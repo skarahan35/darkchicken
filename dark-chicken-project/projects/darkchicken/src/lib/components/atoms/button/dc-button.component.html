@@ -1,1 +1,17 @@
-<button (click)="onClick($event)" >{{ buttonText }}</button>
+<button (click)="onClick($event)"
+        (mouseover)="onHover($event)"
+        (mousedown)="onMouseDown($event)"
+        (mouseup)="onMouseUp($event)"
+        (mouseenter)="onMouseEnter($event)"
+        (mouseout)="onMouseOut($event)"
+        [disabled]="disabled"
+        [ngClass]="{ 'hidden' : !visible}"
+        [ngStyle]="{
+          'width': width,
+          'height': height,
+          'background-color': bgColor,
+          'color': color
+        }"
+        class="btn">
+  <span>{{ buttonText }}</span>
+</button>
