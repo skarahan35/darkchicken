@@ -5,13 +5,8 @@
         (mouseenter)="onMouseEnter($event)"
         (mouseout)="onMouseOut($event)"
         [disabled]="disabled"
-        [ngClass]="{ 'hidden' : !visible}"
-        [ngStyle]="{
-          'width': width,
-          'height': height,
-          'background-color': bgColor,
-          'color': color
-        }"
-        class="btn">
+        [ngClass]="{ 'hidden' : !visible}" 
+        [class]="class"
+        >
   <span>{{ buttonText }}</span>
 </button>
