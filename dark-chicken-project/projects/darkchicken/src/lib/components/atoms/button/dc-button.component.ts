@@ -3,21 +3,22 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 @Component({
   selector: 'dca-button',
   templateUrl: 'dc-button.component.html',
-  styleUrls: ['../../assets/style.css']
+  styleUrls: ['../../assets/style.css', 'dc-button.component.css']
 })
 export class DCButtonComponent {
   
     //#region Inputs
-    @Input() buttonText:String = 'TEST'
-    @Input() bgColor:String = 'blue'
-    @Input() hoverBgColor: String = 'pink'
-    @Input() color:String = 'white'
-    @Input() hoverColor: String = 'red'
-    @Input() width:String = '50px'
-    @Input() height:String = '20px'
+    @Input() buttonText?:string = undefined
+    @Input() bgColor?:string = undefined
+    @Input() hoverBgColor?:string = undefined
+    @Input() color?:string = undefined
+    @Input() hoverColor?:string = undefined
+    @Input() width?:string = undefined
+    @Input() height?:string = undefined
     @Input() disabled:boolean = false
     @Input() visible:boolean = true
     @Input() isToggle:boolean = false
+    @Input() class:string = '' 
     //#endregion
 
     //#region Outputs
@@ -29,10 +30,6 @@ export class DCButtonComponent {
     @Output() dcMouseEnter = new EventEmitter<Event>()
     //#endregion
 
-    //#region Variables
-    private originalBgColor:String = this.bgColor
-    private originalColor:String = this.color
-    //#endregion
 
     //#region onClick Event
     onClick(e:Event){
@@ -43,8 +40,6 @@ export class DCButtonComponent {
     //#region onHover Event
     onHover(e:Event){
       this.dcHover.emit(e)
-      this.bgColor = this.hoverBgColor
-      this.color = this.hoverColor
     }
     //#endregion
 
@@ -68,8 +63,6 @@ export class DCButtonComponent {
 
     //#region onMouseOut Event
     onMouseOut(e:Event){
-      this.bgColor = this.originalBgColor
-      this.color = this.originalColor
       this.dcMouseOut.emit(e)
     }
     //#endregion
