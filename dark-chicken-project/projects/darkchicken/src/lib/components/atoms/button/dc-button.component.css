@@ -1,0 +1,101 @@
+*{
+    --dc-atom-button-bg-color-primary: #242582;
+    --dc-atom-button-text-color-primary: #fff;
+    --dc-atom-button-bg-color-hover-primary:#2F2FA1;
+    --dc-atom-button-text-color-hover-primary:#fff;
+    --dc-atom-button-bg-color-secondary:#563D67;
+    --dc-atom-button-text-color-secondary:#fff;
+    --dc-atom-button-bg-color-hover-secondary:#99728D;
+    --dc-atom-button-text-color-hover-secondary:#fff;
+}
+
+/* DC-BTN */
+.dc-btn{
+    appearance: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 2.75em;
+    min-width: 0;
+    outline: none;
+    padding: 1em 2.3em;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+    font-family: 'Roobert', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    border-radius: 0.9375em;
+    box-sizing: border-box;
+}
+
+/*PRIMARY */
+.dc-btn.dc-btn-primary {
+    background-color: var(--dc-atom-button-bg-color-primary);
+    border: 0.125em solid var(--dc-atom-button-bg-color-primary);
+    color: var(--dc-atom-button-text-color-primary);
+}
+
+/*PRIMARY DISABLED */
+.dc-btn.dc-btn-primary:disabled {
+    pointer-events: none;
+    background-color: var(--dc-atom-button-bg-color-primary);
+    border-color: var(--dc-atom-button-bg-color-primary);
+    color: var(--dc-atom-button-text-color-primary); 
+    opacity: 0.7; 
+}
+
+/*PRIMARY HOVER*/
+.dc-btn.dc-btn-primary:hover {
+    color: var(--dc-atom-button-text-color-hover-primary);
+    background-color: var(--dc-atom-button-bg-color-hover-primary);
+    box-shadow: var(--dc-atom-button-bg-color-hover-primary) 0 8px 15px;
+    border: 0.125em solid var(--dc-atom-button-bg-color-hover-primary);
+    transform: translateY(-2px);
+}
+
+/*PRIMARY ACTIVE */
+.dc-btn.dc-btn-primary:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+
+/*SECONDARY*/
+.dc-btn.dc-btn-secondary {
+    background-color: var(--dc-atom-button-bg-color-secondary);
+    border: 0.125em solid var(--dc-atom-button-bg-color-secondary);
+    color: var(--dc-atom-button-text-color-secondary);
+}
+
+/*SECONDARY DISABLED */
+.dc-btn.dc-btn-secondary:disabled {
+    pointer-events: none;
+    background-color: var(--dc-atom-button-bg-color-secondary);
+    border-color: var(--dc-atom-button-bg-color-secondary);
+    color: var(--dc-atom-button-text-color-secondary);
+    opacity: 0.7; 
+}
+
+/*SECONDARY HOVER*/
+.dc-btn.dc-btn-secondary:hover {
+    color: var(--dc-atom-button-text-color-hover-secondary);
+    background-color: var(--dc-atom-button-bg-color-hover-secondary);
+    box-shadow: var(--dc-atom-button-bg-color-hover-secondary) 0 8px 15px;
+    border: 0.125em solid var(--dc-atom-button-bg-color-hover-secondary);
+    transform: translateY(-2px);
+}
+
+/*SECONDARY ACTIVE */
+.dc-btn.dc-btn-secondary:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+
+

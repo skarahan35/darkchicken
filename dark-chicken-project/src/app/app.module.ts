@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DCAtomModule } from 'projects/darkchicken';
 import { InputsComponent } from './inputs/inputs.component';
+import { ButtonsComponent } from './buttons/buttons.component';
 
 
 
@@ -12,6 +13,7 @@ import { InputsComponent } from './inputs/inputs.component';
   declarations: [
     AppComponent,
     InputsComponent
+    ButtonsComponent
   ],
   imports: [
     BrowserModule,
