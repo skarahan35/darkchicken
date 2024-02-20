@@ -1,1 +1,4 @@
-<input [placeholder]="placeholder" (change)="onValueChange($event)">
+<label for="dcInput" class="dca-input-label">{{label}}</label>
+<br>
+<input id='dcInput' [placeholder]="placeholder" [type]="type" [value]="value" [ngClass]="{ 'hidden' : !visible}" [class]="class"
+    (focus)="onFocusIn($event)" (focusout)="onFocusOut($event)" (change)="onValueChange($event)">
