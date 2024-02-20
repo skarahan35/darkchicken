@@ -8,11 +8,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'dark-chicken-project';
 
-  click(e:any){
-    debugger
-  }
-
-  changed(e:any){
-    debugger
-  }
 }
