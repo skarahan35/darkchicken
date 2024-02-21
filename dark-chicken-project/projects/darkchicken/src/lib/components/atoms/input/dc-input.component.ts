@@ -1,9 +1,11 @@
 import {
   AfterViewInit,
   Component,
+  ElementRef,
   EventEmitter,
   Input,
   Output,
+  ViewChild,
 } from '@angular/core';
 import { InputType } from '../../assets/types/dc-atom-input-types';
 import { InputValidationRulesModel } from '../../assets/models/input-validation-rules.model';
@@ -19,12 +21,13 @@ export class DCInputComponent implements AfterViewInit {
   @Input() label: string | null = null;
   @Input() type: InputType = 'text';
   @Input() value: any = null;
-  @Input() width?: string = '80';
-  @Input() height?: string = '100';
-  @Input() validationRules: InputValidationRulesModel | null = null;
+  @Input() width: string | null = null;
+  @Input() height: string | null = null;
+  @Input() validationRules: InputValidationRulesModel[] | null = null;
   @Input() readonly: boolean = false;
   @Input() visible: boolean = true;
   @Input() class: string = 'dca-input';
+
   //#endregion
 
   //#region Outputs
@@ -35,6 +38,49 @@ export class DCInputComponent implements AfterViewInit {
 
   //#region Variables
   previousValue: string | null = null;
+
+  //#region Validation Variables
+  get isRequired() {
+    return (
+      this.validationRules?.some((rule) => rule.type === 'required') ?? false
+    );
+  }
+
+  get minValue() {
+    const minRule = this.validationRules?.find((rule) => rule.type === 'min');
+    return minRule ? minRule.value : null;
+  }
+
+  get maxValue() {
+    const maxRule = this.validationRules?.find((rule) => rule.type === 'max');
+    return maxRule ? maxRule.value : null;
+  }
+
+  get minLengthValue() {
+    const minLengthRule = this.validationRules?.find(
+      (rule) => rule.type === 'minLength'
+    );
+    return minLengthRule ? minLengthRule.value : null;
+  }
+
+  get maxLengthValue() {
+    const maxLengthRule = this.validationRules?.find(
+      (rule) => rule.type === 'maxLength'
+    );
+    return maxLengthRule ? maxLengthRule.value : null;
+  }
+
+  get pattern() {
+    const patternRule = this.validationRules?.find(
+      (rule) => rule.type === 'regEx'
+    );
+    return patternRule ? patternRule.pattern : null;
+  }
+
+  clickedOnce: boolean = false;
+  validationMessage?: string | null = null;
+  //#endregion
+
   //#endregion
 
   ngAfterViewInit(): void {
@@ -43,6 +89,7 @@ export class DCInputComponent implements AfterViewInit {
 
   //#region Outputs methots
   onFocusIn(e: Event) {
+    this.clickedOnce = true;
     this.dcFocusIn.emit({
       currentValue: (e.currentTarget as HTMLInputElement).value,
       nativeElement: e,
@@ -50,6 +97,7 @@ export class DCInputComponent implements AfterViewInit {
   }
 
   onFocusOut(e: Event) {
+    this.checkValidation(e); //checking the validation 
     this.dcFocusOut.emit({
       currentValue: (e.currentTarget as HTMLInputElement).value,
       nativeElement: e,
@@ -67,5 +115,46 @@ export class DCInputComponent implements AfterViewInit {
   }
   //#endregion
 
-  initValidationRules() {}
+  //#region onValidation
+  checkValidation(e: Event) {
+    let validity = (e.currentTarget as HTMLInputElement).validity;
+    if (!validity.valid) {
+      if (validity.valueMissing) {
+        this.validationMessage = this.validationRules?.find(
+          (rule) => rule.type == 'required'
+        )?.message;
+      } else if (validity.tooShort) {
+        this.validationMessage = this.validationRules?.find(
+          (rule) => rule.type == 'minLength'
+        )?.message;
+      } else if (validity.tooLong) {
+        this.validationMessage = this.validationRules?.find(
+          (rule) => rule.type == 'maxLength'
+        )?.message;
+      } else if (validity.rangeUnderflow) {
+        this.validationMessage = this.validationRules?.find(
+          (rule) => rule.type == 'min'
+        )?.message;
+      } else if (validity.rangeOverflow) {
+        this.validationMessage = this.validationRules?.find(
+          (rule) => rule.type == 'max'
+        )?.message;
+      } else if (validity.patternMismatch) {
+        this.validationMessage = this.validationRules?.find(
+          (rule) => rule.type == 'regEx'
+        )?.message;
+      } else if (validity.typeMismatch) {
+        this.validationMessage = (
+          e.currentTarget as HTMLInputElement
+        ).validationMessage;
+      } else {
+        this.validationMessage = (
+          e.currentTarget as HTMLInputElement
+        ).validationMessage;
+      }
+    } else {
+      this.validationMessage = null;
+    }
+  }
+  //#endregion
 }

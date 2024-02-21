@@ -1,4 +1,22 @@
-<label for="dcInput" class="dca-input-label">{{label}}</label>
-<br>
-<input id='dcInput' [placeholder]="placeholder" [type]="type" [value]="value" [ngClass]="{ 'hidden' : !visible}" [class]="class"
-    (focus)="onFocusIn($event)" (focusout)="onFocusOut($event)" (change)="onValueChange($event)">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<span class="dca-input-wrapper">
+    <!--Label-->
+    <label for="dcInput" class="dca-input-label">{{label}}</label>
+    <br>
+    <span class="dca-input-content">
+        <!--Input-->
+        <input [style.width]="this.width" [style.height]="this.height" #dcaInput id='dcInput'
+            [placeholder]="placeholder" [type]="type" [value]="value"
+            [ngClass]="{ 'hidden' : !visible, 'clickedOnce':clickedOnce}" [class]="class" (focus)="onFocusIn($event)"
+            (focusout)="onFocusOut($event)" (change)="onValueChange($event)" [required]="isRequired"
+            [attr.min]="minValue" [attr.max]="maxValue" [attr.minLength]="minLengthValue"
+            [attr.maxLength]="maxLengthValue" [attr.pattern]="pattern">
+
+        <!--Invalid Icon & Message-->
+        <i *ngIf="validationMessage" class="dca-input-icon fa fa-cloud">
+            <p *ngIf="validationMessage" class="validation-message show-icon-on-hover">{{validationMessage}}</p>
+        </i>
+
+    </span>
+</span>
