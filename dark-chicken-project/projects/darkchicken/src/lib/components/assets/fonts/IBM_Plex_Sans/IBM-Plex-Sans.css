@@ -1,0 +1,97 @@
+@font-face {
+  font-family: "IBMPlexSans";
+  font-style: normal;
+  font-weight: normal;
+  src: local("IBMPlexSans-Regular"),
+    url("IBMPlexSans-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "IBMPlexSans";
+  font-style: normal;
+  font-weight: normal;
+  src: local("IBMPlexSans-Bold"),
+    url("IBMPlexSans-Bold.ttf") format("ttf");
+}
+@font-face {
+  font-family: "IBMPlexSans";
+  font-style: normal;
+  font-weight: normal;
+  src: local("IBMPlexSans-BoldItalic"),
+    url("IBMPlexSans-BoldItalic.ttf") format("ttf");
+}
+@font-face {
+  font-family: "IBMPlexSans";
+  font-style: normal;
+  font-weight: normal;
+  src: local("IBMPlexSans-ExtraLight"),
+    url("IBMPlexSans-ExtraLight.ttf") format("ttf");
+}
+@font-face {
+  font-family: "IBMPlexSans";
+  font-style: normal;
+  font-weight: normal;
+  src: local("IBMPlexSans-ExtraLightItalic"),
+    url("IBMPlexSans-ExtraLightItalic.ttf") format("ttf");
+}
+@font-face {
+  font-family: "IBMPlexSans";
+  font-style: normal;
+  font-weight: normal;
+  src: local("IBMPlexSans-Italic"),
+    url("IBMPlexSans-Italic.ttf") format("ttf");
+}
+@font-face {
+  font-family: "IBMPlexSans";
+  font-style: normal;
+  font-weight: normal;
+  src: local("IBMPlexSans-Light"),
+    url("IBMPlexSans-Light.ttf") format("ttf");
+}
+@font-face {
+  font-family: "IBMPlexSans";
+  font-style: normal;
+  font-weight: normal;
+  src: local("IBMPlexSans-LightItalic"),
+    url("IBMPlexSans-LightItalic.ttf") format("ttf");
+}
+@font-face {
+  font-family: "IBMPlexSans";
+  font-style: normal;
+  font-weight: normal;
+  src: local("IBMPlexSans-Medium"),
+    url("IBMPlexSans-Medium.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: "IBMPlexSans";
+    font-style: normal;
+    font-weight: normal;
+    src: local("IBMPlexSans-MediumItalic"),
+      url("IBMPlexSans-MediumItalic.ttf") format("ttf");
+  }
+
+  @font-face {
+    font-family: "IBMPlexSans";
+    font-style: normal;
+    font-weight: normal;
+    src: local("IBMPlexSans-SemiBold"),
+      url("IBMPlexSans-SemiBold.ttf") format("ttf");
+  }
+
+  @font-face {
+    font-family: "IBMPlexSans";
+    font-style: normal;
+    font-weight: normal;
+    src: local("IBMPlexSans-SemiBoldItalic"),
+      url("IBMPlexSans-SemiBoldItalic.ttf") format("ttf");
+  }
+
+  @font-face {
+    font-family: "IBMPlexSans";
+    font-style: normal;
+    font-weight: normal;
+    src: local("IBMPlexSans-Thin"),
+      url("IBMPlexSans-ThinItalic.ttf") format("ttf");
+  }
+

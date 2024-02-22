@@ -10,7 +10,7 @@ export class InputsComponent {
   validationRules: InputValidationRulesModel[] = [
     {
       type: 'required',
-      message:"bu alan gerekli"
+      message:"bu alan gereklixxxxxxxxxxxxxxxxxxxxxx"
     },
 
     {

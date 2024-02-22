@@ -34,10 +34,13 @@ export class DCInputComponent implements AfterViewInit {
   @Output() dcValueChanged = new EventEmitter<Object>();
   @Output() dcFocusOut = new EventEmitter<Object>();
   @Output() dcFocusIn = new EventEmitter<Object>();
+  @Output() dcValidating = new EventEmitter<Object>();
+  @Output() dcValidated = new EventEmitter<Object>();
   //#endregion
 
   //#region Variables
   previousValue: string | null = null;
+  isValid:boolean=true;
 
   //#region Validation Variables
   get isRequired() {
@@ -117,8 +120,13 @@ export class DCInputComponent implements AfterViewInit {
 
   //#region onValidation
   checkValidation(e: Event) {
+    this.dcValidating.emit({
+      nativeElememt:e,
+      validationRules:this.validationRules
+    })
     let validity = (e.currentTarget as HTMLInputElement).validity;
     if (!validity.valid) {
+      this.isValid=false
       if (validity.valueMissing) {
         this.validationMessage = this.validationRules?.find(
           (rule) => rule.type == 'required'
@@ -148,13 +156,17 @@ export class DCInputComponent implements AfterViewInit {
           e.currentTarget as HTMLInputElement
         ).validationMessage;
       } else {
-        this.validationMessage = (
-          e.currentTarget as HTMLInputElement
-        ).validationMessage;
+        this.validationMessage = "Invalid input" //Default olarak ayarlandı dil servisine entegre edilmesi gerekli
       }
     } else {
+      this.isValid=false
       this.validationMessage = null;
     }
+    this.dcValidated.emit({
+      nativeElement:e,
+      isValid:this.isValid
+    })
+
   }
   //#endregion
 }

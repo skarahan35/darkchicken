@@ -1,3 +1,10 @@
+@import url('../assets/fonts/IBM_Plex_Sans/IBM-Plex-Sans.css');
+
+*{
+    font-family: 'IBMPlexxSans', sans-serif;
+
+}
+
 .hidden{
     display: none;
 }
