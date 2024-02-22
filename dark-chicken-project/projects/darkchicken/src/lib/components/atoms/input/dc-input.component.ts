@@ -9,6 +9,7 @@ import {
 } from '@angular/core';
 import { InputType } from '../../assets/types/dc-atom-input-types';
 import { InputValidationRulesModel } from '../../assets/models/input-validation-rules.model';
+import { LanguageService } from '../../../services/language.service';
 
 @Component({
   selector: 'dca-input',
@@ -86,6 +87,10 @@ export class DCInputComponent implements AfterViewInit {
 
   //#endregion
 
+  constructor(private languageService:LanguageService){
+
+  }
+
   ngAfterViewInit(): void {
     this.previousValue = this.value;
   }
@@ -151,12 +156,8 @@ export class DCInputComponent implements AfterViewInit {
         this.validationMessage = this.validationRules?.find(
           (rule) => rule.type == 'regEx'
         )?.message;
-      } else if (validity.typeMismatch) {
-        this.validationMessage = (
-          e.currentTarget as HTMLInputElement
-        ).validationMessage;
       } else {
-        this.validationMessage = "Invalid input" //Default olarak ayarlandı dil servisine entegre edilmesi gerekli
+        this.validationMessage = this.languageService.getTranslation('invalid-input') 
       }
     } else {
       this.isValid=false

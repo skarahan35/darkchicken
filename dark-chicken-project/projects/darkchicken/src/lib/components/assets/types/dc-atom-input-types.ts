@@ -1,5 +1,5 @@
 export type InputType =
-  | 'text'
+  'text'
   | 'number'
   | 'color'
   | 'date'
@@ -15,10 +15,11 @@ export type InputType =
   | 'time'
 
 export type InputValidationType =
-  | 'required'
+  'required'
   | 'min'
   | 'max'
   | 'minLength'
   | 'maxLength'
   | 'regEx'
   | 'null';
+
