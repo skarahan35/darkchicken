@@ -4,9 +4,12 @@
         (mouseup)="onMouseUp($event)"
         (mouseenter)="onMouseEnter($event)"
         (mouseout)="onMouseOut($event)"
+        (dblclick)="onDoubleClick($event)"
         [disabled]="disabled"
         [ngClass]="{ 'hidden' : !visible}" 
         [class]="class"
+        [style.width]="this.width"
+        [style.height]="this.height"
         >
   <span>{{ buttonText }}</span>
 </button>

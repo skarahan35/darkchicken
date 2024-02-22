@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'dca-button',
@@ -9,10 +9,6 @@ export class DCButtonComponent {
   
     //#region Inputs
     @Input() buttonText?:string = undefined
-    @Input() bgColor?:string = undefined
-    @Input() hoverBgColor?:string = undefined
-    @Input() color?:string = undefined
-    @Input() hoverColor?:string = undefined
     @Input() width?:string = undefined
     @Input() height?:string = undefined
     @Input() disabled:boolean = false
@@ -28,11 +24,18 @@ export class DCButtonComponent {
     @Output() dcMouseDown = new EventEmitter<Event>()
     @Output() dcMouseOut = new EventEmitter<Event>()
     @Output() dcMouseEnter = new EventEmitter<Event>()
+    @Output() dcDoubleClick = new EventEmitter<Event>()
     //#endregion
 
+    
+
+    onDoubleClick(e:Event){
+      this.dcDoubleClick.emit(e)
+    }
 
     //#region onClick Event
     onClick(e:Event){
+      // document.documentElement.style.setProperty('')
       this.dcClick.emit(e)
     }
     //#endregion
