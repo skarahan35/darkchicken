@@ -1,12 +1,26 @@
 *{
-    --dc-atom-button-bg-color-primary: #242582;
+    --dc-atom-button-width: auto;
+    --dc-atom-button-bg-color: none;
+    --dc-atom-button-bg-color-primary: #4a90e2;
     --dc-atom-button-text-color-primary: #fff;
-    --dc-atom-button-bg-color-hover-primary:#2F2FA1;
+    --dc-atom-button-bg-color-hover-primary:#4169aa;
     --dc-atom-button-text-color-hover-primary:#fff;
-    --dc-atom-button-bg-color-secondary:#563D67;
+    --dc-atom-button-bg-color-secondary:#6c757d;
     --dc-atom-button-text-color-secondary:#fff;
-    --dc-atom-button-bg-color-hover-secondary:#99728D;
+    --dc-atom-button-bg-color-hover-secondary:#545b62;
     --dc-atom-button-text-color-hover-secondary:#fff;
+    --dc-atom-button-bg-color-success:#4caf50;
+    --dc-atom-button-bg-color-hover-success:#388e3c;
+    --dc-atom-button-bg-color-danger:#e53935;
+    --dc-atom-button-bg-color-hover-danger:#c62828;
+    --dc-atom-button-bg-color-warning:#ff9800;
+    --dc-atom-button-bg-color-hover-warning:#f57c00;
+    --dc-atom-button-bg-color-info:#00bcd4;
+    --dc-atom-button-bg-color-hover-info:#00838f;
+    --dc-atom-button-bg-color-light:#f5f5f5;
+    --dc-atom-button-bg-color-hover-light:#e0e0e0;
+    --dc-atom-button-bg-color-dark:#333333;
+    --dc-atom-button-bg-color-hover-dark:#1a1a1a;
 }
 
 /* DC-BTN */
@@ -14,9 +28,11 @@
     appearance: none;
     cursor: pointer;
     display: inline-block;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
+    background-color: var(--dc-atom-button-bg-color);
     line-height: normal;
+    width: var(--dc-atom-button-width);
     margin: 0;
     min-height: 2.75em;
     min-width: 0;
@@ -37,7 +53,7 @@
 /*PRIMARY */
 .dc-btn.dc-btn-primary {
     background-color: var(--dc-atom-button-bg-color-primary);
-    border: 0.125em solid var(--dc-atom-button-bg-color-primary);
+    border: 0.125em solid var(--dc-atom-button-bg-color-hover-primary);
     color: var(--dc-atom-button-text-color-primary);
 }
 
@@ -69,7 +85,7 @@
 /*SECONDARY*/
 .dc-btn.dc-btn-secondary {
     background-color: var(--dc-atom-button-bg-color-secondary);
-    border: 0.125em solid var(--dc-atom-button-bg-color-secondary);
+    border: 0.125em solid var(--dc-atom-button-bg-color-hover-secondary);
     color: var(--dc-atom-button-text-color-secondary);
 }
 
@@ -97,5 +113,196 @@
     transform: translateY(0);
 }
 
+
+/*SUCCESS */
+.dc-btn.dc-btn-success {
+    background-color: var(--dc-atom-button-bg-color-success);
+    border: 0.125em solid var(--dc-atom-button-bg-color-hover-success);
+    color: var(--dc-atom-button-text-color-primary);
+}
+
+/*SUCCESS DISABLED */
+.dc-btn.dc-btn-success:disabled {
+    pointer-events: none;
+    background-color: var(--dc-atom-button-bg-color-success);
+    border-color: var(--dc-atom-button-bg-color-success);
+    color: var(--dc-atom-button-text-color-primary); 
+    opacity: 0.7; 
+}
+
+/*SUCCESS HOVER*/
+.dc-btn.dc-btn-success:hover {
+    color: var(--dc-atom-button-text-color-hover-primary);
+    background-color: var(--dc-atom-button-bg-color-hover-success);
+    box-shadow: var(--dc-atom-button-bg-color-hover-success) 0 8px 15px;
+    border: 0.125em solid var(--dc-atom-button-bg-color-hover-success);
+    transform: translateY(-2px);
+}
+
+/*SUCCESS ACTIVE */
+.dc-btn.dc-btn-success:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+
+/*DANGER */
+.dc-btn.dc-btn-danger {
+    background-color: var(--dc-atom-button-bg-color-danger);
+    border: 0.125em solid var(--dc-atom-button-bg-color-hover-danger);
+    color: var(--dc-atom-button-text-color-primary);
+}
+
+/*DANGER DISABLED */
+.dc-btn.dc-btn-danger:disabled {
+    pointer-events: none;
+    background-color: var(--dc-atom-button-bg-color-danger);
+    border-color: var(--dc-atom-button-bg-color-danger);
+    color: var(--dc-atom-button-text-color-primary); 
+    opacity: 0.7; 
+}
+
+/*DANGER HOVER*/
+.dc-btn.dc-btn-danger:hover {
+    color: var(--dc-atom-button-text-color-hover-primary);
+    background-color: var(--dc-atom-button-bg-color-hover-danger);
+    box-shadow: var(--dc-atom-button-bg-color-hover-danger) 0 8px 15px;
+    border: 0.125em solid var(--dc-atom-button-bg-color-hover-danger);
+    transform: translateY(-2px);
+}
+
+/*DANGER ACTIVE */
+.dc-btn.dc-btn-danger:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+
+/*WARNING */
+.dc-btn.dc-btn-warning {
+    background-color: var(--dc-atom-button-bg-color-warning);
+    border: 0.125em solid var(--dc-atom-button-bg-color-hover-warning);
+    color: var(--dc-atom-button-text-color-primary);
+}
+
+/*WARNING DISABLED */
+.dc-btn.dc-btn-warning:disabled {
+    pointer-events: none;
+    background-color: var(--dc-atom-button-bg-color-warning);
+    border-color: var(--dc-atom-button-bg-color-warning);
+    color: var(--dc-atom-button-text-color-primary); 
+    opacity: 0.7; 
+}
+
+/*WARNING HOVER*/
+.dc-btn.dc-btn-warning:hover {
+    color: var(--dc-atom-button-text-color-hover-primary);
+    background-color: var(--dc-atom-button-bg-color-hover-warning);
+    box-shadow: var(--dc-atom-button-bg-color-hover-warning) 0 8px 15px;
+    border: 0.125em solid var(--dc-atom-button-bg-color-hover-warning);
+    transform: translateY(-2px);
+}
+
+/*WARNING ACTIVE */
+.dc-btn.dc-btn-warning:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+
+/*INFO */
+.dc-btn.dc-btn-info {
+    background-color: var(--dc-atom-button-bg-color-info);
+    border: 0.125em solid var(--dc-atom-button-bg-color-hover-info);
+    color: var(--dc-atom-button-text-color-primary);
+}
+
+/*INFO DISABLED */
+.dc-btn.dc-btn-info:disabled {
+    pointer-events: none;
+    background-color: var(--dc-atom-button-bg-color-info);
+    border-color: var(--dc-atom-button-bg-color-info);
+    color: var(--dc-atom-button-text-color-primary); 
+    opacity: 0.7; 
+}
+
+/*INFO HOVER*/
+.dc-btn.dc-btn-info:hover {
+    color: var(--dc-atom-button-text-color-hover-primary);
+    background-color: var(--dc-atom-button-bg-color-hover-info);
+    box-shadow: var(--dc-atom-button-bg-color-hover-info) 0 8px 15px;
+    border: 0.125em solid var(--dc-atom-button-bg-color-hover-info);
+    transform: translateY(-2px);
+}
+
+/*INFO ACTIVE */
+.dc-btn.dc-btn-info:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+
+/*LIGHT */
+.dc-btn.dc-btn-light {
+    background-color: var(--dc-atom-button-bg-color-light);
+    border: 0.125em solid var(--dc-atom-button-bg-color-hover-light);
+    color: black;
+}
+
+/*LIGHT DISABLED */
+.dc-btn.dc-btn-light:disabled {
+    pointer-events: none;
+    background-color: var(--dc-atom-button-bg-color-light);
+    border-color: var(--dc-atom-button-bg-color-light);
+    color: black; 
+    opacity: 0.7; 
+}
+
+/*LIGHT HOVER*/
+.dc-btn.dc-btn-light:hover {
+    color: black;
+    background-color: var(--dc-atom-button-bg-color-hover-light);
+    box-shadow: var(--dc-atom-button-bg-color-hover-light) 0 8px 15px;
+    border: 0.125em solid var(--dc-atom-button-bg-color-hover-light);
+    transform: translateY(-2px);
+}
+
+/*LIGHT ACTIVE */
+.dc-btn.dc-btn-light:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+
+/*DARK */
+.dc-btn.dc-btn-dark {
+    background-color: var(--dc-atom-button-bg-color-dark);
+    border: 0.125em solid var(--dc-atom-button-bg-color-hover-dark);
+    color: var(--dc-atom-button-text-color-primary);
+}
+
+/*DARK DISABLED */
+.dc-btn.dc-btn-dark:disabled {
+    pointer-events: none;
+    background-color: var(--dc-atom-button-bg-color-dark);
+    border-color: var(--dc-atom-button-bg-color-dark);
+    color: var(--dc-atom-button-text-color-primary); 
+    opacity: 0.7; 
+}
+
+/*DARK HOVER*/
+.dc-btn.dc-btn-dark:hover {
+    color: var(--dc-atom-button-text-color-hover-primary);
+    background-color: var(--dc-atom-button-bg-color-hover-dark);
+    box-shadow: var(--dc-atom-button-bg-color-hover-dark) 0 8px 15px;
+    border: 0.125em solid var(--dc-atom-button-bg-color-hover-dark);
+    transform: translateY(-2px);
+}
+
+/*DARK ACTIVE */
+.dc-btn.dc-btn-dark:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
 
 
