@@ -1,18 +1,14 @@
-<!-- <h3>DCA-BUTTON DÜZ</h3>
-<dca-button buttonText="DÜZ"  ></dca-button>
-<dca-button buttonText="DÜZ PASİF" [disabled]="true" ></dca-button><br><br><br>
-
-<h3>DCA-BUTTON DC-BTN CLASS</h3>
-<dca-button buttonText="DC-BTN"   class="dc-btn"  ></dca-button>
-<dca-button buttonText="DC-BTN PASİF" class="dc-btn" [disabled]="true" ></dca-button><br><br><br> -->
-
 <div class="card">
     <h3>PRIMARY</h3>
     <div class="button-container">
-        <dca-button buttonText="PRIMARY" class="dc-btn dc-btn-primary"></dca-button>
+        <dca-button (dcClick)="dcClick($event)" (dcHover)="dcHover($event)" (dcMouseUp)="dcMouseUp($event)"
+            (dcMouseDown)="dcMouseDown($event)" (dcMouseOut)="dcMouseOut($event)" (dcMouseEnter)="dcMouseEnter($event)"
+            (dcDoubleClick)="dcDoubleClick($event)" buttonText="PRIMARY" class="dc-btn dc-btn-primary"
+            [isToggle]="true"></dca-button>
         <dca-button buttonText="PRIMARY PASİF" class="dc-btn dc-btn-primary" [disabled]="true"></dca-button>
         <dca-button buttonText="PRIMARY OUTLINE" class="dc-btn dc-btn-outline-primary"></dca-button>
-        <dca-button buttonText="PRIMARY OUTLINE PASİF" class="dc-btn dc-btn-outline-primary" [disabled]="true"></dca-button>
+        <dca-button buttonText="PRIMARY OUTLINE PASİF" class="dc-btn dc-btn-outline-primary"
+            [disabled]="true"></dca-button>
     </div>
 </div>
 
@@ -22,7 +18,8 @@
         <dca-button buttonText="SECONDARY" class="dc-btn dc-btn-secondary"></dca-button>
         <dca-button buttonText="SECONDARY PASİF" class="dc-btn dc-btn-secondary" [disabled]="true"></dca-button>
         <dca-button buttonText="SECONDARY OUTLINE" class="dc-btn dc-btn-outline-secondary"></dca-button>
-        <dca-button buttonText="SECONDARY OUTLINE PASİF" class="dc-btn dc-btn-outline-secondary" [disabled]="true"></dca-button>
+        <dca-button buttonText="SECONDARY OUTLINE PASİF" class="dc-btn dc-btn-outline-secondary"
+            [disabled]="true"></dca-button>
     </div>
 </div>
 
@@ -32,7 +29,8 @@
         <dca-button buttonText="SUCCESS" class="dc-btn dc-btn-success"></dca-button>
         <dca-button buttonText="SUCCESS PASİF" class="dc-btn dc-btn-success" [disabled]="true"></dca-button>
         <dca-button buttonText="SUCCESS OUTLINE" class="dc-btn dc-btn-outline-success"></dca-button>
-        <dca-button buttonText="SUCCESS OUTLINE PASİF" class="dc-btn dc-btn-outline-success" [disabled]="true"></dca-button>
+        <dca-button buttonText="SUCCESS OUTLINE PASİF" class="dc-btn dc-btn-outline-success"
+            [disabled]="true"></dca-button>
     </div>
 </div>
 
@@ -42,7 +40,8 @@
         <dca-button buttonText="DANGER" class="dc-btn dc-btn-danger"></dca-button>
         <dca-button buttonText="DANGER PASİF" class="dc-btn dc-btn-danger" [disabled]="true"></dca-button>
         <dca-button buttonText="DANGER OUTLINE" class="dc-btn dc-btn-outline-danger"></dca-button>
-        <dca-button buttonText="DANGER OUTLINE PASİF" class="dc-btn dc-btn-outline-danger" [disabled]="true"></dca-button>
+        <dca-button buttonText="DANGER OUTLINE PASİF" class="dc-btn dc-btn-outline-danger"
+            [disabled]="true"></dca-button>
     </div>
 </div>
 
@@ -52,7 +51,8 @@
         <dca-button buttonText="WARNING" class="dc-btn dc-btn-warning"></dca-button>
         <dca-button buttonText="WARNING PASİF" class="dc-btn dc-btn-warning" [disabled]="true"></dca-button>
         <dca-button buttonText="WARNING OUTLINE" class="dc-btn dc-btn-outline-warning"></dca-button>
-        <dca-button buttonText="WARNING OUTLINE PASİF" class="dc-btn dc-btn-outline-warning" [disabled]="true"></dca-button>
+        <dca-button buttonText="WARNING OUTLINE PASİF" class="dc-btn dc-btn-outline-warning"
+            [disabled]="true"></dca-button>
     </div>
 </div>
 
@@ -75,7 +75,7 @@
         <dca-button buttonText="LIGHT OUTLINE PASİF" class="dc-btn dc-btn-outline-light" [disabled]="true"></dca-button>
     </div>
 </div>
-<div class="card" >
+<div class="card">
     <h3>DARK</h3>
     <div class="button-container">
         <dca-button buttonText="DARK" class="dc-btn dc-btn-dark"></dca-button>

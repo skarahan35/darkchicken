@@ -2,9 +2,14 @@
 
 *{
     font-family: 'IBMPlexxSans', sans-serif;
-
 }
 
 .hidden{
     display: none;
 }
+
+.dca-icon{
+    width: 16px;
+    height: 16px;
+}
+
