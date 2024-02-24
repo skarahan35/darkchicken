@@ -22,7 +22,7 @@ export class DCButtonComponent {
     @Output() dcHover = new EventEmitter<Event>()
     @Output() dcMouseUp = new EventEmitter<Event>()
     @Output() dcMouseDown = new EventEmitter<Event>()
-    @Output() dcMouseOut = new EventEmitter<Event>()
+    @Output() dcMouseLeave = new EventEmitter<Event>()
     @Output() dcMouseEnter = new EventEmitter<Event>()
     @Output() dcDoubleClick = new EventEmitter<Event>()
     //#endregion
@@ -65,8 +65,8 @@ export class DCButtonComponent {
     //#endregion
 
     //#region onMouseOut Event
-    onMouseOut(e:Event){
-      this.dcMouseOut.emit(e)
+    onMouseLeave(e:Event){
+      this.dcMouseLeave.emit(e)
     }
     //#endregion
 
