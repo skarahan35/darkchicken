@@ -8,10 +8,26 @@
   --dc-atom-input-width: 150px;
   --dc-atom-input-height: 40px;
 }
+
 /*#endregion*/
 
 /*#region Input*/
+.dca-input-wrapper {
+  position: relative;
+}
+
+.dca-input-wrapper span {
+  float: left;
+  clear: both;
+}
+
+.dca-input-content {
+  position: relative;
+}
+
+
 .dca-input {
+  z-index: 1;
   position: relative;
   width: var(--dc-atom-input-width);
   height: var(--dc-atom-input-height);
@@ -29,12 +45,14 @@
   border-color: var(--dc-atom-input-border-color-focus);
   box-shadow: 0px 0px 5px var(--dc-atom-input-border-color-focus);
 }
+
 /*#endregion*/
 
 /*#region Label*/
 .dca-input-label {
   padding: 0.75em 0.5em;
 }
+
 /*#endregion*/
 
 /*#region Invalid States*/
@@ -49,23 +67,28 @@
 }
 
 /*#region Invalid Icon*/
-.dca-input-icon {
-  color: var(--dc-colors-danger);
+
+
+.dca-invalid-icon {
+  z-index: 2;
   position: absolute;
   display: inline-block;
   right: 5px;
   top: 50%;
   transform: translateY(-50%);
+  fill: var(--dc-colors-danger);
 }
 
-.dca-input-icon:hover {
-  color: var(--dc-colors-danger-hover);
+
+.dca-invalid-icon:hover {
+  fill: var(--dc-colors-danger-hover);
 }
 
 /*#endregion*/
 
 /*#region Invalid Message*/
-.dca-input-icon .validation-message {
+.dca-invalid-icon .validation-message {
+
   visibility: hidden;
   min-width: max-content;
   min-height: max-content;
@@ -81,18 +104,11 @@
   margin-left: -60px;
 
 }
-.dca-input-icon:hover .validation-message {
+
+.dca-invalid-icon:hover .validation-message {
   visibility: visible;
 }
 
 /*#endregion*/
 
 /*#endregion*/
-
-.dca-input-wrapper {
-  position: relative;
-}
-
-.dca-input-content {
-  position: relative;
-}

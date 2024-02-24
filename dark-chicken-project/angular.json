@@ -22,7 +22,13 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./dist/darkchicken/assets",
+                "output": "/assets/"
+              }
+
             ],
             "styles": [
               "src/styles.css"

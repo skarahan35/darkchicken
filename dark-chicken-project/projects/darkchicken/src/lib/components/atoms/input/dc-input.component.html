@@ -1,10 +1,7 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 <span class="dca-input-wrapper">
     <!--Label-->
     <span *ngIf="label" class="dca-input-label-wrapper">
         <label *ngIf="label" for="dcInput" class="dca-input-label">{{label}}</label>
-        <br>
     </span>
     <span class="dca-input-content">
         <!--Input-->
@@ -16,9 +13,10 @@
             [attr.maxLength]="maxLengthValue" [attr.pattern]="pattern" autocomplete="off">
 
         <!--Invalid Icon & Message-->
-        <i *ngIf="validationMessage" class="dca-input-icon fa-solid fa fa-cloud">
-            <span *ngIf="validationMessage" class="validation-message show-icon-on-hover">{{validationMessage}}</span>
-        </i>
+        <div *ngIf="validationMessage" class="dca-invalid-icon">
+            <dca-icon icon="circle-exclamation" ></dca-icon>
+            <span  class="validation-message">{{validationMessage}}</span>
+        </div>
 
     </span>
 </span>
