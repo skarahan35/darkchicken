@@ -1,12 +1,21 @@
-import { Component } from '@angular/core';
-import { InputValidationRulesModel } from 'projects/darkchicken/src/lib/components/assets/models/input-validation-rules.model';
+import { Component, OnInit } from '@angular/core';
+
+import { InputValidationRulesModel } from 'projects/darkchicken/src/lib/models/input-validation-rules.model';
+import { LanguageService } from 'projects/darkchicken/src/lib/services/language.service';
 
 @Component({
   selector: 'app-inputs',
   templateUrl: './inputs.component.html',
   styleUrls: ['./inputs.component.css'],
 })
-export class InputsComponent {
+export class InputsComponent implements OnInit{
+
+  constructor(private testService:LanguageService){}
+
+  ngOnInit(): void {
+    this.testService.setLanguage('en')
+  }
+
   validationRules: InputValidationRulesModel[] = [
     {
       type: 'required',

@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 @Component({
   selector: 'dca-button',
   templateUrl: 'dc-button.component.html',
-  styleUrls: ['../../assets/style.css', 'dc-button.component.css']
+  styleUrls: ['../../../../../assets/style.css', 'dc-button.component.css']
 })
 export class DCButtonComponent {
   

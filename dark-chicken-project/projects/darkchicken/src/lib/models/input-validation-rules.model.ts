@@ -1,4 +1,5 @@
-import { InputValidationType } from "../types/dc-atom-input-types";
+import { InputValidationType } from "../types/dc-types";
+
 
 export interface InputValidationRulesModel {
     type:InputValidationType,

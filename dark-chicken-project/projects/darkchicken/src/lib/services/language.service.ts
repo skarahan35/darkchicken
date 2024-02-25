@@ -1,23 +1,25 @@
 import { Injectable } from '@angular/core';
-import { LanguageType } from '../components/assets/types/dc-types';
+import { LanguageType } from '../types/dc-types';
+import { HttpClient } from '@angular/common/http';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
 })
 export class LanguageService {
-    currentLanguage: LanguageType = 'tr';
 
-    translations:any = {
-        'en': {
-            'invalid-input': "Invalid input"
-        },
-        'tr': {
-            'invalid-input': "Geçersiz giriş"
-        }
-    };
+    constructor(private http: HttpClient) {
 
-    getTranslation(key: string): any {
-        return this.translations[this.currentLanguage][key]
+    }
+
+    private currentLanguage: LanguageType = 'tr';
+
+    getTranslation(key: string): Observable<any> {
+        return this.http.get(`assets/i18n/${this.currentLanguage}.json`).pipe(
+            map((res:any) => {
+                return res[key] ? res[key] : key;
+            })
+        );
     }
 
     setLanguage(lang: LanguageType) {
