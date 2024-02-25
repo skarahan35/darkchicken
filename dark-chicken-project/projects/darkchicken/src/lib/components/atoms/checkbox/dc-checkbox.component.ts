@@ -5,7 +5,7 @@ export type CheckboxType = 'box' | 'switch'
 @Component({
   selector: 'dca-checkbox',
   templateUrl: './dc-checkbox.component.html',
-  styleUrls: ['../../assets/style.css','./dc-checkbox.component.css']
+  styleUrls: ['../../../../../assets/style.css','./dc-checkbox.component.css']
 })
 
 
