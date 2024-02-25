@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { InputsComponent } from './inputs/inputs.component';
 import { CheckboxesComponent } from './checkboxes/checkboxes.component';
+import { IconComponent } from './icon/icon.component';
 
 const routes: Routes = [{
   path:'pages/buttons',
@@ -15,8 +16,11 @@ const routes: Routes = [{
 {
   path:'pages/checkboxes',
   component:CheckboxesComponent
+},
+{
+  path:'pages/icons',
+  component:IconComponent
 }
-
 ];
 
 @NgModule({

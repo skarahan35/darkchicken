@@ -162,7 +162,7 @@ export class DCInputComponent implements AfterViewInit {
         })
       }
     } else {
-      this.isValid = false
+      this.isValid = true
       this.validationMessage = null;
     }
     this.dcValidated.emit({

@@ -7,6 +7,7 @@ import { DCAtomModule } from 'projects/darkchicken';
 import { InputsComponent } from './inputs/inputs.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { CheckboxesComponent } from './checkboxes/checkboxes.component';
+import { IconComponent } from './icon/icon.component';
 
 
 
@@ -15,7 +16,8 @@ import { CheckboxesComponent } from './checkboxes/checkboxes.component';
     AppComponent,
     InputsComponent,
     ButtonsComponent,
-    CheckboxesComponent
+    CheckboxesComponent,
+    IconComponent
   ],
   imports: [
     BrowserModule,

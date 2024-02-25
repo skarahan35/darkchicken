@@ -1,3 +1,13 @@
-.tst path {
-    fill: red;
-  }
+.inputs{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+textarea{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-51%);
+  margin-top: 50px;
+}

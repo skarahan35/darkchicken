@@ -11,6 +11,7 @@
 
 /*#endregion*/
 
+
 /*#region Input*/
 .dca-input-wrapper {
   position: relative;
@@ -111,4 +112,16 @@
 
 /*#endregion*/
 
+/*#endregion*/
+
+/*#region*/
+
+.dca-input-icon{
+  z-index: 2;
+  position: absolute;
+  display: inline-block;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
 /*#endregion*/
