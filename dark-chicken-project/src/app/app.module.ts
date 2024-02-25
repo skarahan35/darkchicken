@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { DCAtomModule } from 'projects/darkchicken';
 import { InputsComponent } from './inputs/inputs.component';
 import { ButtonsComponent } from './buttons/buttons.component';
+import { CheckboxesComponent } from './checkboxes/checkboxes.component';
 
 
 
@@ -13,7 +14,8 @@ import { ButtonsComponent } from './buttons/buttons.component';
   declarations: [
     AppComponent,
     InputsComponent,
-    ButtonsComponent
+    ButtonsComponent,
+    CheckboxesComponent
   ],
   imports: [
     BrowserModule,
