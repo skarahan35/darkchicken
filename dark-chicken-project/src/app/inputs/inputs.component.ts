@@ -12,20 +12,66 @@ export class InputsComponent implements OnInit{
 
   constructor(private testService:LanguageService){}
 
+  consoleText=''
+
   ngOnInit(): void {
     this.testService.setLanguage('en')
   }
 
-  validationRules: InputValidationRulesModel[] = [
+  validationRulesText: InputValidationRulesModel[] = [
     {
       type: 'required',
-      message:"bu alan gereklixxxxxxxxxxxxxxxxxxxxxx"
+      message:"Zorunlu alan"
+    },
+    {
+      type: 'minLength',
+      value: 3,
+      message:"En az 3 karakter içermelidir."
+    },
+    {
+      type: 'maxLength',
+      value: 10,
+      message:"En fazla 10 karakter içerebilir."
     },
 
-    {
-      type:'regEx',
-      message:'pattern test',
-      pattern:"[A-Za-z]{1,25}"
-    }
   ];
+  validationRulesNumber: InputValidationRulesModel[] = [
+    {
+      type: 'required',
+      message:"Zorunlu alan"
+    },
+    {
+      type: 'min',
+      value: 5,
+      message: 'En az 5 girilir.'
+    },
+    {
+      type: 'max',
+      value: 20,
+      message: 'En falza 20 girilir.'
+    }
+
+  ];
+
+
+  dcValueChanged(e:any){
+    this.consoleText+="dcValueChanged \n";
+    console.log("dcValueChanged");
+  }
+  dcFocusOut(e:any){
+    this.consoleText+="dcFocusOut \n";
+    console.log("dcFocusOut");
+  }
+  dcFocusIn(e:any){
+    this.consoleText+="dcFocusIn \n";
+    console.log("dcFocusIn");
+  }
+  dcValidating(e:any){
+    this.consoleText+="dcValidating \n";
+    console.log("dcValidating");
+  }
+  dcValidated(e:any){
+    this.consoleText+="dcValidated \n";
+    console.log("dcValidated");
+  }
 }

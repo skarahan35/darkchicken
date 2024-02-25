@@ -1,5 +1,16 @@
-<dca-input [width]="'550px'" [height]="'250px'" type="text" [validationRules]="validationRules"></dca-input>
-<br><dca-input placeholder="placeholder" type="email" [validationRules]="validationRules"></dca-input>
-<dca-input placeholder="placeholder" type="text" [validationRules]="validationRules"></dca-input>
-<dca-input label="test" placeholder="placeholder" type="text" [validationRules]="validationRules"></dca-input>
-<br>
+<div class="inputs">
+    <dca-input (dcValueChanged)="dcValueChanged($event)" (dcFocusOut)="dcFocusOut($event)"
+        (dcFocusIn)="dcFocusIn($event)" (dcValidating)="dcValidating($event)" (dcValidated)="dcValidated($event)"
+        label="Clear" placeholder="Type..."></dca-input>
+    <br>
+    <dca-input label="Text*" placeholder="Text" type="text" [validationRules]="validationRulesText"></dca-input>
+    <br>
+    <dca-input label="Number*" placeholder="Number" type="number" [validationRules]="validationRulesNumber"></dca-input>
+
+    <dca-input label="With Icon" placeholder="search..." type="text">
+        <dca-icon icon="bolt"></dca-icon>
+    </dca-input>
+    <br>
+</div>
+
+<textarea name="" id="" cols="30" rows="10">{{consoleText}}</textarea>

@@ -14,9 +14,12 @@
 
         <!--Invalid Icon & Message-->
         <div *ngIf="!isValid" class="dca-invalid-icon">
-            <dca-icon icon="circle-exclamation" ></dca-icon>
-            <span  class="validation-message">{{validationMessage}}</span>
+            <dca-icon icon="circle-exclamation"></dca-icon>
+            <span class="validation-message">{{validationMessage}}</span>
         </div>
 
+        <span class="dca-input-icon">
+            <ng-content select="dca-icon"></ng-content>
+        </span>
     </span>
 </span>
