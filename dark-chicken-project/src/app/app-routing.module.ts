@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { InputsComponent } from './inputs/inputs.component';
+import { CheckboxesComponent } from './checkboxes/checkboxes.component';
 
 const routes: Routes = [{
   path:'pages/buttons',
@@ -10,7 +11,13 @@ const routes: Routes = [{
 {
   path:'pages/inputs',
   component:InputsComponent
-}];
+},
+{
+  path:'pages/checkboxes',
+  component:CheckboxesComponent
+}
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
