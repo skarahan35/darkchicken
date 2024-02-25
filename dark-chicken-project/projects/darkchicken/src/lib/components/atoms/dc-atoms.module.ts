@@ -4,6 +4,7 @@ import { DCInputComponent } from './input/dc-input.component';
 import { CommonModule } from '@angular/common';
 import { DCIconComponent } from './icon/dc-icon.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DCCheckboxComponent } from './checkbox/dc-checkbox.component';
 
 
 
@@ -11,7 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     DCButtonComponent,
     DCInputComponent,
-    DCIconComponent
+    DCIconComponent,
+    DCCheckboxComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
   exports: [
     DCButtonComponent,
     DCInputComponent,
-    DCIconComponent
+    DCIconComponent,
+    DCCheckboxComponent
   ]
 })
 export class DCAtomModule { }
