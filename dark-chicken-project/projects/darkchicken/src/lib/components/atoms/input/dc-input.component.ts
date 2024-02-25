@@ -7,14 +7,14 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
-import { InputType } from '../../assets/types/dc-atom-input-types';
-import { InputValidationRulesModel } from '../../assets/models/input-validation-rules.model';
-import { LanguageService } from '../../../services/language.service';
 
+import { InputValidationRulesModel } from '../../../models/input-validation-rules.model';
+import { LanguageService } from '../../../services/language.service';
+import { InputType } from '../../../types/dc-types';
 @Component({
   selector: 'dca-input',
   templateUrl: 'dc-input.component.html',
-  styleUrls: ['../../assets/style.css', 'dc-input.component.css'],
+  styleUrls: ['../../../../../assets/style.css', 'dc-input.component.css'],
 })
 export class DCInputComponent implements AfterViewInit {
   //#region Inputs
@@ -41,7 +41,7 @@ export class DCInputComponent implements AfterViewInit {
 
   //#region Variables
   previousValue: string | null = null;
-  isValid:boolean=true;
+  isValid: boolean = true;
 
   //#region Validation Variables
   get isRequired() {
@@ -87,7 +87,7 @@ export class DCInputComponent implements AfterViewInit {
 
   //#endregion
 
-  constructor(private languageService:LanguageService){
+  constructor(private languageService: LanguageService) {
 
   }
 
@@ -126,12 +126,12 @@ export class DCInputComponent implements AfterViewInit {
   //#region onValidation
   checkValidation(e: Event) {
     this.dcValidating.emit({
-      nativeElememt:e,
-      validationRules:this.validationRules
+      nativeElememt: e,
+      validationRules: this.validationRules
     })
     let validity = (e.currentTarget as HTMLInputElement).validity;
     if (!validity.valid) {
-      this.isValid=false
+      this.isValid = false
       if (validity.valueMissing) {
         this.validationMessage = this.validationRules?.find(
           (rule) => rule.type == 'required'
@@ -157,15 +157,17 @@ export class DCInputComponent implements AfterViewInit {
           (rule) => rule.type == 'regEx'
         )?.message;
       } else {
-        this.validationMessage = this.languageService.getTranslation('invalid-input') 
+        this.languageService.getTranslation('invalidInput').subscribe(message=>{
+          this.validationMessage = message
+        })
       }
     } else {
-      this.isValid=false
+      this.isValid = false
       this.validationMessage = null;
     }
     this.dcValidated.emit({
-      nativeElement:e,
-      isValid:this.isValid
+      nativeElement: e,
+      isValid: this.isValid
     })
 
   }
