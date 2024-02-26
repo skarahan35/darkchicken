@@ -12,4 +12,8 @@
         [style.height]="this.height"
         >
   <span>{{ buttonText }}</span>
+
+  <span class="dca-btn-icon">
+    <ng-content select="dca-icon"></ng-content>
+</span>
 </button>

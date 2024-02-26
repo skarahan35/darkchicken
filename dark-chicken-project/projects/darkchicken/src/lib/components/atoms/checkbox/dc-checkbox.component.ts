@@ -14,7 +14,7 @@ export class DCCheckboxComponent {
 
   @Input() checkboxId?: string | null = null
   @Input() label?: string | null = null
-  @Input() checked?: boolean | null = true
+  @Input() checked?: boolean | null = null
   @Input() type?: CheckboxType = 'box'
   @Input() disabled: boolean = false
   @Input() visible: boolean = true
