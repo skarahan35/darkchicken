@@ -7,10 +7,13 @@
     <br>
     <dca-input label="Number*" placeholder="Number" type="number" [validationRules]="validationRulesNumber"></dca-input>
 
-    <dca-input label="With Icon" placeholder="search..." type="text">
+    <dca-input [validationRules]="validationRulesText" label="With Icon" placeholder="search..." type="text">
         <dca-icon icon="bolt"></dca-icon>
     </dca-input>
     <br>
 </div>
 
 <textarea name="" id="" cols="30" rows="10">{{consoleText}}</textarea>
+
+
+<dca-input (dcValidated)="onValidated($event)" (dcValidating)="onValidating($event)" (dcFocusOut)="onFocusOut($event)" (dcFocusIn)="onFocusIn($event)" (dcValueChanged)="onValueChanged($event)" [visible]="true" width="250px" height="50px" value="35" label="labelc5" placeholder="test"></dca-input>
