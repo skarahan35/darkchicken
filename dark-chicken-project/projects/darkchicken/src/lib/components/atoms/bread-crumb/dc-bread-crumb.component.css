@@ -26,6 +26,7 @@
 
 .breadcrumb-item:last-child { /*Last item of the list*/
   font-weight: bold;
+  margin-top: 0.2em
 }
 
 .breadcrumb-item a {    /*All items of the list*/ 
@@ -36,8 +37,8 @@
 
 /*#region With link items*/
 .breadcrumb-item:not(:last-child) .breadcrumb-item-with-link:hover { 
-  color: var(--dc-primary-hover);
-  fill: var(--dc-primary-hover);
+  color: var(--dc-primary);
+  fill: var(--dc-primary);
   cursor: pointer;
 }
 
