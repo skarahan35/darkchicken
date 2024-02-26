@@ -28,7 +28,8 @@ import { DCSpinnerComponent } from './spinner/dc-spinner.component';
     DCInputComponent,
     DCIconComponent,
     DCCheckboxComponent,
-    DCBreadCrumbComponent
+    DCBreadCrumbComponent,
+    DCSpinnerComponent
   ]
 })
 export class DCAtomModule { }
