@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'lib-spinner',
+  selector: 'dca-spinner',
   templateUrl: './dc-spinner.component.html',
-  styleUrls: ['./dc-spinner.component.css']
+  styleUrls: ['../../../../../assets/style.css', './dc-spinner.component.css']
 })
 export class DCSpinnerComponent {
-
+  @Input() active?: boolean = true
+  @Input() class:string = 'dca-spinner-primary'
+  
 }

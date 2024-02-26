@@ -9,6 +9,7 @@ import { ButtonsComponent } from './buttons/buttons.component';
 import { CheckboxesComponent } from './checkboxes/checkboxes.component';
 import { IconComponent } from './icon/icon.component';
 import { BreadCrumbsComponent } from './bread-crumbs/bread-crumbs.component';
+import { SpinnersComponent } from './spinners/spinners.component';
 
 
 
@@ -19,7 +20,8 @@ import { BreadCrumbsComponent } from './bread-crumbs/bread-crumbs.component';
     ButtonsComponent,
     CheckboxesComponent,
     IconComponent,
-    BreadCrumbsComponent
+    BreadCrumbsComponent,
+    SpinnersComponent
   ],
   imports: [
     BrowserModule,
