@@ -8,6 +8,7 @@ import { InputsComponent } from './inputs/inputs.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { CheckboxesComponent } from './checkboxes/checkboxes.component';
 import { IconComponent } from './icon/icon.component';
+import { BreadCrumbsComponent } from './bread-crumbs/bread-crumbs.component';
 
 
 
@@ -17,7 +18,8 @@ import { IconComponent } from './icon/icon.component';
     InputsComponent,
     ButtonsComponent,
     CheckboxesComponent,
-    IconComponent
+    IconComponent,
+    BreadCrumbsComponent
   ],
   imports: [
     BrowserModule,

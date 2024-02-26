@@ -11,6 +11,7 @@ import { Icons } from '../../../types/dc-types';
 export class DCIconComponent implements OnInit {
   
   @Input() icon!: Icons;
+  @Input() class:string ="dca-icon"
   
 
   @Output() dcClick = new EventEmitter<Event>()

@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { DCIconComponent } from './icon/dc-icon.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DCCheckboxComponent } from './checkbox/dc-checkbox.component';
+import { DCBreadCrumbComponent } from './bread-crumb/dc-bread-crumb.component';
 
 
 
@@ -13,7 +14,8 @@ import { DCCheckboxComponent } from './checkbox/dc-checkbox.component';
     DCButtonComponent,
     DCInputComponent,
     DCIconComponent,
-    DCCheckboxComponent
+    DCCheckboxComponent,
+    DCBreadCrumbComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { DCCheckboxComponent } from './checkbox/dc-checkbox.component';
     DCButtonComponent,
     DCInputComponent,
     DCIconComponent,
-    DCCheckboxComponent
+    DCCheckboxComponent,
+    DCBreadCrumbComponent
   ]
 })
 export class DCAtomModule { }

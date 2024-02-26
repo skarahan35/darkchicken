@@ -1,0 +1,13 @@
+.dca-icon {
+    width: 16px; /* veya istediğiniz genişlik değeri */
+    height: 16px; /* veya istediğiniz yükseklik değeri */
+  }
+  
+.dca-bread-crumb-chevron-right{
+    width: 0.5em;
+    height: 0.5em;
+}
+.dca-bread-crumb-item{
+    width: 1em;
+    height: 1em;
+}

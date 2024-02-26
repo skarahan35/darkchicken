@@ -1,0 +1,12 @@
+<div class="breadcrumb-container">
+  <ng-container *ngFor="let crumb of crumbList; let last = last">
+    <div class="breadcrumb-item">
+      <a [ngClass]="{'breadcrum-item-with-no-icon': !crumb.icon,'breadcrumb-item-with-link': crumb.link}">
+        <dca-icon *ngIf="crumb.icon" class="dca-bread-crumb-item breadcrumb-item" [icon]="crumb.icon"></dca-icon>
+        {{ crumb.label }}</a>
+      <span *ngIf="!last">
+        <dca-icon class="dca-bread-crumb-chevron-right" icon="chevron-right"></dca-icon>
+      </span>
+    </div>
+  </ng-container>
+</div>

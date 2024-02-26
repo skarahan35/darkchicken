@@ -1,0 +1,79 @@
+* {
+  --dc-primary: #4a90e2;
+  --dc-primary-hover: #4169aa;
+  --dc-secondary: #6c757d;
+  --dc-light-hover: #e0e0e0;
+}
+
+/*#region Bread Crumb Container*/
+.breadcrumb-container {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  padding: 0.2em;
+  background: linear-gradient(
+    to right,
+    var(--dc-light-hover),
+    transparent
+  ); /* Sol kırmızıdan sağa transparan geçiş */
+  border-radius: 4px;
+}
+/*#endregion*/
+
+.breadcrumb-item:not(:last-child) {  /*All items of the list but without last item*/
+  margin-right: 0.2em;
+}
+
+.breadcrumb-item:last-child { /*Last item of the list*/
+  font-weight: bold;
+}
+
+.breadcrumb-item a {    /*All items of the list*/ 
+  text-decoration: none;
+  color: #333;
+  position: relative;
+}
+
+/*#region With link items*/
+.breadcrumb-item:not(:last-child) .breadcrumb-item-with-link:hover { 
+  color: var(--dc-primary-hover);
+  fill: var(--dc-primary-hover);
+  cursor: pointer;
+}
+
+.breadcrumb-item:not(:last-child) .breadcrumb-item-with-link::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: var(--dc-primary);
+  transition: width 0.3s ease-out, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.breadcrumb-item .breadcrumb-item-with-link:hover::before {
+  width: 100%;
+  opacity: 1;
+}
+/*#endregion*/
+
+.dca-bread-crumb-item {  /*With icon*/
+  padding: 0.2em;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.breadcrum-item-with-no-icon { /*With no icons*/
+  margin-top: 0.2em;
+}
+
+/*#region Right arrow*/
+.dca-bread-crumb-chevron-right {
+  fill: var(--dc-secondary);
+  padding: 0.2em;
+  display: inline-block;
+
+  flex-shrink: 0;
+}
+/*#endregion*/
