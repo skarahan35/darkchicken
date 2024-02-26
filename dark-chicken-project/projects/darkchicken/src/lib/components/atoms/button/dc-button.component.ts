@@ -18,55 +18,54 @@ export class DCButtonComponent {
     //#endregion
 
     //#region Outputs
-    @Output() dcClick = new EventEmitter<Event>()
-    @Output() dcHover = new EventEmitter<Event>()
-    @Output() dcMouseUp = new EventEmitter<Event>()
-    @Output() dcMouseDown = new EventEmitter<Event>()
-    @Output() dcMouseLeave = new EventEmitter<Event>()
-    @Output() dcMouseEnter = new EventEmitter<Event>()
-    @Output() dcDoubleClick = new EventEmitter<Event>()
+    @Output() dcClick = new EventEmitter<Object>()
+    @Output() dcHover = new EventEmitter<Object>()
+    @Output() dcMouseUp = new EventEmitter<Object>()
+    @Output() dcMouseDown = new EventEmitter<Object>()
+    @Output() dcMouseLeave = new EventEmitter<Object>()
+    @Output() dcMouseEnter = new EventEmitter<Object>()
+    @Output() dcDoubleClick = new EventEmitter<Object>()
     //#endregion
-
+  
     
-
+  
     onDoubleClick(e:Event){
-      this.dcDoubleClick.emit(e)
+      this.dcDoubleClick.emit({'nativeElement':e})
     }
-
+  
     //#region onClick Event
     onClick(e:Event){
-      // document.documentElement.style.setProperty('')
-      this.dcClick.emit(e)
+      this.dcClick.emit({'nativeElement':e})
     }
     //#endregion
-
+  
     //#region onHover Event
     onHover(e:Event){
-      this.dcHover.emit(e)
+      this.dcHover.emit({'nativeElement':e})
     }
     //#endregion
-
+  
     //#region onMouseDown Event
     onMouseDown(e:Event){
-      this.dcMouseDown.emit(e)
+      this.dcMouseDown.emit({'nativeElement':e})
     }
     //#endregion
-
+  
     //#region onMouseUp Event
     onMouseUp(e:Event){
-      this.dcMouseUp.emit(e)
+      this.dcMouseUp.emit({'nativeElement':e})
     }
     //#endregion
-
+  
     //#region onMouseEnter Event
     onMouseEnter(e:Event){
-      this.dcMouseEnter.emit(e)
+      this.dcMouseEnter.emit({'nativeElement':e})
     }
     //#endregion
-
+  
     //#region onMouseOut Event
     onMouseLeave(e:Event){
-      this.dcMouseLeave.emit(e)
+      this.dcMouseLeave.emit({'nativeElement':e})
     }
     //#endregion
 

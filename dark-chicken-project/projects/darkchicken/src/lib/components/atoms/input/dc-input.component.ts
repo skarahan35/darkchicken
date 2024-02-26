@@ -8,7 +8,7 @@ import {
   ViewChild,
 } from '@angular/core';
 
-import { InputValidationRulesModel } from '../../../models/input-validation-rules.model';
+import { InputValidationRulesModel } from '../../../models/dc-models.model';
 import { LanguageService } from '../../../services/language.service';
 import { InputType } from '../../../types/dc-types';
 @Component({

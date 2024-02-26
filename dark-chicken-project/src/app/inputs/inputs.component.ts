@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { InputValidationRulesModel } from 'projects/darkchicken/src/lib/models/input-validation-rules.model';
+import { InputValidationRulesModel } from 'projects/darkchicken/src/lib/models/dc-models.model';
 import { LanguageService } from 'projects/darkchicken/src/lib/services/language.service';
 
 @Component({
