@@ -25,9 +25,11 @@ export class DCInputComponent implements AfterViewInit {
   @Input() width: string | null = null;
   @Input() height: string | null = null;
   @Input() validationRules: InputValidationRulesModel[] | null = null;
-  @Input() readonly: boolean = false;
+  @Input() readonly?: boolean;
+  @Input() disabled?: boolean;
   @Input() visible: boolean = true;
   @Input() class: string = 'dca-input';
+  @Input() inputId?:string
 
   //#endregion
 
