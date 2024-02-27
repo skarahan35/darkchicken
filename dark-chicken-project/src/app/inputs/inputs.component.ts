@@ -18,23 +18,6 @@ export class InputsComponent implements OnInit{
     this.testService.setLanguage('en')
   }
 
-  onValueChanged(e:any){
-  }
-
-  onFocusIn(e:any){
-  }
-
-  onFocusOut(e:any){
-  }
-
-  onValidating(e:any){
-    
-  }
-
-  onValidated(e:any){
-    
-  }
-
   validationRulesText: InputValidationRulesModel[] = [
     {
       type: 'required',
