@@ -3,7 +3,7 @@
         (dcFocusIn)="dcFocusIn($event)" (dcValidating)="dcValidating($event)" (dcValidated)="dcValidated($event)"
         label="Clear" placeholder="Type..."></dca-input>
     <br>
-    <dca-input label="Text*" placeholder="Text" type="text" [validationRules]="validationRulesText"></dca-input>
+    <dca-input label="Text*" placeholder="Text" type="text" (dcValidating)="dcValidating($event)" [validationRules]="validationRulesText"></dca-input>
     <br>
     <dca-input label="Number*" placeholder="Number" type="number" [validationRules]="validationRulesNumber"></dca-input>
 
