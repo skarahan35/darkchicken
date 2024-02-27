@@ -17,7 +17,7 @@ export class InputsComponent implements OnInit{
   ngOnInit(): void {
     this.testService.setLanguage('en')
   }
-
+//
   validationRulesText: InputValidationRulesModel[] = [
     {
       type: 'required',
