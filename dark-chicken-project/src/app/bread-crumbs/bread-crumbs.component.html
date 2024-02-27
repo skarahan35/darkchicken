@@ -1,1 +1,10 @@
-<dca-bread-crumb [crumbList]="crumbList"></dca-bread-crumb>
+<dca-bread-crumb 
+(dcClick)="dcClick($event)"
+(dcHover)="dcHover($event)"
+(dcMouseUp)="dcMouseUp($event)"
+(dcMouseDown)="dcMouseDown($event)"
+(dcMouseLeave)="dcMouseLeave($event)"
+(dcMouseEnter)="dcMouseEnter($event)"
+(dcDoubleClick)="dcDoubleClick($event)"
+
+[crumbList]="crumbList"></dca-bread-crumb>
