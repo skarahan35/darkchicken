@@ -1,16 +1,16 @@
-<span class="dca-input-wrapper">
+<span class="dca-input-wrapper" [ngClass]="{'hidden' : !visible}">
     <!--Label-->
     <span *ngIf="label" class="dca-input-label-wrapper">
-        <label *ngIf="label" for="dcInput" class="dca-input-label">{{label}}</label>
+        <label *ngIf="label" [attr.for]="inputId" class="dca-input-label">{{label}}</label>
     </span>
     <span class="dca-input-content">
         <!--Input-->
-        <input [style.width]="this.width" [style.height]="this.height" #dcaInput id='dcInput'
+        <input [style.width]="this.width" [style.height]="this.height" #dcaInput [attr.id]='inputId'
             [attr.placeholder]="placeholder ? placeholder : null" [type]="type" [value]="value"
-            [ngClass]="{ 'hidden' : !visible, 'clickedOnce':clickedOnce}" [class]="class" (focus)="onFocusIn($event)"
+            [ngClass]="{'clickedOnce':clickedOnce}" [class]="class" (focus)="onFocusIn($event)"
             (focusout)="onFocusOut($event)" (change)="onValueChange($event)" [required]="isRequired"
             [attr.min]="minValue" [attr.max]="maxValue" [attr.minLength]="minLengthValue"
-            [attr.maxLength]="maxLengthValue" [attr.pattern]="pattern" autocomplete="off" [attr.readonly]="readonly">
+            [attr.maxLength]="maxLengthValue" [attr.pattern]="pattern" autocomplete="off" [attr.readonly]="readonly" [attr.disabled]="disabled">
 
         <!--Invalid Icon & Message-->
         <div *ngIf="!isValid" class="dca-invalid-icon">

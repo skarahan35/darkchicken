@@ -1,13 +1,15 @@
 <div class="inputs">
     <dca-input (dcValueChanged)="dcValueChanged($event)" (dcFocusOut)="dcFocusOut($event)"
         (dcFocusIn)="dcFocusIn($event)" (dcValidating)="dcValidating($event)" (dcValidated)="dcValidated($event)"
-        label="Clear" placeholder="Type..."></dca-input>
+        value="test" label="Clear" placeholder="Type..." [readonly]="true"></dca-input>
     <br>
-    <dca-input label="Text*" placeholder="Text" type="text" (dcValidating)="dcValidating($event)" [validationRules]="validationRulesText"></dca-input>
+    <dca-input (dcValueChanged)="dcValueChanged($event)" (dcFocusOut)="dcFocusOut($event)"
+    (dcFocusIn)="dcFocusIn($event)" (dcValidating)="dcValidating($event)" (dcValidated)="dcValidated($event)" inputId="isd1" value="test" label="Text*" placeholder="Text" type="text" (dcValidating)="dcValidating($event)" [validationRules]="validationRulesText"></dca-input>
     <br>
-    <dca-input label="Number*" placeholder="Number" type="number" [validationRules]="validationRulesNumber"></dca-input>
+    <dca-input [visible]="false" (dcValueChanged)="dcValueChanged($event)" (dcFocusOut)="dcFocusOut($event)"
+    (dcFocusIn)="dcFocusIn($event)" (dcValidating)="dcValidating($event)" (dcValidated)="dcValidated($event)" label="Number*" placeholder="Number" type="number" [validationRules]="validationRulesNumber"></dca-input>
 
-    <dca-input label="With Icon" placeholder="search..." type="text">
+    <dca-input [validationRules]="validationRulesText" label="With Icon" placeholder="search..." type="text">
         <dca-icon icon="bolt"></dca-icon>
     </dca-input>
     <br>

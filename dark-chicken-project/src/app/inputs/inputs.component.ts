@@ -25,12 +25,12 @@ export class InputsComponent implements OnInit{
     },
     {
       type: 'minLength',
-      value: 3,
+      value: 30,
       message:"En az 3 karakter içermelidir."
     },
     {
       type: 'maxLength',
-      value: 10,
+      value: 50,
       message:"En fazla 10 karakter içerebilir."
     },
 
