@@ -16,3 +16,6 @@
 </div>
 
 <textarea name="" id="" cols="30" rows="10">{{consoleText}}</textarea>
+
+
+<dca-input (dcValidated)="onValidated($event)" (dcValidating)="onValidating($event)" (dcFocusOut)="onFocusOut($event)" (dcFocusIn)="onFocusIn($event)" (dcValueChanged)="onValueChanged($event)" [visible]="true" width="250px" height="50px" value="35" label="labelc5" placeholder="test"></dca-input>

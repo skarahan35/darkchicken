@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-
-export type CheckboxType = 'box' | 'switch'
+import { CheckboxType } from '../../../types/dc-types';
 
 @Component({
   selector: 'dca-checkbox',
@@ -14,7 +13,7 @@ export class DCCheckboxComponent {
 
   @Input() checkboxId?: string | null = null
   @Input() label?: string | null = null
-  @Input() checked?: boolean | null = true
+  @Input() checked?: boolean | null = null
   @Input() type?: CheckboxType = 'box'
   @Input() disabled: boolean = false
   @Input() visible: boolean = true

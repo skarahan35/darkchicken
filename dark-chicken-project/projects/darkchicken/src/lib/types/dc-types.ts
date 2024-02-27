@@ -29,4 +29,5 @@ export type InputValidationType =
   | 'regEx'
   | 'null';
 
+  export type CheckboxType = 'box' | 'switch'
 
