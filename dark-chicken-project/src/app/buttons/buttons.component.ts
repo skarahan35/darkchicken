@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToastService } from 'projects/darkchicken';
 
 @Component({
   selector: 'app-buttons',
@@ -6,6 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./buttons.component.css']
 })
 export class ButtonsComponent {
+
+constructor(private toastService:ToastService){
+  
+}
+
 dcClick(e:any){
   console.log("dcClick")
 }

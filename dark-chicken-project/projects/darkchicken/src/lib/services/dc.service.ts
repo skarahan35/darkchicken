@@ -10,4 +10,8 @@ export class DCService{
     getIconSVG(iconName: string) {
       return this.http.get(`assets/icons/${iconName}.svg`, { responseType: 'text' });
     }
+
+    hello(message:any){
+      return message + 'HELLO'
+    }
 }

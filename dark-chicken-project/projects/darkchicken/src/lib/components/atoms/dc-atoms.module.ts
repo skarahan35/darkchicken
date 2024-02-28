@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DCCheckboxComponent } from './checkbox/dc-checkbox.component';
 import { DCBreadCrumbComponent } from './bread-crumb/dc-bread-crumb.component';
 import { DCSpinnerComponent } from './spinner/dc-spinner.component';
+import { DcToastComponent } from './toast/dc-toast.component';
 
 
 
@@ -17,7 +18,8 @@ import { DCSpinnerComponent } from './spinner/dc-spinner.component';
     DCIconComponent,
     DCCheckboxComponent,
     DCBreadCrumbComponent,
-    DCSpinnerComponent
+    DCSpinnerComponent,
+    DcToastComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +31,8 @@ import { DCSpinnerComponent } from './spinner/dc-spinner.component';
     DCIconComponent,
     DCCheckboxComponent,
     DCBreadCrumbComponent,
-    DCSpinnerComponent
+    DCSpinnerComponent,
+    DcToastComponent
   ]
 })
 export class DCAtomModule { }

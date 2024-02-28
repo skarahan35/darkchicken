@@ -10,6 +10,7 @@ import { CheckboxesComponent } from './checkboxes/checkboxes.component';
 import { IconComponent } from './icon/icon.component';
 import { BreadCrumbsComponent } from './bread-crumbs/bread-crumbs.component';
 import { SpinnersComponent } from './spinners/spinners.component';
+import { ToastComponent } from './toast/toast.component';
 
 
 
@@ -21,7 +22,8 @@ import { SpinnersComponent } from './spinners/spinners.component';
     CheckboxesComponent,
     IconComponent,
     BreadCrumbsComponent,
-    SpinnersComponent
+    SpinnersComponent,
+    ToastComponent
   ],
   imports: [
     BrowserModule,
