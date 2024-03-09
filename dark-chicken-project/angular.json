@@ -27,8 +27,12 @@
                 "glob": "**/*",
                 "input": "./dist/darkchicken/assets",
                 "output": "/assets/"
+              },
+              {
+                "glob": "**/*",
+                "input": "./node_modules/dc-toast-ng/assets",
+                "output": "/assets/"
               }
-
             ],
             "styles": [
               "src/styles.css"

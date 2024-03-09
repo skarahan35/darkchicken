@@ -1,0 +1,66 @@
+<body>
+    <form (ngSubmit)="showToast()">
+      <h2>DarkChicken Toast Angular</h2>
+  
+      <label for="content">Content</label><br>
+      <input type="text" id="content" name="content" [(ngModel)]="DCToast.content"><br><br>
+  
+      <label for="time">Time</label><br>
+      <input type="number" id="time" name="time" [(ngModel)]="DCToast.time"><br><br>
+  
+      <div class="radio-group">
+        <fieldset>
+          <legend>Toast Position</legend>
+          <div class="grid-container">
+            <label><input type="radio" name="position" value="top-left" [(ngModel)]="DCToast.position"> Top Left</label>
+            <label><input type="radio" name="position" value="top-center" [(ngModel)]="DCToast.position"> Top
+              Center</label>
+            <label><input type="radio" name="position" value="top-right" [(ngModel)]="DCToast.position"> Top
+              Right</label>
+            <label><input type="radio" name="position" value="left-center" [(ngModel)]="DCToast.position"> Left
+              Center</label>
+            <label></label>
+            <label><input type="radio" name="position" value="right-center" [(ngModel)]="DCToast.position"> Right
+              Center</label>
+            <label><input type="radio" name="position" value="bottom-left" [(ngModel)]="DCToast.position"> Bottom
+              Left</label>
+            <label><input type="radio" name="position" value="bottom-center" [(ngModel)]="DCToast.position"> Bottom
+              Center</label>
+            <label><input type="radio" name="position" value="bottom-right" [(ngModel)]="DCToast.position"> Bottom
+              Right</label>
+          </div>
+        </fieldset>
+      </div>
+  
+  
+      <label for="close-hover">Close With Hover</label>
+      <input type="checkbox" id="close-hover" name="close-hover" [(ngModel)]="DCToast.closeWithHover"><br><br>
+      <label for="allow-time-bar">Allow Time Bar</label>
+      <input type="checkbox" id="allow-time-bar" name="allow-time-bar" [(ngModel)]="DCToast.allowTimeBar"><br><br>
+      <label for="show-close-button">Show Close Button</label>
+      <input type="checkbox" id="show-close-button" name="show-close-button"
+        [(ngModel)]="DCToast.showCloseButton"><br><br>
+  
+      <div class="radio-group">
+        <fieldset>
+          <legend>Close Button Position</legend>
+          <label><input type="radio" name="close-position" value="left" [(ngModel)]="DCToast.closeButtonPosition"> Left</label>
+          <label><input type="radio" name="close-position" value="right" [(ngModel)]="DCToast.closeButtonPosition">
+            Right</label>
+        </fieldset>
+      </div>
+  
+      <div class="radio-group">
+        <fieldset>
+          <legend>Type</legend>
+          <label><input type="radio" name="type" value="success" [(ngModel)]="DCToast.type"> Success</label>
+          <label><input type="radio" name="type" value="warn" [(ngModel)]="DCToast.type"> Warn</label>
+          <label><input type="radio" name="type" value="error" [(ngModel)]="DCToast.type"> Error</label>
+          <label><input type="radio" name="type" value="info" [(ngModel)]="DCToast.type"> Info</label>
+        </fieldset>
+      </div>
+  
+      <button type="submit">Show Toast</button>
+    </form>
+  
+  </body>
