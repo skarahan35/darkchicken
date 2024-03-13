@@ -14,6 +14,7 @@ import { DcToastNgModule } from 'dc-toast-ng';
 import { ToastComponent } from './toast/toast.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { TreeComponent } from './tree/tree.component';
 
 
 
@@ -26,7 +27,8 @@ import { FormsModule } from '@angular/forms';
     IconComponent,
     BreadCrumbsComponent,
     SpinnersComponent,
-    ToastComponent
+    ToastComponent,
+    TreeComponent
   ],
   imports: [
     BrowserModule,

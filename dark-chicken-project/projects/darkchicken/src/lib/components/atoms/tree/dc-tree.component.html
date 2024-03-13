@@ -1,0 +1,16 @@
+<div>
+    <ul>
+        <ng-container *ngFor="let item of treeData">
+            <li>
+                <div (click)="changeOpen(item)" class="icon-button">
+                    <!-- <dca-icon icon="arrow-down"></dca-icon> -->
+                    <dca-icon [icon]="item.icon"></dca-icon>
+                    <span>{{ item.title }}</span>    
+                </div>
+                <div *ngIf="item.subItems && item.expanded">
+                    <dca-tree [treeData]="item.subItems"></dca-tree>
+                </div>
+            </li>
+        </ng-container>
+    </ul>
+</div>
