@@ -9,11 +9,12 @@ import { Icons } from '../../../types/dc-types';
   styleUrls: ['../../../../../assets/style.css', 'dc-icon.component.css']
 })
 export class DCIconComponent implements OnInit {
-  
+  //#region Inputs
   @Input() icon!: Icons;
-  @Input() class:string ="dca-icon"
-  
+  @Input() class: string | null = null
+  //#endregion
 
+  //#region Outputs
   @Output() dcClick = new EventEmitter<Event>()
   @Output() dcHover = new EventEmitter<Event>()
   @Output() dcMouseUp = new EventEmitter<Event>()
@@ -21,13 +22,14 @@ export class DCIconComponent implements OnInit {
   @Output() dcMouseLeave = new EventEmitter<Event>()
   @Output() dcMouseEnter = new EventEmitter<Event>()
   @Output() dcDoubleClick = new EventEmitter<Event>()
+  //#endregion
 
   svgContent!: SafeHtml;
 
   constructor(private iconService: DCService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
-    this.iconService.getIconSVG(this.icon).subscribe((data:string) => {
+    this.iconService.getIconSVG(this.icon).subscribe((data: string) => {
       this.svgContent = this.getTrustedSvgContent(data);
     });
   }
@@ -36,43 +38,44 @@ export class DCIconComponent implements OnInit {
     return this.sanitizer.bypassSecurityTrustHtml(content);
   }
 
-  onDoubleClick(e:Event){
+  //#region onDoubleClick Event
+  onDoubleClick(e: Event) {
     this.dcDoubleClick.emit(e)
   }
+  //#endregion
 
   //#region onClick Event
-  onClick(e:Event){
-    // document.documentElement.style.setProperty('')
+  onClick(e: Event) {
     this.dcClick.emit(e)
   }
   //#endregion
 
   //#region onHover Event
-  onHover(e:Event){
+  onHover(e: Event) {
     this.dcHover.emit(e)
   }
   //#endregion
 
   //#region onMouseDown Event
-  onMouseDown(e:Event){
+  onMouseDown(e: Event) {
     this.dcMouseDown.emit(e)
   }
   //#endregion
 
   //#region onMouseUp Event
-  onMouseUp(e:Event){
+  onMouseUp(e: Event) {
     this.dcMouseUp.emit(e)
   }
   //#endregion
 
   //#region onMouseEnter Event
-  onMouseEnter(e:Event){
+  onMouseEnter(e: Event) {
     this.dcMouseEnter.emit(e)
   }
   //#endregion
 
   //#region onMouseOut Event
-  onMouseLeave(e:Event){
+  onMouseLeave(e: Event) {
     this.dcMouseLeave.emit(e)
   }
   //#endregion

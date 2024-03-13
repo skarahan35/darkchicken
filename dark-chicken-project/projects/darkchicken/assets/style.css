@@ -2,11 +2,33 @@
 
 *{
     font-family: 'IBMPlexxSans', sans-serif;
+
+    --dc-color-primary: #4a90e2;
+    --dc-color-primary-hover:#4169aa;
+    --dc-color-secondary:#6c757d;
+    --dc-color-secondary-hover:#545b62;
+    --dc-color-success:#4caf50;
+    --dc-color-success-hover:#388e3c;
+    --dc-color-danger:#e53935;
+    --dc-color-danger-hover:#c62828;
+    --dc-color-warning:#ff9800;
+    --dc-color-warning-hover:#f57c00;
+    --dc-color-info:#00bcd4;
+    --dc-color-info-hover:#00838f;
+    --dc-color-light:#f5f5f5;
+    --dc-color-light-hover:#e0e0e0;
+    --dc-color-dark:#333333;
+    --dc-color-dark-hover:#1a1a1a;
+
+    --dc-color-white: #fff;
 }
 
 .hidden{
     visibility: hidden;
 }
+
+
+
 
 /* .dca-icon{
     width: 16px;

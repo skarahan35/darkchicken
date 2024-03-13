@@ -7,10 +7,12 @@ import { BreadCrumbModel } from '../../../models/dc-models.model';
   styleUrls: ['../../../../../assets/style.css', 'dc-bread-crumb.component.css']
 })
 export class DCBreadCrumbComponent {
+  //#region Inputs
   @Input() crumbList!: BreadCrumbModel[]
-  @Input() visible: boolean = true
-  @Input() disabled: boolean = false
+  @Input() visible: boolean= true
+  //#endregion
 
+  //#region Outputs
   @Output() dcClick = new EventEmitter<Object>()
   @Output() dcHover = new EventEmitter<Object>()
   @Output() dcMouseUp = new EventEmitter<Object>()
@@ -20,9 +22,11 @@ export class DCBreadCrumbComponent {
   @Output() dcDoubleClick = new EventEmitter<Object>()
   //#endregion
 
+  //#region onDoubleClick Event
   onDoubleClick(e: Event, crumbGroup: HTMLDivElement, crumb: BreadCrumbModel) {
     this.dcDoubleClick.emit({ 'nativeElement': e, 'crumbGroup': { 'nativeElement': crumbGroup, 'crumbList': this.crumbList }, 'crumb': crumb })
   }
+  //#endregion
 
   //#region onClick Event
   onClick(e: Event, crumbGroup: HTMLDivElement, crumb: BreadCrumbModel) {
