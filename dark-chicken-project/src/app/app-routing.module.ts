@@ -7,6 +7,7 @@ import { IconComponent } from './icon/icon.component';
 import { BreadCrumbsComponent } from './bread-crumbs/bread-crumbs.component';
 import { SpinnersComponent } from './spinners/spinners.component';
 import { ToastComponent } from './toast/toast.component';
+import { TreeComponent } from './tree/tree.component';
 
 const routes: Routes = [{
   path:'pages/buttons',
@@ -35,6 +36,10 @@ const routes: Routes = [{
 {
   path: 'pages/toast',
   component: ToastComponent
+},
+{
+  path: 'pages/tree',
+  component: TreeComponent
 }
 ];
 
