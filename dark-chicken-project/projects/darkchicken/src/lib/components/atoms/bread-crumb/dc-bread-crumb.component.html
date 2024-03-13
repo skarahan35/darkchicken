@@ -1,4 +1,4 @@
-<div #breadcrumbContainer class="breadcrumb-container" [ngClass]="{'hidden' : !visible}">
+<div #breadcrumbContainer class="dca-bread-crumb" [ngClass]="{'hidden' : !visible}">
   <ng-container *ngFor="let crumb of crumbList; let last = last;" >
     <div class="breadcrumb-item" >
       <a (click)="onClick($event,breadcrumbContainer, crumb)" (mouseover)="onHover($event,breadcrumbContainer, crumb)"
@@ -7,7 +7,7 @@
         (mouseenter)="onMouseEnter($event,breadcrumbContainer, crumb)"
         (mouseleave)="onMouseLeave($event,breadcrumbContainer, crumb)"
         (dblclick)="onDoubleClick($event,breadcrumbContainer, crumb)" [attr.href]="crumb.link"
-        [ngClass]="{'breadcrum-item-with-no-icon': !crumb.icon,'breadcrumb-item-with-link': crumb.link}">
+        [ngClass]="{'breadcrumb-item-with-no-icon': !crumb.icon,'breadcrumb-item-with-link': crumb.link}">
         <dca-icon *ngIf="crumb.icon" class="dca-bread-crumb-item breadcrumb-item" [icon]="crumb.icon"></dca-icon>
         {{ crumb.label }}</a>
       <span *ngIf="!last">

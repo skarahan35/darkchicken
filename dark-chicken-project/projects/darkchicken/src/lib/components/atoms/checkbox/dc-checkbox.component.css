@@ -1,15 +1,10 @@
-* {
-    --dc-atom-checkbox-primary: #4a90e2;
-    --dc-atom-checkbox-primary-hover: #4169aa;
-}
-
 .dca-checkbox {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     width: 1.5em;
     height: 1.5em;
-    border: 2px solid var(--dc-atom-checkbox-primary);
+    border: 2px solid var(--dc-color-primary);
     border-radius: 4px;
     outline: none;
     transition: 0.3s;
@@ -19,8 +14,8 @@
 
 .dca-checkbox:disabled {
     pointer-events: none;
-    background-color: var(--dc-atom-checkbox-primary);
-    border-color: var(--dc-atom-checkbox-primary);
+    background-color: var(--dc-color-primary);
+    border-color: var(--dc-color-primary);
     opacity: 0.7; 
 }
 .dca-checkbox:disabled:not(:checked) {
@@ -28,25 +23,25 @@
 }
 .dca-checkbox.indeterminate:disabled{
     pointer-events: none;
-    background-color: var(--dc-atom-checkbox-primary);
-    border-color: var(--dc-atom-checkbox-primary);
+    background-color: var(--dc-color-primary);
+    border-color: var(--dc-color-primary);
     opacity: 0.7; 
 }
 
 
 .dca-checkbox:hover {
-    border: 2px solid var(--dc-atom-checkbox-primary-hover)
+    border: 2px solid var(--dc-color-primary-hover)
 }
 
 .dca-checkbox:checked {
-    background-color: var(--dc-atom-checkbox-primary);
-    border: 2px solid var(--dc-atom-checkbox-primary);
+    background-color: var(--dc-color-primary);
+    border: 2px solid var(--dc-color-primary);
     text-shadow: 0.5px 0.8px 2px black;
 }
 
 .dca-checkbox:checked:hover {
-    border: 2px solid var(--dc-atom-checkbox-primary-hover);
-    background-color: var(--dc-atom-checkbox-primary-hover);
+    border: 2px solid var(--dc-color-primary-hover);
+    background-color: var(--dc-color-primary-hover);
 }
 
 .dca-checkbox::before {
@@ -67,7 +62,7 @@
 
 .dca-checkbox.indeterminate {
     position: relative;
-    background-color: var(--dc-atom-checkbox-primary);
+    background-color: var(--dc-color-primary);
 }
 
 .dca-checkbox.indeterminate::before {
@@ -84,7 +79,7 @@
 }
 
 .dca-checkbox.indeterminate:hover {
-    background-color: var(--dc-atom-checkbox-primary-hover);
+    background-color: var(--dc-color-primary-hover);
 }
 
 
@@ -114,13 +109,13 @@
     right: 0;
     bottom: 0;
     background-color: #fff;
-    border: 2px solid var(--dc-atom-checkbox-primary);
+    border: 2px solid var(--dc-color-primary);
     transition: 0.6s;
     border-radius: 20px;
 }
 
 .slider:hover {
-    border: 2px solid var(--dc-atom-checkbox-primary-hover);
+    border: 2px solid var(--dc-color-primary-hover);
 }
 
 .slider:before {
@@ -131,14 +126,14 @@
     left: 2px;
     bottom: 2px;
     top: 1px;
-    background-color: var(--dc-atom-checkbox-primary);
+    background-color: var(--dc-color-primary);
     transition: 0.6s;
     border-radius: 50%;
 }
 
 input:checked+.slider {
-    background-color: var(--dc-atom-checkbox-primary);
-    border: 2px solid var(--dc-atom-checkbox-primary-hover);
+    background-color: var(--dc-color-primary);
+    border: 2px solid var(--dc-color-primary-hover);
 }
 
 input:checked+.slider:before {
@@ -147,7 +142,7 @@ input:checked+.slider:before {
 }
 
 .switch:hover .slider:before {
-    background-color: var(--dc-atom-checkbox-primary-hover);
+    background-color: var(--dc-color-primary-hover);
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.6);
 }
 
@@ -156,13 +151,13 @@ input:checked+.slider:hover:before {
 }
 
 input:checked+.slider:hover {
-    background-color: var(--dc-atom-checkbox-primary-hover);
+    background-color: var(--dc-color-primary-hover);
 }
 
 .switch input:disabled + .slider {
     pointer-events: none;
-    background-color: var(--dc-atom-checkbox-primary);
-    border-color: var(--dc-atom-checkbox-primary);
+    background-color: var(--dc-color-primary);
+    border-color: var(--dc-color-primary);
     opacity: 0.7; 
 }
 

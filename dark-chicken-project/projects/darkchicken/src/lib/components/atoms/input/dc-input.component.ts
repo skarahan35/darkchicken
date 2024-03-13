@@ -1,13 +1,4 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  EventEmitter,
-  Input,
-  Output,
-  ViewChild,
-} from '@angular/core';
-
+import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/core';
 import { InputValidationRulesModel } from '../../../models/dc-models.model';
 import { LanguageService } from '../../../services/language.service';
 import { InputType } from '../../../types/dc-types';
@@ -18,19 +9,18 @@ import { InputType } from '../../../types/dc-types';
 })
 export class DCInputComponent implements AfterViewInit {
   //#region Inputs
-  @Input() placeholder?: string | null = null;
+  @Input() placeholder: string | null = null;
   @Input() label: string | null = null;
   @Input() type: InputType = 'text';
   @Input() value: any = null;
   @Input() width: string | null = null;
   @Input() height: string | null = null;
   @Input() validationRules: InputValidationRulesModel[] | null = null;
-  @Input() readonly?: boolean;
-  @Input() disabled?: boolean;
+  @Input() readonly: boolean | null = null;
+  @Input() disabled: boolean | null = null;
   @Input() visible: boolean = true;
   @Input() class: string = 'dca-input';
-  @Input() inputId?:string
-
+  @Input() inputId: string | null = null
   //#endregion
 
   //#region Outputs
@@ -89,9 +79,7 @@ export class DCInputComponent implements AfterViewInit {
 
   //#endregion
 
-  constructor(private languageService: LanguageService) {
-
-  }
+  constructor(private languageService: LanguageService) { }
 
   ngAfterViewInit(): void {
     this.previousValue = this.value;
@@ -125,7 +113,7 @@ export class DCInputComponent implements AfterViewInit {
   }
   //#endregion
 
-  //#region onValidation
+  //#region onValidating
   checkValidation(e: Event) {
     this.dcValidating.emit({
       nativeElememt: e,
@@ -159,7 +147,7 @@ export class DCInputComponent implements AfterViewInit {
           (rule) => rule.type == 'regEx'
         )?.message;
       } else {
-        this.languageService.getTranslation('invalidInput').subscribe(message=>{
+        this.languageService.getTranslation('invalidInput').subscribe(message => {
           this.validationMessage = message
         })
       }

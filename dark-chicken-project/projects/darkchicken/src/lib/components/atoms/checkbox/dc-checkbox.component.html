@@ -1,9 +1,9 @@
 <input *ngIf="type == 'box'" [disabled]="disabled" [checked]="checked" [ngClass]="{'indeterminate' :checked==null, 'hidden': !visible }" [attr.id]="checkboxId"
-    type="checkbox" class="dca-checkbox" (change)="onValueChanged($event)">
+    type="checkbox" class="dca-checkbox" (change)="onValueChange($event)">
 
 
 <label *ngIf="type == 'switch'" class="switch">
     <input [checked]="checked" [disabled]="disabled"  [attr.id]="checkboxId" type="checkbox" class="dca-checkbox"
-        (change)="onValueChanged($event)">
+        (change)="onValueChange($event)">
     <span [ngClass]="{'hidden': !visible }" class="slider"></span>
 </label>
