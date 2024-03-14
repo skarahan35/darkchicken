@@ -1,27 +1,40 @@
-ul{
+.dca-tree{
     list-style-type: none;
-    max-width: max-content;
+    display: inline-block;
 }
 
-.icon-button {
+.dca-tree-parent-item {
     display: flex;
     align-items: center;
-    background-color: #f0f0f0;
+    background-color: var(--dc-color-light);
     padding: 5px;
     border-radius: 5px;
     margin-bottom: 5px;
     cursor: pointer;
 }
 
-.icon-button:hover {
-    background-color: #e0e0e0;
+.dca-tree-parent-item:hover {
+    background-color: var(--dc-color-light-hover);
 }
 
-.icon-button dca-icon {
+.dca-tree-parent-item dca-icon {
     margin-right: 0.5rem;
 }
 
-.dca-tree-ul{
-    display: inline-block;
+
+.chevron-icons{
+    svg{
+        width: 0.8rem;
+        height: 0.8rem;
+
+        fill: var(--dc-color-secondary);
+    }
 }
 
+.dca-tree-item:hover{
+    .chevron-icons{
+        svg{
+            fill: var(--dc-color-secondary-hover);
+        }
+    }
+}

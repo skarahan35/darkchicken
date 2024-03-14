@@ -1,11 +1,13 @@
-<ul class="dca-tree-ul">
-    <li *ngFor="let item of treeData">
-        <div (click)="changeOpen(item, $event)" class="icon-button">
-            <!-- <dca-icon icon="chevron-right" class="chevron-right"></dca-icon> -->
-            <dca-icon *ngIf="item.icon" [icon]="item.icon"></dca-icon>
-            <span>{{ item.title }}</span>
+<ul class="dca-tree">
+    <li class="dca-tree-item" *ngFor="let node of treeData">
+        <div (click)="changeOpen(node, $event)" class="dca-tree-parent-item">
+            <dca-icon *ngIf="node.subItems && !node.expanded" icon="chevron-right" class="chevron-icons"></dca-icon>
+            <dca-icon *ngIf="node.subItems && node.expanded" icon="chevron-down" class="chevron-icons"></dca-icon>
+            <dca-icon *ngIf="node.icon" class="dca-tree-icon" [icon]="node.icon"></dca-icon>
+            <span class="dca-tree-title">{{ node.title }}</span>
         </div>
-        <dca-tree *ngIf="item.subItems && item.expanded" (dcCollapsed)="changeOpenSubItems($event)" (dcExpanded)="changeOpenSubItems($event)"
-            [treeData]="item.subItems"></dca-tree>
+        <dca-tree class="dca-tree-sub-item" *ngIf="node.subItems && node.expanded"
+            (dcCollapsing)="changeOpenSubItems($event)" (dcExpanding)="changeOpenSubItems($event)"
+            [treeData]="node.subItems"></dca-tree>
     </li>
 </ul>

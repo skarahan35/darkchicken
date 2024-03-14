@@ -16,6 +16,6 @@ export interface BreadCrumbModel{
 
 export interface TreeModel {
     title?:string,
-    icon?:string,
-    subItems?: TreeModel[]
+    icon?:Icons,
+    subItems?: TreeModel[],
 }
