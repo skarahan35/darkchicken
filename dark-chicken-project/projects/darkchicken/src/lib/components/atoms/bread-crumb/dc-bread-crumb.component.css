@@ -8,7 +8,7 @@
     to right,
     var(--dc-color-light-hover),
     transparent
-  ); /* Sol kırmızıdan sağa transparan geçiş */
+  );
   border-radius: 4px;
 }
 /*#endregion*/
@@ -54,9 +54,14 @@
 /*#endregion*/
 
 .dca-bread-crumb-item {  /*With icon*/
-  padding: 0.2em;
-  display: inline-block;
-  flex-shrink: 0;
+  .dca-icon{
+    width: 1em;
+    height: 1em;
+
+    padding: 0.2em;
+    display: inline-block;
+    flex-shrink: 0;
+  }
 }
 .breadcrumb-item-with-no-icon { /*With no icons*/
   margin-top: 0.2em;
@@ -64,10 +69,15 @@
 
 /*#region Right arrow*/
 .dca-bread-crumb-chevron-right {
-  fill: var(--dc-color-secondary);
-  padding: 0.2em;
-  display: inline-block;
+  .dca-icon{
+    width: 0.5em;
+    height: 0.5em;
 
-  flex-shrink: 0;
+    fill: var(--dc-color-secondary);
+    padding: 0.2em;
+    display: inline-block;
+  
+    flex-shrink: 0;
+  }
 }
 /*#endregion*/

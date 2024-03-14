@@ -9,8 +9,8 @@ import { TreeModel } from '../../../models/dc-models.model';
 export class DcTreeComponent implements OnChanges {
 
   @Input() treeData!: TreeModel[] | any[];
-  @Output() dcExpanded = new EventEmitter<Object>();
-  @Output() dcCollapsed = new EventEmitter<Object>();
+  @Output() dcExpanding = new EventEmitter<Object>();
+  @Output() dcCollapsing = new EventEmitter<Object>();
 
   constructor() { }
   ngOnChanges(changes: SimpleChanges): void {
@@ -21,20 +21,20 @@ export class DcTreeComponent implements OnChanges {
     }
   }
 
-  changeOpen(item: any, event: Event) {
-    item.expanded = !item.expanded;
-    if (item.expanded) {
-      this.dcExpanded.emit({ item: item, nativeElement: event });
+  changeOpen(node: any, event: Event) {
+    node.expanded = !node.expanded;
+    if (node.expanded) {
+      this.dcExpanding.emit({ item: node, nativeElement: event });
     } else {
-      this.dcCollapsed.emit({ item: item, nativeElement: event });
+      this.dcCollapsing.emit({ item: node, nativeElement: event });
     }
   }
 
-  changeOpenSubItems(item: any) {
-    if (item.expanded) {
-      this.dcExpanded.emit(item);
+  changeOpenSubItems(node: any) {
+    if (node.expanded) {
+      this.dcExpanding.emit(node);
     } else {
-      this.dcCollapsed.emit(item);
+      this.dcCollapsing.emit(node);
     }
   }
 }
