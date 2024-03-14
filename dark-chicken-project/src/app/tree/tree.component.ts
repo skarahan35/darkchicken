@@ -10,18 +10,15 @@ export class TreeComponent {
   treeData: TreeModel[] = [
     {
       title: 'Parent 1',
-      icon: 'folder',
       subItems: [
         {
           title: 'Child 1',
-          icon: 'file',
           subItems: [
             {
               title: 'Child 1',
-              icon: 'file'
             },
             {
-              title: 'Child 2',
+              title: 'Child 2.1',
               icon: 'file',
               subItems: [
                 {
@@ -29,7 +26,7 @@ export class TreeComponent {
                   icon: 'file'
                 },
                 {
-                  title: 'Child 2',
+                  title: 'Child 2.2',
                   icon: 'file',
                   subItems: [
                     {
@@ -37,7 +34,7 @@ export class TreeComponent {
                       icon: 'file'
                     },
                     {
-                      title: 'Child 2',
+                      title: 'Child 2.3',
                       icon: 'file',
                       subItems: [
                         {
@@ -45,7 +42,7 @@ export class TreeComponent {
                           icon: 'file'
                         },
                         {
-                          title: 'Child 2',
+                          title: 'Child 2.4',
                           icon: 'file',
                           subItems: [
                             {
@@ -53,7 +50,7 @@ export class TreeComponent {
                               icon: 'file'
                             },
                             {
-                              title: 'Child 2',
+                              title: 'Child 2.5',
                               icon: 'file'
                             }
                           ]
@@ -149,7 +146,9 @@ export class TreeComponent {
   ];
 
   collapsed(e:any){
+    debugger
   }
   expanded(e:any){
+    debugger
   }
 }
