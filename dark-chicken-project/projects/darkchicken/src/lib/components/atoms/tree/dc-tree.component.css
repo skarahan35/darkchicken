@@ -21,6 +21,7 @@ ul{
     margin-right: 0.5rem;
 }
 
-div{
+.dca-tree-ul{
     display: inline-block;
 }
+
