@@ -1,6 +1,8 @@
 .dca-tree{
     list-style-type: none;
     display: inline-block;
+    padding-inline-start: inherit;
+    width: max-content;
 }
 
 .dca-tree-parent-item {
@@ -37,4 +39,8 @@
             fill: var(--dc-color-secondary-hover);
         }
     }
+}
+
+.dca-tree-sub-item{
+    padding-inline-start: 1rem;
 }

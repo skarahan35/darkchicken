@@ -19,3 +19,8 @@ export interface TreeModel {
     icon?:Icons,
     subItems?: TreeModel[],
 }
+
+export interface ListModel{
+    id:any
+    data:any
+}

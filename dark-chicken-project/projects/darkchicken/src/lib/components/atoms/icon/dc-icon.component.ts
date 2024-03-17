@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { DCService } from '../../../services/dc.service';
 import { Icons } from '../../../types/dc-types';
@@ -8,7 +8,7 @@ import { Icons } from '../../../types/dc-types';
   templateUrl: 'dc-icon.component.html',
   styleUrls: ['../../../../../assets/style.css', 'dc-icon.component.css']
 })
-export class DCIconComponent implements OnInit {
+export class DCIconComponent implements OnChanges {
   //#region Inputs
   @Input() icon!: Icons;
   @Input() class: string | null = null
@@ -28,10 +28,14 @@ export class DCIconComponent implements OnInit {
 
   constructor(private iconService: DCService, private sanitizer: DomSanitizer) { }
 
-  ngOnInit(): void {
-    this.iconService.getIconSVG(this.icon).subscribe((data: string) => {
-      this.svgContent = this.getTrustedSvgContent(data);
-    });
+
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if(changes['icon']){
+      this.iconService.getIconSVG(this.icon).subscribe((data: string) => {
+        this.svgContent = this.getTrustedSvgContent(data);
+      });
+    }
   }
 
   private getTrustedSvgContent(content: string): SafeHtml {

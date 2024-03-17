@@ -8,6 +8,7 @@ import { DCCheckboxComponent } from './checkbox/dc-checkbox.component';
 import { DCBreadCrumbComponent } from './bread-crumb/dc-bread-crumb.component';
 import { DCSpinnerComponent } from './spinner/dc-spinner.component';
 import { DcTreeComponent } from './tree/dc-tree.component';
+import { DcListComponent } from './list/dc-list.component';
 
 
 
@@ -19,7 +20,8 @@ import { DcTreeComponent } from './tree/dc-tree.component';
     DCCheckboxComponent,
     DCBreadCrumbComponent,
     DCSpinnerComponent,
-    DcTreeComponent
+    DcTreeComponent,
+    DcListComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +34,8 @@ import { DcTreeComponent } from './tree/dc-tree.component';
     DCCheckboxComponent,
     DCBreadCrumbComponent,
     DCSpinnerComponent,
-    DcTreeComponent
+    DcTreeComponent,
+    DcListComponent
   ]
 })
 export class DCAtomModule { }

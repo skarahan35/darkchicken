@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { DcDropdownComponent } from './dc-dropdown/dc-dropdown.component';
+import { DCAtomModule } from '../atoms';
 
 
 
@@ -11,7 +12,8 @@ import { DcDropdownComponent } from './dc-dropdown/dc-dropdown.component';
   ],
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    DCAtomModule
   ],
   exports: [
     DcDropdownComponent
