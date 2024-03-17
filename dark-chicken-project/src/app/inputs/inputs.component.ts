@@ -10,6 +10,9 @@ import { LanguageService } from 'projects/darkchicken/src/lib/services/language.
 })
 export class InputsComponent implements OnInit{
 
+  visibleInput=false
+
+
   constructor(private testService:LanguageService){}
 
   consoleText=''

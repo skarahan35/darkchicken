@@ -26,6 +26,7 @@ export class DcDropdownComponent {
 
   constructor(private elementRef: ElementRef, private dcService: DCService) {
     this.id = this.dcService.generateUniqueId()
+    console.log(this.id)
   }
 
 
@@ -43,6 +44,7 @@ export class DcDropdownComponent {
   focusInput() {
     const inputElement = document.getElementById(this.id);
     if (inputElement) {
+      debugger
       inputElement.focus();
     }
   }
