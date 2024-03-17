@@ -127,7 +127,7 @@
   z-index: 2;
   position: absolute;
   display: inline-block;
-  left: 5px;
+  left: 0.5rem;
   top: 50%;
   transform: translateY(-50%);
 }
