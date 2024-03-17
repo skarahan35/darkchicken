@@ -9,7 +9,10 @@ import { TreeModel } from 'projects/darkchicken/src/lib/models/dc-models.model';
 })
 export class DropdownsComponent {
 
-  @ViewChild('dropdown') content!: DcDropdownComponent;
+  @ViewChild('dropdown1') content1!: DcDropdownComponent;
+  @ViewChild('dropdown2') content2!: DcDropdownComponent;
+  @ViewChild('dropdown3') content3!: DcDropdownComponent;
+
 
   dropdownValue:any = ""
 
@@ -158,7 +161,7 @@ export class DropdownsComponent {
   test(e:any){
     if(!e.item.subItems){
       this.dropdownValue = e.item.title
-      this.content.closeDropdown()
+      this.content1.closeDropdown()
     }
   }
   listData=[{
@@ -185,9 +188,9 @@ export class DropdownsComponent {
     name:'ergul 7'
   },]
   optionSelect(e:any){
-
+    debugger
       this.dropdownValue = e.listItem.name
-      this.content.closeDropdown()
+      this.content2.closeDropdown()
   }
 
 

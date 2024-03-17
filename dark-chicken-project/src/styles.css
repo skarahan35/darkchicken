@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+.content {
+    margin: auto;
+    width: 80%;
+    border: 1px solid red;
+    h1{
+        display: flex;
+        justify-content: center;
+    }
+
+    h2{
+        display: flex;
+        justify-content: center;
+    }
+
+    .content-item{
+        display: grid;
+        grid-template-areas: 'lib-item item-description';
+        gap: 1rem;
+        border: 1px dashed black;
+        justify-content: space-around;
+        padding: 1rem;
+        
+        .content-lib-items{
+            grid-area: lib-item;
+
+            .content-lib-item{
+                margin: 0.5rem 0.2rem;
+            }
+        }   
+
+        .content-item-description{
+            grid-area: item-description;
+        }
+    }
+    
+}

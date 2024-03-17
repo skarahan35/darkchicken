@@ -1,13 +1,67 @@
+<div #content class="content">
+    <h1> Darck Chicken Atomic Input</h1>
+
+    <h2>No decoration</h2>
+    <div class="content-item">
+        <div class="content-lib-items">
+            <dca-input class="dca-input content-libt-item"> </dca-input>
+        </div>
+        <div class="content-item-description">
+            Herhangi bir dekorasyon kullanmadan Dark Chicken Input'u kullanmak mümkün. Bu yazının hemen solunda
+            gördüğünüz input alanı hiçbir dekorasyon kullanılmadan oluşturulmuştur. Tabiki eksik dekorasyonlar bağzı
+            özelliklerin kullanılmasını engellemektedir, fakat sadece basit bir input alanı istiyorsanız işte
+            karşınızda. Başlangıç için dekorasyon kullanmamak biz geliştiriciler için ne kadar güzel olsada hepimiz
+            kontrolün bizim elimizde olmasını isteriz. Alt bölümlerimizde kontrolü nasıl ele alabileceğiniz
+            gösterilmiştir. Ne duruyorsun hadi oraya da bir göz at.
+        </div>
+    </div>
+
+    <h2>With decorations</h2>
+    <div class="content-item">
+        <div class="content-lib-items">
+            <dca-input label="Label" placeholder="Placeholder" inputId="id-01"></dca-input>
+        </div>
+        <div class="content-item-description">
+            Burada input için olmazsa olmaz dekorasyonlardan olan 'label' ve 'placeholder'ı görüyorsunuz. Label bölümünü
+            tasarlarken HTML'in label etiketini kullandık. Tabi ki burada etiketin düzgün çalışması için input alanı
+            için bir id gerekiyordu. Id bölümünü kullanıcılardan alacak şekilde parametrik olarak tasarladık. Eğer ki id
+            alanı boş geçilirse label alanı yine gözükür fakat tıklanıldığında focus özelliği gerçekleşmez.
+        </div>
+    </div>
+
+    <div class="content-item">
+        <div class="content-lib-items">
+            <dca-input [readonly]="true" class="dca-input content-lib-item" value="Dark Chicken"></dca-input>
+            <dca-input [disabled]="true" class="dca-input content-lib-item" value="Awsome Inputs"></dca-input>
+            <dca-input [visible]="visibleInput" class="dca-input content-lib-item" value="This is a magic"></dca-input>
+
+        </div>
+        <div class="content-item-description">
+            Burası güvenli alan. Input alanlarında çok fazla kullanılmayan ama nadir de olsa lazım olan iki özelliği ele
+            aldık 'readonly' ve 'disabled'. Aslında iki alanın işlev olarak bir farkı olmamasına karşın kullanıcıya
+            sunum açısından geliştiricilerde farklı anlama gelebileceğinden dolayı bu iki alanı birleştirmeden ayrı ayrı
+            tasarladık. Bu örneklerde fark edebileceğiniz gibi input alanlarımızın içerisine dışarıdan değer ataması
+            yapabiliyor. Bu sayede başlangıç değeri ataması veya değer kontrollerini de buradan kontrol edebiliyoruz.
+            Buraya kadar bahsetmediğimiz bir özelliğimiz daha var, fark etmemeniz çok normal çünkü görünmezlik. Hemen
+            alttaki butona tıkladığınızda neyden bahettiğimizi çok iyi anlayacaksınız.
+            <dca-button (dcClick)="visibleInput = !visibleInput" style="display: flex; padding: 0.2rem;" buttonText="Click Me" class="dca-btn dca-btn-primary"></dca-button>
+        </div>
+    </div>
+</div>
+
 <div class="inputs">
     <dca-input (dcValueChanged)="dcValueChanged($event)" (dcFocusOut)="dcFocusOut($event)"
         (dcFocusIn)="dcFocusIn($event)" (dcValidating)="dcValidating($event)" (dcValidated)="dcValidated($event)"
         value="test" label="Clear" placeholder="Type..." [readonly]="true"></dca-input>
     <br>
     <dca-input [disabled]="true" (dcValueChanged)="dcValueChanged($event)" (dcFocusOut)="dcFocusOut($event)"
-    (dcFocusIn)="dcFocusIn($event)" (dcValidating)="dcValidating($event)" (dcValidated)="dcValidated($event)" inputId="isd1"  label="Text*" type="text" (dcValidating)="dcValidating($event)" [validationRules]="validationRulesText"></dca-input>
+        (dcFocusIn)="dcFocusIn($event)" (dcValidating)="dcValidating($event)" (dcValidated)="dcValidated($event)"
+        inputId="isd1" label="Text*" type="text" (dcValidating)="dcValidating($event)"
+        [validationRules]="validationRulesText"></dca-input>
     <br>
     <dca-input [visible]="true" (dcValueChanged)="dcValueChanged($event)" (dcFocusOut)="dcFocusOut($event)"
-    (dcFocusIn)="dcFocusIn($event)" (dcValidating)="dcValidating($event)" (dcValidated)="dcValidated($event)" label="Number*" placeholder="Number" type="number" [validationRules]="validationRulesNumber"></dca-input>
+        (dcFocusIn)="dcFocusIn($event)" (dcValidating)="dcValidating($event)" (dcValidated)="dcValidated($event)"
+        label="Number*" placeholder="Number" type="number" [validationRules]="validationRulesNumber"></dca-input>
 
     <dca-input [validationRules]="validationRulesText" label="With Icon" placeholder="search..." type="text">
         <dca-icon icon="bolt"></dca-icon>
