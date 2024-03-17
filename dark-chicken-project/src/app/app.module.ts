@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DCAtomModule } from 'projects/darkchicken';
+import { DCAtomModule, DCMoleculesModule } from 'projects/darkchicken';
 import { InputsComponent } from './inputs/inputs.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { CheckboxesComponent } from './checkboxes/checkboxes.component';
@@ -15,6 +15,7 @@ import { ToastComponent } from './toast/toast.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TreeComponent } from './tree/tree.component';
+import { DropdownsComponent } from './dropdowns/dropdowns.component';
 
 
 
@@ -28,12 +29,14 @@ import { TreeComponent } from './tree/tree.component';
     BreadCrumbsComponent,
     SpinnersComponent,
     ToastComponent,
-    TreeComponent
+    TreeComponent,
+    DropdownsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     DCAtomModule,
+    DCMoleculesModule,
     DcToastNgModule,
     CommonModule,
     FormsModule

@@ -1,0 +1,29 @@
+.dca-list{
+    list-style-type: none;
+    padding: inherit;
+}
+
+.dca-list-item{
+    
+    display: flex;
+    align-items: center;
+    background-color: var(--dc-color-light);
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.dca-list-item:hover{
+    background-color: var(--dc-color-light-hover);
+    .dca-list-icon{
+        fill:var(--dc-color-secondary-hover) ;
+    }
+}
+
+.dca-list-icon{
+    margin-right:0.2rem;
+    margin-left: 0.2rem;
+
+    fill: var(--dc-color-secondary);
+}

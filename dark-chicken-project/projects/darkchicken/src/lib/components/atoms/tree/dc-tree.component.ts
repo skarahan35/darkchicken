@@ -11,7 +11,7 @@ export class DcTreeComponent implements OnChanges {
   @Input() treeData!: TreeModel[] | any[];
   @Output() dcExpanding = new EventEmitter<Object>();
   @Output() dcCollapsing = new EventEmitter<Object>();
-
+  @Output() dcClick = new EventEmitter<Object>
   constructor() { }
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['treeData']) {
@@ -23,6 +23,7 @@ export class DcTreeComponent implements OnChanges {
 
   changeOpen(node: any, event: Event) {
     node.expanded = !node.expanded;
+    this.dcClick.emit({ item: node, nativeElement: event })
     if (node.expanded) {
       this.dcExpanding.emit({ item: node, nativeElement: event });
     } else {
@@ -31,6 +32,8 @@ export class DcTreeComponent implements OnChanges {
   }
 
   changeOpenSubItems(node: any) {
+    this.dcClick.emit(node)
+
     if (node.expanded) {
       this.dcExpanding.emit(node);
     } else {

@@ -1,0 +1,40 @@
+* {
+    svg {
+        width: 0.8rem;
+        height: 0.8rem;
+    }
+}
+
+.dcm-dropdown-content {
+    background-color: var(--dc-color-light);
+    min-width: 100%;
+    z-index: 1;
+    border-radius: 0.5rem;
+    position: absolute;
+    top: calc(100% + 0.1rem);
+}
+
+.dcm-dropdown-input {
+    position: relative;
+    transition: border-color 0.2s;
+
+    .dca-input-icon{
+        right: 5px;
+        left: inherit;
+    }
+}
+
+.dcm-dropdown {
+    position: relative;
+    width: fit-content;
+    display: inline-flex;
+}
+
+
+
+
+
+.disable{
+    opacity: 0.7;
+    cursor: pointer;
+}

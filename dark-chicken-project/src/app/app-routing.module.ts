@@ -8,6 +8,7 @@ import { BreadCrumbsComponent } from './bread-crumbs/bread-crumbs.component';
 import { SpinnersComponent } from './spinners/spinners.component';
 import { ToastComponent } from './toast/toast.component';
 import { TreeComponent } from './tree/tree.component';
+import { DropdownsComponent } from './dropdowns/dropdowns.component';
 
 const routes: Routes = [{
   path:'pages/buttons',
@@ -40,6 +41,10 @@ const routes: Routes = [{
 {
   path: 'pages/tree',
   component: TreeComponent
+},
+{
+  path: 'pages/dropdowns',
+  component: DropdownsComponent
 }
 ];
 
