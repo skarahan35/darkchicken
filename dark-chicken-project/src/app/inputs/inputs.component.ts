@@ -8,14 +8,32 @@ import { LanguageService } from 'projects/darkchicken/src/lib/services/language.
   templateUrl: './inputs.component.html',
   styleUrls: ['./inputs.component.css'],
 })
-export class InputsComponent implements OnInit{
+export class InputsComponent implements OnInit {
 
-  visibleInput=false
+  validationModel = `
+export interface InputValidationRulesModel {
+   type: InputValidationType,
+   message?: string,
+   value?: number,
+   pattern?: string
+},
+
+export type InputValidationType =
+  'required'
+  | 'min'
+  | 'max'
+  | 'minLength'
+  | 'maxLength'
+  | 'regEx'
+  | 'null';`
 
 
-  constructor(private testService:LanguageService){}
+  visibleInput = false
 
-  consoleText=''
+
+  constructor(private testService: LanguageService) { }
+
+  consoleText = ''
 
   ngOnInit(): void {
     this.testService.setLanguage('en')
@@ -24,24 +42,24 @@ export class InputsComponent implements OnInit{
   validationRulesText: InputValidationRulesModel[] = [
     {
       type: 'required',
-      message:"Zorunlu alan"
+      message: "Zorunlu alan"
     },
     {
       type: 'minLength',
       value: 30,
-      message:"En az 3 karakter içermelidir."
+      message: "En az 3 karakter içermelidir."
     },
     {
       type: 'maxLength',
       value: 50,
-      message:"En fazla 10 karakter içerebilir."
+      message: "En fazla 10 karakter içerebilir."
     },
 
   ];
   validationRulesNumber: InputValidationRulesModel[] = [
     {
       type: 'required',
-      message:"Zorunlu alan"
+      message: "Zorunlu alan"
     },
     {
       type: 'min',
@@ -57,24 +75,24 @@ export class InputsComponent implements OnInit{
   ];
 
 
-  dcValueChanged(e:any){
-    this.consoleText+="dcValueChanged \n";
+  dcValueChanged(e: any) {
+    this.consoleText += "dcValueChanged \n";
     console.log("dcValueChanged");
   }
-  dcFocusOut(e:any){
-    this.consoleText+="dcFocusOut \n";
+  dcFocusOut(e: any) {
+    this.consoleText += "dcFocusOut \n";
     console.log("dcFocusOut");
   }
-  dcFocusIn(e:any){
-    this.consoleText+="dcFocusIn \n";
+  dcFocusIn(e: any) {
+    this.consoleText += "dcFocusIn \n";
     console.log("dcFocusIn");
   }
-  dcValidating(e:any){
-    this.consoleText+="dcValidating \n";
+  dcValidating(e: any) {
+    this.consoleText += "dcValidating \n";
     console.log("dcValidating");
   }
-  dcValidated(e:any){
-    this.consoleText+="dcValidated \n";
+  dcValidated(e: any) {
+    this.consoleText += "dcValidated \n";
     console.log("dcValidated");
   }
 }

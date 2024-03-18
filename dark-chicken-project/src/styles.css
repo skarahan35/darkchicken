@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files
 .content {
   margin: auto;
   width: 80%;
@@ -40,4 +40,84 @@
     font-size: 14px;
     line-height: 1.5;
 }
+} */
+
+*{
+  font-family: 'IBMPlexxSans', sans-serif;
+
+  --dc-color-primary: #4a90e2;
+  --dc-color-primary-hover:#4169aa;
+  --dc-color-secondary:#6c757d;
+  --dc-color-secondary-hover:#545b62;
+  --dc-color-success:#4caf50;
+  --dc-color-success-hover:#388e3c;
+  --dc-color-danger:#e53935;
+  --dc-color-danger-hover:#c62828;
+  --dc-color-warning:#ff9800;
+  --dc-color-warning-hover:#f57c00;
+  --dc-color-info:#00bcd4;
+  --dc-color-info-hover:#00838f;
+  --dc-color-light:#f5f5f5;
+  --dc-color-light-hover:#e0e0e0;
+  --dc-color-dark:#333333;
+  --dc-color-dark-hover:#1a1a1a;
+
+  --dc-color-white: #fff;
+
+  font-family: 'IBMPlexxSans', sans-serif;
+
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+
+}
+
+h1 {
+  color: var(--dc-color-secondary);
+}
+
+h2 {
+  color: var(--dc-color-secondary);
+  border-bottom-width: 2px ;
+  border-bottom-style: dashed;
+  border-image: linear-gradient(to right, var(--dc-color-secondary-hover), transparent)1; 
+}
+
+h3 {
+  margin-top: -28px;
+  color: var(--dc-color-secondary-hover);
+  background-color: var(--dc-color-white);
+  width: max-content;
+  padding: 0;
+  display:block;
+}
+
+.content-item {
+  margin-bottom: 2rem;
+
+  border-style: solid;
+  border-width: 2px;
+  border-image: 
+      linear-gradient(to bottom right, 
+          var(--dc-color-primary),
+          transparent
+      ) 1;
+
+  padding: 1rem;
+}
+
+.content-lib-items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.content-item-description {
+  margin-top: 10px;
+}
+
+.content-lib-item {
+padding: 1rem;
 }

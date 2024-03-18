@@ -1,99 +1,71 @@
-<div #content class="content">
-  <h1>Darck Chicken Atomic Input</h1>
+<div class="content">
+    <h1>Darck Chicken Atomic Input</h1>
 
-  <h2>No decoration</h2>
-  <div class="content-item">
-    <div class="content-lib-items">
-      <dca-input class="dca-input content-libt-item"> </dca-input>
+    <h2>No decoration</h2>
+    <div class="content-item">
+        <div class="content-lib-items">
+            <dca-input class="dca-input content-lib-item"> </dca-input>
+        </div>
+        <div class="content-item-description">
+            Herhangi bir dekorasyon kullanmadan Dark Chicken Input'u kullanmak mümkün.
+            Bu yazının hemen solunda gördüğünüz input alanı hiçbir dekorasyon
+            kullanılmadan oluşturulmuştur. Tabiki eksik dekorasyonlar bağzı
+            özelliklerin kullanılmasını engellemektedir, fakat sadece basit bir input
+            alanı istiyorsanız işte karşınızda. Başlangıç için dekorasyon kullanmamak
+            biz geliştiriciler için ne kadar güzel olsada hepimiz kontrolün bizim
+            elimizde olmasını isteriz. Alt bölümlerimizde kontrolü nasıl ele
+            alabileceğiniz gösterilmiştir. Ne duruyorsun hadi oraya da bir göz at.
+        </div>
     </div>
-    <div class="content-item-description">
-      Herhangi bir dekorasyon kullanmadan Dark Chicken Input'u kullanmak mümkün.
-      Bu yazının hemen solunda gördüğünüz input alanı hiçbir dekorasyon
-      kullanılmadan oluşturulmuştur. Tabiki eksik dekorasyonlar bağzı
-      özelliklerin kullanılmasını engellemektedir, fakat sadece basit bir input
-      alanı istiyorsanız işte karşınızda. Başlangıç için dekorasyon kullanmamak
-      biz geliştiriciler için ne kadar güzel olsada hepimiz kontrolün bizim
-      elimizde olmasını isteriz. Alt bölümlerimizde kontrolü nasıl ele
-      alabileceğiniz gösterilmiştir. Ne duruyorsun hadi oraya da bir göz at.
-    </div>
-  </div>
 
-  <h2>With decorations</h2>
-  <div class="content-item">
-    <div class="content-lib-items">
-      <dca-input
-        label="Label"
-        placeholder="Placeholder"
-        inputId="id-01"
-      ></dca-input>
+    <h2>With decorations</h2>
+    <div class="content-item">
+        <h3>Label & Placeholder</h3>
+        <div class="content-lib-items">
+            <dca-input class="dca-input content-lib-item"  label="Label" placeholder="Placeholder" inputId="id-01"></dca-input>
+        </div>
+        <div class="content-item-description">
+            Burada input için olmazsa olmaz dekorasyonlardan olan 'label' ve
+            'placeholder'ı görüyorsunuz. Label bölümünü tasarlarken HTML'in label
+            etiketini kullandık. Tabi ki burada etiketin düzgün çalışması için input
+            alanı için bir id gerekiyordu. Id bölümünü kullanıcılardan alacak şekilde
+            parametrik olarak tasarladık. Eğer ki id alanı boş geçilirse label alanı
+            yine gözükür fakat tıklanıldığında focus özelliği gerçekleşmez.
+        </div>
     </div>
-    <div class="content-item-description">
-      Burada input için olmazsa olmaz dekorasyonlardan olan 'label' ve
-      'placeholder'ı görüyorsunuz. Label bölümünü tasarlarken HTML'in label
-      etiketini kullandık. Tabi ki burada etiketin düzgün çalışması için input
-      alanı için bir id gerekiyordu. Id bölümünü kullanıcılardan alacak şekilde
-      parametrik olarak tasarladık. Eğer ki id alanı boş geçilirse label alanı
-      yine gözükür fakat tıklanıldığında focus özelliği gerçekleşmez.
-    </div>
-  </div>
 
-  <div class="content-item">
-    <div class="content-lib-items">
-      <dca-input
-        [readonly]="true"
-        class="dca-input content-lib-item"
-        value="Dark Chicken"
-      ></dca-input>
-      <dca-input
-        [disabled]="true"
-        class="dca-input content-lib-item"
-        value="Awsome Inputs"
-      ></dca-input>
-      <dca-input
-        [visible]="visibleInput"
-        class="dca-input content-lib-item"
-        value="This is a magic"
-      ></dca-input>
+    <div class="content-item">
+        <div class="content-lib-items">
+            <dca-input [readonly]="true" class="dca-input content-lib-item" value="Dark Chicken"></dca-input>
+            <dca-input [disabled]="true" class="dca-input content-lib-item" value="Awsome Inputs"></dca-input>
+            <dca-input [visible]="visibleInput" class="dca-input content-lib-item" value="This is a magic"></dca-input>
+        </div>
+        <div class="content-item-description">
+            Burası güvenli alan. Input alanlarında çok fazla kullanılmayan ama nadir
+            de olsa lazım olan iki özelliği ele aldık 'readonly' ve 'disabled'.
+            Aslında iki alanın işlev olarak bir farkı olmamasına karşın kullanıcıya
+            sunum açısından geliştiricilerde farklı anlama gelebileceğinden dolayı bu
+            iki alanı birleştirmeden ayrı ayrı tasarladık. Bu örneklerde fark
+            edebileceğiniz gibi input alanlarımızın içerisine dışarıdan değer ataması
+            yapabiliyor. Bu sayede başlangıç değeri ataması veya değer kontrollerini
+            de buradan kontrol edebiliyoruz. Buraya kadar bahsetmediğimiz bir
+            özelliğimiz daha var, fark etmemeniz çok normal çünkü görünmezlik. Hemen
+            alttaki butona tıkladığınızda neyden bahettiğimizi çok iyi anlayacaksınız.
+            <dca-button (dcClick)="visibleInput = !visibleInput" style="display: flex; padding: 0.2rem"
+                buttonText="Click Me" class="dca-btn dca-btn-primary"></dca-button>
+        </div>
     </div>
-    <div class="content-item-description">
-      Burası güvenli alan. Input alanlarında çok fazla kullanılmayan ama nadir
-      de olsa lazım olan iki özelliği ele aldık 'readonly' ve 'disabled'.
-      Aslında iki alanın işlev olarak bir farkı olmamasına karşın kullanıcıya
-      sunum açısından geliştiricilerde farklı anlama gelebileceğinden dolayı bu
-      iki alanı birleştirmeden ayrı ayrı tasarladık. Bu örneklerde fark
-      edebileceğiniz gibi input alanlarımızın içerisine dışarıdan değer ataması
-      yapabiliyor. Bu sayede başlangıç değeri ataması veya değer kontrollerini
-      de buradan kontrol edebiliyoruz. Buraya kadar bahsetmediğimiz bir
-      özelliğimiz daha var, fark etmemeniz çok normal çünkü görünmezlik. Hemen
-      alttaki butona tıkladığınızda neyden bahettiğimizi çok iyi anlayacaksınız.
-      <dca-button
-        (dcClick)="visibleInput = !visibleInput"
-        style="display: flex; padding: 0.2rem"
-        buttonText="Click Me"
-        class="dca-btn dca-btn-primary"
-      ></dca-button>
-    </div>
-  </div>
 
-  <div class="content-item">
-    <div class="content-lib-items">
-      <dca-input
-        label="Required"
-        inputId="req"
-        [validationRules]="[
+    <div class="content-item">
+        <div class="content-lib-items">
+            <dca-input label="Required" inputId="req" [validationRules]="[
           {
             type: 'required',
             message: 'Required field'
           }
-        ]"
-        class="dca-input content-lib-item"
-      >
-      </dca-input>
-      <dca-input
-        label="Min Value"
-        inputId="min"
-        type="number"
-        [validationRules]="[
+        ]" class="dca-input content-lib-item">
+            </dca-input>
+            <dca-input label="Min Value" inputId="min" type="number" [validationRules]="[
           {
             type: 'min',
             value: 5,
@@ -103,16 +75,9 @@
             type: 'required',
             message: 'This field value min 5'
           }
-        ]"
-        class="dca-input content-lib-item"
-      >
-      </dca-input>
-      <dca-input
-        label="Max Value"
-        inputId="max"
-        type="number"
-        [value]="18"
-        [validationRules]="[
+        ]" class="dca-input content-lib-item">
+            </dca-input>
+            <dca-input label="Max Value" inputId="max" type="number" [value]="18" [validationRules]="[
           {
             type: 'max',
             value: 10,
@@ -122,41 +87,25 @@
             type: 'required',
             message: 'This field value max 10'
           }
-        ]"
-        class="dca-input content-lib-item"
-      >
-      </dca-input>
-      <dca-input
-        label="Min Length"
-        inputId="minLength"
-        [validationRules]="[
+        ]" class="dca-input content-lib-item">
+            </dca-input>
+            <dca-input label="Min Length" inputId="minLength" [validationRules]="[
           { type: 'minLength', value: 5, message: 'This field min length 5' },
           {
             type: 'required',
             message: 'This field min length 5'
           }
-        ]"
-        class="dca-input content-lib-item"
-      >
-      </dca-input>
-      <dca-input
-        label="Max Length"
-        inputId="maxLength"
-        placeholder="Try max length"
-        [validationRules]="[
+        ]" class="dca-input content-lib-item">
+            </dca-input>
+            <dca-input label="Max Length" inputId="maxLength" placeholder="Try max length" [validationRules]="[
           { type: 'maxLength', value: 3, message: 'This field max length 3' },
           {
             type: 'required',
             message: 'This field length max 3'
           }
-        ]"
-        class="dca-input content-lib-item"
-      >
-      </dca-input>
-      <dca-input
-        label="RegEx"
-        inputId="regEx"
-        [validationRules]="[
+        ]" class="dca-input content-lib-item">
+            </dca-input>
+            <dca-input label="RegEx" inputId="regEx" [validationRules]="[
           {
             type: 'regEx',
             pattern: '.*a.*',
@@ -166,75 +115,80 @@
             type: 'required',
             message: 'Required field'
           }
-        ]"
-        class="dca-input content-lib-item"
-      >
-      </dca-input>
+        ]" class="dca-input content-lib-item">
+            </dca-input>
+        </div>
+        <div class="content-item-description">
+            Bir input alanı için validasyon en önemli şeylerden biridir. Biz burada
+            HTML'e güvenerek onun validasyonlarını uyguluyoruz. Burada kullanıcıların
+            işlerini kolaylaştırmak için validasyonları bir array içerisinde kendi
+            belirlediğimiz modelde alıyoruz. Bu model tipi şu şekildedir:
+            <pre>
+                <code [innerHTML]="validationModel"></code>
+            </pre>
+        </div>
     </div>
-    <div class="content-item-description">
-      Bir input alanı için validasyon en önemli şeylerden biridir. Biz burada
-      HTML'e güvenerek onun validasyonlarını uyguluyoruz. Burada kullanıcıların
-      işlerini kolaylaştırmak için validasyonları bir array içerisinde kendi
-      belirlediğimiz modelde alıyoruz. Bu model tipi şu şekildedir:
-      <pre>
-        <code>
-            BURAYA KOD GELECEK AMA GETİREMEDİM
-            
-        </code>
-    </pre>
+
+    <div class="content-item">
+        <div class="content-lib-items">
+            <dca-input class="dca-input content-lib-item"  label="Coffe ?" placeholder="It can be hot" inputId="id-02"
+                (dcValueChanged)="dcValueChanged($event)" (dcFocusOut)="dcFocusOut($event)"
+                (dcFocusIn)="dcFocusIn($event)" (dcValidating)="dcValidating($event)"
+                (dcValidated)="dcValidated($event)">
+                <dca-icon icon="coffee"></dca-icon>
+            </dca-input>
+        </div>
+        <div class="content-item-description">
+            Bu bölümde output (Event)'leri inceleyeceğiz. Input alanımız için belirlediğimiz eventlerimiz şunlardır :
+            dcValueChanged
+            ,dcFocusOut
+            ,dcFocusIn
+            ,dcValidating
+            ,dcValidated. Geliştiriciler kontrolün kendilerinde olmasını istediklerini bildiğimizden dolayı
+            event'lerimizin içerisinde input alanı ile ilgili her şeyi açıkça vermekteyiz. Tam şuanda hemen yandaki
+            input alanı ile yapacağınız etkileşimlerin sonucunu sayfayı inceleyerek konsolda bulabilirsiniz. Aynı
+            zamanda icon paketimizi de input alanımızın içerisinde kullanabilirsiniz. Sizin için sıcak bir kahveyi
+            hazırladık, input alanın hemen solunda görebilirsiniz.
+        </div>
     </div>
-  </div>
+
+    <div class="content-item">
+        <div class="content-lib-items">
+            <dca-input class="dca-input content-lib-item" label="Dark Chicken" placeholder="Here's a really tiny, tiny, sweet chicken" inputId="id-04"
+                (dcValueChanged)="dcValueChanged($event)" (dcFocusOut)="dcFocusOut($event)"
+                (dcFocusIn)="dcFocusIn($event)" (dcValidating)="dcValidating($event)"
+                (dcValidated)="dcValidated($event)" width='300px' height="100px">
+                <dca-icon icon="egg"></dca-icon>
+            </dca-input>
+        </div>
+        <div class="content-item-description">
+            Son olarak genişlik ve yükseklik attribute'larına bakalım. Burada sizleri CSS dosyaları içerisine boğmak
+            istemediğimizden hiç değilse boyutlandırmayı sizin için yapabiliriz dedik. Eğer ki belirlediğimiz genişlik
+            sizin için uygun değilse 'width' ve 'height' attributlarını vererek istediğiniz değeri atayabilirsiniz.
+        </div>
+    </div>
+
 </div>
 
-<div class="inputs">
-  <dca-input
-    (dcValueChanged)="dcValueChanged($event)"
-    (dcFocusOut)="dcFocusOut($event)"
-    (dcFocusIn)="dcFocusIn($event)"
-    (dcValidating)="dcValidating($event)"
-    (dcValidated)="dcValidated($event)"
-    value="test"
-    label="Clear"
-    placeholder="Type..."
-    [readonly]="true"
-  ></dca-input>
-  <br />
-  <dca-input
-    [disabled]="true"
-    (dcValueChanged)="dcValueChanged($event)"
-    (dcFocusOut)="dcFocusOut($event)"
-    (dcFocusIn)="dcFocusIn($event)"
-    (dcValidating)="dcValidating($event)"
-    (dcValidated)="dcValidated($event)"
-    inputId="isd1"
-    label="Text*"
-    type="text"
-    (dcValidating)="dcValidating($event)"
-    [validationRules]="validationRulesText"
-  ></dca-input>
-  <br />
-  <dca-input
-    [visible]="true"
-    (dcValueChanged)="dcValueChanged($event)"
-    (dcFocusOut)="dcFocusOut($event)"
-    (dcFocusIn)="dcFocusIn($event)"
-    (dcValidating)="dcValidating($event)"
-    (dcValidated)="dcValidated($event)"
-    label="Number*"
-    placeholder="Number"
-    type="number"
-    [validationRules]="validationRulesNumber"
-  ></dca-input>
 
-  <dca-input
-    [validationRules]="validationRulesText"
-    label="With Icon"
-    placeholder="search..."
-    type="text"
-  >
-    <dca-icon icon="bolt"></dca-icon>
-  </dca-input>
-  <br />
+<!-- <div class="inputs">
+    <dca-input (dcValueChanged)="dcValueChanged($event)" (dcFocusOut)="dcFocusOut($event)"
+        (dcFocusIn)="dcFocusIn($event)" (dcValidating)="dcValidating($event)" (dcValidated)="dcValidated($event)"
+        value="test" label="Clear" placeholder="Type..." [readonly]="true"></dca-input>
+    <br />
+    <dca-input [disabled]="true" (dcValueChanged)="dcValueChanged($event)" (dcFocusOut)="dcFocusOut($event)"
+        (dcFocusIn)="dcFocusIn($event)" (dcValidating)="dcValidating($event)" (dcValidated)="dcValidated($event)"
+        inputId="isd1" label="Text*" type="text" (dcValidating)="dcValidating($event)"
+        [validationRules]="validationRulesText"></dca-input>
+    <br />
+    <dca-input [visible]="true" (dcValueChanged)="dcValueChanged($event)" (dcFocusOut)="dcFocusOut($event)"
+        (dcFocusIn)="dcFocusIn($event)" (dcValidating)="dcValidating($event)" (dcValidated)="dcValidated($event)"
+        label="Number*" placeholder="Number" type="number" [validationRules]="validationRulesNumber"></dca-input>
+
+    <dca-input [validationRules]="validationRulesText" label="With Icon" placeholder="search..." type="text">
+        <dca-icon icon="bolt"></dca-icon>
+    </dca-input>
+    <br />
 </div>
 
-<textarea name="" id="" cols="30" rows="10">{{ consoleText }}</textarea>
+<textarea name="" id="" cols="30" rows="10">{{ consoleText }}</textarea> -->
