@@ -41,7 +41,8 @@
     line-height: 1.5;
 }
 } */
-
+@import url(../node_modules/prismjs/themes/prism-tomorrow.css);
+@import url(../node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css);
 *{
   font-family: 'IBMPlexxSans', sans-serif;
 
@@ -120,4 +121,8 @@ h3 {
 
 .content-lib-item {
 padding: 1rem;
+}
+
+.language-ts{
+  border-radius: 1rem !important;
 }
