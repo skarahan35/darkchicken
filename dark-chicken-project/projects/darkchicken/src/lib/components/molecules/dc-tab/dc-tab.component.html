@@ -1,0 +1,17 @@
+<div [id]="id" class="tab">
+    <input class="tab-input" *ngFor="let tabItem of tab" type="radio" [id]="tabItem.tabId + id" name="tab-control"
+        [checked]="activeTab === tabItem" (change)="onTabChange(tabItem,$event)">
+    <ul class="tab-list">
+        <li (mouseover)="onTabHover($event, tabItem)" (mousedown)="onTabMouseDown($event, tabItem)" (mouseup)="onTabMouseUp($event, tabItem)"
+            (mouseenter)="onTabMouseEnter($event, tabItem)" (mouseleave)="onTabMouseLeave($event, tabItem)" (dblclick)="onTabDoubleClick($event, tabItem)"
+            (click)="onTabClick($event,tabItem)" [ngClass]="{'active-tab':activeTab ===tabItem}" class="tab-list-item"
+            *ngFor="let tabItem of tab" [title]="tabItem.tabTitle">
+            <label class="tab-list-item-label" [for]="tabItem.tabId + id" role="button">
+                <dca-icon class="tab-list-item-icon" *ngIf="tabItem.tabIcon" [icon]="tabItem.tabIcon"></dca-icon>
+                <span class="tab-list-item-title">{{tabItem.tabTitle}}</span>
+            </label>
+        </li>
+    </ul>
+
+    <div class="tab-content-wraper"><ng-content></ng-content></div>
+</div>

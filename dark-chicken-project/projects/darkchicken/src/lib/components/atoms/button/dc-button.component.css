@@ -4,9 +4,11 @@
 
 /* #region dca-BTN */
 .dca-btn{
+    align-items: center;
+    justify-content: center;
     appearance: none;
     cursor: pointer;
-    display: inline-block;
+    display: inline-flex;
     font-size: 12px;
     font-weight: 600;
     background-color: none;

@@ -24,3 +24,10 @@ export interface ListModel{
     id:any
     data:any
 }
+
+export interface TabModel{
+    tabId:string,
+    tabTitle:string,
+    tabIcon?:Icons,
+    isActive?:boolean
+}

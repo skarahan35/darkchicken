@@ -16,6 +16,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TreeComponent } from './tree/tree.component';
 import { DropdownsComponent } from './dropdowns/dropdowns.component';
+import { TabsComponent } from './tabs/tabs.component';
 
 
 
@@ -30,7 +31,8 @@ import { DropdownsComponent } from './dropdowns/dropdowns.component';
     SpinnersComponent,
     ToastComponent,
     TreeComponent,
-    DropdownsComponent
+    DropdownsComponent,
+    TabsComponent
   ],
   imports: [
     BrowserModule,
