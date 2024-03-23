@@ -1,0 +1,49 @@
+<dcm-tab [tab]="tabs" (dcTabChange)="dcTabChange($event)" (dcTabClick)="dcTabClick($event)"
+    (dcTabHover)="dcTabHover($event)" (dcTabMouseDown)="dcTabMouseDown($event)" (dcTabMouseUp)="dcTabMouseUp($event)"
+    (dcTabMouseEnter)="dcTabMouseEnter($event)" (dcTabMouseLeave)="dcTabMouseLeave($event)"
+    (dcTabDoubleClick)="dcTabDoubleClick($event)">
+    <div #tabContent id="tab-1">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.</div>
+    <div #tabContent id="tab-2">
+        <dcm-tab [tab]="subTabs">
+            <div #tabContent id="sub-tab-1">
+                Vitae congue eu consequat ac felis. Non arcu risus quis varius quam quisque id diam vel. Nunc congue nisi vitae
+                suscipit. Risus in hendrerit gravida rutrum. Ac turpis egestas sed tempus urna et pharetra pharetra massa.
+                Tincidunt ornare massa eget egestas. Luctus accumsan tortor posuere ac ut. Ut faucibus pulvinar elementum
+                integer enim neque volutpat ac. Vitae semper quis lectus nulla. Lectus urna duis convallis convallis tellus id
+                interdum. Pharetra magna ac placerat vestibulum lectus mauris ultrices. Diam quam nulla porttitor massa id neque
+                aliquam. Cursus vitae congue mauris rhoncus aenean vel elit scelerisque. Nulla facilisi etiam dignissim diam
+                quis enim lobortis. Ut diam quam nulla porttitor massa id neque aliquam.
+            </div>
+            <div #tabContent id="sub-tab-2">
+                        
+                Ultricies tristique nulla aliquet enim. Ipsum dolor sit amet consectetur adipiscing elit. Ut tellus elementum
+                sagittis vitae et leo duis ut. Dis parturient montes nascetur ridiculus. Interdum varius sit amet mattis
+                vulputate. Imperdiet massa tincidunt nunc pulvinar sapien et. Ut ornare lectus sit amet est placerat in egestas.
+                Pellentesque adipiscing commodo elit at imperdiet dui. Vitae proin sagittis nisl rhoncus mattis rhoncus urna
+                neque. Diam quam nulla porttitor massa. Vitae nunc sed velit dignissim sodales ut eu. Quis hendrerit dolor magna
+                eget est. Quis eleifend quam adipiscing vitae proin sagittis. Suscipit tellus mauris a diam maecenas.
+            </div>
+        </dcm-tab>
+    </div>
+    <div #tabContent id="tab-3">
+        Pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Enim facilisis gravida neque
+        convallis. Urna molestie at elementum eu facilisis sed odio. Molestie at elementum eu facilisis sed. Ac turpis
+        egestas integer eget aliquet nibh praesent. Id donec ultrices tincidunt arcu. Feugiat scelerisque varius morbi
+        enim nunc faucibus a. Et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. Eu ultrices vitae
+        auctor eu augue ut lectus arcu. Lectus magna fringilla urna porttitor rhoncus dolor. Ac placerat vestibulum
+        lectus mauris.</div>
+    <div #tabContent id="tab-4">
+        Posuere ac ut consequat semper viverra nam libero justo. Blandit massa enim nec dui nunc mattis. Quis commodo
+        odio aenean sed adipiscing diam donec adipiscing. Massa tincidunt dui ut ornare lectus sit amet est. Cras sed
+        felis eget velit aliquet sagittis id. Maecenas pharetra convallis posuere morbi leo urna molestie at elementum.
+        Commodo elit at imperdiet dui. Non blandit massa enim nec. Tristique senectus et netus et malesuada. Dui id
+        ornare arcu odio ut. Proin fermentum leo vel orci porta. Sed ullamcorper morbi tincidunt ornare massa. Pretium
+        vulputate sapien nec sagittis aliquam malesuada bibendum. Auctor augue mauris augue neque gravida in. Integer
+        malesuada nunc vel risus commodo viverra maecenas accumsan. Vel pharetra vel turpis nunc eget lorem.</div>
+
+</dcm-tab>

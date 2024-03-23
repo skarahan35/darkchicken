@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-import { InputValidationRulesModel } from 'projects/darkchicken/src/lib/models/dc-models.model';
+import { inputEventCodeHtml, inputEventCodeTs, inputSizeCode, labelPlaceholdercode, noDecorationCode, passiveCodeHtml, passiveCodeTs, validationCode, validationModelCode } from 'src/assets/codes/input';
+import { InputValidationRulesModel, TabModel } from 'projects/darkchicken/src/lib/models/dc-models.model';
 import { LanguageService } from 'projects/darkchicken/src/lib/services/language.service';
 
 @Component({
@@ -10,28 +10,51 @@ import { LanguageService } from 'projects/darkchicken/src/lib/services/language.
 })
 export class InputsComponent implements OnInit {
 
-  validationModel = `
-export interface InputValidationRulesModel {
-   type: InputValidationType,
-   message?: string,
-   value?: number,
-   pattern?: string
-},
+  constructor(private testService: LanguageService) { }
 
-export type InputValidationType =
-  'required'
-  | 'min'
-  | 'max'
-  | 'minLength'
-  | 'maxLength'
-  | 'regEx'
-  | 'null';`
+  validationModel = validationModelCode
+
+  tabs: TabModel[] = [{
+    tabId: 'des',
+    tabTitle: 'Description'
+  },
+  {
+    tabId: 'code',
+    tabTitle: 'Code'
+  },
+  ]
+
+  codeTabs:TabModel[] = [
+    {
+      tabId:'html',
+      tabTitle:'HTML',
+      tabIcon:'html5',
+    },
+    {
+      tabId:'ts',
+      tabTitle:'TS',
+      tabIcon:'angular',
+    }
+  ]
 
 
+  codes: any = {
+    'readonly': {
+      'HTML': true,
+      'TS': false
+    }
+  }
+
+  noDecorationCode = noDecorationCode
+  labelPlaceholdercode = labelPlaceholdercode
+  passiveCodeHtml = passiveCodeHtml
+  passiveCodeTs = passiveCodeTs
+  validationCode= validationCode
+  inputEventCodeHtml=inputEventCodeHtml
+  inputEventCodeTs=inputEventCodeTs
+  inputSizeCode = inputSizeCode
   visibleInput = false
 
-
-  constructor(private testService: LanguageService) { }
 
   consoleText = ''
 
@@ -76,23 +99,19 @@ export type InputValidationType =
 
 
   dcValueChanged(e: any) {
-    this.consoleText += "dcValueChanged \n";
     console.log("dcValueChanged");
   }
   dcFocusOut(e: any) {
-    this.consoleText += "dcFocusOut \n";
     console.log("dcFocusOut");
   }
   dcFocusIn(e: any) {
-    this.consoleText += "dcFocusIn \n";
     console.log("dcFocusIn");
   }
   dcValidating(e: any) {
-    this.consoleText += "dcValidating \n";
     console.log("dcValidating");
   }
   dcValidated(e: any) {
-    this.consoleText += "dcValidated \n";
     console.log("dcValidated");
   }
+
 }

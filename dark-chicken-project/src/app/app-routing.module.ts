@@ -9,6 +9,7 @@ import { SpinnersComponent } from './spinners/spinners.component';
 import { ToastComponent } from './toast/toast.component';
 import { TreeComponent } from './tree/tree.component';
 import { DropdownsComponent } from './dropdowns/dropdowns.component';
+import { TabsComponent } from './tabs/tabs.component';
 
 const routes: Routes = [{
   path:'pages/buttons',
@@ -45,6 +46,10 @@ const routes: Routes = [{
 {
   path: 'pages/dropdowns',
   component: DropdownsComponent
+},
+{
+  path: 'pages/tabs',
+  component: TabsComponent
 }
 ];
 
