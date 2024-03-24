@@ -68,7 +68,7 @@ export class DcTabComponent implements OnChanges, AfterViewInit {
     return Array.from(this.tabContents)
   }
 
-  onTabChange(tabItem: TabModel, e: Event) {
+  onTabChange( e: Event, tabItem: TabModel) {
     let oldActiveTab = this.activeTab
     this.activeTab = tabItem
     this.tabContentArray = this.contentToArray()

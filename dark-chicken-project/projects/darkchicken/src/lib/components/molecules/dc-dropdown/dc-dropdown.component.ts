@@ -10,7 +10,6 @@ import { DCService } from '../../../services';
 export class DcDropdownComponent {
 
   @Input() placeholder: string | null = "Select"
-  @Input() options: string[] | null = null
   @Input() value: string | null = null
   @Input() closeOnOutsideClick: boolean = true
   @Input() disabled: boolean | null = null
@@ -19,7 +18,6 @@ export class DcDropdownComponent {
   @Output() dcClick = new EventEmitter<Object>
   @Output() dcExpanding = new EventEmitter<Object>
   @Output() dcCollapsing = new EventEmitter<Object>
-  @Output() dcValueChange = new EventEmitter<Object>
 
   isMenuShow: boolean = false
   id!: string
@@ -49,7 +47,7 @@ export class DcDropdownComponent {
     }
   }
 
-  onDropDownFocusIn() {
+  onDropdownFocusIn() {
 
     this.dcClick.emit({ elementRef: this.elementRef })
     if (!this.disabled) {
