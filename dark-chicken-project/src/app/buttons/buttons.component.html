@@ -1,80 +1,334 @@
 <div class="content">
-    <h1>Darck Chicken Atomic Button</h1>
+  <h1>Darck Chicken Atomic Button</h1>
 
-    <h2>Header 2</h2>
-    <div class="content-item">
-        <h3>Sub Header 1</h3>
+  <h2>No Decoration</h2>
+  <div class="content-item">
+    <dcm-tab class="content-tab" [tab]="tabs" id="1">
+      <div #tabContent [id]="tabs[0].tabId">
         <div class="content-lib-items">
-            <dca-button class="dca-btn content-lib-item dca-btn-primary"></dca-button>
-            <dca-button class="dca-btn content-lib-item dca-btn-secondary"></dca-button>
-            <dca-button class="dca-btn content-lib-item dca-btn-success"></dca-button>
-            <dca-button class="dca-btn content-lib-item dca-btn-danger"></dca-button>
-            <dca-button class="dca-btn content-lib-item dca-btn-warning"></dca-button>
-            <dca-button class="dca-btn content-lib-item dca-btn-info"></dca-button>
-            <dca-button class="dca-btn content-lib-item dca-btn-dark"></dca-button>
-            <dca-button class="dca-btn content-lib-item dca-btn-light"></dca-button>
-
+          <dca-button
+            class="dca-btn content-lib-item dca-btn-primary"
+          ></dca-button>
+          <dca-button
+            class="dca-btn content-lib-item dca-btn-secondary"
+          ></dca-button>
+          <dca-button
+            class="dca-btn content-lib-item dca-btn-success"
+          ></dca-button>
+          <dca-button
+            class="dca-btn content-lib-item dca-btn-danger"
+          ></dca-button>
+          <dca-button
+            class="dca-btn content-lib-item dca-btn-warning"
+          ></dca-button>
+          <dca-button
+            class="dca-btn content-lib-item dca-btn-info"
+          ></dca-button>
+          <dca-button
+            class="dca-btn content-lib-item dca-btn-dark"
+          ></dca-button>
+          <dca-button
+            class="dca-btn content-lib-item dca-btn-light"
+          ></dca-button>
         </div>
         <div class="content-item-description">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit dolorem nam quisquam numquam et debitis nemo
-            qui dolor a. Sit modi unde numquam iusto voluptas ea molestias porro incidunt nihil iste, officiis dolor cum
-            reiciendis a! Impedit nihil eaque maxime, harum beatae vel atque inventore sed, expedita, vero dolore
-            deleniti! Sapiente assumenda autem consequuntur incidunt cupiditate, delectus totam ad est doloribus
-            eligendi ex accusantium dolorem? Nostrum a itaque architecto, earum alias error exercitationem repellendus
-            tenetur, vitae inventore totam explicabo nesciunt ducimus laudantium, et id accusantium aspernatur at velit
-            corporis. Iste ullam sunt enim excepturi, corrupti perspiciatis accusantium suscipit laboriosam ipsum.
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit dolorem
+          nam quisquam numquam et debitis nemo qui dolor a. Sit modi unde
+          numquam iusto voluptas ea molestias porro incidunt nihil iste,
+          officiis dolor cum reiciendis a! Impedit nihil eaque maxime, harum
+          beatae vel atque inventore sed, expedita, vero dolore deleniti!
+          Sapiente assumenda autem consequuntur incidunt cupiditate, delectus
+          totam ad est doloribus eligendi ex accusantium dolorem? Nostrum a
+          itaque architecto, earum alias error exercitationem repellendus
+          tenetur, vitae inventore totam explicabo nesciunt ducimus laudantium,
+          et id accusantium aspernatur at velit corporis. Iste ullam sunt enim
+          excepturi, corrupti perspiciatis accusantium suscipit laboriosam
+          ipsum.
         </div>
-    </div>
+      </div>
+      <pre
+        #tabContent
+        [id]="tabs[1].tabId"
+        class="line-numbers"
+      ><code class="language-html">{{noDecorationButton}}</code></pre>
+    </dcm-tab>
+  </div>
 
-    <h2>Header 3</h2>
-    <div class="content-item">
-        <h3>Sub Header 2</h3>
+  <h2>With Decoration</h2>
+  <div class="content-item">
+    <h3>Button With Text</h3>
+    <dcm-tab class="content-tab" [tab]="tabs" id="2">
+      <div #tabContent [id]="tabs[0].tabId">
         <div class="content-lib-items">
-            <dca-button buttonText="Primary" class="dca-btn content-lib-item dca-btn-primary"></dca-button>
-            <dca-button buttonText="Secondary" class="dca-btn content-lib-item dca-btn-secondary"></dca-button>
-            <dca-button buttonText="Success" class="dca-btn content-lib-item dca-btn-success"></dca-button>
-            <dca-button buttonText="Danger" class="dca-btn content-lib-item dca-btn-danger"></dca-button>
-            <dca-button buttonText="Warning" class="dca-btn content-lib-item dca-btn-warning"></dca-button>
-            <dca-button buttonText="Info" class="dca-btn content-lib-item dca-btn-info"></dca-button>
-            <dca-button buttonText="Dark" class="dca-btn content-lib-item dca-btn-dark"></dca-button>
-            <dca-button buttonText="Light" class="dca-btn content-lib-item dca-btn-light"></dca-button>
-
+          <dca-button
+            buttonText="Primary"
+            class="dca-btn content-lib-item dca-btn-primary"
+          ></dca-button>
+          <dca-button
+            buttonText="Secondary"
+            class="dca-btn content-lib-item dca-btn-secondary"
+          ></dca-button>
+          <dca-button
+            buttonText="Success"
+            class="dca-btn content-lib-item dca-btn-success"
+          ></dca-button>
+          <dca-button
+            buttonText="Danger"
+            class="dca-btn content-lib-item dca-btn-danger"
+          ></dca-button>
+          <dca-button
+            buttonText="Warning"
+            class="dca-btn content-lib-item dca-btn-warning"
+          ></dca-button>
+          <dca-button
+            buttonText="Info"
+            class="dca-btn content-lib-item dca-btn-info"
+          ></dca-button>
+          <dca-button
+            buttonText="Dark"
+            class="dca-btn content-lib-item dca-btn-dark"
+          ></dca-button>
+          <dca-button
+            buttonText="Light"
+            class="dca-btn content-lib-item dca-btn-light"
+          ></dca-button>
         </div>
         <div class="content-item-description">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit dolorem nam quisquam numquam et debitis nemo
-            qui dolor a. Sit modi unde numquam iusto voluptas ea molestias porro incidunt nihil iste, officiis dolor cum
-            reiciendis a! Impedit nihil eaque maxime, harum beatae vel atque inventore sed, expedita, vero dolore
-            deleniti! Sapiente assumenda autem consequuntur incidunt cupiditate, delectus totam ad est doloribus
-            eligendi ex accusantium dolorem? Nostrum a itaque architecto, earum alias error exercitationem repellendus
-            tenetur, vitae inventore totam explicabo nesciunt ducimus laudantium, et id accusantium aspernatur at velit
-            corporis. Iste ullam sunt enim excepturi, corrupti perspiciatis accusantium suscipit laboriosam ipsum.
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit dolorem
+          nam quisquam numquam et debitis nemo qui dolor a. Sit modi unde
+          numquam iusto voluptas ea molestias porro incidunt nihil iste,
+          officiis dolor cum reiciendis a! Impedit nihil eaque maxime, harum
+          beatae vel atque inventore sed, expedita, vero dolore deleniti!
+          Sapiente assumenda autem consequuntur incidunt cupiditate, delectus
+          totam ad est doloribus eligendi ex accusantium dolorem? Nostrum a
+          itaque architecto, earum alias error exercitationem repellendus
+          tenetur, vitae inventore totam explicabo nesciunt ducimus laudantium,
+          et id accusantium aspernatur at velit corporis. Iste ullam sunt enim
+          excepturi, corrupti perspiciatis accusantium suscipit laboriosam
+          ipsum.
         </div>
-    </div>
+      </div>
+      <pre
+        #tabContent
+        [id]="tabs[1].tabId"
+        class="line-numbers"
+      ><code class="language-html">{{buttonWithTextButton}}</code></pre>
+    </dcm-tab>
+  </div>
 
-    <h2>Header 4</h2>
-    <div class="content-item">
-        <h3>Sub Header 3</h3>
+  <div class="content-item">
+    <h3>Outlined Buttons</h3>
+    <dcm-tab [tab]="tabs" id="3">
+      <div #tabContent [id]="tabs[0].tabId">
         <div class="content-lib-items">
-            <dca-button buttonText="Primary" class="dca-btn content-lib-item dca-btn-outline-primary"></dca-button>
-            <dca-button buttonText="Secondary" class="dca-btn content-lib-item dca-btn-outline-secondary"></dca-button>
-            <dca-button buttonText="Success" class="dca-btn content-lib-item dca-btn-outline-success"></dca-button>
-            <dca-button buttonText="Danger" class="dca-btn content-lib-item dca-btn-outline-danger"></dca-button>
-            <dca-button buttonText="Warning" class="dca-btn content-lib-item dca-btn-outline-warning"></dca-button>
-            <dca-button buttonText="Info" class="dca-btn content-lib-item dca-btn-outline-info"></dca-button>
-            <dca-button buttonText="Dark" class="dca-btn content-lib-item dca-btn-outline-dark"></dca-button>
-            <dca-button buttonText="Light" class="dca-btn content-lib-item dca-btn-outline-light"></dca-button>
-
+          <dca-button
+            buttonText="Primary"
+            class="dca-btn content-lib-item dca-btn-outline-primary"
+          ></dca-button>
+          <dca-button
+            buttonText="Secondary"
+            class="dca-btn content-lib-item dca-btn-outline-secondary"
+          ></dca-button>
+          <dca-button
+            buttonText="Success"
+            class="dca-btn content-lib-item dca-btn-outline-success"
+          ></dca-button>
+          <dca-button
+            buttonText="Danger"
+            class="dca-btn content-lib-item dca-btn-outline-danger"
+          ></dca-button>
+          <dca-button
+            buttonText="Warning"
+            class="dca-btn content-lib-item dca-btn-outline-warning"
+          ></dca-button>
+          <dca-button
+            buttonText="Info"
+            class="dca-btn content-lib-item dca-btn-outline-info"
+          ></dca-button>
+          <dca-button
+            buttonText="Dark"
+            class="dca-btn content-lib-item dca-btn-outline-dark"
+          ></dca-button>
+          <dca-button
+            buttonText="Light"
+            class="dca-btn content-lib-item dca-btn-outline-light"
+          ></dca-button>
         </div>
         <div class="content-item-description">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit dolorem nam quisquam numquam et debitis nemo
-            qui dolor a. Sit modi unde numquam iusto voluptas ea molestias porro incidunt nihil iste, officiis dolor cum
-            reiciendis a! Impedit nihil eaque maxime, harum beatae vel atque inventore sed, expedita, vero dolore
-            deleniti! Sapiente assumenda autem consequuntur incidunt cupiditate, delectus totam ad est doloribus
-            eligendi ex accusantium dolorem? Nostrum a itaque architecto, earum alias error exercitationem repellendus
-            tenetur, vitae inventore totam explicabo nesciunt ducimus laudantium, et id accusantium aspernatur at velit
-            corporis. Iste ullam sunt enim excepturi, corrupti perspiciatis accusantium suscipit laboriosam ipsum.
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit dolorem
+          nam quisquam numquam et debitis nemo qui dolor a. Sit modi unde
+          numquam iusto voluptas ea molestias porro incidunt nihil iste,
+          officiis dolor cum reiciendis a! Impedit nihil eaque maxime, harum
+          beatae vel atque inventore sed, expedita, vero dolore deleniti!
+          Sapiente assumenda autem consequuntur incidunt cupiditate, delectus
+          totam ad est doloribus eligendi ex accusantium dolorem? Nostrum a
+          itaque architecto, earum alias error exercitationem repellendus
+          tenetur, vitae inventore totam explicabo nesciunt ducimus laudantium,
+          et id accusantium aspernatur at velit corporis. Iste ullam sunt enim
+          excepturi, corrupti perspiciatis accusantium suscipit laboriosam
+          ipsum.
         </div>
-    </div>
+      </div>
+      <pre
+        #tabContent
+        [id]="tabs[1].tabId"
+        class="line-numbers"
+      ><code class="language-html">{{outlinedButton}}</code></pre>
+    </dcm-tab>
+  </div>
+  <div class="content-item">
+    <h3>Passive Buttons</h3>
+    <dcm-tab [tab]="tabs" id="4">
+      <div #tabContent [id]="tabs[0].tabId">
+        <div class="content-lib-items">
+          <dca-button
+            buttonText="Primary"
+            class="dca-btn content-lib-item dca-btn-primary"
+            [disabled]="true"
+          ></dca-button>
+          <dca-button
+            buttonText="Secondary"
+            class="dca-btn content-lib-item dca-btn-secondary"
+            [disabled]="true"
+          ></dca-button>
+          <dca-button
+            buttonText="Success"
+            class="dca-btn content-lib-item dca-btn-success"
+            [disabled]="true"
+          ></dca-button>
+          <dca-button
+            buttonText="Danger"
+            class="dca-btn content-lib-item dca-btn-danger"
+            [disabled]="true"
+          ></dca-button>
+          <dca-button
+            buttonText="Warning"
+            class="dca-btn content-lib-item dca-btn-warning"
+            [disabled]="true"
+          ></dca-button>
+          <dca-button
+            buttonText="Info"
+            class="dca-btn content-lib-item dca-btn-info"
+            [disabled]="true"
+          ></dca-button>
+          <dca-button
+            buttonText="Dark"
+            class="dca-btn content-lib-item dca-btn-dark"
+            [disabled]="true"
+          ></dca-button>
+          <dca-button
+            buttonText="Light"
+            class="dca-btn content-lib-item dca-btn-light"
+            [disabled]="true"
+          ></dca-button>
+        </div>
+        <div class="content-item-description">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit dolorem
+          nam quisquam numquam et debitis nemo qui dolor a. Sit modi unde
+          numquam iusto voluptas ea molestias porro incidunt nihil iste,
+          officiis dolor cum reiciendis a! Impedit nihil eaque maxime, harum
+          beatae vel atque inventore sed, expedita, vero dolore deleniti!
+          Sapiente assumenda autem consequuntur incidunt cupiditate, delectus
+          totam ad est doloribus eligendi ex accusantium dolorem? Nostrum a
+          itaque architecto, earum alias error exercitationem repellendus
+          tenetur, vitae inventore totam explicabo nesciunt ducimus laudantium,
+          et id accusantium aspernatur at velit corporis. Iste ullam sunt enim
+          excepturi, corrupti perspiciatis accusantium suscipit laboriosam
+          ipsum.
+        </div>
+      </div>
+      <pre
+        #tabContent
+        [id]="tabs[1].tabId"
+        class="line-numbers"
+      ><code class="language-html">{{passiveButton}}</code></pre>
+    </dcm-tab>
+  </div>
+
+  <div class="content-item">
+    <h3>Button Events</h3>
+    <dcm-tab [tab]="tabs" id="5">
+      <div #tabContent [id]="tabs[0].tabId">
+        <div class="content-lib-items">
+          <dca-button
+            buttonText="Primary"
+            class="dca-btn content-lib-item dca-btn-primary"
+            (dcClick)="dcClick($event)"
+            (dcHover)="dcHover($event)"
+            (dcMouseUp)="dcMouseUp($event)"
+            (dcMouseDown)="dcMouseDown($event)"
+            (dcMouseOut)="dcMouseOut($event)"
+            (dcMouseEnter)="dcMouseEnter($event)"
+            (dcDoubleClick)="dcDoubleClick($event)"
+          ></dca-button>
+        </div>
+        <div class="content-item-description">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit dolorem
+          nam quisquam numquam et debitis nemo qui dolor a. Sit modi unde
+          numquam iusto voluptas ea molestias porro incidunt nihil iste,
+          officiis dolor cum reiciendis a! Impedit nihil eaque maxime, harum
+          beatae vel atque inventore sed, expedita, vero dolore deleniti!
+          Sapiente assumenda autem consequuntur incidunt cupiditate, delectus
+          totam ad est doloribus eligendi ex accusantium dolorem? Nostrum a
+          itaque architecto, earum alias error exercitationem repellendus
+          tenetur, vitae inventore totam explicabo nesciunt ducimus laudantium,
+          et id accusantium aspernatur at velit corporis. Iste ullam sunt enim
+          excepturi, corrupti perspiciatis accusantium suscipit laboriosam
+          ipsum.
+        </div>
+      </div>
+      <div #tabContent [id]="tabs[1].tabId">
+        <dcm-tab [tab]="codeTabs" id="11">
+          <pre
+            #tabContent
+            [id]="codeTabs[0].tabId"
+            class="line-numbers"
+          ><code class="language-html">{{buttonEventsHtml}}</code></pre>
+
+          <pre
+            #tabContent
+            [id]="codeTabs[1].tabId"
+            class="line-numbers"
+          ><code class="language-ts">{{buttonEventsTs}}</code></pre>
+        </dcm-tab>
+      </div>
+    </dcm-tab>
+  </div>
+
+  <div class="content-item">
+    <h3>Button Size</h3>
+    <dcm-tab [tab]="tabs" id="6">
+      <div #tabContent [id]="tabs[0].tabId">
+        <div class="content-lib-items">
+          <dca-button
+            buttonText="Primary"
+            class="dca-btn content-lib-item dca-btn-primary"
+            width="400px"
+            height="10px"
+          ></dca-button>
+        </div>
+        <div class="content-item-description">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit dolorem
+          nam quisquam numquam et debitis nemo qui dolor a. Sit modi unde
+          numquam iusto voluptas ea molestias porro incidunt nihil iste,
+          officiis dolor cum reiciendis a! Impedit nihil eaque maxime, harum
+          beatae vel atque inventore sed, expedita, vero dolore deleniti!
+          Sapiente assumenda autem consequuntur incidunt cupiditate, delectus
+          totam ad est doloribus eligendi ex accusantium dolorem? Nostrum a
+          itaque architecto, earum alias error exercitationem repellendus
+          tenetur, vitae inventore totam explicabo nesciunt ducimus laudantium,
+          et id accusantium aspernatur at velit corporis. Iste ullam sunt enim
+          excepturi, corrupti perspiciatis accusantium suscipit laboriosam
+          ipsum.
+        </div>
+      </div>
+      <pre
+        #tabContent
+        [id]="tabs[1].tabId"
+        class="line-numbers"
+      ><code class="language-html">{{buttonSize}}</code></pre>
+    </dcm-tab>
+  </div>
 </div>
 
 <!-- <div class="card">

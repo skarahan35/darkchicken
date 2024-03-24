@@ -99,19 +99,19 @@ export class InputsComponent implements OnInit {
 
 
   dcValueChanged(e: any) {
-    console.log("dcValueChanged");
+    console.log({"dcValueChanged": e});
   }
   dcFocusOut(e: any) {
-    console.log("dcFocusOut");
+    console.log({"dcFocusOut": e});
   }
   dcFocusIn(e: any) {
-    console.log("dcFocusIn");
+    console.log({"dcFocusIn": e});
   }
   dcValidating(e: any) {
-    console.log("dcValidating");
+    console.log({"dcValidating": e});
   }
   dcValidated(e: any) {
-    console.log("dcValidated");
+    console.log({"dcValidated": e});
   }
 
 }

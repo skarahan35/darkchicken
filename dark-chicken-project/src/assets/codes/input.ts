@@ -103,19 +103,19 @@ export const inputEventCodeHtml=`<dca-input class="dca-input content-lib-item" l
 </dca-input>`
 
 export const inputEventCodeTs=`dcValueChanged(e: any) {
-  console.log("dcValueChanged");
+  console.log({"dcValueChanged": e});
 }
 dcFocusOut(e: any) {
-  console.log("dcFocusOut");
+  console.log({"dcFocusOut": e});
 }
 dcFocusIn(e: any) {
-  console.log("dcFocusIn");
+  console.log({"dcFocusIn": e});
 }
 dcValidating(e: any) {
-  console.log("dcValidating");
+  console.log({"dcValidating": e});
 }
 dcValidated(e: any) {
-  console.log("dcValidated");
+  console.log({"dcValidated": e});
 }`
 
 export const inputSizeCode=`<dca-input class="dca-input content-lib-item" label="Dark Chicken"
