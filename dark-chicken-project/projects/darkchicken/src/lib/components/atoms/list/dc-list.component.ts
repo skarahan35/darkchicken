@@ -30,8 +30,8 @@ onDoubleClick(e: Event, item:any) {
 //#endregion
 
 //#region onClick Event
-onClick(e: Event, item:any) {
-  this.dcClick.emit({'listItem':item, 'nativeElement': e })
+onClick(e: Event, item:any, dataField:string, value:any) {
+  this.dcClick.emit({'listItem':item, 'nativeElement': e, [dataField] : value })
 }
 //#endregion
 

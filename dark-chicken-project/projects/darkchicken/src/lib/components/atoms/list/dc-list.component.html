@@ -1,6 +1,6 @@
 <ul class="dca-list">
     <ng-container *ngIf="dataSource && valueExp && displayExp">
-        <li *ngFor="let item of dataSource" [value]="item[valueExp]" (click)="onClick($event, item)"
+        <li *ngFor="let item of dataSource" [value]="item[valueExp]" (click)="onClick($event, item, valueExp, item[valueExp] )"
             (mouseover)="onHover($event, item)" (mousedown)="onMouseDown($event, item)" (mouseup)="onMouseUp($event, item)"
             (mouseenter)="onMouseEnter($event, item)" (mouseleave)="onMouseLeave($event, item)" (dblclick)="onDoubleClick($event, item)"
             [ngClass]="{ 'hidden' : !visible, 'disable': disabled, 'dca-list-item' : true}" [class]="class">
