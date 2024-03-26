@@ -188,7 +188,6 @@ export class DropdownsComponent {
     name:'ergul 7'
   },]
   optionSelect(e:any){
-    debugger
       this.dropdownValue = e.listItem.name
       this.content2.closeDropdown()
   }

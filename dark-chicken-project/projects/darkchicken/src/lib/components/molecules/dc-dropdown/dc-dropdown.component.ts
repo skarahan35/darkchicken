@@ -42,7 +42,6 @@ export class DcDropdownComponent {
   focusInput() {
     const inputElement = document.getElementById(this.id);
     if (inputElement) {
-      debugger
       inputElement.focus();
     }
   }
