@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { TreeComponent } from './tree/tree.component';
 import { DropdownsComponent } from './dropdowns/dropdowns.component';
 import { TabsComponent } from './tabs/tabs.component';
+import { ListsComponent } from './lists/lists.component';
 
 
 
@@ -32,7 +33,8 @@ import { TabsComponent } from './tabs/tabs.component';
     ToastComponent,
     TreeComponent,
     DropdownsComponent,
-    TabsComponent
+    TabsComponent,
+    ListsComponent
   ],
   imports: [
     BrowserModule,
