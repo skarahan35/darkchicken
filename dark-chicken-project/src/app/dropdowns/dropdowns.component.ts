@@ -1,17 +1,19 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core';
 import { DcDropdownComponent } from 'projects/darkchicken';
 import { TreeModel } from 'projects/darkchicken/src/lib/models/dc-models.model';
 
 @Component({
   selector: 'app-dropdowns',
   templateUrl: './dropdowns.component.html',
-  styleUrls: ['./dropdowns.component.css']
+  styleUrls: ['./dropdowns.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class DropdownsComponent {
 
   @ViewChild('dropdown1') content1!: DcDropdownComponent;
   @ViewChild('dropdown2') content2!: DcDropdownComponent;
   @ViewChild('dropdown3') content3!: DcDropdownComponent;
+  @ViewChild('dropdown4') content4!: DcDropdownComponent;
 
 
   treeVal: string = ''
@@ -160,11 +162,16 @@ export class DropdownsComponent {
 
 
 
+  onTreeClickOnlyIcon(e: any) {
+    this.treeVal = e.item.title
+    this.content1.closeDropdown()
+  }
   onTreeClick(e: any) {
-    if (!e.item.subItems) {
+    if(!e.item.subItems){
       this.treeVal = e.item.title
-      this.content1.closeDropdown()
+    this.content4.closeDropdown()
     }
+    
   }
   listData = [{
     id: 1,
@@ -194,12 +201,22 @@ export class DropdownsComponent {
     this.content2.closeDropdown()
   }
 
-  onTemplateClick(e:any){
-    this.templateVal=e.textContent
+  onTemplateClick(e: any) {
+    this.templateVal = e.textContent
     this.content3.closeDropdown()
 
   }
 
+  dropdownClick(e: any) {
+    console.log({ 'dropdownClick': e })
+  }
 
+  dropdownCollapsing(e: any) {
+    console.log({ 'dropdownCollapsing': e })
+  }
+
+  dropdownExpanding(e: any) {
+    console.log({ 'dropdownExpanding': e })
+  }
 
 }

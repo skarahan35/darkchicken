@@ -1,5 +1,10 @@
-<dcm-dropdown [closeOnOutsideClick]="true" [value]="treeVal" #dropdown1>
-     <dca-tree (dcClick)="onTreeClick($event)" #dcmDropdownContent [treeData]="treeData"></dca-tree>
+<dcm-dropdown  [disabled]="false" [visible]="true" (dcClick)="dropdownClick($event)" (dcCollapsing)="dropdownCollapsing($event)"
+     (dcExpanding)="dropdownExpanding($event)" [closeOnOutsideClick]="false" [value]="treeVal" #dropdown1>
+     <dca-tree [expandOnlyIcon]="true" (dcClick)="onTreeClickOnlyIcon($event)" #dcmDropdownContent [treeData]="treeData"></dca-tree>
+</dcm-dropdown>
+<dcm-dropdown  [disabled]="false" [visible]="true" (dcClick)="dropdownClick($event)" (dcCollapsing)="dropdownCollapsing($event)"
+     (dcExpanding)="dropdownExpanding($event)" [closeOnOutsideClick]="false" [value]="treeVal" #dropdown4>
+     <dca-tree [expandOnlyIcon]="false" (dcClick)="onTreeClick($event)" #dcmDropdownContent [treeData]="treeData"></dca-tree>
 </dcm-dropdown>
 
 <dcm-dropdown [closeOnOutsideClick]="true" [value]="listVal" #dropdown2>
@@ -11,5 +16,6 @@
 </dcm-dropdown>
 
 <ng-template #testTemplate>
-     <p  (click)="onTemplateClick($event.currentTarget)">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, at.</p>
+     <p (click)="onTemplateClick($event.currentTarget)">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Repellat, at.</p>
 </ng-template>
