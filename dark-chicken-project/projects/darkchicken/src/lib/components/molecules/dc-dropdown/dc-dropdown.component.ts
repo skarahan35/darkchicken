@@ -14,6 +14,8 @@ export class DcDropdownComponent {
   @Input() closeOnOutsideClick: boolean = true
   @Input() disabled: boolean | null = null
   @Input() readonly: boolean | null = null
+  @Input() visible: boolean = true
+  @Input() class: string = ''
 
   @Output() dcClick = new EventEmitter<Object>
   @Output() dcExpanding = new EventEmitter<Object>
@@ -24,7 +26,6 @@ export class DcDropdownComponent {
 
   constructor(private elementRef: ElementRef, private dcService: DCService) {
     this.id = this.dcService.generateUniqueId()
-    console.log(this.id)
   }
 
 
@@ -48,15 +49,17 @@ export class DcDropdownComponent {
 
   onDropdownFocusIn() {
 
-    this.dcClick.emit({ elementRef: this.elementRef })
-    if (!this.disabled) {
-      this.dcExpanding.emit({ elementRef: this.elementRef })
+    this.dcClick.emit({ nativeElemet: this.elementRef.nativeElement })
+    if (!this.disabled && this.isMenuShow == false) {
+      this.dcExpanding.emit({ nativeElemet: this.elementRef.nativeElement })
       this.isMenuShow = true
     }
   }
 
   public closeDropdown() {
-    this.dcCollapsing.emit({ elementRef: this.elementRef })
-    this.isMenuShow = false
+    if(this.isMenuShow == true){
+      this.dcCollapsing.emit({ nativeElemet: this.elementRef.nativeElement })
+      this.isMenuShow = false
+    }
   }
 }

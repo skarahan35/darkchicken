@@ -10,6 +10,7 @@ export class DCBreadCrumbComponent {
   //#region Inputs
   @Input() crumbList!: BreadCrumbModel[]
   @Input() visible: boolean= true
+  @Input() class:string = ''
   //#endregion
 
   //#region Outputs
