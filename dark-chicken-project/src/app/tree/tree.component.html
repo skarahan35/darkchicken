@@ -1,1 +1,10 @@
-<dca-tree [treeData]="treeData" (dcClick)="click($event)" (dcCollapsing)="collapsed($event)" (dcExpanding)="expanded($event)"></dca-tree>
+<dca-tree [treeData]="treeData" (dcClick)="click($event)"
+    (dcCollapsing)="collapsed($event)"
+    (dcExpanding)="expanded($event)"
+    (dcHover)="dcHover($event)"
+    (dcMouseUp)="dcMouseUp($event)"
+    (dcMouseDown)="dcMouseDown($event)"
+    (dcMouseLeave)="dcMouseLeave($event)"
+    (dcMouseEnter)="dcMouseEnter($event)"
+    (dcDoubleClick)="dcDoubleClick($event)"
+    [disabled]="true"></dca-tree>

@@ -19,8 +19,9 @@
     --dc-color-light-hover:#e0e0e0;
     --dc-color-dark:#333333;
     --dc-color-dark-hover:#1a1a1a;
-
     --dc-color-white: #fff;
+    --dc-color-menu-logo: #1d1b31;
+    --dc-color-menu: #11101d;
 }
 
 .hidden{

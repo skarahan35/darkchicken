@@ -1,12 +1,17 @@
-import { Component } from '@angular/core';
-import { TreeModel } from 'projects/darkchicken/src/lib/models/dc-models.model';
+import { Component, OnInit } from '@angular/core';
+import { SidebarDataService } from '../../../services/sidebar-data.service';
+import { TreeModel } from '../../../models/dc-models.model';
 
 @Component({
-  selector: 'app-tree',
-  templateUrl: './tree.component.html',
-  styleUrls: ['./tree.component.css']
+  selector: 'dcm-sidebar',
+  templateUrl: './dc-sidebar.component.html',
+  styleUrls: ['./dc-sidebar.component.css']
 })
-export class TreeComponent {
+export class DcSidebarComponent implements OnInit {
+
+  sidebarData: any[]  = [];
+  isSidebarClosed: boolean = false;
+
   treeData: TreeModel[] = [
     {
       title: 'Parent 1',
@@ -145,33 +150,24 @@ export class TreeComponent {
     }
   ];
 
-  collapsed(e: any) {
-    console.log({ collapsed: e })
-  }
-  expanded(e: any) {
-    console.log({ expanded: e })
+  constructor(private sidebarDataservice: SidebarDataService){}
+
+  ngOnInit(): void {
+    this.sidebarDataservice.getSidebarData().subscribe((data:any) => {
+      this.sidebarData = data;
+    });
   }
 
-  click(e: any) {
-    console.log({ click: e })
+  toggleMenu(event: any) {
+    let arrowParent = event.target.parentElement.parentElement;
+    arrowParent.classList.toggle("showMenu");
   }
 
-  dcHover(e: any) {
-    console.log({ dcHover: e })
+  toggleSidebar() {
+    let sidebar = document.querySelector(".sidebar");
+    if (sidebar !== null) {
+      sidebar.classList.toggle("close");
+    }
   }
-  dcMouseUp(e: any) {
-    console.log({ dcMouseUp: e })
-  }
-  dcMouseDown(e: any) {
-    console.log({ dcMouseDown: e })
-  }
-  dcMouseLeave(e: any) {
-    console.log({ dcMouseLeave: e })
-  }
-  dcMouseEnter(e: any) {
-    console.log({ dcMouseEnter: e })
-  }
-  dcDoubleClick(e: any) {
-    console.log({ dcDoubleClick: e })
-  }
+
 }

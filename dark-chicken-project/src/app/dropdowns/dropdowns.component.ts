@@ -14,9 +14,11 @@ export class DropdownsComponent {
   @ViewChild('dropdown3') content3!: DcDropdownComponent;
 
 
-  dropdownValue:any = ""
+  treeVal: string = ''
+  listVal: string = ''
+  templateVal: string = ''
 
-  options=['option 1', 'option 2', 'option 3']
+  options = ['option 1', 'option 2', 'option 3']
 
   treeData: TreeModel[] = [
     {
@@ -158,38 +160,44 @@ export class DropdownsComponent {
 
 
 
-  test(e:any){
-    if(!e.item.subItems){
-      this.dropdownValue = e.item.title
+  onTreeClick(e: any) {
+    if (!e.item.subItems) {
+      this.treeVal = e.item.title
       this.content1.closeDropdown()
     }
   }
-  listData=[{
-    id:1,
-    name:'ergul 1',
-    icon:'bolt'
-  },{
-    id:2,
-    name:'ergul 2'
-  },{
-    id:3,
-    name:'ergul 3'
-  },{
-    id:4,
-    name:'ergul 4'
-  },{
-    id:5,
-    name:'ergul 5'
-  },{
-    id:6,
-    name:'ergul 6'
-  },{
-    id:7,
-    name:'ergul 7'
+  listData = [{
+    id: 1,
+    name: 'ergul 1',
+    icon: 'bolt'
+  }, {
+    id: 2,
+    name: 'ergul 2'
+  }, {
+    id: 3,
+    name: 'ergul 3'
+  }, {
+    id: 4,
+    name: 'ergul 4'
+  }, {
+    id: 5,
+    name: 'ergul 5'
+  }, {
+    id: 6,
+    name: 'ergul 6'
+  }, {
+    id: 7,
+    name: 'ergul 7'
   },]
-  optionSelect(e:any){
-      this.dropdownValue = e.listItem.name
-      this.content2.closeDropdown()
+  optionSelect(e: any) {
+    this.listVal = e.listItem.name
+    this.content2.closeDropdown()
+  }
+
+  onTemplateClick(e:any){
+    this.templateVal=e.textContent
+    this.content3.closeDropdown()
+
   }
 
 

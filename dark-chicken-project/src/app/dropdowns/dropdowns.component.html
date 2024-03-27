@@ -1,16 +1,15 @@
-<dcm-dropdown [closeOnOutsideClick]="true" [value]="dropdownValue" #dropdown1>
-     <dca-tree (dcClick)="test($event)" #dcmDropdownContent [treeData]="treeData"></dca-tree>
-     <!-- <dca-list (dcClick)="optionSelect($event)" displayExp="name" valueExp="id" [dataSource]="listData"></dca-list> -->
+<dcm-dropdown [closeOnOutsideClick]="true" [value]="treeVal" #dropdown1>
+     <dca-tree (dcClick)="onTreeClick($event)" #dcmDropdownContent [treeData]="treeData"></dca-tree>
 </dcm-dropdown>
 
-<dcm-dropdown [closeOnOutsideClick]="true" [value]="dropdownValue" #dropdown2>
+<dcm-dropdown [closeOnOutsideClick]="true" [value]="listVal" #dropdown2>
      <dca-list (dcClick)="optionSelect($event)" displayExp="name" valueExp="id" [dataSource]="listData"></dca-list>
 </dcm-dropdown>
 
-<dcm-dropdown [closeOnOutsideClick]="true" [value]="dropdownValue" #dropdown3>
+<dcm-dropdown [closeOnOutsideClick]="true" [value]="templateVal" #dropdown3>
      <ng-container *ngTemplateOutlet="testTemplate"></ng-container>
 </dcm-dropdown>
 
 <ng-template #testTemplate>
-     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, at.</p>
+     <p  (click)="onTemplateClick($event.currentTarget)">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, at.</p>
 </ng-template>

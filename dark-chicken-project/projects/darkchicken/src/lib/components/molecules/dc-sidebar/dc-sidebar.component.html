@@ -1,0 +1,12 @@
+<div class="sidebar" [ngClass]="{'close': isSidebarClosed}">
+  <div class="logo-details">
+    <img src="../../../../../assets/images/logo.png" class="logo"/>
+    <span class="logo_name">Dark Chicken</span>
+  </div>
+  <div class="arrow-menu" (click)="toggleSidebar()">
+    <dca-icon icon="circle-arrow-right" class="icon-class"></dca-icon>
+  </div>
+  <ul class="nav-links">
+      <dca-tree #dcmDropdownContent [treeData]="treeData" class="tree-view"></dca-tree>
+  </ul>
+</div>
