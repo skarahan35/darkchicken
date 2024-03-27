@@ -67,7 +67,7 @@
         <div class="content-lib-items">
           <dca-input [readonly]="true" class="dca-input content-lib-item" value="Dark Chicken"></dca-input>
           <dca-input [disabled]="true" class="dca-input content-lib-item" value="Awsome Inputs"></dca-input>
-          <dca-input [visible]="visibleInput" class="dca-input content-lib-item" value="This is a magic"></dca-input>
+          <dca-input [visible]="visibleInput" class="dca-input content-lib-item" value="This is a magic" label="testLabel"></dca-input>
         </div>
         <div class="content-item-description">
           Burası güvenli alan. Input alanlarında çok fazla kullanılmayan ama nadir
@@ -104,7 +104,7 @@
     <dcm-tab class="content-tab" [tab]="tabs" id="4">
       <div #tabContent [id]="tabs[0].tabId">
         <div class="content-lib-items">
-          <dca-input  label="Required" inputId="req" [validationRules]="[
+          <dca-input label="Required" inputId="req" [validationRules]="[
             {
               type: 'required',
               message: 'Required field'
