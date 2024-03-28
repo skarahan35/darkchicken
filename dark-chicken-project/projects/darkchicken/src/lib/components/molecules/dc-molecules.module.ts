@@ -4,13 +4,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { DcDropdownComponent } from './dc-dropdown/dc-dropdown.component';
 import { DCAtomModule } from '../atoms';
 import { DcTabComponent } from './dc-tab/dc-tab.component';
+import { DcSidebarComponent } from './dc-sidebar/dc-sidebar.component';
 
 
 
 @NgModule({
   declarations: [
     DcDropdownComponent,
-    DcTabComponent
+    DcTabComponent,
+    DcSidebarComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import { DcTabComponent } from './dc-tab/dc-tab.component';
   ],
   exports: [
     DcDropdownComponent,
-    DcTabComponent
+    DcTabComponent,
+    DcSidebarComponent
   ]
 })
 export class DCMoleculesModule { }

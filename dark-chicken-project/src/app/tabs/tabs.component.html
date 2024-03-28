@@ -9,7 +9,10 @@
         pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
         laborum.</div>
     <div #tabContent id="tab-2">
-        <dcm-tab [tab]="subTabs">
+        <dcm-tab [tab]="subTabs" (dcTabChange)="dcTabChange($event)" (dcTabClick)="dcTabClick($event)"
+        (dcTabHover)="dcTabHover($event)" (dcTabMouseDown)="dcTabMouseDown($event)" (dcTabMouseUp)="dcTabMouseUp($event)"
+        (dcTabMouseEnter)="dcTabMouseEnter($event)" (dcTabMouseLeave)="dcTabMouseLeave($event)"
+        (dcTabDoubleClick)="dcTabDoubleClick($event)">
             <div #tabContent id="sub-tab-1">
                 Vitae congue eu consequat ac felis. Non arcu risus quis varius quam quisque id diam vel. Nunc congue nisi vitae
                 suscipit. Risus in hendrerit gravida rutrum. Ac turpis egestas sed tempus urna et pharetra pharetra massa.

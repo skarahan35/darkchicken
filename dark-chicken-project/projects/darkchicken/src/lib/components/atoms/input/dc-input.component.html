@@ -7,10 +7,11 @@
         <!--Input-->
         <input [style.width]="this.width" [style.height]="this.height" #dcaInput [attr.id]='inputId'
             [attr.placeholder]="placeholder ? placeholder : null" [type]="type" [value]="value"
-            [ngClass]="{'clickedOnce':clickedOnce}" [class]="class" (focus)="onFocusIn($event)"
+            [ngClass]="{'clickedOnce':clickedOnce,'dca-input':true}" [class]="dcClass" (focus)="onFocusIn($event)"
             (focusout)="onFocusOut($event)" (change)="onValueChange($event)" [required]="isRequired"
             [attr.min]="minValue" [attr.max]="maxValue" [attr.minLength]="minLengthValue"
-            [attr.maxLength]="maxLengthValue" [attr.pattern]="pattern" autocomplete="off" [attr.readonly]="readonly" [disabled]="disabled">
+            [attr.maxLength]="maxLengthValue" [attr.pattern]="pattern" autocomplete="off" [readonly]="readonly"
+            [disabled]="disabled">
 
         <!--Invalid Icon & Message-->
         <div *ngIf="!isValid" class="dca-invalid-icon">

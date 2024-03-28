@@ -31,3 +31,7 @@ export interface TabModel{
     tabIcon?:Icons,
     isActive?:boolean
 }
+
+export interface nativeEvent{
+    nativeElement:Event
+}

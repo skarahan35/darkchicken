@@ -2,34 +2,40 @@
 .dca-bread-crumb {
   width: max-content;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   padding: 0.2em;
-  background: linear-gradient(
-    to right,
-    var(--dc-color-light-hover),
-    transparent
-  );
+  background: linear-gradient(to right,
+      var(--dc-color-light-hover),
+      transparent);
   border-radius: 4px;
 }
 /*#endregion*/
 
-.breadcrumb-item:not(:last-child) {  /*All items of the list but without last item*/
+.breadcrumb-item:not(:last-child) {
+  /*All items of the list but without last item*/
   margin-right: 0.2em;
 }
 
-.breadcrumb-item:last-child { /*Last item of the list*/
+.breadcrumb-item{
+  text-align: center;
+  vertical-align: bottom;
+}
+
+.breadcrumb-item:last-child {
+  /*Last item of the list*/
   font-weight: bold;
   margin-top: 0.2em
 }
 
-.breadcrumb-item a {    /*All items of the list*/ 
+.breadcrumb-item a {
+  /*All items of the list*/
   text-decoration: none;
   color: #333;
   position: relative;
 }
 
 /*#region With link items*/
-.breadcrumb-item:not(:last-child) .breadcrumb-item-with-link:hover { 
+.breadcrumb-item:not(:last-child) .breadcrumb-item-with-link:hover {
   color: var(--dc-color-primary);
   fill: var(--dc-color-primary);
   cursor: pointer;
@@ -51,33 +57,44 @@
   width: 100%;
   opacity: 1;
 }
+
 /*#endregion*/
 
-.dca-bread-crumb-item {  /*With icon*/
-  .dca-icon{
-    width: 1em;
-    height: 1em;
+.dca-bread-crumb-item {
+
+  /*With icon*/
+  .dca-icon {
+    svg {
+      width: 1em;
+      height: 1em;
+    }
 
     padding: 0.2em;
     display: inline-block;
     flex-shrink: 0;
   }
 }
-.breadcrumb-item-with-no-icon { /*With no icons*/
+
+.breadcrumb-item-with-no-icon {
+  /*With no icons*/
   margin-top: 0.2em;
 }
 
 /*#region Right arrow*/
 .dca-bread-crumb-chevron-right {
-  .dca-icon{
-    width: 0.5em;
-    height: 0.5em;
+  .dca-icon {
+    svg {
+      width: 0.5em;
+      height: 0.5em;
+      padding: 0.2em;
+
+    }
 
     fill: var(--dc-color-secondary);
-    padding: 0.2em;
     display: inline-block;
-  
+
     flex-shrink: 0;
   }
 }
+
 /*#endregion*/

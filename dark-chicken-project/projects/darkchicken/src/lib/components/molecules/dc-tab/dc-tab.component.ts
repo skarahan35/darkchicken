@@ -5,22 +5,21 @@ import { TabModel } from '../../../models/dc-models.model';
 @Component({
   selector: 'dcm-tab',
   templateUrl: './dc-tab.component.html',
-  styleUrls: ['./dc-tab.component.css', '../../../../../assets/style.css'],
-  encapsulation: ViewEncapsulation.None
 })
 export class DcTabComponent implements OnChanges, AfterViewInit {
 
   @Input() tab: TabModel[] | null = null
   @Input() id : string = 'tab'
+  @Input() dcClass:string =''
 
-  @Output() dcTabChange = new EventEmitter<Object>;
-  @Output() dcTabClick = new EventEmitter<Object>;
-  @Output() dcTabHover = new EventEmitter<Object>
-  @Output() dcTabMouseDown = new EventEmitter<Object>
-  @Output() dcTabMouseUp = new EventEmitter<Object>
-  @Output() dcTabMouseEnter = new EventEmitter<Object>
-  @Output() dcTabMouseLeave = new EventEmitter<Object>
-  @Output() dcTabDoubleClick = new EventEmitter<Object>
+  @Output() dcTabChange = new EventEmitter<Object>()
+  @Output() dcTabClick = new EventEmitter<Object>()
+  @Output() dcTabHover = new EventEmitter<Object>()
+  @Output() dcTabMouseDown = new EventEmitter<Object>()
+  @Output() dcTabMouseUp = new EventEmitter<Object>()
+  @Output() dcTabMouseEnter = new EventEmitter<Object>()
+  @Output() dcTabMouseLeave = new EventEmitter<Object>()
+  @Output() dcTabDoubleClick = new EventEmitter<Object>()
 
 
   @ContentChildren('tabContent') tabContents!: QueryList<ElementRef>

@@ -23,14 +23,30 @@
     margin-right: 0.5rem;
 }
 
-
-.chevron-icons{
-    svg{
-        width: 0.8rem;
-        height: 0.8rem;
-
-        fill: var(--dc-color-secondary);
+.tree-chevron-icons{
+    .chevron-icons{
+        svg{
+            width: 0.8rem;
+            height: 0.8rem;
+    
+            fill: var(--dc-color-secondary);
+        }
     }
+    
+    .chevron-icons{
+        position: absolute;
+        margin-top: 0.4rem;
+        margin-left: 0.1rem;
+    }
+}
+
+
+.dca-tree-parent-item{
+    padding-left: 1rem;
+}
+
+.dca-tree-icon{
+    padding-left:0.5rem;
 }
 
 .dca-tree-item:hover{

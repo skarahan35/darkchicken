@@ -4,8 +4,7 @@ import { DCService } from '../../../services';
 
 @Component({
   selector: 'dcm-dropdown',
-  templateUrl: './dc-dropdown.component.html',
-  styleUrls: ['./dc-dropdown.component.css', '../../../../../assets/style.css']
+  templateUrl: './dc-dropdown.component.html'
 })
 export class DcDropdownComponent {
 
@@ -14,6 +13,8 @@ export class DcDropdownComponent {
   @Input() closeOnOutsideClick: boolean = true
   @Input() disabled: boolean | null = null
   @Input() readonly: boolean | null = null
+  @Input() visible: boolean = true
+  @Input() dcClass: string = ''
 
   @Output() dcClick = new EventEmitter<Object>
   @Output() dcExpanding = new EventEmitter<Object>
@@ -24,7 +25,6 @@ export class DcDropdownComponent {
 
   constructor(private elementRef: ElementRef, private dcService: DCService) {
     this.id = this.dcService.generateUniqueId()
-    console.log(this.id)
   }
 
 
@@ -42,22 +42,23 @@ export class DcDropdownComponent {
   focusInput() {
     const inputElement = document.getElementById(this.id);
     if (inputElement) {
-      debugger
       inputElement.focus();
     }
   }
 
   onDropdownFocusIn() {
 
-    this.dcClick.emit({ elementRef: this.elementRef })
-    if (!this.disabled) {
-      this.dcExpanding.emit({ elementRef: this.elementRef })
+    this.dcClick.emit({ nativeElemet: this.elementRef.nativeElement })
+    if (!this.disabled && this.isMenuShow == false) {
+      this.dcExpanding.emit({ nativeElemet: this.elementRef.nativeElement })
       this.isMenuShow = true
     }
   }
 
   public closeDropdown() {
-    this.dcCollapsing.emit({ elementRef: this.elementRef })
-    this.isMenuShow = false
+    if(this.isMenuShow == true){
+      this.dcCollapsing.emit({ nativeElemet: this.elementRef.nativeElement })
+      this.isMenuShow = false
+    }
   }
 }
