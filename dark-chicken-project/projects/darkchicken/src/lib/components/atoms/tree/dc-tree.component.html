@@ -1,8 +1,8 @@
-<ul [class]="class" [ngClass]="{ 'hidden' : !visible, 'dca-tree':true}">
+<ul [class]="dcClass" [ngClass]="{ 'hidden' : !visible, 'dca-tree':true}">
     <li class="dca-tree-item" *ngFor="let node of treeData">
         <dca-icon (dcClick)="changeOpen(node,$event)" *ngIf="node.subItems"
         [icon]="node.expanded ? 'chevron-down' : 'chevron-right'"
-        class="chevron-icons"></dca-icon>
+        class="tree-chevron-icons" dcClass="chevron-icons"></dca-icon>
         <div (click)="changeOpen(node, $event)"
             (mouseover)="onHover(node,$event)"
             (mousedown)="onMouseDown(node,$event)"

@@ -106,6 +106,8 @@ export class InputsComponent implements OnInit {
   }
   dcFocusIn(e: any) {
     console.log({"dcFocusIn": e});
+    e.nativeElement.currentTarget.value = e.currentValue * 2
+    debugger
   }
   dcValidating(e: any) {
     console.log({"dcValidating": e});

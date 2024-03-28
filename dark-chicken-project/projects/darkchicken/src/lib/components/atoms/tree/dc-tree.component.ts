@@ -3,14 +3,13 @@ import { TreeModel } from '../../../models/dc-models.model';
 
 @Component({
   selector: 'dca-tree',
-  templateUrl: './dc-tree.component.html',
-  styleUrls: ['../../../../../assets/style.css', './dc-tree.component.css']
+  templateUrl: './dc-tree.component.html'
 })
 export class DcTreeComponent implements OnChanges {
 
   @Input() treeData!: TreeModel[] | any[];
   @Input() visible: boolean = true
-  @Input() class: string = ''
+  @Input() dcClass: string = ''
   @Input() expandOnlyIcon: boolean = false
 
   @Output() dcExpanding = new EventEmitter<Object>();

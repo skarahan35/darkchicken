@@ -1,13 +1,13 @@
-<dcm-dropdown  [disabled]="false" [visible]="true" (dcClick)="dropdownClick($event)" (dcCollapsing)="dropdownCollapsing($event)"
-     (dcExpanding)="dropdownExpanding($event)" [closeOnOutsideClick]="false" [value]="treeVal" #dropdown1>
+<dcm-dropdown [disabled]="false" [visible]="true" (dcClick)="dropdownClick($event)" (dcCollapsing)="dropdownCollapsing($event)"
+     (dcExpanding)="dropdownExpanding($event)"  [value]="treeVal" #dropdown1>
      <dca-tree [expandOnlyIcon]="true" (dcClick)="onTreeClickOnlyIcon($event)" #dcmDropdownContent [treeData]="treeData"></dca-tree>
 </dcm-dropdown>
 <dcm-dropdown  [disabled]="false" [visible]="true" (dcClick)="dropdownClick($event)" (dcCollapsing)="dropdownCollapsing($event)"
-     (dcExpanding)="dropdownExpanding($event)" [closeOnOutsideClick]="false" [value]="treeVal" #dropdown4>
+     (dcExpanding)="dropdownExpanding($event)"  [value]="treeVal" #dropdown4>
      <dca-tree [expandOnlyIcon]="false" (dcClick)="onTreeClick($event)" #dcmDropdownContent [treeData]="treeData"></dca-tree>
 </dcm-dropdown>
 
-<dcm-dropdown [closeOnOutsideClick]="true" [value]="listVal" #dropdown2>
+<dcm-dropdown [closeOnOutsideClick]="true"[closeOnOutsideClick]="false"  [value]="listVal" #dropdown2>
      <dca-list (dcClick)="optionSelect($event)" displayExp="name" valueExp="id" [dataSource]="listData"></dca-list>
 </dcm-dropdown>
 

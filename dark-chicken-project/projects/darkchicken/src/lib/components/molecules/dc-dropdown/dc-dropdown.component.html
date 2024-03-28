@@ -1,8 +1,8 @@
-<div [class]="class" [ngClass]="{ 'hidden' : !visible, 'dcm-dropdown': true}" >
+<div [class]="dcClass" [ngClass]="{ 'hidden' : !visible, 'dcm-dropdown': true}" >
     <dca-input [disabled]="disabled" [readonly]="readonly" [value]="value" [placeholder]="placeholder" [inputId]="id"
-        (dcFocusIn)="onDropdownFocusIn()" class="dca-input dcm-dropdown-input">
+        (dcFocusIn)="onDropdownFocusIn()" class="dcm-dropdown-input">
         <dca-icon (dcClick)="isMenuShow ? closeDropdown() : focusInput()" [ngClass]="{'disable': disabled}"
-            class="dcm-dropdown-icon" [icon]="isMenuShow==true ? 'chevron-left' : 'chevron-down'"></dca-icon>
+            dcClass="dcm-dropdown-icon" [icon]="isMenuShow==true ? 'chevron-left' : 'chevron-down'"></dca-icon>
     </dca-input>
     <span class="dcm-dropdown-content" *ngIf="isMenuShow">
         <ng-content ></ng-content>

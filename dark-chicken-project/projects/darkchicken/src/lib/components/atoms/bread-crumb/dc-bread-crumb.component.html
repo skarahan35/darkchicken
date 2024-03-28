@@ -1,4 +1,4 @@
-<div #breadcrumbContainer [class]="class" [ngClass]="{'hidden' : !visible, 'dca-bread-crumb':true}">
+<div #breadcrumbContainer [class]="dcClass" [ngClass]="{'hidden' : !visible, 'dca-bread-crumb':true}">
   <ng-container *ngFor="let crumb of crumbList; let last = last;" >
     <div class="breadcrumb-item" >
       <a (click)="onClick($event,breadcrumbContainer, crumb)" (mouseover)="onHover($event,breadcrumbContainer, crumb)"

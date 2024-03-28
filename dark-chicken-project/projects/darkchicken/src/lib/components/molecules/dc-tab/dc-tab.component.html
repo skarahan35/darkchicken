@@ -1,4 +1,4 @@
-<div [id]="id" class="tab">
+<div [id]="id" [class]="dcClass" [ngClass]="{'tab':true}">
     <input class="tab-input" *ngFor="let tabItem of tab" type="radio" [id]="tabItem.tabId + id" name="tab-control"
         [checked]="activeTab === tabItem" (change)="onTabChange($event,tabItem)">
     <ul class="tab-list">

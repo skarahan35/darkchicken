@@ -5,7 +5,6 @@ import { InputType } from '../../../types/dc-types';
 @Component({
   selector: 'dca-input',
   templateUrl: 'dc-input.component.html',
-  styleUrls: ['../../../../../assets/style.css', 'dc-input.component.css'],
 })
 export class DCInputComponent implements AfterViewInit {
   //#region Inputs
@@ -19,7 +18,7 @@ export class DCInputComponent implements AfterViewInit {
   @Input() readonly: boolean | null = null;
   @Input() disabled: boolean | null = null;
   @Input() visible: boolean = true;
-  @Input() class: string = 'dca-input';
+  @Input() dcClass: string = '';
   @Input() inputId: string | null = null
   //#endregion
 

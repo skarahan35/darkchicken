@@ -1,4 +1,20 @@
+/*#region Atom Components CSS*/
 @import url('../assets/fonts/IBM_Plex_Sans/IBM-Plex-Sans.css');
+@import url('../src/lib/components/atoms/bread-crumb/dc-bread-crumb.component.css');
+@import url('../src/lib/components/atoms/button/dc-button.component.css');
+@import url('../src/lib/components/atoms/checkbox/dc-checkbox.component.css');
+@import url('../src/lib/components/atoms/icon/dc-icon.component.css');
+@import url('../src/lib/components/atoms/input/dc-input.component.css');
+@import url('../src/lib/components/atoms/list/dc-list.component.css');
+@import url('../src/lib/components/atoms/spinner/dc-spinner.component.css');
+@import url('../src/lib/components/atoms/tree/dc-tree.component.css');
+/*#endregion*/
+
+/*#region Molecule Components CSS*/
+@import url('../src/lib/components/molecules/dc-dropdown/dc-dropdown.component.css');
+@import url('../src/lib/components/molecules/dc-tab/dc-tab.component.css');
+
+/*#endregio*/
 
 *{
     font-family: 'IBMPlexxSans', sans-serif;

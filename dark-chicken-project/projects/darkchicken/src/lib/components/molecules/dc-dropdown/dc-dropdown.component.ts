@@ -4,8 +4,7 @@ import { DCService } from '../../../services';
 
 @Component({
   selector: 'dcm-dropdown',
-  templateUrl: './dc-dropdown.component.html',
-  styleUrls: ['./dc-dropdown.component.css', '../../../../../assets/style.css']
+  templateUrl: './dc-dropdown.component.html'
 })
 export class DcDropdownComponent {
 
@@ -15,7 +14,7 @@ export class DcDropdownComponent {
   @Input() disabled: boolean | null = null
   @Input() readonly: boolean | null = null
   @Input() visible: boolean = true
-  @Input() class: string = ''
+  @Input() dcClass: string = ''
 
   @Output() dcClick = new EventEmitter<Object>
   @Output() dcExpanding = new EventEmitter<Object>

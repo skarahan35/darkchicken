@@ -2,16 +2,14 @@ import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angu
 
 @Component({
   selector: 'dca-list',
-  templateUrl: './dc-list.component.html',
-  styleUrls: ['./dc-list.component.css','../../../../../assets/style.css'],
-  encapsulation: ViewEncapsulation.None
+  templateUrl: './dc-list.component.html'
 })
 export class DcListComponent {
   @Input() dataSource: any[] = []
   @Input() valueExp: string | null = null
   @Input() displayExp: string | null = null
   @Input() visible: boolean = true
-  @Input() class: string = ''
+  @Input() dcClass: string = ''
 
 
   @Output() dcClick = new EventEmitter<Object>()
@@ -25,43 +23,43 @@ export class DcListComponent {
   
 //#region onDoubleClick Event
 onDoubleClick(e: Event, item:any, dataField:string, value:any) {
-  this.dcDoubleClick.emit({'listItem':item, 'nativeElement': e, [dataField] : value })
+  this.dcDoubleClick.emit({listItem:item, nativeElement: e, [dataField] : value })
 }
 //#endregion
 
 //#region onClick Event
 onClick(e: Event, item:any, dataField:string, value:any) {
-  this.dcClick.emit({'listItem':item, 'nativeElement': e, [dataField] : value })
+  this.dcClick.emit({listItem:item, nativeElement: e, [dataField] : value })
 }
 //#endregion
 
 //#region onHover Event
 onHover(e: Event, item:any, dataField:string, value:any) {
-  this.dcHover.emit({'listItem':item, 'nativeElement': e, [dataField] : value })
+  this.dcHover.emit({listItem:item, nativeElement: e, [dataField] : value })
 }
 //#endregion
 
 //#region onMouseDown Event
 onMouseDown(e: Event, item:any, dataField:string, value:any) {
-  this.dcMouseDown.emit({'listItem':item, 'nativeElement': e, [dataField] : value })
+  this.dcMouseDown.emit({listItem:item, nativeElement: e, [dataField] : value })
 }
 //#endregion
 
 //#region onMouseUp Event
 onMouseUp(e: Event, item:any, dataField:string, value:any) {
-  this.dcMouseUp.emit({'listItem':item, 'nativeElement': e, [dataField] : value })
+  this.dcMouseUp.emit({listItem:item, nativeElement: e, [dataField] : value })
 }
 //#endregion
 
 //#region onMouseEnter Event
 onMouseEnter(e: Event, item:any, dataField:string, value:any) {
-  this.dcMouseEnter.emit({'listItem':item, 'nativeElement': e, [dataField] : value })
+  this.dcMouseEnter.emit({listItem:item, nativeElement: e, [dataField] : value })
 }
 //#endregion
 
 //#region onMouseOut Event
 onMouseLeave(e: Event, item:any, dataField:string, value:any) {
-  this.dcMouseLeave.emit({'listItem':item, 'nativeElement': e, [dataField] : value })
+  this.dcMouseLeave.emit({listItem:item, nativeElement: e, [dataField] : value })
 }
 //#endregion
 

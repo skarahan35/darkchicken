@@ -1,6 +1,3 @@
-<!-- <dca-button [height]="'1rem'" buttonText="HTML" class="dca-btn dca-btn-outline-primary"></dca-button> -->
-
-
 <div class="content">
   <h1>Darck Chicken Atomic Input</h1>
   <!--#region No Decoration-->
@@ -9,7 +6,7 @@
     <dcm-tab class="content-tab" [tab]="tabs" id="1">
       <div #tabContent [id]="tabs[0].tabId">
         <div class="content-lib-items">
-          <dca-input class="dca-input content-lib-item"> </dca-input>
+          <dca-input class="content-lib-item"> </dca-input>
         </div>
         <div class="content-item-description">
           Herhangi bir dekorasyon kullanmadan Dark Chicken Input'u kullanmak mümkün.
@@ -38,7 +35,7 @@
     <dcm-tab class="content-tab" [tab]="tabs" id="2">
       <div #tabContent [id]="tabs[0].tabId">
         <div class="content-lib-items">
-          <dca-input class="dca-input content-lib-item" label="Label" placeholder="Placeholder"
+          <dca-input class="content-lib-item" label="Label" placeholder="Placeholder"
             inputId="id-01"></dca-input>
         </div>
         <div class="content-item-description">
@@ -65,9 +62,9 @@
     <dcm-tab class="content-tab" [tab]="tabs" id="3">
       <div #tabContent [id]="tabs[0].tabId">
         <div class="content-lib-items">
-          <dca-input [readonly]="true" class="dca-input content-lib-item" value="Dark Chicken"></dca-input>
-          <dca-input [disabled]="true" class="dca-input content-lib-item" value="Awsome Inputs"></dca-input>
-          <dca-input [visible]="visibleInput" class="dca-input content-lib-item" value="This is a magic" label="testLabel"></dca-input>
+          <dca-input [readonly]="true" class="content-lib-item" value="Dark Chicken"></dca-input>
+          <dca-input [disabled]="true" class="content-lib-item" value="Awsome Inputs"></dca-input>
+          <dca-input [visible]="visibleInput" class="content-lib-item" value="This is a magic" label="testLabel"></dca-input>
         </div>
         <div class="content-item-description">
           Burası güvenli alan. Input alanlarında çok fazla kullanılmayan ama nadir
@@ -109,7 +106,7 @@
               type: 'required',
               message: 'Required field'
             }
-          ]" class="dca-input content-lib-item">
+          ]" class="content-lib-item">
           </dca-input>
           <dca-input label="Min Value" inputId="min" type="number" [validationRules]="[
             {
@@ -121,7 +118,7 @@
               type: 'required',
               message: 'This field value min 5'
             }
-          ]" class="dca-input content-lib-item">
+          ]" class="content-lib-item">
           </dca-input>
           <dca-input label="Max Value" inputId="max" type="number" [value]="18" [validationRules]="[
             {
@@ -133,7 +130,7 @@
               type: 'required',
               message: 'This field value max 10'
             }
-          ]" class="dca-input content-lib-item">
+          ]" class="content-lib-item">
           </dca-input>
           <dca-input label="Min Length" inputId="minLength" [validationRules]="[
             { type: 'minLength', value: 5, message: 'This field min length 5' },
@@ -141,7 +138,7 @@
               type: 'required',
               message: 'This field min length 5'
             }
-          ]" class="dca-input content-lib-item">
+          ]" class="content-lib-item">
           </dca-input>
           <dca-input label="Max Length" inputId="maxLength" placeholder="Try max length" [validationRules]="[
             { type: 'maxLength', value: 3, message: 'This field max length 3' },
@@ -149,7 +146,7 @@
               type: 'required',
               message: 'This field length max 3'
             }
-          ]" class="dca-input content-lib-item">
+          ]" class="content-lib-item">
           </dca-input>
           <dca-input label="RegEx" inputId="regEx" [validationRules]="[
             {
@@ -161,7 +158,7 @@
               type: 'required',
               message: 'Required field'
             }
-          ]" class="dca-input content-lib-item">
+          ]" class="content-lib-item">
           </dca-input>
         </div>
         <div class="content-item-description">
@@ -188,7 +185,7 @@
     <dcm-tab class="content-tab" [tab]="tabs" id="5">
       <div #tabContent [id]="tabs[0].tabId">
         <div class="content-lib-items">
-          <dca-input class="dca-input content-lib-item" label="Coffe ?" placeholder="It can be hot" inputId="id-02"
+          <dca-input class="content-lib-item" label="Coffe ?" placeholder="It can be hot" inputId="id-02"
             (dcValueChanged)="dcValueChanged($event)" (dcFocusOut)="dcFocusOut($event)" (dcFocusIn)="dcFocusIn($event)"
             (dcValidating)="dcValidating($event)" (dcValidated)="dcValidated($event)">
             <dca-icon icon="coffee"></dca-icon>
@@ -228,7 +225,7 @@
     <dcm-tab class="content-tab" [tab]="tabs">
       <div #tabContent [id]="tabs[0].tabId">
         <div class="content-lib-items">
-          <dca-input class="dca-input content-lib-item" label="Dark Chicken"
+          <dca-input class="content-lib-item" label="Dark Chicken"
             placeholder="Here's a really tiny, tiny, sweet chicken" inputId="id-04" width='300px' height="100px">
             <dca-icon icon="egg"></dca-icon>
           </dca-input>
