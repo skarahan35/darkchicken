@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TabModel } from 'projects/darkchicken/src/lib/models/dc-models.model';
+import { listHTML, listTS } from 'src/assets/codes/list';
 
 @Component({
   selector: 'app-lists',
@@ -6,49 +8,71 @@ import { Component } from '@angular/core';
   styleUrls: ['./lists.component.css']
 })
 export class ListsComponent {
-  listData=[{
-    id:1,
-    name:'ergul 1',
-    icon:'bolt'
-  },{
-    id:2,
-    name:'ergul 2'
-  },{
-    id:3,
-    name:'ergul 3'
-  },{
-    id:4,
-    name:'ergul 4'
-  },{
-    id:5,
-    name:'ergul 5'
-  },{
-    id:6,
-    name:'ergul 6'
-  },{
-    id:7,
-    name:'ergul 7'
-  },]
+  tabs: TabModel[] = [{
+    tabId: 'des',
+    tabTitle: 'Description'
+  },
+  {
+    tabId: 'code',
+    tabTitle: 'Code'
+  },
+  ]
+  codeTabs: TabModel[] = [
+    {
+      tabId: 'html',
+      tabTitle: 'HTML',
+      tabIcon: 'html5',
+    },
+    {
+      tabId: 'ts',
+      tabTitle: 'TS',
+      tabIcon: 'angular',
+    }
+  ]
+  listTS = listTS
+  listHTML = listHTML
 
-  dcListClick(e:any){
-    console.log({ "dcListClick": e })
+  listData = [{
+    id: 1,
+    name: 'Nietzsche',
+    icon: 'bolt'
+  }, {
+    id: 2,
+    name: 'Alan Turing',
+    icon: 'computer'
+  }, {
+    id: 3,
+    name: 'Cicero',
+    icon: 'scale-balanced'
+  }, {
+    id: 4,
+    name: 'Ada Lovelace',
+    icon: 'spa'
+  }, {
+    id: 5,
+    name: 'Dostoevskiy',
+    icon: 'book'
+  }]
+
+  dcListClick(e: any) {
+    console.log({ dcListClick: e })
   }
-  dcListHover(e:any){
-    console.log({ "dcListHover": e })
+  dcListHover(e: any) {
+    console.log({ dcListHover: e })
   }
-  dcListDoubleClick(e:any){
-    console.log({ "dcListDoubleClick": e })
+  dcListDoubleClick(e: any) {
+    console.log({ dcListDoubleClick: e })
   }
-  dcListMouseDown(e:any){
-    console.log({ "dcListMouseDown": e })
+  dcListMouseDown(e: any) {
+    console.log({ dcListMouseDown: e })
   }
-  dcListMouseEnter(e:any){
-    console.log({ "dcListMouseEnter": e })
+  dcListMouseEnter(e: any) {
+    console.log({ dcListMouseEnter: e })
   }
-  dcListMouseLeave(e:any){
-    console.log({ "dcListMouseLeave": e })
+  dcListMouseLeave(e: any) {
+    console.log({ dcListMouseLeave: e })
   }
-  dcListMouseUp(e:any){
-    console.log({ "dcListMouseUp": e })
+  dcListMouseUp(e: any) {
+    console.log({ dcListMouseUp: e })
   }
 }

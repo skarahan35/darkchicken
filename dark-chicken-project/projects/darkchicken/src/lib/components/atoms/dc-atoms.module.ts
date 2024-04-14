@@ -9,6 +9,7 @@ import { DCBreadCrumbComponent } from './bread-crumb/dc-bread-crumb.component';
 import { DCSpinnerComponent } from './spinner/dc-spinner.component';
 import { DcTreeComponent } from './tree/dc-tree.component';
 import { DcListComponent } from './list/dc-list.component';
+import { DcSidebarTreeComponent } from './sidebar-tree/dc-sidebar-tree.component';
 
 
 
@@ -21,7 +22,8 @@ import { DcListComponent } from './list/dc-list.component';
     DCBreadCrumbComponent,
     DCSpinnerComponent,
     DcTreeComponent,
-    DcListComponent
+    DcListComponent,
+    DcSidebarTreeComponent
   ],
   imports: [
     CommonModule,
@@ -35,7 +37,8 @@ import { DcListComponent } from './list/dc-list.component';
     DCBreadCrumbComponent,
     DCSpinnerComponent,
     DcTreeComponent,
-    DcListComponent
+    DcListComponent,
+    DcSidebarTreeComponent
   ]
 })
 export class DCAtomModule { }

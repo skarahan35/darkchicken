@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SidebarDataService } from '../../../services/sidebar-data.service';
-import { TreeModel } from '../../../models/dc-models.model';
+import { SidebarTreeModel} from '../../../models/dc-models.model';
 
 @Component({
   selector: 'dcm-sidebar',
@@ -12,9 +12,10 @@ export class DcSidebarComponent implements OnInit {
   sidebarData: any[]  = [];
   isSidebarClosed: boolean = false;
 
-  treeData: TreeModel[] = [
+  treeData: SidebarTreeModel[] = [
     {
       title: 'Parent 1',
+      link: 'https://www.google.com',
       subItems: [
         {
           title: 'Child 1',

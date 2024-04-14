@@ -1,3 +1,46 @@
-<dca-list (dcClick)="dcListClick($event)" (dcHover)="dcListHover($event)" (dcDoubleClick)="dcListDoubleClick($event)"
-    (dcMouseDown)="dcListMouseDown($event)" (dcMouseEnter)="dcListMouseEnter($event)" (dcMouseLeave)="dcListMouseLeave($event)"
-    (dcMouseUp)="dcListMouseUp($event)" displayExp="name" valueExp="name" [dataSource]="listData" ></dca-list>
+<div class="content">
+    <h1>Dark Chicken Atomic List</h1>
+    <h2> Using of the List</h2>
+    <div class="content-item">
+        <dcm-tab class="content-tab" [tab]="tabs" id="1">
+            <div #tabContent [id]="tabs[0].tabId">
+                <div class="content-lib-items">
+                    <dca-list (dcClick)="dcListClick($event)"
+                        (dcHover)="dcListHover($event)"
+                        (dcDoubleClick)="dcListDoubleClick($event)"
+                        (dcMouseDown)="dcListMouseDown($event)"
+                        (dcMouseEnter)="dcListMouseEnter($event)"
+                        (dcMouseLeave)="dcListMouseLeave($event)"
+                        (dcMouseUp)="dcListMouseUp($event)" displayExp="name"
+                        valueExp="id"
+                        [dataSource]="listData"></dca-list>
+                </div>
+                <div class="content-item-description">
+                    İşte karşınızda oldukça basit kullanımlı bir list.
+                    İstediğimiz liste içeriğini oluşturmak için öncellikle
+                    'dataSource' içerisinde listelenmesini istediğimiz
+                    elemanları veriyoruz. Ardından bu listeleme elamanlarından
+                    hangilerinin ekran gözükeceği hangilerinin value olarak
+                    arkaplanda saklanacağını söylememiz yeterli. Vee işte
+                    karşınızda harika bir list. Bu list öğleri için verdiğimiz
+                    eventler diğer atomic elementlere oldukça bennzer.
+                    Verdiğimiz eventlerin çıktılarını tarayıcınızın konsolunu
+                    açarak ulaşabilirsiniz. Aynı zamanda hazırladığınız listeyi
+                    istediğiniz zaman görünmez yapabilmeniz için 'visible'
+                    özelliğini de sizlere sunuyoruz.
+                </div>
+            </div>
+            <div #tabContent [id]="tabs[1].tabId">
+                <dcm-tab [tab]="codeTabs" id="2">
+
+                    <pre #tabContent [id]="codeTabs[0].tabId">
+                <code class="language-html">{{listHTML}}</code></pre>
+                
+                <pre #tabContent [id]="codeTabs[1].tabId">
+                    <code class="language-ts">{{listTS}}</code></pre>
+                </dcm-tab>
+            </div>
+        </dcm-tab>
+    </div>
+
+</div>

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { inputEventCodeHtml, inputEventCodeTs, inputSizeCode, labelPlaceholdercode, noDecorationCode, passiveCodeHtml, passiveCodeTs, validationCode, validationModelCode } from 'src/assets/codes/input';
 import { InputValidationRulesModel, TabModel } from 'projects/darkchicken/src/lib/models/dc-models.model';
 import { LanguageService } from 'projects/darkchicken/src/lib/services/language.service';
+import { ColorService } from '../color.service';
 
 @Component({
   selector: 'app-inputs',
@@ -10,7 +11,7 @@ import { LanguageService } from 'projects/darkchicken/src/lib/services/language.
 })
 export class InputsComponent implements OnInit {
 
-  constructor(private testService: LanguageService) { }
+  constructor(private testService: LanguageService, private colorService:ColorService) { }
 
   validationModel = validationModelCode
 
@@ -37,14 +38,6 @@ export class InputsComponent implements OnInit {
     }
   ]
 
-
-  codes: any = {
-    'readonly': {
-      'HTML': true,
-      'TS': false
-    }
-  }
-
   noDecorationCode = noDecorationCode
   labelPlaceholdercode = labelPlaceholdercode
   passiveCodeHtml = passiveCodeHtml
@@ -69,12 +62,12 @@ export class InputsComponent implements OnInit {
     },
     {
       type: 'minLength',
-      value: 30,
+      value: 3,
       message: "En az 3 karakter içermelidir."
     },
     {
       type: 'maxLength',
-      value: 50,
+      value: 10,
       message: "En fazla 10 karakter içerebilir."
     },
 
@@ -106,8 +99,6 @@ export class InputsComponent implements OnInit {
   }
   dcFocusIn(e: any) {
     console.log({"dcFocusIn": e});
-    e.nativeElement.currentTarget.value = e.currentValue * 2
-    debugger
   }
   dcValidating(e: any) {
     console.log({"dcValidating": e});
@@ -116,4 +107,28 @@ export class InputsComponent implements OnInit {
     console.log({"dcValidated": e});
   }
 
+  isIn=false
+  activeClass=''
+  activetagName=''
+  @HostListener('window:mousedown', ['$event'])
+  test(event:any){
+    if(this.isIn){
+      if(event.srcElement.tagName == 'path' || 'svg'){
+        event.srcElement.style.fill=this.colorService.generatePastelColor()
+      }
+      
+      event.srcElement.style.backgroundColor=this.colorService.generatePastelColor()
+      event.srcElement.style.boxShadow= '0 4px 30px rgba(0, 0, 0, 0.1)'
+      this.activeClass = event.srcElement.classList[0]
+      this.activetagName = event.srcElement.tagName
+      debugger
+    }
+  }
+
+  onMouseEnter(){
+    this.isIn=true
+  }
+  onMouseLeave(){
+    this.isIn = false
+  }
 }

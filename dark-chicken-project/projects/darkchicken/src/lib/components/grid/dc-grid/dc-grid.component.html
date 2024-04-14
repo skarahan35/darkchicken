@@ -1,0 +1,23 @@
+<div class="dc-grid">
+    <div class="grid-header">
+        <div class="grid-header-row">
+            <ng-container *ngIf="headerTemplate; else noHeaderTemplate"
+                [ngTemplateOutlet]="headerTemplate"></ng-container>
+            <ng-template #noHeaderTemplate>
+                <grid-header-cell *ngFor="let column of columns">{{column}}</grid-header-cell>
+            </ng-template>
+        </div>
+    </div>
+    <div class="grid-body">
+
+        <ng-container *ngIf="bodyCellTemplate; else noBodyCellTemplate"
+            [ngTemplateOutlet]="bodyCellTemplate"></ng-container>
+        <ng-template #noBodyCellTemplate>
+            <grid-body-row  *ngFor="let data of dataSource">
+                <grid-body-cell *ngFor="let column of columns">{{ data[column] }}</grid-body-cell>
+            </grid-body-row>
+
+        </ng-template>
+
+    </div>
+</div>

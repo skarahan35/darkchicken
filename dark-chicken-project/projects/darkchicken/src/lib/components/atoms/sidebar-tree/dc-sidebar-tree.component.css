@@ -1,0 +1,62 @@
+.dca-sidebar-tree{
+    list-style-type: none;
+    display: inline-block;
+    padding-inline-start: inherit;
+    width: max-content;
+}
+
+.dca-sidebar-tree-parent-item {
+    display: flex;
+    align-items: center;
+    background-color: var(--dc-color-light);
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.dca-sidebar-tree-parent-item:hover {
+    background-color: var(--dc-color-light-hover);
+}
+
+.dca-sidebar-tree-parent-item dca-icon {
+    margin-right: 0.5rem;
+}
+
+.tree-chevron-icons{
+    .chevron-icons{
+        svg{
+            width: 0.8rem;
+            height: 0.8rem;
+    
+            fill: var(--dc-color-secondary);
+        }
+    }
+    
+    .chevron-icons{
+        position: absolute;
+        margin-top: 0.4rem;
+        margin-left: 0.1rem;
+    }
+}
+
+
+.dca-sidebar-tree-parent-item{
+    padding-left: 1rem;
+}
+
+.dca-sidebar-tree-icon{
+    padding-left:0.5rem;
+}
+
+.dca-sidebar-tree-item:hover{
+    .chevron-icons{
+        svg{
+            fill: var(--dc-color-secondary-hover);
+        }
+    }
+}
+
+.dca-sidebar-tree-sub-item{
+    padding-inline-start: 1rem;
+}

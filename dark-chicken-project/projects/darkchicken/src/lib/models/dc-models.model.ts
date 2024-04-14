@@ -9,15 +9,22 @@ export interface InputValidationRulesModel {
 }
 
 export interface BreadCrumbModel{
-    label:string,
-    link:string,
-    icon:Icons
+    label?:string,
+    link?:string,
+    icon?:Icons
 }
 
 export interface TreeModel {
     title?:string,
     icon?:Icons,
     subItems?: TreeModel[],
+}
+
+export interface SidebarTreeModel {
+    title?:string,
+    icon?:Icons,
+    subItems?: SidebarTreeModel[],
+    link?: string
 }
 
 export interface ListModel{

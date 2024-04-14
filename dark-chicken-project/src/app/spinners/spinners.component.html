@@ -1,12 +1,112 @@
-<div class="spinner-container">
-    <dca-spinner [active]="active"></dca-spinner>
-    <dca-spinner dcClass="dca-spinner-secondary"></dca-spinner>
-    <dca-spinner [active]="active" dcClass="dca-spinner-success"></dca-spinner>
-    <dca-spinner dcClass="dca-spinner-danger"></dca-spinner>
-    <dca-spinner [active]="active" dcClass="dca-spinner-warning"></dca-spinner>
-    <dca-spinner dcClass="dca-spinner-info"></dca-spinner>
-    <dca-spinner [active]="active" dcClass="dca-spinner-light"></dca-spinner>
-    <dca-spinner dcClass="dca-spinner-dark"></dca-spinner>
+<div class="content">
+  <h1>Dark Chicken Atomic Spinner</h1>
+
+  <h2> No Decoration</h2>
+  <div class="content-item">
+    <dcm-tab class="content-tab" [tab]="tabs" id="1">
+      <div #tabContent [id]="tabs[0].tabId">
+        <div class="content-lib-items">
+          <dca-spinner class="content-lib-item"></dca-spinner>
+        </div>
+        <div class="content-item-description">
+          Biz geliştiriciler her zaman en optimal senaryo üzerinden hareket
+          ederiz, fakat olası sorunları da düşünmememiz gereklidir. Burada hemen
+          ilk aklımıza gelen spinner olmuştur. Herhangi bir işlevin
+          gerçekleşmesi zaman alacağını düşündüğümüzde spinner'ı aktif sayfa
+          üzerinde gösterip kullanıcılara işleminin arkaplanda sürdüğünü
+          belirtiriz. Bu derece önemli ve bir o kadar basit bir işlevi olan
+          spinner için aynı kalıplarla yaklaştık. Çok önemli bir bakışla
+          olabildiğince basit bir kullanım sağlamaya çalıştık. İşte karşınızda
+          hiç bir dekorasyon kullanılmadan oluşturulan spinner.
+        </div>
+      </div>
+
+      <pre #tabContent [id]="tabs[1].tabId">
+      <code class="language-html">
+        {{noDecorationSpinner}}
+      </code> </pre>
+    </dcm-tab>
   </div>
-  <br>
-  <dca-button class="dca-btn dca-btn-primary" buttonText="SPINNER VISIBLE" (dcClick)="click($event)"></dca-button>
+
+  <h2>With Decoration</h2>
+  <div class="content-item">
+    <h3>Spinner Types</h3>
+    <dcm-tab class="content-tab" [tab]="tabs" id="2">
+      <div #tabContent [id]="tabs[0].tabId">
+        <div class="content-lib-items">
+          <dca-spinner class="content-lib-item"
+            dcClass="dca-spinner-primary"></dca-spinner>
+          <dca-spinner class="content-lib-item"
+            dcClass="dca-spinner-secondary"></dca-spinner>
+          <dca-spinner class="content-lib-item"
+            dcClass="dca-spinner-success"></dca-spinner>
+          <dca-spinner class="content-lib-item"
+            dcClass="dca-spinner-danger"></dca-spinner>
+          <dca-spinner class="content-lib-item"
+            dcClass="dca-spinner-warning"></dca-spinner>
+          <dca-spinner class="content-lib-item"
+            dcClass="dca-spinner-info"></dca-spinner>
+          <dca-spinner class="content-lib-item"
+            dcClass="dca-spinner-light"></dca-spinner>
+          <dca-spinner class="content-lib-item"
+            dcClass="dca-spinner-dark"></dca-spinner> </div>
+        <div class="content-item-description">
+          Spinnerlar birden farkllı şekillerde birden farklı renklerde olabilir.
+          Burada geliştiricilerin tasarım sürecinde zaman harcamasını
+          istemediğimiz için sizlere hazır renk tasarımlarını içeren spinner
+          tiplerini sunduk. Burada diğer atomic elementlerde olduğu gibi basit
+          bir class atamasıyla istediğiniz tipteki spinener'ı ekranınınızda
+          gösterebilirsiniz.
+        </div>
+      </div>
+
+      <pre #tabContent [id]="tabs[1].tabId">
+      <code class="language-html">
+        {{spinnerTypes}}
+      </code> </pre>
+    </dcm-tab>
+  </div>
+
+  <div class="content-item">
+    <h3>Spinner Active & Passive</h3>
+    <dcm-tab class="content-tab" [tab]="tabs" id="3">
+      <div #tabContent [id]="tabs[0].tabId">
+        <div class="content-lib-items">
+          <dca-spinner class="content-lib-item"
+            dcClass="dca-spinner-primary"></dca-spinner>
+          <dca-spinner [active]="activity" class="content-lib-item"
+            dcClass="dca-spinner-secondary"></dca-spinner>
+          <dca-spinner class="content-lib-item"
+            dcClass="dca-spinner-success"></dca-spinner>
+          <dca-spinner [active]="activity" class="content-lib-item"
+            dcClass="dca-spinner-danger"></dca-spinner>
+          <dca-spinner class="content-lib-item"
+            dcClass="dca-spinner-warning"></dca-spinner>
+          <dca-spinner [active]="activity" class="content-lib-item"
+            dcClass="dca-spinner-info"></dca-spinner>
+          <dca-spinner class="content-lib-item"
+            dcClass="dca-spinner-light"></dca-spinner>
+          <dca-spinner [active]="activity" class="content-lib-item"
+            dcClass="dca-spinner-dark"></dca-spinner> </div>
+        <div class="content-item-description">
+          Spinner her ne kadar çok önemli bir element olsa da bir yerde
+          kapanması gerekli. Bir spinnerı kapatabilmek için en basit ne
+          yapabiliriz diye düşündük ve tabiki de bir boolean inputu ile bunu
+          gerçekleştirebileceğimize karar verdik. Spinner içerisindeki 'active'
+          inputuna verdiğiniz boolean değerler spinner'ın pasif mi yoksa aktif
+          mi olduğunu belirler. Defaul olarak biz bu değeri 'true' yani 'active'
+          değerine ayarladık.
+          <br>
+          <dca-button (dcClick)="activity = !activity"
+            buttonText="Click Me"
+            dcClass="dca-btn dca-btn-primary"></dca-button>
+        </div>
+      </div>
+
+      <pre #tabContent [id]="tabs[1].tabId">
+      <code class="language-html">
+        {{spinnerActive}}
+      </code> </pre>
+    </dcm-tab>
+  </div>
+</div>

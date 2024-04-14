@@ -12,6 +12,7 @@ import { DropdownsComponent } from './dropdowns/dropdowns.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ListsComponent } from './lists/lists.component';
+import { GridComponent } from './grid/grid.component';
 
 const routes: Routes = [{
   path:'pages/buttons',
@@ -60,6 +61,11 @@ const routes: Routes = [{
 {
   path: 'pages/lists',
   component: ListsComponent
+}
+,
+{
+  path: 'pages/grid',
+  component: GridComponent
 }
 ];
 

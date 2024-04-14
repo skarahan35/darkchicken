@@ -1,10 +1,73 @@
-<dca-tree [treeData]="treeData" (dcClick)="click($event)"
-    (dcCollapsing)="collapsed($event)"
-    (dcExpanding)="expanded($event)"
-    (dcHover)="dcHover($event)"
-    (dcMouseUp)="dcMouseUp($event)"
-    (dcMouseDown)="dcMouseDown($event)"
-    (dcMouseLeave)="dcMouseLeave($event)"
-    (dcMouseEnter)="dcMouseEnter($event)"
-    (dcDoubleClick)="dcDoubleClick($event)"
-     [visible]="true" [expandOnlyIcon]="true"></dca-tree>
+
+
+<div class="content">
+    <h1>Dark Chicken Atomic Tree List</h1>
+
+    <div class="content-item">
+        <dcm-tab class="content-tab" [tab]="tabs" id="1">
+            <div #tabContent [id]="tabs[0].tabId">
+                <div class="content-lib-items">
+                    <dca-tree class="content-lib-item" [treeData]="world"
+                        (dcClick)="dcClick($event)"
+                        (dcCollapsing)="dcCollapsing($event)"
+                        (dcExpanding)="dcExpanding($event)"
+                        (dcHover)="dcHover($event)"
+                        (dcMouseUp)="dcMouseUp($event)"
+                        (dcMouseDown)="dcMouseDown($event)"
+                        (dcMouseLeave)="dcMouseLeave($event)"
+                        (dcMouseEnter)="dcMouseEnter($event)"
+                        (dcDoubleClick)="dcDoubleClick($event)"
+                        [visible]="true" [expandOnlyIcon]="false"></dca-tree>
+
+                    <dca-tree class="content-lib-item" [treeData]="lessons"
+                        (dcClick)="dcClick($event)"
+                        (dcCollapsing)="dcCollapsing($event)"
+                        (dcExpanding)="dcExpanding($event)"
+                        (dcHover)="dcHover($event)"
+                        (dcMouseUp)="dcMouseUp($event)"
+                        (dcMouseDown)="dcMouseDown($event)"
+                        (dcMouseLeave)="dcMouseLeave($event)"
+                        (dcMouseEnter)="dcMouseEnter($event)"
+                        (dcDoubleClick)="dcDoubleClick($event)"
+                        [visible]="true" [expandOnlyIcon]="true"></dca-tree>
+                </div>
+                <div class="content-item-description">
+                    Veri görselleştirmenin önemli öğelerinden bir tanesi de tree
+                    gösterimidir.Burdada gösterilecek verinin formatı çok
+                    önemlidir. Biz geliştiriciler en az kodu yazarak tek bir
+                    format üzerinden işlermizi yapmaya çalışırız. Tree görünümü
+                    içinde oldukça basit bir model kullanımı sunuyoruz sizlere.
+                    Bir 'title' key'i içerisinde tree de görüntelecenek yazıyı,
+                    'icon' içerisinde listelenen elmanın hemen solunda bulanacak
+                    icon'u, 'subItems' içerisinde de listelecenek olan elemanın
+                    alt dallarını gönderebilirsiniz. Bu basit 3 adet input ile
+                    birlikte istenilen tree görnümüne ulaşabiliriz. Tree yapısı
+                    için event'leri diğer atomic eventlerden çok fazla ayırmak
+                    istemedik. Klasik eventlerimizin üzerine tree içerisine
+                    ekstradan 2 adet event ekledik, bunlar 'dcCollapsing' ve
+                    'dcExpanding'. Bu iki event isimlerinden de anlaşılacağı
+                    gibi treenin herhangi bir node'u üzerinedeki açılma veya
+                    kapanma durumunu bildirir. Tüm bunların üzerine kullanıcı
+                    gözünden bakıldığında tree için şöyle bir şeyi fark ettik:
+                    Kullanıcı her zaman tree node'unun üzerine tıklayarak
+                    genişletmek istemyebilir, bu durum istenilirse sadece icon'a
+                    tıklanrak genişletilip daraltılabilir olmalıdır. Bunun için
+                    bir boolean tipinde bir kontrol inputu alıyoruz
+                    (expandOnlyIcon). expandOnlyIcon inputu 'true' olursa sadece
+                    icon'a tıklanıldıgında genişletilir, eğer ki 'false' olursa
+                    node üzerinde tıklama işlemi yapıldıgında da genişletme
+                    işlemi yapılır (Bu değer deafult olarak 'false' olarak
+                    ayarlanmıştır).
+                </div>
+            </div>
+            <div #tabContent [id]="tabs[1].tabId">
+                <dcm-tab [tab]="codeTabs" id="01">
+                    <pre #tabContent [id]="codeTabs[0].tabId">
+                    <code class="language-html">{{treeHTML}}</code></pre>
+                    <pre #tabContent [id]="codeTabs[1].tabId">
+                        <code class="language-html">{{treeTS}}</code></pre>
+                </dcm-tab>
+            </div>
+        </dcm-tab>
+    </div>
+</div>

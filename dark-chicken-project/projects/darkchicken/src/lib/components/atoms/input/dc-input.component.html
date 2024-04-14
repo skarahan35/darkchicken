@@ -1,4 +1,6 @@
-<span class="dca-input-wrapper" [ngClass]="{'hidden' : !visible}">
+<span (click)="onClick($event)" (mouseover)="onHover($event)" (mousedown)="onMouseDown($event)"
+    (mouseup)="onMouseUp($event)" (mouseenter)="onMouseEnter($event)" (mouseleave)="onMouseLeave($event)"
+    (dblclick)="onDoubleClick($event)" class="dca-input-wrapper" [ngClass]="{'hidden' : !visible}">
     <!--Label-->
     <span *ngIf="label" class="dca-input-label-wrapper">
         <label *ngIf="label" [attr.for]="inputId" class="dca-input-label">{{label}}</label>

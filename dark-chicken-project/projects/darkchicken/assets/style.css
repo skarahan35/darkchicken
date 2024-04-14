@@ -14,7 +14,13 @@
 @import url('../src/lib/components/molecules/dc-dropdown/dc-dropdown.component.css');
 @import url('../src/lib/components/molecules/dc-tab/dc-tab.component.css');
 
-/*#endregio*/
+/*#endregion*/
+
+/*#region Grid Components CSS*/
+@import url('../src/lib/components/grid/dc-grid/dc-grid.component.css');
+@import url('../src/lib/components/grid/grid-header-cell/grid-header-cell.component.css');
+
+/*#endregion*/
 
 *{
     font-family: 'IBMPlexxSans', sans-serif;
@@ -38,6 +44,8 @@
     --dc-color-white: #fff;
     --dc-color-menu-logo: #1d1b31;
     --dc-color-menu: #11101d;
+
+    --dc-grid-header-radius:0.5rem;
 }
 
 .hidden{
@@ -55,3 +63,4 @@
     width: 16px;
     height: 16px;
 } */
+

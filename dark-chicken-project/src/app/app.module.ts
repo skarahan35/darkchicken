@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DCAtomModule, DCMoleculesModule } from 'projects/darkchicken';
+import { DCAtomModule, DCGridModule, DCMoleculesModule } from 'projects/darkchicken';
 import { InputsComponent } from './inputs/inputs.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { CheckboxesComponent } from './checkboxes/checkboxes.component';
@@ -19,6 +19,9 @@ import { DropdownsComponent } from './dropdowns/dropdowns.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ListsComponent } from './lists/lists.component';
+import { GridComponent } from './grid/grid.component';
+import { DataService } from './services/data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -37,7 +40,8 @@ import { ListsComponent } from './lists/lists.component';
     DropdownsComponent,
     TabsComponent,
     SidebarComponent,
-    ListsComponent
+    ListsComponent,
+    GridComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,9 +50,11 @@ import { ListsComponent } from './lists/lists.component';
     DCMoleculesModule,
     DcToastNgModule,
     CommonModule,
-    FormsModule
+    DCGridModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
