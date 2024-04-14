@@ -1,2 +1,152 @@
-<dca-checkbox type="box"></dca-checkbox><br>
-<dca-checkbox type="switch" [visible]="true"></dca-checkbox>
+<div class="content">
+    <h1> Dark Chicken Atomic Checkbox & Switch</h1>
+
+    <h2> No Decoration</h2>
+    <div class="content-item">
+        <dcm-tab class="content-tab" [tab]="tabs" id="1">
+            <div #tabContent [id]="tabs[0].tabId">
+                <div class="content-lib-items">
+                    <dca-checkbox class="content-lib-item"></dca-checkbox>
+                </div>
+                <div class="content-item-description">
+                    Checkbox' element'imize herhangi bir etiket atamazsak eğer
+                    ortada sade bir checkbox görürüz. Eğer tasarımınızda ve
+                    kurduğunuz yapıda bu yeterli ise sadece tek bir satır kod
+                    ile istediğniiz checkbox'a sahip olabilirsiniz.
+                </div>
+            </div>
+
+            <pre #tabContent [id]="tabs[1].tabId">
+                <code class="language-html">
+                    {{noDecorationCheckbox}}
+                </code>
+            </pre>
+        </dcm-tab>
+    </div>
+
+    <div class="content-item">
+        <h3> Checkbox Types</h3>
+        <dcm-tab class="content-tab" [tab]="tabs" id="2">
+            <div #tabContent [id]="tabs[0].tabId">
+                <div class="content-lib-items">
+                    <dca-checkbox type="box"
+                        class="content-lib-item"></dca-checkbox>
+                    <dca-checkbox type="switch" label="Type Switch"
+                        checkboxId="002"
+                        class="content-lib-item"></dca-checkbox>
+                </div>
+                <div class="content-item-description">
+                    Boolean bir veri girişi için checkbox'lar biz geliştiriciler
+                    için vazgeçilmezdir. Fakat burada kullanıcı gözünden
+                    baktığımızda bir işaret kutusu ile bir swtich kutusu
+                    arasında büyük farklar vardır. Burada kullanıcıların bu tarz
+                    isteklerini giderebilmek için checkbox'ın içerisine aynı
+                    zamanda bir switch ekledik. Bu sayede sadece 'type' etiketi
+                    ile checkbox'un tipini yönetebiliriz. Ne kadar heyecanlı
+                    değil mi?
+                </div>
+            </div>
+
+            <pre #tabContent [id]="tabs[1].tabId">
+                <code class="language-html">
+                    {{checkboxTypes}}
+                </code>
+            </pre>
+        </dcm-tab>
+    </div>
+
+    <div class="content-item">
+        <h3> Disabled & Visible</h3>
+        <dcm-tab class="content-tab" [tab]="tabs" id="3">
+            <div #tabContent [id]="tabs[0].tabId">
+                <div class="content-lib-items">
+                    <dca-checkbox type="box" [visible]="visibleCheckbox"
+                        class="content-lib-item"></dca-checkbox>
+                    <dca-checkbox type="switch" [disabled]="true"
+                        [checked]="true"
+                        class="content-lib-item"></dca-checkbox>
+                </div>
+                <div class="content-item-description">
+                    Checkbox ve Switch birbirlerinden farklı olarak gözükselerde
+                    aslında birbirlerine çok benzerler. Hatta clasic HTML input
+                    alanlarına da bezerler. Bu sayede onlara disabled etiketi
+                    verebilmemiz oldukça mümkündür. Burada basit bir 'disabled'
+                    etiketi ile checkbox'ları kullanım dışı yapabiliyoruz. Hatta
+                    istersek görünmez olmasını da sağlayabiliriz. 'visible'
+                    etiketiyle diğer atomik elementlerde olduğu gibi
+                    checkbox'ları da görünmez yapabiliriz.
+                    <dca-button (dcClick)="visibleCheckbox = !visibleCheckbox"
+                        buttonText="Click Me"
+                        dcClass="dca-btn dca-btn-primary"></dca-button>
+                </div>
+            </div>
+
+            <div #tabContent [id]="tabs[1].tabId">
+                <dcm-tab class="content-code" [tab]="codeTabs" id="code-1">,
+                    <div #tabContent [id]="codeTabs[0].tabId">
+                        <pre
+                            class="line-numbers"><code class="language-html">{{checkboxPassiveCodeHTML}}</code></pre>
+                    </div>
+                    <div #tabContent [id]="codeTabs[1].tabId">
+                        <pre
+                            class="line-numbers"><code class="language-ts">{{checkboxPassiveCodeTS}}</code></pre>
+                    </div>
+                </dcm-tab>
+            </div>
+        </dcm-tab>
+    </div>
+
+    <div class="content-item">
+        <h3> Events</h3>
+        <dcm-tab class="content-tab" [tab]="tabs" id="4">
+            <div #tabContent [id]="tabs[0].tabId">
+                <div class="content-lib-items">
+                    <dca-checkbox
+                        (dcClick)="dcClick($event)"
+                        (dcHover)="dcHover($event)"
+                        (dcMouseUp)="dcMouseUp($event)"
+                        (dcMouseDown)="dcMouseDown($event)"
+                        (dcMouseLeave)="dcMouseLeave($event)"
+                        (dcMouseEnter)="dcMouseEnter($event)"
+                        (dcDoubleClick)="dcDoubleClick($event)"
+                        (dcValueChanged)="dcValueChanged($event)"
+                        type="box"
+                        class="content-lib-item"></dca-checkbox>
+                    <dca-checkbox
+                        (dcClick)="dcClick($event)"
+                        (dcHover)="dcHover($event)"
+                        (dcMouseUp)="dcMouseUp($event)"
+                        (dcMouseDown)="dcMouseDown($event)"
+                        (dcMouseLeave)="dcMouseLeave($event)"
+                        (dcMouseEnter)="dcMouseEnter($event)"
+                        (dcDoubleClick)="dcDoubleClick($event)"
+                        (dcValueChanged)="dcValueChanged($event)"
+                        type="switch"
+                        class="content-lib-item"></dca-checkbox>
+                </div>
+                <div class="content-item-description">
+                    Bu bölümde checkbox&switch için vermiş olduğumuz event'leri
+                    inceleyeceğiz. Burada diğer atomic elementlerde verilen
+                    eventlere çok benzer bir şekilde yöntem izledik ve
+                    yakaladığımız her event'i size verdik. Tarayıcınızın
+                    konsolunu açarak verilen eventleri ve çıktılarını
+                    görebilirsiniz.
+                </div>
+            </div>
+
+            <div #tabContent [id]="tabs[1].tabId">
+                <dcm-tab class="content-code" [tab]="codeTabs" id="code-2">,
+                    <div #tabContent [id]="codeTabs[0].tabId">
+                        <pre
+                            class="line-numbers"><code class="language-html">{{checkboxEventHTML}}</code></pre>
+                    </div>
+                    <div #tabContent [id]="codeTabs[1].tabId">
+                        <pre
+                            class="line-numbers"><code class="language-ts">{{checkboxEventTS}}</code></pre>
+                    </div>
+                </dcm-tab>
+            </div>
+        </dcm-tab>
+    </div>
+
+</div>

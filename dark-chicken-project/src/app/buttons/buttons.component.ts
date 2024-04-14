@@ -39,24 +39,24 @@ buttonEventsTs = buttonEventsTs
 buttonSize = buttonSize
   
 dcClick(e:any){
-  console.log({"dcClick": e})
+  console.log({dcClick: e})
 }
 dcHover(e:any){
-  console.log({"dcHover": e})
+  console.log({dcHover: e})
 }
 dcMouseUp(e:any){
-  console.log({"dcMouseUp": e})
+  console.log({dcMouseUp: e})
 }
 dcMouseDown(e:any){
-  console.log({"dcMouseDown": e})
+  console.log({dcMouseDown: e})
 }
 dcMouseOut(e:any){
-  console.log({"dcMouseOut": e})
+  console.log({dcMouseOut: e})
 }
 dcMouseEnter(e:any){
-  console.log({"dcMouseEnter": e})
+  console.log({dcMouseEnter: e})
 }
 dcDoubleClick(e:any){
-  console.log({"dcDoubleClick": e})
+  console.log({dcDoubleClick: e})
 }
 }

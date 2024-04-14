@@ -1,10 +1,103 @@
-<dca-bread-crumb 
-(dcClick)="dcClick($event)"
-(dcHover)="dcHover($event)"
-(dcMouseUp)="dcMouseUp($event)"
-(dcMouseDown)="dcMouseDown($event)"
-(dcMouseLeave)="dcMouseLeave($event)"
-(dcMouseEnter)="dcMouseEnter($event)"
-(dcDoubleClick)="dcDoubleClick($event)"
-[crumbList]="crumbList"
-></dca-bread-crumb>
+<div class="content">
+    <h1> Dark Chicken Atomic Bread Crumb</h1>
+
+    <div class="content-item">
+        <h3>Crumb List</h3>
+        <dcm-tab class="content-tab" [tab]="tabs" id="1">
+            <div #tabContent [id]="tabs[0].tabId">
+                <div class="content-lib-items">
+                    <dca-bread-crumb
+                        [crumbList]="crumbList"
+                        class="content-lib-item"></dca-bread-crumb>
+                </div>
+                <div class="content-item-description">
+                    Neredeyse her web sayfasında gördüğümüz, oldukça işe yarayan
+                    fakat çok az kişinin dikkat ettiği bread-crumb ile
+                    karşınızdayız. Bu elementin oldukça basit ve etkili bir
+                    kullanımı vardır. İçerisine listelemek istediğimiz öğleri
+                    verdiğimizde gerekli yönlendirmeleri içeren bir bread-crumb
+                    oluşturacaktır. Burada Görüntülemek için gerekli olan birkaç
+                    öğeyi sizlerden rica ediyoruz:
+                    <br>
+                    <strong>*Label:</strong> Bu öğe listelenecek öğenin ekran
+                    gözükecek etiketini
+                    temsil etmketedir.
+                    <br>
+                    <strong>*Link:</strong> Bu öğe listelenen elmandaki bağlantı
+                    yolunu temisl
+                    etmektedir. Eğer ki bir öğede bağlantı varsa bunu belli
+                    etmek için de içerisine basit bir renk belirteci de ekler.
+                    <br>
+                    <strong>*Icon:</strong> Bu öğe listelenecek öğenin hemen
+                    solunda gözükecek
+                    olan icon'u temsil etmektedir.
+                </div>
+            </div>
+
+            <div #tabContent [id]="tabs[1].tabId">
+                <dcm-tab class="content-code" [tab]="codeTabs">
+                    <div #tabContent [id]="codeTabs[0].tabId">
+                        <pre>
+                        <code class="language-html">
+                            {{basicCrumbHTML}}
+                        </code>
+                    </pre>
+                    </div>
+                    <div #tabContent [id]="codeTabs[1].tabId">
+                        <pre>
+                            <code class="language-ts">
+                                {{basicCrumbTS}}
+                            </code>
+                        </pre>
+                    </div>
+                </dcm-tab>
+            </div>
+        </dcm-tab>
+    </div>
+
+    <div class="content-item">
+        <h3>Events</h3>
+        <dcm-tab class="content-tab" [tab]="tabs" id="3">
+            <div #tabContent [id]="tabs[0].tabId">
+                <div class="content-lib-items">
+                    <dca-bread-crumb (dcClick)="dcClick($event)"
+                        (dcHover)="dcHover($event)"
+                        (dcMouseUp)="dcMouseUp($event)"
+                        (dcMouseDown)="dcMouseDown($event)"
+                        (dcMouseLeave)="dcMouseLeave($event)"
+                        (dcMouseEnter)="dcMouseEnter($event)"
+                        (dcDoubleClick)="dcDoubleClick($event)"
+                        [crumbList]="crumbList"
+                        class="content-lib-item"></dca-bread-crumb>
+                </div>
+                <div class="content-item-description">
+                    Bu bölümde bread-crumb için vermiş olduğumuz event'leri
+                    inceleyeceğiz. Burada diğer atomic elementlerde verilen
+                    eventlere çok benzer bir şekilde yöntem izledik ve
+                    yakaladığımız her event'i size verdik. Tarayıcınızın
+                    konsolunu açarak verilen eventleri ve çıktılarını
+                    görebilirsiniz.
+                </div>
+            </div>
+
+            <div #tabContent [id]="tabs[1].tabId">
+                <dcm-tab id="4" class="content-code" [tab]="codeTabs">
+                    <div #tabContent [id]="codeTabs[0].tabId">
+                        <pre>
+                        <code class="language-html">
+                            {{eventBreadCrumbHTML}}
+                        </code>
+                    </pre>
+                    </div>
+                    <div #tabContent [id]="codeTabs[1].tabId">
+                        <pre>
+                            <code class="language-ts">
+                                {{eventBreadCrumbTS}}
+                            </code>
+                        </pre>
+                    </div>
+                </dcm-tab>
+            </div>
+        </dcm-tab>
+    </div>
+</div>

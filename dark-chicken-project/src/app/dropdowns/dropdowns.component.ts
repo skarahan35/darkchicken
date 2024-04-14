@@ -1,222 +1,177 @@
 import { Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core';
 import { DcDropdownComponent } from 'projects/darkchicken';
-import { TreeModel } from 'projects/darkchicken/src/lib/models/dc-models.model';
+import { TabModel, TreeModel } from 'projects/darkchicken/src/lib/models/dc-models.model';
+import { dropdownInputsHTML, dropdownInputsTS, dropdownOutputsHTML, dropdownOutputsTS, firstDropdownHTML, firstDropdownTS } from 'src/assets/codes/dropdown';
 
 @Component({
   selector: 'app-dropdowns',
   templateUrl: './dropdowns.component.html',
   styleUrls: ['./dropdowns.component.css'],
-  encapsulation: ViewEncapsulation.None
 })
 export class DropdownsComponent {
+  @ViewChild('myDropdown') myDropdown!: DcDropdownComponent;
 
-  @ViewChild('dropdown1') content1!: DcDropdownComponent;
-  @ViewChild('dropdown2') content2!: DcDropdownComponent;
-  @ViewChild('dropdown3') content3!: DcDropdownComponent;
-  @ViewChild('dropdown4') content4!: DcDropdownComponent;
+  dropdownValue: string = ''
+
+  listData = [{
+    id: 1,
+    name: 'Nietzsche',
+    icon: 'bolt'
+  }, {
+    id: 2,
+    name: 'Alan Turing',
+    icon: 'computer'
+  }, {
+    id: 3,
+    name: 'Cicero',
+    icon: 'scale-balanced'
+  }, {
+    id: 4,
+    name: 'Ada Lovelace',
+    icon: 'spa'
+  }, {
+    id: 5,
+    name: 'Dostoevskiy',
+    icon: 'book'
+  }]
 
 
-  treeVal: string = ''
-  listVal: string = ''
-  templateVal: string = ''
+  optionSelect(e: any, dropdown: DcDropdownComponent) {
+    dropdown.value = e.listItem.name
+    dropdown.closeDropdown()
+  }
 
-  options = ['option 1', 'option 2', 'option 3']
 
-  treeData: TreeModel[] = [
+  lessons: TreeModel[] = [
     {
-      title: 'Parent 1',
-      subItems: [
+      "title": "Computer Science",
+      "icon": "computer",
+      "subItems": [
         {
-          title: 'Child 1',
-          subItems: [
+          "title": "Algorithms",
+          "subItems": [
             {
-              title: 'Child 1',
-            },
-            {
-              title: 'Child 2.1',
-              icon: 'file',
-              subItems: [
+              "title": "Sorting Algorithms",
+              "subItems": [
                 {
-                  title: 'Child 1',
-                  icon: 'file'
+                  "title": "Bubble Sort",
                 },
                 {
-                  title: 'Child 2.2',
-                  icon: 'file',
-                  subItems: [
-                    {
-                      title: 'Child 1',
-                      icon: 'file'
-                    },
-                    {
-                      title: 'Child 2.3',
-                      icon: 'file',
-                      subItems: [
-                        {
-                          title: 'Child 1',
-                          icon: 'file'
-                        },
-                        {
-                          title: 'Child 2.4',
-                          icon: 'file',
-                          subItems: [
-                            {
-                              title: 'Child 1',
-                              icon: 'file'
-                            },
-                            {
-                              title: 'Child 2.5',
-                              icon: 'file'
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
+                  "title": "Merge Sort",
+                }
+              ]
+            },
+            {
+              "title": "Search Algorithms",
+              "subItems": [
+                {
+                  "title": "Binary Search",
+                },
+                {
+                  "title": "Linear Search",
                 }
               ]
             }
           ]
         },
         {
-          title: 'Child 2',
-          icon: 'file',
-          subItems: [
+          "title": "Data Structures",
+          "subItems": [
             {
-              title: 'Child 1',
-              icon: 'file'
+              "title": "Arrays",
             },
             {
-              title: 'Child 2',
-              icon: 'file',
-              subItems: [
-                {
-                  title: 'Child 1',
-                  icon: 'file'
-                },
-                {
-                  title: 'Child 2',
-                  icon: 'file',
-                  subItems: [
-                    {
-                      title: 'Child 1',
-                      icon: 'file'
-                    },
-                    {
-                      title: 'Child 2',
-                      icon: 'file',
-                      subItems: [
-                        {
-                          title: 'Child 1',
-                          icon: 'file'
-                        },
-                        {
-                          title: 'Child 2',
-                          icon: 'file',
-                          subItems: [
-                            {
-                              title: 'Child 1',
-                              icon: 'file'
-                            },
-                            {
-                              title: 'Child 2',
-                              icon: 'file'
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
+              "title": "Linked Lists",
             }
           ]
         }
       ]
     },
     {
-      title: 'Parent 2',
-      icon: 'folder',
-      subItems: [
+      "title": "Mathematics",
+      "icon": "nutritionix",
+      "subItems": [
         {
-          title: 'Child 3',
-          icon: 'file'
-        },
-        {
-          title: 'Child 4',
-          icon: 'file',
-          subItems: [
+          "title": "Algebra",
+          "subItems": [
             {
-              title: 'Grandchild 1',
-              icon: 'file'
+              "title": "Linear Algebra",
             },
             {
-              title: 'Grandchild 2',
-              icon: 'file'
+              "title": "Matrices",
+            }
+          ]
+        },
+        {
+          "title": "Geometry",
+          "subItems": [
+            {
+              "title": "Plane Geometry",
+            },
+            {
+              "title": "Spatial Geometry",
             }
           ]
         }
       ]
     }
-  ];
+
+  ]
 
 
+  firstDropdownHTML = firstDropdownHTML
+  firstDropdownTS = firstDropdownTS
+  dropdownInputsHTML = dropdownInputsHTML
+  dropdownInputsTS = dropdownInputsTS
+  dropdownOutputsHTML = dropdownOutputsHTML
+  dropdownOutputsTS = dropdownOutputsTS
+  visibleDropdown = false
 
-  onTreeClickOnlyIcon(e: any) {
-    this.treeVal = e.item.title
-    this.content1.closeDropdown()
-  }
-  onTreeClick(e: any) {
-    if(!e.item.subItems){
-      this.treeVal = e.item.title
-    this.content4.closeDropdown()
+  tabs: TabModel[] = [{
+    tabId: 'des',
+    tabTitle: 'Description'
+  },
+  {
+    tabId: 'code',
+    tabTitle: 'Code'
+  },
+  ]
+  codeTabs: TabModel[] = [
+    {
+      tabId: 'html',
+      tabTitle: 'HTML',
+      tabIcon: 'html5',
+    },
+    {
+      tabId: 'ts',
+      tabTitle: 'TS',
+      tabIcon: 'angular',
     }
-    
-  }
-  listData = [{
-    id: 1,
-    name: 'ergul 1',
-    icon: 'bolt'
-  }, {
-    id: 2,
-    name: 'ergul 2'
-  }, {
-    id: 3,
-    name: 'ergul 3'
-  }, {
-    id: 4,
-    name: 'ergul 4'
-  }, {
-    id: 5,
-    name: 'ergul 5'
-  }, {
-    id: 6,
-    name: 'ergul 6'
-  }, {
-    id: 7,
-    name: 'ergul 7'
-  },]
-  optionSelect(e: any) {
-    this.listVal = e.listItem.name
-    this.content2.closeDropdown()
+  ]
+
+  treeVal: string = ''
+  templateVal: string = ''
+
+
+  onTreeClick(e: any, treeDropdown:DcDropdownComponent) {
+    if (!e.item.subItems) {
+      treeDropdown.value = e.item.title
+      treeDropdown.closeDropdown()
+    }
   }
 
-  onTemplateClick(e: any) {
-    this.templateVal = e.textContent
-    this.content3.closeDropdown()
 
-  }
 
   dropdownClick(e: any) {
-    console.log({ 'dropdownClick': e })
+    console.log({ dropdownClick: e })
   }
 
   dropdownCollapsing(e: any) {
-    console.log({ 'dropdownCollapsing': e })
+    console.log({ dropdownCollapsing: e })
   }
 
   dropdownExpanding(e: any) {
-    console.log({ 'dropdownExpanding': e })
+    console.log({ dropdownExpanding: e })
   }
 
 }

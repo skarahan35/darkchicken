@@ -1,21 +1,229 @@
-<dcm-dropdown [disabled]="false" [visible]="true" (dcClick)="dropdownClick($event)" (dcCollapsing)="dropdownCollapsing($event)"
-     (dcExpanding)="dropdownExpanding($event)"  [value]="treeVal" #dropdown1>
-     <dca-tree [expandOnlyIcon]="true" (dcClick)="onTreeClickOnlyIcon($event)" #dcmDropdownContent [treeData]="treeData"></dca-tree>
-</dcm-dropdown>
-<dcm-dropdown  [disabled]="false" [visible]="true" (dcClick)="dropdownClick($event)" (dcCollapsing)="dropdownCollapsing($event)"
-     (dcExpanding)="dropdownExpanding($event)"  [value]="treeVal" #dropdown4>
-     <dca-tree [expandOnlyIcon]="false" (dcClick)="onTreeClick($event)" #dcmDropdownContent [treeData]="treeData"></dca-tree>
-</dcm-dropdown>
 
-<dcm-dropdown [closeOnOutsideClick]="true"[closeOnOutsideClick]="false"  [value]="listVal" #dropdown2>
-     <dca-list (dcClick)="optionSelect($event)" displayExp="name" valueExp="id" [dataSource]="listData"></dca-list>
-</dcm-dropdown>
+<div class="content">
+     <h1> Dark Chicken Molecular Dropdown</h1>
 
-<dcm-dropdown [closeOnOutsideClick]="true" [value]="templateVal" #dropdown3>
-     <ng-container *ngTemplateOutlet="testTemplate"></ng-container>
-</dcm-dropdown>
+     <div class="content-item">
+          <h3>Main Usage</h3>
+          <dcm-tab class="content-tab" [tab]="tabs" id="1">
+               <div #tabContent [id]="tabs[0].tabId">
+                    <div class="content-lib-items">
+                         <dcm-dropdown
+                              #myDropdown
+                              [value]="dropdownValue"
+                              class="content-lib-item">
+                              <dca-list
+                                   (dcClick)="optionSelect($event, myDropdown)"
+                                   displayExp="name" valueExp="id"
+                                   [dataSource]="listData"></dca-list>
+                         </dcm-dropdown>
+                         <div class="content-item-description">
+                              Kullanıcılara bir seçim aracı sunacağımız zaman
+                              hepimizin en çok tercih ettiği araçlardan bir
+                              tanesi de dropdown. Dropdown görünüş olarak çok
+                              masum dursada içerisinde her türlü element
+                              yerleştirilebilir. Biz de dropdown'u tasarlarken
+                              bu gibi isteklerin doğabileceğini düşünüp
+                              tasarımımızı tüm içeriklere göre tasarladık. Bunu
+                              yapmak tabiki de oldukça zor oldu. Siz
+                              geliştiricilerinde çeşitli bir dropdown çıkarmak
+                              için yardımlarınıza ihtiyacımız vardı. Sizlerden
+                              beklediğimiz bir kaç önemli input oluyor dropdown
+                              için. En önemlisi dropdown'un ne zaman kapanacağı.
+                              Burda ilk akla gelen seçim yapılınca kapanmasıdır,
+                              fakat en başında da belirttiğimiz gibi dropdown
+                              içerisine istediğiniz her şeyi koyabilirsiniz.
+                              Yani sizin neyi ne zaman seçtiğinizi hiç bir zaman
+                              bilemeyiz, fakat eğer ki seçim yaptığınızda bize
+                              söylerseniz biz sizin için açılan menü'yü hemen
+                              kapatırız. İkinici beklediğimiz input'da ekranda
+                              gösterilecek değer. Sonuçta her şeyi
+                              gösterebilsek'de seçilen öğenin gösterebileceğimiz
+                              tek bir özelliği olmaktadır. Bunun için sizlerden
+                              seçim yaptığınızda ekranda yazmasını istediğiniz
+                              text'i vermenizi bekliyoruz.
+                         </div>
+                    </div>
+               </div>
+               <div #tabContent [id]="tabs[1].tabId">
+                    <dcm-tab [tab]="codeTabs" id="01">
+                         <div #tabContent
+                              [id]="codeTabs[0].tabId">
+                              <pre>
+                              <code class="language-html">{{firstDropdownHTML}}</code>
+                         </pre>
+                         </div>
+                         <div #tabContent
+                              [id]="codeTabs[1].tabId">
+                              <pre>
+                                   <code class="language-ts">{{firstDropdownTS}}</code>
+                              </pre>
+                         </div>
+                    </dcm-tab>
+               </div>
+          </dcm-tab>
+     </div>
 
-<ng-template #testTemplate>
-     <p (click)="onTemplateClick($event.currentTarget)">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Repellat, at.</p>
-</ng-template>
+     <h2>Inputs</h2>
+     <div class="content-item">
+          <h3>Placeholder, Readonly, Disabled, Close on Outside Click, Class,
+               Visible</h3>
+          <dcm-tab class="content-tab" [tab]="tabs" id="2">
+               <div #tabContent [id]="tabs[0].tabId">
+                    <div class="content-lib-items">
+                         <dcm-dropdown
+                              placeholder="Placeholder"
+                              #myDropdown1
+                              [value]="dropdownValue"
+                              class="content-lib-item">
+                              <dca-list
+                                   (dcClick)="optionSelect($event, myDropdown1)"
+                                   displayExp="name" valueExp="id"
+                                   [dataSource]="listData"></dca-list>
+                         </dcm-dropdown>
+                         <dcm-dropdown
+                              [readonly]="true"
+                              #myDropdown2
+                              [value]="dropdownValue"
+                              class="content-lib-item">
+                              <dca-list
+                                   (dcClick)="optionSelect($event, myDropdown2)"
+                                   displayExp="name" valueExp="id"
+                                   [dataSource]="listData"></dca-list>
+                         </dcm-dropdown>
+                         <dcm-dropdown
+                              [disabled]="true"
+                              #myDropdown3
+                              [value]="dropdownValue"
+                              class="content-lib-item">
+                              <dca-list
+                                   (dcClick)="optionSelect($event, myDropdown3)"
+                                   displayExp="name" valueExp="id"
+                                   [dataSource]="listData"></dca-list>
+                         </dcm-dropdown>
+                         <dcm-dropdown
+                              [closeOnOutsideClick]="false"
+                              #myDropdown4
+                              [value]="dropdownValue"
+                              class="content-lib-item">
+                              <dca-list
+                                   (dcClick)="optionSelect($event, myDropdown4)"
+                                   displayExp="name" valueExp="id"
+                                   [dataSource]="listData"></dca-list>
+                         </dcm-dropdown>
+                         <dcm-dropdown
+                              dcClass="my-custom-class"
+                              #myDropdown5
+                              [value]="dropdownValue"
+                              class="content-lib-item">
+                              <dca-list
+                                   (dcClick)="optionSelect($event, myDropdown5)"
+                                   displayExp="name" valueExp="id"
+                                   [dataSource]="listData"></dca-list>
+                         </dcm-dropdown>
+                         <dcm-dropdown
+                              [visible]="visibleDropdown"
+                              #myDropdown6
+                              [value]="dropdownValue"
+                              class="content-lib-item">
+                              <dca-list
+                                   (dcClick)="optionSelect($event, myDropdown6)"
+                                   displayExp="name" valueExp="id"
+                                   [dataSource]="listData"></dca-list>
+                         </dcm-dropdown>
+                         <div class="content-item-description">
+                              Bu bölüm altında dropdown için almış olduğumuz
+                              inputları görebilirsiniz. Diğer atomik elementler
+                              ile çok benzer bir yaklaşımda bulunup sizlerin
+                              ihtiyacı olabileceğini düşündüğümüz tüm inputları
+                              aldık, aynı zamanda da defaul değerler atadık.
+                              İşte alt tabloda aldığımız değerler ve default
+                              değerleri.
+                              <br>
+                              <dca-button
+                                   (dcClick)="visibleDropdown = !visibleDropdown"
+                                   buttonText="Click Me"
+                                   dcClass="dca-btn dca-btn-primary"></dca-button>
+                              <br>
+                              BURAYA TABLE YAPILINCA TABLE GELECEK
+                         </div>
+                    </div>
+               </div>
+               <div #tabContent [id]="tabs[1].tabId">
+                    <dcm-tab [tab]="codeTabs" id="02">
+                         <div #tabContent
+                              [id]="codeTabs[0].tabId">
+                              <pre>
+                              <code class="language-html">{{dropdownInputsHTML}}</code>
+                         </pre>
+                         </div>
+                         <div #tabContent
+                              [id]="codeTabs[1].tabId">
+                              <pre>
+                                   <code class="language-ts">{{dropdownInputsTS}}</code>
+                              </pre>
+                         </div>
+                    </dcm-tab>
+               </div>
+          </dcm-tab>
+     </div>
+
+     <h2>Outputs</h2>
+     <div class="content-item">
+          <h3>Click, Expanding, Collapsing</h3>
+          <dcm-tab class="content-tab" [tab]="tabs" id="3">
+               <div #tabContent [id]="tabs[0].tabId">
+                    <div class="content-lib-items">
+
+                         <dcm-dropdown
+                              class="content-lib-item"
+                              (dcClick)="dropdownClick($event)"
+                              (dcCollapsing)="dropdownCollapsing($event)"
+                              (dcExpanding)="dropdownExpanding($event)"
+                              #treeDropdown>
+                              <dca-tree
+                                   (dcClick)="onTreeClick($event, treeDropdown)"
+                                   [treeData]="lessons"></dca-tree>
+                         </dcm-dropdown>
+
+                         <div class="content-item-description">
+                              Bu bölümde dropdown için sunmuş olduğumuz
+                              event'leri inceleyeceğiz. İlk olarak 'dcClick'. Bu
+                              event dropdown element'i içerisindeki input
+                              alanına focus olunduğunda çalışmaktadır. Yani
+                              dropdown içerisine tıklama yapıldığında bu event
+                              tetiklenmektedir. İkinci event'imiz 'dcExpanding'.
+                              Bu event eğerki dropdown içerisindeki içeriğin
+                              görüntelenmesinde sorun yoksa (dropdown disabled
+                              değilse yada hali hazırda açık değilse)
+                              tetiklenmektedir. Son eventimiz ise
+                              'dcCollapsing'. Bu event dropdown içerisindeki
+                              içerik kapandığında tetiklenmetedir. Burada dikkat
+                              edilmesi gereken husus dropdown kapandığında
+                              tetikleniyor, nasıl kapandığıyla ilgilenmiyor. Tüm
+                              eventlerin çıktılarını tarayıcınızın konsolunu
+                              açtığınızda görebilirsiniz.
+
+                              EVENTLER İÇİN DE TABLE HAZIR OLDUĞUNDA BİR TABLE
+                              HAZIRLANACAK
+                         </div>
+                    </div>
+               </div>
+               <div #tabContent [id]="tabs[1].tabId">
+                    <dcm-tab [tab]="codeTabs" id="03">
+                         <div #tabContent
+                              [id]="codeTabs[0].tabId">
+                              <pre>
+                              <code class="language-html">{{dropdownOutputsHTML}}</code>
+                         </pre>
+                         </div>
+                         <div #tabContent
+                              [id]="codeTabs[1].tabId">
+                              <pre>
+                                   <code class="language-ts">{{dropdownOutputsTS}}</code>
+                              </pre>
+                         </div>
+                    </dcm-tab>
+               </div>
+          </dcm-tab>
+     </div>
+</div>

@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ContentChild, ContentChildren, ElementRef, EventEmitter, Input, OnChanges, Output, QueryList, SimpleChanges, ViewChildren, ViewEncapsulation } from '@angular/core';
 import { TabModel } from '../../../models/dc-models.model';
+import { DCService } from '../../../services';
 
 
 @Component({
@@ -9,8 +10,7 @@ import { TabModel } from '../../../models/dc-models.model';
 export class DcTabComponent implements OnChanges, AfterViewInit {
 
   @Input() tab: TabModel[] | null = null
-  @Input() id : string = 'tab'
-  @Input() dcClass:string =''
+  @Input() dcClass: string = ''
 
   @Output() dcTabChange = new EventEmitter<Object>()
   @Output() dcTabClick = new EventEmitter<Object>()
@@ -23,9 +23,13 @@ export class DcTabComponent implements OnChanges, AfterViewInit {
 
 
   @ContentChildren('tabContent') tabContents!: QueryList<ElementRef>
+  
+  constructor(private dcService: DCService) {  }
 
   tabContentArray!: ElementRef[]
   activeTab: TabModel | null = null
+  id = this.dcService.generateUniqueId()
+
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['tab']) {
@@ -67,7 +71,7 @@ export class DcTabComponent implements OnChanges, AfterViewInit {
     return Array.from(this.tabContents)
   }
 
-  onTabChange( e: Event, tabItem: TabModel) {
+  onTabChange(e: Event, tabItem: TabModel) {
     let oldActiveTab = this.activeTab
     this.activeTab = tabItem
     this.tabContentArray = this.contentToArray()

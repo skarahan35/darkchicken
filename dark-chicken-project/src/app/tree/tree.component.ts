@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { TreeModel } from 'projects/darkchicken/src/lib/models/dc-models.model';
+import { TabModel, TreeModel } from 'projects/darkchicken/src/lib/models/dc-models.model';
+import { treeHTML, treeTS } from 'src/assets/codes/tree';
 
 @Component({
   selector: 'app-tree',
@@ -7,155 +8,205 @@ import { TreeModel } from 'projects/darkchicken/src/lib/models/dc-models.model';
   styleUrls: ['./tree.component.css']
 })
 export class TreeComponent {
-  treeData: TreeModel[] = [
+
+  treeHTML = treeHTML
+  treeTS = treeTS
+
+  tabs: TabModel[] = [{
+    tabId: 'des',
+    tabTitle: 'Description'
+  },
+  {
+    tabId: 'code',
+    tabTitle: 'Code'
+  },
+  ]
+  codeTabs: TabModel[] = [
     {
-      title: 'Parent 1',
-      subItems: [
+      tabId: 'html',
+      tabTitle: 'HTML',
+      tabIcon: 'html5',
+    },
+    {
+      tabId: 'ts',
+      tabTitle: 'TS',
+      tabIcon: 'angular',
+    }
+  ]
+
+  lessons: TreeModel[] = [
+    {
+      "title": "Computer Science",
+      "icon": "computer",
+      "subItems": [
         {
-          title: 'Child 1',
-          subItems: [
+          "title": "Algorithms",
+          "subItems": [
             {
-              title: 'Child 1',
-            },
-            {
-              title: 'Child 2.1',
-              icon: 'file',
-              subItems: [
+              "title": "Sorting Algorithms",
+              "subItems": [
                 {
-                  title: 'Child 1',
-                  icon: 'file'
+                  "title": "Bubble Sort",
                 },
                 {
-                  title: 'Child 2.2',
-                  icon: 'file',
-                  subItems: [
-                    {
-                      title: 'Child 1',
-                      icon: 'file'
-                    },
-                    {
-                      title: 'Child 2.3',
-                      icon: 'file',
-                      subItems: [
-                        {
-                          title: 'Child 1',
-                          icon: 'file'
-                        },
-                        {
-                          title: 'Child 2.4',
-                          icon: 'file',
-                          subItems: [
-                            {
-                              title: 'Child 1',
-                              icon: 'file'
-                            },
-                            {
-                              title: 'Child 2.5',
-                              icon: 'file'
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
+                  "title": "Merge Sort",
+                }
+              ]
+            },
+            {
+              "title": "Search Algorithms",
+              "subItems": [
+                {
+                  "title": "Binary Search",
+                },
+                {
+                  "title": "Linear Search",
                 }
               ]
             }
           ]
         },
         {
-          title: 'Child 2',
-          icon: 'file',
-          subItems: [
+          "title": "Data Structures",
+          "subItems": [
             {
-              title: 'Child 1',
-              icon: 'file'
+              "title": "Arrays",
             },
             {
-              title: 'Child 2',
-              icon: 'file',
-              subItems: [
-                {
-                  title: 'Child 1',
-                  icon: 'file'
-                },
-                {
-                  title: 'Child 2',
-                  icon: 'file',
-                  subItems: [
-                    {
-                      title: 'Child 1',
-                      icon: 'file'
-                    },
-                    {
-                      title: 'Child 2',
-                      icon: 'file',
-                      subItems: [
-                        {
-                          title: 'Child 1',
-                          icon: 'file'
-                        },
-                        {
-                          title: 'Child 2',
-                          icon: 'file',
-                          subItems: [
-                            {
-                              title: 'Child 1',
-                              icon: 'file'
-                            },
-                            {
-                              title: 'Child 2',
-                              icon: 'file'
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
+              "title": "Linked Lists",
             }
           ]
         }
       ]
     },
     {
-      title: 'Parent 2',
-      icon: 'folder',
-      subItems: [
+      "title": "Mathematics",
+      "icon": "nutritionix",
+      "subItems": [
         {
-          title: 'Child 3',
-          icon: 'file'
-        },
-        {
-          title: 'Child 4',
-          icon: 'file',
-          subItems: [
+          "title": "Algebra",
+          "subItems": [
             {
-              title: 'Grandchild 1',
-              icon: 'file'
+              "title": "Linear Algebra",
             },
             {
-              title: 'Grandchild 2',
-              icon: 'file'
+              "title": "Matrices",
+            }
+          ]
+        },
+        {
+          "title": "Geometry",
+          "subItems": [
+            {
+              "title": "Plane Geometry",
+            },
+            {
+              "title": "Spatial Geometry",
             }
           ]
         }
       ]
     }
-  ];
 
-  collapsed(e: any) {
-    console.log({ collapsed: e })
-  }
-  expanded(e: any) {
-    console.log({ expanded: e })
-  }
+  ]
 
-  click(e: any) {
-    console.log({ click: e })
-  }
+  world: TreeModel[] = [
+        {
+      "title": "Africa",
+      "icon": 'eye',
+      "subItems": [
+        {
+          "title": "Northern Africa",
+          "icon": "bolt",
+          "subItems": [
+            {
+              "title": "Egypt",
+              "icon": "bolt"
+            },
+            {
+              "title": "Algeria",
+              "icon": "bolt"
+            },
+            {
+              "title": "Morocco",
+              "icon": "bolt"
+            }
+          ]
+        },
+        {
+          "title": "Eastern Africa",
+          "icon": "bolt",
+          "subItems": [
+            {
+              "title": "Kenya",
+              "icon": "bolt"
+            },
+            {
+              "title": "Tanzania",
+              "icon": "bolt"
+            },
+            {
+              "title": "Ethiopia",
+              "icon": "bolt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Europe",
+      "icon": "headset",
+      "subItems": [
+        {
+          "title": "Western Europe",
+          "icon": "bolt",
+          "subItems": [
+            {
+              "title": "France",
+              "icon": "bolt"
+            },
+            {
+              "title": "Germany",
+              "icon": "bolt"
+            },
+            {
+              "title": "United Kingdom",
+              "icon": "bolt"
+            }
+          ]
+        },
+        {
+          "title": "Eastern Europe",
+          "icon": "bolt",
+          "subItems": [
+            {
+              "title": "Russia",
+              "icon": "bolt"
+            },
+            {
+              "title": "Poland",
+              "icon": "bolt"
+            },
+            {
+              "title": "Hungary",
+              "icon": "bolt"
+            }
+          ]
+        }
+      ]
+    }
 
+  ]
+
+  dcClick(e: any) {
+    console.log({ dcClick: e })
+  }
+  dcCollapsing(e: any) {
+    console.log({ dcCollapsing: e })
+  }
+  dcExpanding(e: any) {
+    console.log({ dcExpanding: e })
+  }
   dcHover(e: any) {
     console.log({ dcHover: e })
   }

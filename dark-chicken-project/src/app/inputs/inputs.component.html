@@ -3,7 +3,7 @@
   <!--#region No Decoration-->
   <h2>No decoration</h2>
   <div class="content-item">
-    <dcm-tab class="content-tab" [tab]="tabs" id="1">
+    <dcm-tab class="content-tab" [tab]="tabs">
       <div #tabContent [id]="tabs[0].tabId">
         <div class="content-lib-items">
           <dca-input class="content-lib-item"> </dca-input>
@@ -32,7 +32,7 @@
   <!--#region Label & Placeholder-->
   <div class="content-item">
     <h3>Label & Placeholder</h3>
-    <dcm-tab class="content-tab" [tab]="tabs" id="2">
+    <dcm-tab class="content-tab" [tab]="tabs" >
       <div #tabContent [id]="tabs[0].tabId">
         <div class="content-lib-items">
           <dca-input class="content-lib-item" label="Label" placeholder="Placeholder"
@@ -59,12 +59,12 @@
 
   <div class="content-item">
     <h3>Passive</h3>
-    <dcm-tab class="content-tab" [tab]="tabs" id="3">
+    <dcm-tab class="content-tab" [tab]="tabs" >
       <div #tabContent [id]="tabs[0].tabId">
         <div class="content-lib-items">
           <dca-input [readonly]="true" class="content-lib-item" value="Dark Chicken"></dca-input>
           <dca-input [disabled]="true" class="content-lib-item" value="Awsome Inputs"></dca-input>
-          <dca-input [visible]="visibleInput" class="content-lib-item" value="This is a magic" label="testLabel"></dca-input>
+          <dca-input [visible]="visibleInput" class="content-lib-item" value="This is a magic"></dca-input>
         </div>
         <div class="content-item-description">
           Burası güvenli alan. Input alanlarında çok fazla kullanılmayan ama nadir
@@ -77,12 +77,12 @@
           de buradan kontrol edebiliyoruz. Buraya kadar bahsetmediğimiz bir
           özelliğimiz daha var, fark etmemeniz çok normal çünkü görünmezlik. Hemen
           alttaki butona tıkladığınızda neyden bahettiğimizi çok iyi anlayacaksınız.
-          <dca-button (dcClick)="visibleInput = !visibleInput" style="display: flex; padding: 0.2rem"
-            buttonText="Click Me" class="dca-btn dca-btn-primary"></dca-button>
+          <dca-button (dcClick)="visibleInput = !visibleInput" 
+            buttonText="Click Me" dcClass="dca-btn dca-btn-primary"></dca-button>
         </div>
       </div>
       <div #tabContent [id]="tabs[1].tabId">
-        <dcm-tab class="content-code" [tab]="codeTabs" id="code-1">,
+        <dcm-tab class="content-code" [tab]="codeTabs" >,
           <div #tabContent [id]="codeTabs[0].tabId">
             <pre class="line-numbers"><code class="language-html">{{passiveCodeHtml}}</code></pre>
           </div>
@@ -98,7 +98,7 @@
   <!--#region Validation-->
   <div class="content-item">
     <h3>Validations</h3>
-    <dcm-tab class="content-tab" [tab]="tabs" id="4">
+    <dcm-tab class="content-tab" [tab]="tabs">
       <div #tabContent [id]="tabs[0].tabId">
         <div class="content-lib-items">
           <dca-input label="Required" inputId="req" [validationRules]="[
@@ -182,7 +182,7 @@
   <!--#region Events-->
   <div class="content-item">
     <h3>Events</h3>
-    <dcm-tab class="content-tab" [tab]="tabs" id="5">
+    <dcm-tab class="content-tab" [tab]="tabs">
       <div #tabContent [id]="tabs[0].tabId">
         <div class="content-lib-items">
           <dca-input class="content-lib-item" label="Coffe ?" placeholder="It can be hot" inputId="id-02"
@@ -243,4 +243,27 @@
   </div>
   <!--#endregion-->
   <!--#endregion-->
+
+
+  <div class="content-item">
+    <h3>Size</h3>
+      <div >
+        <div class="content-lib-items">
+          <dca-input [validationRules]="validationRulesText"
+          (dcMouseEnter)="onMouseEnter()"
+            (dcMouseLeave)="onMouseLeave()"
+          class="content-lib-item" label="Dark Chicken"
+            placeholder="Here's a really tiny, tiny, sweet chicken" inputId="id-05" width='300px' height="100px">
+            <dca-icon icon="egg"></dca-icon>
+          </dca-input>
+        </div>
+        <div class="content-item-description">
+          Active Tag Name : {{activetagName}}
+          <br>
+          Active Class : {{activeClass}}
+          
+        </div>
+      </div>
+
+  </div>
 </div>
