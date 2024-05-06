@@ -1,5 +1,5 @@
-<input *ngIf="type == 'box'" [disabled]="disabled" [checked]="checked"
-    [ngClass]="{'indeterminate' :checked==null, 'hidden': !visible,'dca-checkbox':true }" [attr.id]="checkboxId"
+<input *ngIf="type == 'box'" [disabled]="disabled" [checked]="checked" [required]="isRequired"
+    [ngClass]="{'indeterminate' :checked==null, 'hidden': !visible,'dca-checkbox':true, 'invalid': !isValid }" [attr.id]="checkboxId"
     type="checkbox" [class]="dcClass" (change)="onValueChange($event)" (click)="onClick($event)"
     (mouseover)="onHover($event)" (mousedown)="onMouseDown($event)" (mouseup)="onMouseUp($event)"
     (mouseenter)="onMouseEnter($event)" (mouseleave)="onMouseLeave($event)" (dblclick)="onDoubleClick($event)">

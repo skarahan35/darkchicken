@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { validationRules } from '../../../models/dc-models.model';
 import { LanguageService } from '../../../services/language.service';
 import { InputType } from '../../../types/dc-types';
@@ -15,7 +15,7 @@ export class DCInputComponent implements AfterViewInit {
   @Input() width: string | null = null;
   @Input() height: string | null = null;
   @Input() validationRules?: validationRules[] | null = null;
-  @Input() readonly?: boolean= false;
+  @Input() readonly?: boolean = false;
   @Input() disabled: boolean | null = null;
   @Input() visible: boolean = true;
   @Input() dcClass: string = '';
@@ -37,10 +37,24 @@ export class DCInputComponent implements AfterViewInit {
   @Output() dcDoubleClick = new EventEmitter<Event>()
   @Output() dcKeyUp = new EventEmitter<Object>()
   //#endregion
+  @ViewChild("dcaInput") inputElementRef: ElementRef<HTMLInputElement>
+
 
   //#region Variables
   previousValue: string | null = null;
-  isValid: boolean = true;
+
+  _isValid: boolean = false
+
+  get isValid() {
+    if (this.validationRules && this.validationRules.length > 0) {
+      return this._isValid
+    }
+    return true
+  }
+
+  set isValid(val: boolean) {
+    this._isValid = val
+  }
 
   //#region Validation Variables
   get isRequired() {
@@ -90,6 +104,7 @@ export class DCInputComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.previousValue = this.value;
+    this.checkValidation()
   }
 
   //#region Outputs methots
@@ -102,7 +117,7 @@ export class DCInputComponent implements AfterViewInit {
   }
 
   onFocusOut(e: Event) {
-    this.checkValidation(e); //checking the validation 
+    this.checkValidation(); //checking the validation 
     this.dcFocusOut.emit({
       currentValue: (e.currentTarget as HTMLInputElement).value,
       nativeElement: e,
@@ -121,13 +136,13 @@ export class DCInputComponent implements AfterViewInit {
   //#endregion
 
   //#region onValidating
-  checkValidation(e: Event) {
+  checkValidation() {
     this.dcValidating.emit({
-      nativeElememt: e,
+      nativeElememt: this.inputElementRef.nativeElement,
       validationRules: this.validationRules,
-      value:(e.currentTarget as HTMLInputElement).value,
+      value: (this.inputElementRef.nativeElement as HTMLInputElement).value,
     })
-    let validity = (e.currentTarget as HTMLInputElement).validity;
+    let validity = (this.inputElementRef.nativeElement as HTMLInputElement).validity;
     if (!validity.valid) {
       this.isValid = false
       if (validity.valueMissing) {
@@ -164,16 +179,16 @@ export class DCInputComponent implements AfterViewInit {
       this.validationMessage = null;
     }
     this.dcValidated.emit({
-      nativeElement: e,
+      nativeElement: this.inputElementRef.nativeElement,
       isValid: this.isValid,
-      value:(e.currentTarget as HTMLInputElement).value
+      value: (this.inputElementRef.nativeElement as HTMLInputElement).value
     })
 
   }
   //#endregion
 
   //#region onKeyUp Event
-  onKeyUp(e:Event){
+  onKeyUp(e: Event) {
     this.dcKeyUp.emit({
       nativeElement: e,
       value: (e.currentTarget as HTMLInputElement).value

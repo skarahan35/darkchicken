@@ -1,8 +1,8 @@
-import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { TableColumn, dataType } from 'projects/darkchicken/src/lib/types/table-column.type';
 import { DcDropdownComponent } from '../../../molecules/dc-dropdown/dc-dropdown.component';
 import { validationRules } from '../../../../models/dc-models.model'
-import { DcTreeComponent } from '../../../atoms';
+import { DCCheckboxComponent, DCInputComponent, DcTreeComponent } from '../../../atoms';
 
 @Component({
   selector: 'cell-input',
@@ -27,7 +27,9 @@ export class CellInputComponent {
   @Output() onCellValidated: EventEmitter<any> = new EventEmitter();
 
   @ViewChild('treeComponent') treeComponent: DcTreeComponent
-
+  @ViewChild(DCInputComponent) dcInputComponents: DCInputComponent
+  @ViewChild(DcDropdownComponent) dcDropdownComponents: DcDropdownComponent
+  @ViewChild(DCCheckboxComponent) dcCheckboxComponents: DCCheckboxComponent
   get type() {
     return this.dataType != undefined ? this.dataType : 'text'
   }
@@ -111,6 +113,18 @@ export class CellInputComponent {
       }
     } else {
       return 'below'
+    }
+  }
+
+
+  get isCellValid(){
+    if(this.type == 'date' || this.type == 'text' || this.type == 'number'){
+      return this.dcInputComponents.isValid
+    }else if(this.type == 'lookup'){
+      return this.dcDropdownComponents.isValid
+    }
+    else{
+      return this.dcCheckboxComponents.isValid
     }
   }
 

@@ -3,6 +3,7 @@ import { TreeStatus } from 'projects/darkchicken/src/lib/types/dc-types';
 import { SortDirection } from 'projects/darkchicken/src/lib/types/sort-direction.type';
 import { TableColumn } from 'projects/darkchicken/src/lib/types/table-column.type';
 import { Keys } from 'projects/darkchicken/src/lib/utils/keys';
+import { CellInputComponent } from '../../elements/cell-input/cell-input.component';
 
 @Component({
   selector: 'dc-body-cell',
@@ -15,6 +16,7 @@ export class BodyCellComponent implements DoCheck, OnDestroy {
   @Input() changes: any
   @Output() onRowRemoving: EventEmitter<any> = new EventEmitter();
   @Output() onRowReversing: EventEmitter<any> = new EventEmitter();
+  @ViewChild (CellInputComponent) cellInputRef: CellInputComponent
   cellChange(e: any) {
     if (this._column && this._column.prop) {
       this._row[this._column.prop] = e.newValue

@@ -14,16 +14,25 @@ export class DCCheckboxComponent {
   @Input() disabled: boolean = false
   @Input() visible: boolean = true
   @Input() dcClass: string= ''
+  @Input() isRequired?:boolean = false
+  @Input() validationMessage?:string = ''
   //#endregion
 
   //#region Outputs
   @Output() dcValueChanged = new EventEmitter<Object>()
   //#endregion
 
+  get isValid(){
+    if(this.isRequired){
+      return this.checked == undefined || null ? false : true
+    }
+    return true
+  }
 
   //#region onValueChange
   onValueChange(e: Event) {
     this.checked = (e.currentTarget as HTMLInputElement).checked
+
     this.dcValueChanged.emit({
       nativeElement: e,
       value: this.checked
