@@ -69,18 +69,18 @@ export class TabsComponent {
     {
       tabId: 'page-1',
       tabTitle: 'Page 1',
-      tabIcon:'address-book'
+      tabIcon:'pager'
     },
     {
       tabId: 'page-2',
       tabTitle: 'Page 2',
-      tabIcon:'accusoft',
+      tabIcon:'person',
       isActive:true
     },
     {
       tabId: 'page-3',
       tabTitle: 'Page 3',
-      tabIcon:'audio-description'
+      tabIcon:'paperclip'
     }
   ]
 

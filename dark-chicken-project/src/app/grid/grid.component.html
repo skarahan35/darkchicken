@@ -1,20 +1,13 @@
-<div class="dc-grid-container">
-    <dc-grid class="dc-grid" [columns]='columns' [dataSource]="dataSource" >
-
-    </dc-grid>
-</div>
-
-<ng-template #bodyTemplate>
-    <grid-body-row *ngFor="let data of dataSource">
-        <grid-body-cell *ngFor="let column of columns" class="myclass">{{data[column] + 'test'}}</grid-body-cell>
-    </grid-body-row>    
-
-</ng-template>
-
-<ng-template #headerTemplate>
-<grid-header-cell>t1</grid-header-cell>
-<grid-header-cell>t2</grid-header-cell>
-<grid-header-cell>t3</grid-header-cell>
-<grid-header-cell>t4</grid-header-cell>
-<grid-header-cell>t5</grid-header-cell>
-</ng-template>
+<dc-datatable
+class="primary"
+[rows]="rows"
+[loadingIndicator]="loadingIndicator"
+[columns]="columns"
+[columnMode]="ColumnMode.force"
+[reorderable]="reorderable"
+[allowDeleting]="true"
+columnMode="force"
+[allowColumnSearch]="true"
+[scrollbarH]="true"
+>
+</dc-datatable>

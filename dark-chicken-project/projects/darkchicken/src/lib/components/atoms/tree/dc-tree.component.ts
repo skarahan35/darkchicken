@@ -1,13 +1,13 @@
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { TreeModel } from '../../../models/dc-models.model';
 
 @Component({
   selector: 'dca-tree',
   templateUrl: './dc-tree.component.html'
 })
-export class DcTreeComponent implements OnChanges {
+export class DcTreeComponent implements OnChanges{
 
-  @Input() treeData!: TreeModel[] | any[];
+  @Input() treeData?: TreeModel[] | any[];
   @Input() visible: boolean = true
   @Input() dcClass: string = ''
   @Input() expandOnlyIcon: boolean = false
@@ -22,18 +22,29 @@ export class DcTreeComponent implements OnChanges {
   @Output() dcMouseEnter = new EventEmitter<Object>()
   @Output() dcDoubleClick = new EventEmitter<Object>()
 
-  constructor() { }
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['treeData']) {
       this.treeData?.forEach((item: any) => {
+
         item.expanded = false
       })
     }
   }
 
+  closeAllNodesExcept(selectedNode?: any) {
+    this.treeData?.forEach((node: any) => {
+      // Seçili node dışındaki tüm nodları kapalı konuma getir
+      if (node !== selectedNode) {
+        node.expanded = false;
+      }
+    });
+  }
+  
   changeOpen(node: any, event: Event) {
     if (!this.expandOnlyIcon) {
       this.dcClick.emit({ item: node, nativeElement: event })
+      
+      this.closeAllNodesExcept(node);
 
       node.expanded = !node.expanded;
       if (node.expanded) {

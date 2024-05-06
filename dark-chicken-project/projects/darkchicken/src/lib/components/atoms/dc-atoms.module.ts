@@ -27,7 +27,7 @@ import { DcSidebarTreeComponent } from './sidebar-tree/dc-sidebar-tree.component
   ],
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   exports: [
     DCButtonComponent,

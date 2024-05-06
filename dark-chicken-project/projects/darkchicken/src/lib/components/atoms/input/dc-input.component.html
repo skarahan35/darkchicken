@@ -5,7 +5,7 @@
     <span *ngIf="label" class="dca-input-label-wrapper">
         <label *ngIf="label" [attr.for]="inputId" class="dca-input-label">{{label}}</label>
     </span>
-    <span class="dca-input-content">
+    <span class="dca-input-content" [style.width]="this.width">
         <!--Input-->
         <input [style.width]="this.width" [style.height]="this.height" #dcaInput [attr.id]='inputId'
             [attr.placeholder]="placeholder ? placeholder : null" [type]="type" [value]="value"
@@ -13,7 +13,8 @@
             (focusout)="onFocusOut($event)" (change)="onValueChange($event)" [required]="isRequired"
             [attr.min]="minValue" [attr.max]="maxValue" [attr.minLength]="minLengthValue"
             [attr.maxLength]="maxLengthValue" [attr.pattern]="pattern" autocomplete="off" [readonly]="readonly"
-            [disabled]="disabled">
+            [disabled]="disabled" (keyup)="onKeyUp($event)" (search)="onKeyUp($event)">
+
         <!--Invalid Icon & Message-->
         <div *ngIf="!isValid" class="dca-invalid-icon">
             <dca-icon icon="circle-exclamation"></dca-icon>

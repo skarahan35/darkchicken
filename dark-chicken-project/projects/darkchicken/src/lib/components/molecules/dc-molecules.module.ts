@@ -25,4 +25,4 @@ import { DcSidebarComponent } from './dc-sidebar/dc-sidebar.component';
     DcSidebarComponent
   ]
 })
-export class DCMoleculesModule { }
+export class DCMoleculeModule { }

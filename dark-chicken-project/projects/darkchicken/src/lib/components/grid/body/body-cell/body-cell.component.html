@@ -1,0 +1,43 @@
+<div class="datatable-body-cell-label" [style.margin-left.px]="calcLeftMargin(column, row)">
+    <label *ngIf="column.checkboxable && (!displayCheck || displayCheck(row, column, value))"
+        class="datatable-checkbox">
+        <input type="checkbox" [checked]="isSelected" (click)="onCheckboxChange($event)" />
+    </label>
+    <ng-container *ngIf="column.isTreeColumn">
+        <button *ngIf="!column.treeToggleTemplate" class="datatable-tree-button" [disabled]="treeStatus === 'disabled'"
+            (click)="onTreeAction()">
+            <span>
+                <i *ngIf="treeStatus === 'loading'" class="icon datatable-icon-collapse"></i>
+                <i *ngIf="treeStatus === 'collapsed'" class="icon datatable-icon-up"></i>
+                <i *ngIf="treeStatus === 'expanded' || treeStatus === 'disabled'" class="icon datatable-icon-down"></i>
+            </span>
+        </button>
+        <ng-template *ngIf="column.treeToggleTemplate" [ngTemplateOutlet]="column.treeToggleTemplate"
+            [ngTemplateOutletContext]="{ cellContext: cellContext }">
+        </ng-template>
+    </ng-container>
+
+    <!-- <span *ngIf="!column.cellTemplate" [title]="sanitizedValue" [innerHTML]="value"> </span> -->
+    <!-- <input style="width: 100%; height: 100%; background-color: transparent; border: none; outline: none;" (change)="cellChange($event)" *ngIf="!column.cellTemplate" [title]="sanitizedValue" [value]="value"> -->
+    <!-- <dca-input *ngIf="!column.cellTemplate" [type]="column.dataType ?? 'text'" dcClass="cell-input"  (dcValueChanged)="cellChange($event)" [title]="sanitizedValue" [value]="value"></dca-input> -->
+    <span *ngIf="!column.cellTemplate">
+        <cell-input [column]="column" [class]="getCellState()" (onCellValidating)="onCellValidating($event)"
+            (onCellValidated)="onCellValidated($event)" *ngIf="column.prop != 'action-column'"
+            (onCellChange)="cellChange($event)" [isEditable]="isEditable()" [validationRules]="column.validationRules"
+            [dataType]="column.dataType" [sanitizedValue]="sanitizedValue" [value]="value"
+            [style.width.px]="column.width" [isRemoved]="getCellState() =='remove'" [totalRowCount]="totalRowCount" [rowIndex]="rowIndex"></cell-input>
+
+        <span class="action-column">
+            <dca-icon class="action-icon" *ngIf="column.prop == 'action-column'"
+                [icon]="getCellState() =='remove' ? 'arrow-rotate-left' : 'trash'"
+                (dcClick)="getCellState() =='remove' ? onRowReversing.emit($event) : onRowRemoving.emit($event)"></dca-icon>
+        </span>
+
+
+    </span>
+
+
+    <ng-template #cellTemplate *ngIf="column.cellTemplate" [ngTemplateOutlet]="column.cellTemplate"
+        [ngTemplateOutletContext]="cellContext">
+    </ng-template>
+</div>

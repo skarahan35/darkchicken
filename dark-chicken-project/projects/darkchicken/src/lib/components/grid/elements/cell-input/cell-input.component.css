@@ -1,0 +1,55 @@
+.cell-input{
+
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 1px solid transparent !important;
+    border-radius: 0;
+    display: block;
+    transition:all 0.3s ease ;
+
+    position: absolute;
+    &:focus{
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      border: 1px solid var(--dc-color-success) !important;
+    }
+
+    .dca-input-content{
+        width: 100%;
+        height: 100%;
+        
+      .dca-input{
+        padding-left: 1rem;
+      }
+    }
+    .dca-input.clickedOnce:invalid {
+      border-color: var(--dc-color-danger) !important;
+      box-shadow: inset 0px 0px 5px var(--dc-color-danger);
+  }
+
+  &.remove{
+    *{
+      cursor: not-allowed;
+    }
+  }
+
+  &.dropdown{
+
+  }
+
+  &.text{
+    z-index: 2;
+  }
+  }
+
+  .boolean{
+
+    margin-left: calc(50% - 10px);
+
+  
+    .dca-checkbox:focus{
+      border: 2px solid var(--dc-color-primary-hover);
+    }
+   }

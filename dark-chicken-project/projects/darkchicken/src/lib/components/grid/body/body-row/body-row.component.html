@@ -1,0 +1,11 @@
+<div *ngFor="let colGroup of _columnsByPin; let i = index; trackBy: trackByGroups"
+    class="datatable-row-{{ colGroup.type }} datatable-row-group" [ngClass]="getRowState()" [ngStyle]="_groupStyles[colGroup.type]">
+    <dc-body-cell role="cell" *ngFor="let column of colGroup.columns; let ii = index; trackBy: columnTrackingFn"
+        tabindex="-1" [row]="row" [group]="group" [expanded]="expanded" [isSelected]="isSelected" [rowIndex]="rowIndex"
+        [column]="column" [rowHeight]="rowHeight" [displayCheck]="displayCheck" [treeStatus]="treeStatus"
+        (activate)="onActivate($event, ii)" (treeAction)="onTreeAction()" (onCellChange)="onCellChange($event)"
+        (onRowRemoving)="onRowRemoving.emit({nativeElement:$event,row:this.row})"
+        [changes]="changes" (onRowReversing)="onRowReversing.emit({nativeElement:$event,row:this.row})"
+        [totalRowCount]="totalRowCount">
+    </dc-body-cell>
+</div>

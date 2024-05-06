@@ -1,0 +1,15 @@
+.search-input{
+    border-radius: 0 !important;
+    border: none !important;
+
+}
+
+.action-column-placeholder{
+    background-color: white;
+}
+
+.column-search-icon{
+    width: 0.8rem;
+    height: 0.8rem;
+    display: inline-block;
+}
