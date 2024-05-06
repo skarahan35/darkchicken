@@ -1,4 +1,4 @@
-<div [id]="id" [class]="dcClass" [ngClass]="{ 'hidden' : !visible, 'dcm-dropdown': true , 'invalid':!isValid}">
+<div (mouseenter)="dcMouseEnter.emit($event)" [id]="id" [class]="dcClass" [ngClass]="{ 'hidden' : !visible, 'dcm-dropdown': true , 'invalid':!isValid}">
 
     <span [class]="'dcm-dropdown-content ' + contentPosition" *ngIf="isMenuShow">
         <ng-content></ng-content>

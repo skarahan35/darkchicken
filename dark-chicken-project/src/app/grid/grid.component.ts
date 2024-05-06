@@ -136,7 +136,7 @@ export class GridComponent {
     visible: true,
     validationRules: [{ type: 'required', message: 'requredd' },]
   },
-  { resizeable:false,prop: 'boolean', name: 'Boolean', sortable: false, visible: true, dataType: 'boolean' },
+  { resizeable:false,prop: 'boolean', name: 'Boolean', sortable: false, visible: true, dataType: 'boolean',validationRules: [{ type: 'required', message: 'requredd' },] },
   { resizeable:false,prop: 'date', name: 'Date', sortable: false, visible: true, dataType: 'date' },
   { resizeable:false,name: 'Company', sortable: false, visible: true }, { resizeable:false,name: 'Company', sortable: false, visible: true }, { resizeable:false,name: 'Company', sortable: false, visible: true }, { resizeable:false,name: 'Company', sortable: false, visible: true }, { resizeable:false,name: 'Company', sortable: false, visible: true }, { resizeable:false,name: 'Company', sortable: false, visible: true }, { resizeable:false,name: 'Company', sortable: false, visible: true }, { resizeable:false,name: 'Company', sortable: false, visible: true },];
 

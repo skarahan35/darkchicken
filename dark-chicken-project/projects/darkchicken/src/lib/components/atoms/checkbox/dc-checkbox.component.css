@@ -10,27 +10,38 @@
     transition: 0.3s;
     cursor: pointer;
     position: relative;
+
+    &.invalid {
+        border: 2px solid var(--dc-color-danger);
+    }
 }
 
 .dca-checkbox:disabled {
     pointer-events: none;
     background-color: var(--dc-color-primary);
     border-color: var(--dc-color-primary);
-    opacity: 0.7; 
+    opacity: 0.7;
 }
+
 .dca-checkbox:disabled:not(:checked) {
     background-color: white;
 }
-.dca-checkbox.indeterminate:disabled{
+
+.dca-checkbox.indeterminate:disabled {
     pointer-events: none;
     background-color: var(--dc-color-primary);
     border-color: var(--dc-color-primary);
-    opacity: 0.7; 
+    opacity: 0.7;
 }
 
 
-.dca-checkbox:hover {
-    border: 2px solid var(--dc-color-primary-hover)
+.dca-checkbox {
+    &:hover {
+        border: 2px solid var(--dc-color-primary-hover)
+    }
+    &.invalid:hover{
+        border: 2px solid var(--dc-color-danger-hover)
+    }
 }
 
 .dca-checkbox:checked {
@@ -154,16 +165,14 @@ input:checked+.slider:hover {
     background-color: var(--dc-color-primary-hover);
 }
 
-.switch input:disabled + .slider {
+.switch input:disabled+.slider {
     pointer-events: none;
     background-color: var(--dc-color-primary);
     border-color: var(--dc-color-primary);
-    opacity: 0.7; 
+    opacity: 0.7;
 }
 
-.switch input:disabled + .slider:before {
-    background-color: #888; 
+.switch input:disabled+.slider:before {
+    background-color: #888;
     box-shadow: none;
 }
-
-

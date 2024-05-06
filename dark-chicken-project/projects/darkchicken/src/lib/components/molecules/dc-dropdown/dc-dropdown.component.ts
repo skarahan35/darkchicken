@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, ContentChild, ElementRef, EventEmitter, HostListener, Input, Output } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, ContentChild, ElementRef, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { DCService } from '../../../services';
 import { validationRules } from '../../../models/dc-models.model';
 
@@ -7,7 +7,7 @@ import { validationRules } from '../../../models/dc-models.model';
   selector: 'dcm-dropdown',
   templateUrl: './dc-dropdown.component.html'
 })
-export class DcDropdownComponent {
+export class DcDropdownComponent implements AfterViewInit{
 
   @Input() placeholder: string | null = "Select"
   @Input() value: string | null = null
@@ -26,7 +26,7 @@ export class DcDropdownComponent {
   @Output() dcFocusOut = new EventEmitter<Object>();
   @Output() dcValidating = new EventEmitter<Object>();
   @Output() dcValidated = new EventEmitter<Object>();
-
+  @Output() dcMouseEnter = new EventEmitter<Object>()
   isMenuShow: boolean = false
   id!: string
 
@@ -34,10 +34,20 @@ export class DcDropdownComponent {
     return this.isRequired ?  [{type:'required',message:this.validationMessage}] as validationRules[] : null
   }
 
-  isValid=true
+ _isValid:boolean = false
+  get isValid(){
+    return this.isRequired == true ? this._isValid : true
+  }
+
+  set isValid(val:boolean){
+    this._isValid = val
+  }
 
   constructor(private elementRef: ElementRef, private dcService: DCService) {
     this.id = this.dcService.generateUniqueId()
+  }
+  ngAfterViewInit(): void {
+    this.checkValidity(this.value)
   }
 
 
