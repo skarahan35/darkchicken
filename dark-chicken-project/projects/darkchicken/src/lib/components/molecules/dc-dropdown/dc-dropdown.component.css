@@ -1,9 +1,3 @@
-* {
-    svg {
-        width: 0.8rem;
-        height: 0.8rem;
-    }
-}
 
 .dcm-dropdown-content {
     background-color: var(--dc-color-light);
@@ -11,14 +5,23 @@
     z-index: 999;
     border-radius: 0.5rem;
     position: absolute;
-    top: calc(100% + 0.1rem);
     box-shadow: var(--dc-color-secondary) 1px 1px 6px;
     padding: 0 0.5rem 0 0.5rem;
+    display: block;
+
+    &.below{
+        top: calc(100% + 0.1rem);
+    }
+    &.above{
+        bottom: calc(100% + 0.1rem);
+    }
 }
 
 .dcm-dropdown-input {
     position: relative;
     transition: border-color 0.2s;
+
+
 
     .dca-input-icon{
         right: 5px;
@@ -30,6 +33,33 @@
     position: relative;
     width: fit-content;
     display: inline-flex;
+
+    .dca-invalid-icon{
+        margin-right: 1rem;
+
+        .validation-message{
+            &.below{
+                top: 100%;
+                bottom: unset;
+            }
+            &.above{
+                bottom: 100%;
+                top: unset;
+            }
+        }
+    }
+
+    &.invalid{
+        border-color: var(--dc-color-danger) !important;
+        box-shadow: inset 0px 0px 5px var(--dc-color-danger);
+    }
+
+    * {
+        svg {
+            width: 0.8rem;
+            height: 0.8rem;
+        }
+    }
 }
 
 

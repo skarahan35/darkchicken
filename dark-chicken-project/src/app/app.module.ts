@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DCAtomModule, DCGridModule, DCMoleculesModule } from 'projects/darkchicken';
+import { DCAtomModule, DCGridModule, DCMoleculeModule } from 'projects/darkchicken';
 import { InputsComponent } from './inputs/inputs.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { CheckboxesComponent } from './checkboxes/checkboxes.component';
@@ -47,7 +47,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     DCAtomModule,
-    DCMoleculesModule,
+    DCMoleculeModule,
     DcToastNgModule,
     CommonModule,
     DCGridModule,

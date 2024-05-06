@@ -5,9 +5,9 @@ import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angu
   templateUrl: './dc-list.component.html'
 })
 export class DcListComponent {
-  @Input() dataSource: any[] = []
-  @Input() valueExp: string | null = null
-  @Input() displayExp: string | null = null
+  @Input() dataSource?: any[] = []
+  @Input() valueExp?: string | null = null
+  @Input() displayExp?: string | null = null
   @Input() visible: boolean = true
   @Input() dcClass: string = ''
 

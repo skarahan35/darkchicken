@@ -1,0 +1,17 @@
+<dca-icon  icon="table-cells-column-lock-solid" (dcClick)="iconClick()"></dca-icon>
+<div class="column-chooser" *ngIf="showColumnChooser">
+    <span class="column-chooser-span"> COLUMN CHOOSER </span>
+    <ul class="column-chooser-content">
+        <ng-container *ngFor="let column of _initialColumns">
+            <li class="column-chooser-item"  *ngIf="column.prop != 'action-column' && column.showInColumnChooser != false">
+                <dca-checkbox (dcValueChanged)="columnVisibleChange($event, column.prop)" [checked]="column.visible" [checkboxId]="column.prop"></dca-checkbox>
+                <label [for]="column.prop" class="column-chooser-content-label">{{column.name}}</label>    
+            </li>
+        </ng-container>
+    </ul>
+    <div class="column-chooser-footer">
+        <dca-button [height]="'10px'" dcClass="dca-btn dca-btn-outline-primary" (dcClick)="sendColumns()" [disabled]="sendButtonDisabled" [width]="'10px'" buttonText="SAVE" ></dca-button>
+        <dca-button [height]="'10px'" dcClass="dca-btn dca-btn-outline-danger" [width]="'15px'" buttonText="CANCEL" (dcClick)="clickCancelButton()" class="column-chooser-footer-button"></dca-button>
+    </div>
+    
+</div>

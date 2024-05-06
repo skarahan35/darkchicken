@@ -1,10 +1,20 @@
-<div [class]="dcClass" [ngClass]="{ 'hidden' : !visible, 'dcm-dropdown': true}" >
-    <dca-input [disabled]="disabled" [readonly]="readonly" [value]="value" [placeholder]="placeholder" [inputId]="id"
-        (dcFocusIn)="onDropdownFocusIn()" class="dcm-dropdown-input">
+<div [id]="id" [class]="dcClass" [ngClass]="{ 'hidden' : !visible, 'dcm-dropdown': true , 'invalid':!isValid}">
+
+    <span [class]="'dcm-dropdown-content ' + contentPosition" *ngIf="isMenuShow">
+        <ng-content></ng-content>
+    </span>
+    
+    <div *ngIf="!isValid" class="dca-invalid-icon">
+        <dca-icon icon="circle-exclamation"></dca-icon>
+        <span [class]="'validation-message ' + contentPosition">{{validationMessage}}</span>
+    </div>
+
+    <dca-input (dcFocusOut)="onFocusOut($event)" [disabled]="disabled" [readonly]="readonly" [value]="value"
+        [placeholder]="placeholder" [inputId]="id" (dcFocusIn)="onDropdownFocusIn()"
+        [ngClass]="{'dcm-dropdown-input':true}" [dcClass]="dcClass">
         <dca-icon (dcClick)="isMenuShow ? closeDropdown() : focusInput()" [ngClass]="{'disable': disabled}"
             dcClass="dcm-dropdown-icon" [icon]="isMenuShow==true ? 'chevron-left' : 'chevron-down'"></dca-icon>
     </dca-input>
-    <span class="dcm-dropdown-content" *ngIf="isMenuShow">
-        <ng-content ></ng-content>
-    </span>
+
+
 </div>

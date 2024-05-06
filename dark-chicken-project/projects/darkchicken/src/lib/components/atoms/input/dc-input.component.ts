@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/core';
-import { InputValidationRulesModel } from '../../../models/dc-models.model';
+import { validationRules } from '../../../models/dc-models.model';
 import { LanguageService } from '../../../services/language.service';
 import { InputType } from '../../../types/dc-types';
 @Component({
@@ -14,8 +14,8 @@ export class DCInputComponent implements AfterViewInit {
   @Input() value: any = null;
   @Input() width: string | null = null;
   @Input() height: string | null = null;
-  @Input() validationRules: InputValidationRulesModel[] | null = null;
-  @Input() readonly: boolean | null = null;
+  @Input() validationRules?: validationRules[] | null = null;
+  @Input() readonly?: boolean= false;
   @Input() disabled: boolean | null = null;
   @Input() visible: boolean = true;
   @Input() dcClass: string = '';
@@ -35,6 +35,7 @@ export class DCInputComponent implements AfterViewInit {
   @Output() dcMouseLeave = new EventEmitter<Event>()
   @Output() dcMouseEnter = new EventEmitter<Event>()
   @Output() dcDoubleClick = new EventEmitter<Event>()
+  @Output() dcKeyUp = new EventEmitter<Object>()
   //#endregion
 
   //#region Variables
@@ -123,7 +124,8 @@ export class DCInputComponent implements AfterViewInit {
   checkValidation(e: Event) {
     this.dcValidating.emit({
       nativeElememt: e,
-      validationRules: this.validationRules
+      validationRules: this.validationRules,
+      value:(e.currentTarget as HTMLInputElement).value,
     })
     let validity = (e.currentTarget as HTMLInputElement).validity;
     if (!validity.valid) {
@@ -163,9 +165,19 @@ export class DCInputComponent implements AfterViewInit {
     }
     this.dcValidated.emit({
       nativeElement: e,
-      isValid: this.isValid
+      isValid: this.isValid,
+      value:(e.currentTarget as HTMLInputElement).value
     })
 
+  }
+  //#endregion
+
+  //#region onKeyUp Event
+  onKeyUp(e:Event){
+    this.dcKeyUp.emit({
+      nativeElement: e,
+      value: (e.currentTarget as HTMLInputElement).value
+    })
   }
   //#endregion
 

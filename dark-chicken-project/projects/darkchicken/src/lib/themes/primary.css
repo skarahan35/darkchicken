@@ -1,0 +1,182 @@
+:root {
+    --dc-grid-radius: 0.5rem;
+
+    --dc-grid-header-radius: 0.5rem;
+    --dc-grid-header-color: #4a90e2;
+    --dc-grid-header-text-color: #f5f5f5;
+    --dc-grid-header-divider-color: #c5c5c5;
+
+    --dc-grid-body-color: #f5f5f5;
+    --dc-grid-body-color-hover: #4a91e24f;
+    --dc-grid-body-text-color: #333333;
+    --dc-grid-body-divider-color: #c5c5c5;
+    --dc-grid-body-odd-row-color: #e0e0e0;
+    --dc-grid-body-text-color-hover: #f5f5f5;
+
+
+
+    --dc-grid-footer-color: #4a90e2;
+    --dc-grid-footer-text-color: #f5f5f5;
+}
+
+.dc-datatable.primary {
+    box-shadow: none;
+    /* background: var(--dc-color-primary); */
+
+    color: #fff;
+    font-size: 13px;
+
+
+    .datatable-header {
+        background: var(--dc-color-primary);
+        border-top-left-radius: var(--dc-grid-radius);
+        border-top-right-radius: var(--dc-grid-radius);
+        border-bottom: 1px solid var(--dc-color-primary-hover);
+        text-align: center;
+        .datatable-row-center .datatable-header-cell:not(:first-child){
+            border-left: 1px solid var(--dc-grid-header-divider-color);
+
+        }
+        .datatable-row-right .datatable-header-cell{
+            border-left: 1px solid var(--dc-grid-header-divider-color);
+            height: 100%;
+            background-color: var(--dc-grid-header-color);
+        }
+
+        .datatable-header-cell {
+            text-align: left;
+            /* padding: 0.5rem 1.2rem; */
+            font-weight: bold;
+        }
+
+    }
+
+    .datatable-body {
+        background: var(--dc-grid-body-color);
+        color: var(--dc-grid-body-text-color);
+
+        .datatable-row-wrapper {
+            &:last-child .datatable-body-row {
+                border-bottom: 1px solid var(--dc-grid-body-divider-color);
+            }
+        }
+
+        .datatable-body-row {
+            border-top: 1px solid var(--dc-grid-body-divider-color);
+
+            .datatable-body-cell {
+                vertical-align: middle;
+
+                &:not(:first-child) {
+                    border-left: 1px solid var(--dc-grid-body-divider-color);
+                }
+
+            }
+
+            .datatable-row-right{
+                background-color: var(--dc-grid-body-color);
+            }
+
+            .datatable-row-right{
+                border-left: 1px solid var(--dc-grid-body-divider-color);
+            }
+
+            &.datatable-row-odd {
+                background-color: var(--dc-grid-body-odd-row-color);
+
+                .datatable-row-right{
+                    background-color: var(--dc-grid-body-odd-row-color);
+                }
+            }
+
+
+            &:hover {
+                background: var(--dc-grid-body-color-hover);
+                /* color: var(--dc-grid-body-text-color-hover); */
+                transition-property: background, color;
+                transition-duration: 0.3s;
+                transition-timing-function: linear;
+            }
+
+            &:focus {
+                background-color: #232837;
+            }
+
+            &.active {
+                background-color: #1483ff;
+                color: #fff;
+            }
+        }
+    }
+
+    .datatable-footer {
+        background: var(--dc-grid-footer-color);
+        color: var(--dc-grid-footer-text-color);
+        margin-top: -2px;
+        z-index: 9;
+        position: relative;
+
+        .page-count {
+            line-height: 50px;
+            height: 50px;
+            padding: 0 1.2rem;
+        }
+
+        .datatable-pager {
+            margin: 0 10px;
+            vertical-align: top;
+
+            ul {
+                li {
+                    margin: 10px 0px;
+
+                    &:not(.disabled) {
+
+                        &.active a,
+                        &:hover a {
+                            background-color: #455066;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+
+            a {
+                height: 22px;
+                min-width: 24px;
+                line-height: 22px;
+                padding: 0;
+                border-radius: 3px;
+                margin: 0 3px;
+                text-align: center;
+                vertical-align: top;
+                text-decoration: none;
+                vertical-align: bottom;
+                color: #72809b;
+            }
+
+            .datatable-icon-left,
+            .datatable-icon-skip,
+            .datatable-icon-right,
+            .datatable-icon-prev {
+                font-size: 18px;
+                line-height: 27px;
+                padding: 0 3px;
+            }
+        }
+    }
+
+    .datatable-summary-row {
+        .datatable-body-row {
+            background-color: #14171f;
+
+            &:hover {
+                background-color: #14171f;
+            }
+
+            .datatable-body-cell {
+                font-weight: bold;
+            }
+        }
+    }
+}

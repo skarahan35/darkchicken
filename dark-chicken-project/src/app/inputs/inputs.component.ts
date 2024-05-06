@@ -1,6 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { inputEventCodeHtml, inputEventCodeTs, inputSizeCode, labelPlaceholdercode, noDecorationCode, passiveCodeHtml, passiveCodeTs, validationCode, validationModelCode } from 'src/assets/codes/input';
-import { InputValidationRulesModel, TabModel } from 'projects/darkchicken/src/lib/models/dc-models.model';
+import { validationRules, TabModel } from 'projects/darkchicken/src/lib/models/dc-models.model';
 import { LanguageService } from 'projects/darkchicken/src/lib/services/language.service';
 import { ColorService } from '../color.service';
 
@@ -55,7 +55,7 @@ export class InputsComponent implements OnInit {
     this.testService.setLanguage('en')
   }
 
-  validationRulesText: InputValidationRulesModel[] = [
+  validationRulesText: validationRules[] = [
     {
       type: 'required',
       message: "Zorunlu alan"
@@ -72,7 +72,7 @@ export class InputsComponent implements OnInit {
     },
 
   ];
-  validationRulesNumber: InputValidationRulesModel[] = [
+  validationRulesNumber: validationRules[] = [
     {
       type: 'required',
       message: "Zorunlu alan"
@@ -121,7 +121,6 @@ export class InputsComponent implements OnInit {
       event.srcElement.style.boxShadow= '0 4px 30px rgba(0, 0, 0, 0.1)'
       this.activeClass = event.srcElement.classList[0]
       this.activetagName = event.srcElement.tagName
-      debugger
     }
   }
 

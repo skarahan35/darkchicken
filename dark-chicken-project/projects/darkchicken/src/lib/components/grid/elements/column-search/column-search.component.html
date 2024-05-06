@@ -1,0 +1,7 @@
+<dca-input *ngIf="column.prop != 'action-column'; else actionColumn" [height]="inputHeight" type="search"
+    (dcValueChanged)="valueChanged($event)" (dcKeyUp)="keyUp($event)" [width]="'100%'" dcClass="search-input">
+    <dca-icon (dcClick)="iconClick($event)" class="column-search-icon" icon="magnifying-glass"></dca-icon>
+</dca-input>
+<ng-template #actionColumn>
+<div class="action-column-placeholder" [style.height.px]="height"></div>
+</ng-template>

@@ -1,0 +1,26 @@
+<span class="toolbar">
+
+    <div class="toolbar-item icon-button">
+        <column-reorder></column-reorder>
+    </div>
+
+    <div class="toolbar-item icon-button">
+        <column-chooser [columns]="columns" (changeColumns)="changeColumns($event)"></column-chooser>
+    </div>
+
+    <div (click)="onSaveClick.emit($event)" class="toolbar-item icon-button">
+        <dca-icon icon="floppy-disk"></dca-icon>
+    </div>
+
+    <div (click)="onAddClick.emit($event)" class="toolbar-item icon-button">
+        <dca-icon icon="plus"></dca-icon>
+    </div>
+
+    <div (click)="onGridReverse.emit($event)" class="toolbar-item icon-button">
+        <dca-icon icon="arrow-rotate-left"></dca-icon>
+    </div>
+
+    <div class="toolbar-item">
+        <grid-search></grid-search>
+    </div>
+</span>

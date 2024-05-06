@@ -17,9 +17,8 @@
 /*#endregion*/
 
 /*#region Grid Components CSS*/
-@import url('../src/lib/components/grid/dc-grid/dc-grid.component.css');
-@import url('../src/lib/components/grid/grid-header-cell/grid-header-cell.component.css');
-
+@import url('../src/lib/components/grid/datatable.component.scss');
+@import url('../src/lib/themes/primary.css');
 /*#endregion*/
 
 *{
@@ -45,7 +44,6 @@
     --dc-color-menu-logo: #1d1b31;
     --dc-color-menu: #11101d;
 
-    --dc-grid-header-radius:0.5rem;
 }
 
 .hidden{
@@ -56,11 +54,3 @@
     opacity: 0.7;
     cursor: default;
 }
-
-
-
-/* .dca-icon{
-    width: 16px;
-    height: 16px;
-} */
-

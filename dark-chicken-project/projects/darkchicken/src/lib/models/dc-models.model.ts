@@ -1,7 +1,7 @@
 import { Icons, InputValidationType } from "../types/dc-types";
 
 
-export interface InputValidationRulesModel {
+export interface validationRules {
     type:InputValidationType,
     message?:string,
     value?:number,
@@ -18,6 +18,7 @@ export interface TreeModel {
     title?:string,
     icon?:Icons,
     subItems?: TreeModel[],
+    id?:string
 }
 
 export interface SidebarTreeModel {

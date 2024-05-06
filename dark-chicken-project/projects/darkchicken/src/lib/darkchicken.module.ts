@@ -14,7 +14,7 @@ import { DcDropdownComponent } from './components/molecules/dc-dropdown/dc-dropd
     DCAtomModule,
     CommonModule,
     FormsModule,
-    RouterModule
+    RouterModule,
   ],
   exports: [
   ]
