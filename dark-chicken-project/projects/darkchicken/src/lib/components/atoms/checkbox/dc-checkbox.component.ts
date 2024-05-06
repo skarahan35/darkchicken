@@ -13,26 +13,37 @@ export class DCCheckboxComponent {
   @Input() type: CheckboxType = 'box'
   @Input() disabled: boolean = false
   @Input() visible: boolean = true
-  @Input() dcClass: string= ''
-  @Input() isRequired?:boolean = false
-  @Input() validationMessage?:string = ''
+  @Input() dcClass: string = ''
+  @Input() isRequired?: boolean = false
+  @Input() validationMessage?: string = ''
+  @Input() notEqual: boolean | null = null
   //#endregion
 
   //#region Outputs
   @Output() dcValueChanged = new EventEmitter<Object>()
   //#endregion
 
-  get isValid(){
-    if(this.isRequired){
-      return this.checked == undefined || null ? false : true
+  clickedOnce = false
+
+  get isValid() {
+    let tempValid = true
+    if (this.isRequired) {
+      if (this.checked == undefined || this.checked == null) tempValid = false
     }
-    return true
+    if (this.notEqual != null) {
+
+      if (this.notEqual == true) {
+        if (this.checked == true) tempValid = false
+      } else {
+        if (this.checked == false) tempValid = false
+      }
+    }
+    return tempValid
   }
 
   //#region onValueChange
   onValueChange(e: Event) {
     this.checked = (e.currentTarget as HTMLInputElement).checked
-
     this.dcValueChanged.emit({
       nativeElement: e,
       value: this.checked
@@ -48,6 +59,8 @@ export class DCCheckboxComponent {
   @Output() dcMouseLeave = new EventEmitter<Event>()
   @Output() dcMouseEnter = new EventEmitter<Event>()
   @Output() dcDoubleClick = new EventEmitter<Event>()
+  @Output() dcFocusOut = new EventEmitter<Object>();
+  @Output() dcFocusIn = new EventEmitter<Object>();
   //#endregion
 
   //#region onDoubleClick Event
@@ -91,4 +104,18 @@ export class DCCheckboxComponent {
     this.dcMouseLeave.emit(e)
   }
   //#endregion
+
+  //#region dcFocusOut Event
+  onFocusOut(e: Event) {
+    this.dcFocusOut.emit(e)
+  }
+  //#endregion
+
+  //#region dcFocusIn Event
+  onFocusIn(e: Event) {
+    this.clickedOnce = true
+    this.dcFocusIn.emit(e)
+  }
+  //#endregion
+
 }

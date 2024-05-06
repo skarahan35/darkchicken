@@ -29,7 +29,7 @@ export class DcDropdownComponent implements AfterViewInit{
   @Output() dcMouseEnter = new EventEmitter<Object>()
   isMenuShow: boolean = false
   id!: string
-
+  clickedOnce:boolean=false
   get validationRule(){
     return this.isRequired ?  [{type:'required',message:this.validationMessage}] as validationRules[] : null
   }
@@ -88,6 +88,7 @@ export class DcDropdownComponent implements AfterViewInit{
   onFocusOut(e:any){
     setTimeout(()=>{
       this.dcFocusOut.emit(e)
+      this.clickedOnce = true
     },100)
     
   }

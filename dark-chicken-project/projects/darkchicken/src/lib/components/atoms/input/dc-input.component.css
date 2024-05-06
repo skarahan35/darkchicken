@@ -78,12 +78,14 @@
 
 
 .dca-invalid-icon {
+  width: 0.8rem;
+  height: 0.8rem;
   z-index: 2;
   position: absolute;
   display: inline-block;
   right: 5px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(calc(-50% - 0.2rem));;
   fill: var(--dc-color-danger);
 }
 

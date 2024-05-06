@@ -1,20 +1,22 @@
-<span *ngIf="type == 'text' || type =='number' || type == 'date'">
-    <dca-input [disabled]="isRemoved" [readonly]="readonly" [type]="type" dcClass="cell-input text" [validationRules]="validationRules"
-        (dcValueChanged)="onCellChange.emit($event)" [title]="sanitizedValue" [value]="processedValue" (dcValidating)="onCellValidating.emit($event)"
-        (dcValidated)="onCellValidated.emit($event)"></dca-input>
-</span>
-
-<span *ngIf="type == 'lookup'">
-    <dcm-dropdown (dcCollapsing)="dcCollapsing()" [contentPosition]="dropdownPosition" [disabled]="readonly" [isRequired]="isRequired" [validationMessage]="validationMessage"
-     [readonly]="true" dcClass="cell-input dropdown" [value]="processedValue" #cellInputDropdown>
-        <dca-list *ngIf="!isTree" (dcClick)="optionSelect($event, cellInputDropdown)"
-        [displayExp]="column.lookup?.displayExp" [valueExp]="column.lookup?.valueExp" [dataSource]="column.lookup?.dataSource"
-        ></dca-list>
-
-        <dca-tree #treeComponent *ngIf="isTree" [treeData]="this.column.lookup?.dataSource" (dcClick)="onTreeClick($event, cellInputDropdown)"> </dca-tree>
-    </dcm-dropdown>
-</span>
-
-<span *ngIf="type == 'boolean'" class="boolean">
-    <dca-checkbox [isRequired]="isRequired" [disabled]="isRemoved" (dcValueChanged)="onBooleanChange($event)" [checked]="processedValue"></dca-checkbox>
+<span [id]="column.$$id + '┐' + row['$$$id'] + '┐' + (isCellValid ? 'valid' : 'invalid') + '┐' + (isClickedOnce ? 'clickedOnce' : '')">
+    <span *ngIf="type == 'text' || type =='number' || type == 'date'">
+        <dca-input [disabled]="isRemoved" [readonly]="readonly" [type]="type" dcClass="cell-input text" [validationRules]="validationRules"
+            (dcValueChanged)="onCellChange.emit($event)" [title]="sanitizedValue" [value]="processedValue" (dcValidating)="onCellValidating.emit($event)"
+            (dcValidated)="onCellValidated.emit($event)"></dca-input>
+    </span>
+    
+    <span *ngIf="type == 'lookup'">
+        <dcm-dropdown (dcCollapsing)="dcCollapsing()" [contentPosition]="dropdownPosition" [disabled]="readonly" [isRequired]="isRequired" [validationMessage]="validationMessage"
+         [readonly]="true" dcClass="cell-input dropdown" [value]="processedValue" #cellInputDropdown>
+            <dca-list *ngIf="!isTree" (dcClick)="optionSelect($event, cellInputDropdown)"
+            [displayExp]="column.lookup?.displayExp" [valueExp]="column.lookup?.valueExp" [dataSource]="column.lookup?.dataSource"
+            ></dca-list>
+    
+            <dca-tree #treeComponent *ngIf="isTree" [treeData]="this.column.lookup?.dataSource" (dcClick)="onTreeClick($event, cellInputDropdown)"> </dca-tree>
+        </dcm-dropdown>
+    </span>
+    
+    <span *ngIf="type == 'boolean'" class="boolean">
+        <dca-checkbox [notEqual]="notEqual" [isRequired]="isRequired" [disabled]="isRemoved" (dcValueChanged)="onBooleanChange($event)" [checked]="processedValue"></dca-checkbox>
+    </span>
 </span>

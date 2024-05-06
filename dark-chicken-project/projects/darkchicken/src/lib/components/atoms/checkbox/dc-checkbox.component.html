@@ -1,13 +1,13 @@
-<input *ngIf="type == 'box'" [disabled]="disabled" [checked]="checked" [required]="isRequired"
-    [ngClass]="{'indeterminate' :checked==null, 'hidden': !visible,'dca-checkbox':true, 'invalid': !isValid }" [attr.id]="checkboxId"
+<input #dcaCheckbox *ngIf="type == 'box'" [disabled]="disabled" [checked]="checked" [required]="isRequired"
+    [ngClass]="{'indeterminate' :checked==null, 'hidden': !visible,'dca-checkbox':true, 'invalid': (!isValid && clickedOnce) }" [attr.id]="checkboxId"
     type="checkbox" [class]="dcClass" (change)="onValueChange($event)" (click)="onClick($event)"
     (mouseover)="onHover($event)" (mousedown)="onMouseDown($event)" (mouseup)="onMouseUp($event)"
-    (mouseenter)="onMouseEnter($event)" (mouseleave)="onMouseLeave($event)" (dblclick)="onDoubleClick($event)">
+    (mouseenter)="onMouseEnter($event)" (mouseleave)="onMouseLeave($event)" (dblclick)="onDoubleClick($event)" (focus)="onFocusIn($event)" (focusout)="onFocusOut($event)">
 
 <label *ngIf="type == 'switch'" class="switch">
     <input [checked]="checked" [disabled]="disabled" [attr.id]="checkboxId" type="checkbox"
         [ngClass]="{'dca-checkbox':true}" [class]="dcClass" (change)="onValueChange($event)" (click)="onClick($event)"
         (mouseover)="onHover($event)" (mousedown)="onMouseDown($event)" (mouseup)="onMouseUp($event)"
-        (mouseenter)="onMouseEnter($event)" (mouseleave)="onMouseLeave($event)" (dblclick)="onDoubleClick($event)">
+        (mouseenter)="onMouseEnter($event)" (mouseleave)="onMouseLeave($event)" (dblclick)="onDoubleClick($event)" (focus)="onFocusIn($event)" (focusout)="onFocusOut($event)">
     <span [ngClass]="{'hidden': !visible }" class="slider"></span>
 </label>

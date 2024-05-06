@@ -21,6 +21,7 @@ export class CellInputComponent {
   @Input() isEditable?: boolean = true
   @Input() column: TableColumn
   @Input() isRemoved: boolean = false
+  @Input() row:any
 
   @Output() onCellChange: EventEmitter<any> = new EventEmitter();
   @Output() onCellValidating: EventEmitter<any> = new EventEmitter();
@@ -119,13 +120,29 @@ export class CellInputComponent {
 
   get isCellValid(){
     if(this.type == 'date' || this.type == 'text' || this.type == 'number'){
-      return this.dcInputComponents.isValid
+      return this.dcInputComponents?.isValid
     }else if(this.type == 'lookup'){
-      return this.dcDropdownComponents.isValid
+      return this.dcDropdownComponents?.isValid
     }
     else{
-      return this.dcCheckboxComponents.isValid
+      return this.dcCheckboxComponents?.isValid
     }
+  }
+
+  get isClickedOnce(){
+    if(this.type == 'date' || this.type == 'text' || this.type == 'number'){
+      return this.dcInputComponents?.clickedOnce
+    }else if(this.type == 'lookup'){
+      return this.dcDropdownComponents?.clickedOnce
+    }
+    else{
+      return this.dcCheckboxComponents?.clickedOnce
+    }
+  }
+
+  get notEqual(){
+    const canNoteBeRule = this.column.validationRules?.find((rule) => rule.type === 'canNotBe');
+    return canNoteBeRule && (typeof canNoteBeRule.value === 'boolean') ? canNoteBeRule.value : null;
   }
 
 

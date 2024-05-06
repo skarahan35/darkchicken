@@ -4,7 +4,7 @@ import { Icons, InputValidationType } from "../types/dc-types";
 export interface validationRules {
     type:InputValidationType,
     message?:string,
-    value?:number,
+    value?:number | boolean,
     pattern?:string
 }
 
