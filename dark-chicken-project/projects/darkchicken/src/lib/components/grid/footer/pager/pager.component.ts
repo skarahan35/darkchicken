@@ -3,7 +3,6 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
 @Component({
   selector: 'dc-pager',
   templateUrl: './pager.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'datatable-pager'
   },

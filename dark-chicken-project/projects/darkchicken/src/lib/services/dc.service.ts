@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
 
 @Injectable({
     providedIn: 'root'
@@ -7,8 +8,9 @@ import { Injectable } from "@angular/core";
 export class DCService{
     constructor(private http: HttpClient) { }
 
-    getIconSVG(iconName: string) {
-      return this.http.get(`assets/icons/${iconName}.svg`, { responseType: 'text' });
+    getIconSVG(iconName: string){
+      return this.http.get(`assets/icons/${iconName}.svg`, { responseType: 'text' })
+      
     }
 
     generateUniqueId(): string {

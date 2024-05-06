@@ -7,7 +7,6 @@ import { translateXY } from 'projects/darkchicken/src/lib/utils/translate';
 @Component({
   selector: 'dc-header',
   templateUrl: './header.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'datatable-header'
   },

@@ -8,7 +8,6 @@ import { nextSortDir } from 'projects/darkchicken/src/lib/utils/sort';
 @Component({
   selector: 'dc-header-cell',
   templateUrl: './header-cell.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'datatable-header-cell'
   },
