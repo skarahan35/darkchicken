@@ -4,7 +4,6 @@ import { DatatableFooterDirective } from 'projects/darkchicken/src/lib/directive
 @Component({
   selector: 'dc-footer',
   templateUrl: './footer.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'datatable-footer'
   },

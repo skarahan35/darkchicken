@@ -7,7 +7,6 @@ import { selectRowsBetween, selectRows } from 'projects/darkchicken/src/lib/util
 @Component({
   selector: 'dc-selection',
   templateUrl: './selection.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SelectionComponent {
   @Input() rows: any[];

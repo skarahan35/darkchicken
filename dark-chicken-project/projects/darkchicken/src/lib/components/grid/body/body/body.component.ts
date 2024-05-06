@@ -9,7 +9,6 @@ import { DCService } from 'projects/darkchicken/src/public-api';
 @Component({
   selector: 'dc-body',
   templateUrl: './body.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'datatable-body'
   }

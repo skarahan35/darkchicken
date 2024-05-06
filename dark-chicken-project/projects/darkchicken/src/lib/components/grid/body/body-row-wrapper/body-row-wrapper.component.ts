@@ -3,7 +3,6 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, DoCheck, EventEm
 @Component({
   selector: 'dc-body-row-wrapper',
   templateUrl: './body-row-wrapper.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'datatable-row-wrapper'
   }

@@ -8,7 +8,6 @@ import { translateXY } from 'projects/darkchicken/src/lib/utils/translate';
 @Component({
   selector: 'dc-body-row',
   templateUrl: './body-row.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BodyRowComponent implements DoCheck {
   @Input() totalRowCount:number

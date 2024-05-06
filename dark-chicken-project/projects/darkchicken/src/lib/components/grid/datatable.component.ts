@@ -27,7 +27,6 @@ import { DcToastService } from "dc-toast-ng";
 @Component({
   selector: 'dc-datatable',
   templateUrl: './datatable.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   host: {
     class: 'dc-datatable'
@@ -287,6 +286,9 @@ get allowDeleting(){
       } else {
         this._internalColumns = [...val];
       }
+      this._internalColumns.forEach((item:any) => {
+        item.visible == null || undefined ? item.visible = true : null
+      })
       this._internalColumns = this._internalColumns.filter((x:any) => x.visible || x.prop == 'action-column')
       setColumnDefaults(this._internalColumns);
       this.recalculateColumns();
@@ -824,9 +826,9 @@ get allowDeleting(){
    * view has been fully initialized.
    */
   ngAfterViewInit(): void {
-    setTimeout(() => {
-      this.onColumnResize({ column: this._columns[0], newValue: this._columns[0].width })
-    }, 500)
+    // setTimeout(() => {
+    //   this.onColumnResize({ column: this._columns[0], newValue: this._columns[0].width })
+    // }, 500)
 
     if (!this.externalSorting) {
       this.sortInternalRows();

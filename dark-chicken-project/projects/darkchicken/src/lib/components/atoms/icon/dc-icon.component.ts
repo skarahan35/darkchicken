@@ -25,11 +25,13 @@ export class DCIconComponent implements OnChanges {
 
   svgContent!: SafeHtml;
 
-  constructor(private iconService: DCService, private sanitizer: DomSanitizer) { }
+  constructor(private iconService: DCService, private sanitizer: DomSanitizer) { 
+    
+  }
 
 
 
-  ngOnChanges(changes: SimpleChanges): void {
+    ngOnChanges(changes: SimpleChanges){
     if(changes['icon']){
       this.iconService.getIconSVG(this.icon).subscribe((data: string) => {
         this.svgContent = this.getTrustedSvgContent(data);
@@ -38,6 +40,7 @@ export class DCIconComponent implements OnChanges {
   }
 
   private getTrustedSvgContent(content: string): SafeHtml {
+    
     return this.sanitizer.bypassSecurityTrustHtml(content);
   }
 

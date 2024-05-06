@@ -3,7 +3,6 @@ import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, HostBindi
 @Component({
   selector: 'dc-scroller',
   templateUrl: './scroller.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'datatable-scroll'
   },
