@@ -16,7 +16,7 @@
             [disabled]="disabled" (keyup)="onKeyUp($event)" (search)="onKeyUp($event)">
 
         <!--Invalid Icon & Message-->
-        <div *ngIf="!isValid" class="dca-invalid-icon">
+        <div *ngIf="(!isValid && clickedOnce)" class="dca-invalid-icon">
             <dca-icon icon="circle-exclamation"></dca-icon>
             <span class="validation-message">{{validationMessage}}</span>
         </div>

@@ -1,10 +1,10 @@
-<div (mouseenter)="dcMouseEnter.emit($event)" [id]="id" [class]="dcClass" [ngClass]="{ 'hidden' : !visible, 'dcm-dropdown': true , 'invalid':!isValid}">
+<div (mouseenter)="dcMouseEnter.emit($event)" [id]="id" [class]="dcClass" [ngClass]="{ 'hidden' : !visible, 'dcm-dropdown': true , 'invalid':(!isValid && clickedOnce)}">
 
     <span [class]="'dcm-dropdown-content ' + contentPosition" *ngIf="isMenuShow">
         <ng-content></ng-content>
     </span>
     
-    <div *ngIf="!isValid" class="dca-invalid-icon">
+    <div *ngIf="(!isValid && clickedOnce)" class="dca-invalid-icon">
         <dca-icon icon="circle-exclamation"></dca-icon>
         <span [class]="'validation-message ' + contentPosition">{{validationMessage}}</span>
     </div>

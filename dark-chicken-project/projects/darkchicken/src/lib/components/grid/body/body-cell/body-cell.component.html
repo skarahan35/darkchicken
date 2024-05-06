@@ -25,7 +25,7 @@
             (onCellValidated)="onCellValidated($event)" *ngIf="column.prop != 'action-column'"
             (onCellChange)="cellChange($event)" [isEditable]="isEditable()" [validationRules]="column.validationRules"
             [dataType]="column.dataType" [sanitizedValue]="sanitizedValue" [value]="value"
-            [style.width.px]="column.width" [isRemoved]="getCellState() =='remove'" [totalRowCount]="totalRowCount" [rowIndex]="rowIndex"></cell-input>
+            [style.width.px]="column.width" [isRemoved]="getCellState() =='remove'" [totalRowCount]="totalRowCount" [rowIndex]="rowIndex" [row]="row"></cell-input>
 
         <span class="action-column">
             <dca-icon class="action-icon" *ngIf="column.prop == 'action-column'"

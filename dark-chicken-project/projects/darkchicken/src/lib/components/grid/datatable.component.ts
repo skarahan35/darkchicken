@@ -28,6 +28,7 @@ import { DcToastService } from "dc-toast-ng";
   selector: 'dc-datatable',
   templateUrl: './datatable.component.html',
   encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'dc-datatable'
   }
@@ -45,18 +46,18 @@ export class DatatableComponent implements OnInit, DoCheck, AfterViewInit, OnCha
    * Is datatable datas deletable 
    */
 
- @Input() set allowDeleting(val:boolean){
+  @Input() set allowDeleting(val: boolean) {
     this._allowDeleting = val
-    if(val == false) {
-      this.columns = this.columns.filter((x:any) => x.prop != "action-column" )
+    if (val == false) {
+      this.columns = this.columns.filter((x: any) => x.prop != "action-column")
     }
- }  
+  }
 
-_allowDeleting:boolean = true
+  _allowDeleting: boolean = true
 
-get allowDeleting(){
- return this._allowDeleting
-}
+  get allowDeleting() {
+    return this._allowDeleting
+  }
 
   /**
    * Is new datas insertable 
@@ -85,11 +86,11 @@ get allowDeleting(){
   }
 
   changes: any = []
-  initialRows:any
+  initialRows: any
 
 
   ngOnChanges(changes: SimpleChanges): void {
-    if(changes['rows']){
+    if (changes['rows']) {
       this.initialRows = JSON.parse(JSON.stringify(this._internalRows))
     }
   }
@@ -111,37 +112,92 @@ get allowDeleting(){
     this.rows = this._internalRows
   }
 
-  onSaving(){
-    let removedRows= this.changes.filter((x:any) => x.type =='remove')
-    removedRows.forEach((row:any) => {
-      this.rows = this.rows.filter((x:any) => x.$$$id != row.key)
-    });
-    this.changes = []
-    this.initialRows = JSON.parse(JSON.stringify(this.rows));
-    this.toastService.create({content:'Saved',type:'success', position:'bottom-right',closeWithHover:false})
+  onSaving() {
+    if(this.isChangesValid()){
+      let removedRows = this.changes.filter((x: any) => x.type == 'remove')
+      removedRows.forEach((row: any) => {
+        this.rows = this.rows.filter((x: any) => x.$$$id != row.key)
+      });
+      this.changes = []
+      this.initialRows = JSON.parse(JSON.stringify(this.rows));
+      this.toastService.create({ content: 'Saved', type: 'success', position: 'bottom-right', closeWithHover: true })
+    }else{
+      this.toastService.create({ content: 'Invalid inputs', type: 'error', position: 'bottom-right', closeWithHover: true })
+    }
+
   }
 
-  onRowReversing(e:any){
+  getColumnIdByProp(prop: string) {
+    const col = this.columns.find((x: any) => x.prop == prop)
+    return col ? col.$$id : ''
+  }
+
+  isRowValid(rowId: string) {
+    const row = this.rows.find((x: any) => x['$$$id'] == rowId)
+    let flag = true
+    if (row) {
+      const rowElements = this.findElements(row['$$$id'])
+      if(rowElements){
+        rowElements.forEach((element:any)=>{
+          var idValue = element.getAttribute("id")
+          if(idValue && idValue.includes('┐invalid')){
+            flag = false
+            let inputElement = element.querySelector("input")
+            inputElement.focus()
+            setTimeout(()=>{
+              inputElement.blur()
+            },10)
+          }
+        })
+      }
+    }
+    return flag
+  }
+
+  findElements(rowId: string) {
+    var elements:any = document.querySelectorAll("[id*='┐']");
+    let cels=[]
+    for (let element of elements) {
+        var idValue = element.getAttribute("id");
+        if (idValue && idValue.includes("┐" + rowId + "┐")) {
+            cels.push(element);
+        }
+    }
+    return cels;
+}
+
+
+  isChangesValid(){
+    let flag = true
+    this.changes.forEach((change:any) => {
+      if(!this.isRowValid(change.row["$$$id"])){
+        flag = false
+      }
+    });
+    return flag
+  }
+
+  onRowReversing(e: any) {
     this.initialRows
-    this.changes = this.changes.filter((x:any) => x.key != e.row.$$$id)
+    this.changes = this.changes.filter((x: any) => x.key != e.row.$$$id)
   }
   //#endregion
-  
+
   onGridReverse(e: any) {
     this.changes = [];
     this.rows = JSON.parse(JSON.stringify(this.initialRows));
   }
-  
+
   onRowChange(e: any) {
-    let isChanged=false
-    this.changes.forEach((changedItem:any) => {
-      if(changedItem.key == e.row.$$$id){
+    let isChanged = false
+    this.changes.forEach((changedItem: any) => {
+      if (changedItem.key == e.row.$$$id) {
         isChanged = true
         changedItem.row[e.cell.column.prop] = e.cell.value
       }
     });
 
-    if(!isChanged){
+    if (!isChanged) {
       this.changes.push({
         row: {
           [e.cell.column.prop]: e.cell.value
@@ -149,37 +205,37 @@ get allowDeleting(){
         key: e.row['$$$id'],
         type: 'update'
       });
-    }      
+    }
 
   }
 
-  onRowRemoving(e:any){
+  onRowRemoving(e: any) {
     let isOnChanges = false;
-    this.changes.forEach((changedItem:any, index:number) => {
+    this.changes.forEach((changedItem: any, index: number) => {
       if (changedItem.key === e.row['$$$id']) {
         isOnChanges = true;
         if (changedItem.type === 'insert') {
           this.changes.splice(index, 1);
-          this.rows =this.rows.filter((x:any)=> x.$$$id != e.row.$$$id)
+          this.rows = this.rows.filter((x: any) => x.$$$id != e.row.$$$id)
         }
-        else if (changedItem.type ==='update'){
+        else if (changedItem.type === 'update') {
           changedItem.row = null
           changedItem.type = 'remove'
         }
       }
     });
-    
-    if(!isOnChanges){
+
+    if (!isOnChanges) {
       this.changes.push(
         {
-          row:null,
-          key:e.row.$$$id,
-          type:'remove'
+          row: null,
+          key: e.row.$$$id,
+          type: 'remove'
         }
       )
     }
   }
-  
+
 
   //#endregion
   /**
@@ -267,7 +323,7 @@ get allowDeleting(){
    * Columns to be displayed.
    */
   @Input() set columns(val: TableColumn[]) {
-    let actionColumn: TableColumn = {           
+    let actionColumn: TableColumn = {
       $$id: this.dcService.generateUniqueId(),      //Dev: Ergül         
       canAutoResize: false,                         //Dev: Ergül      
       frozenRight: true,                            //Dev: Ergül        
@@ -276,9 +332,9 @@ get allowDeleting(){
       cellClass: 'action-column-cell',              //Dev: Ergül              
       prop: 'action-column',                        //Dev: Ergül      
       name: '',                                     //Dev: Ergül          
-      sortable:false,                               //Dev: Ergül
-      resizeable:false
-    }                                                            
+      sortable: false,                               //Dev: Ergül
+      resizeable: false
+    }
     let flag = this.isActionColumnAlreadyHas(val)
     if (val) {
       if (this.allowDeleting && !flag) {
@@ -286,20 +342,20 @@ get allowDeleting(){
       } else {
         this._internalColumns = [...val];
       }
-      this._internalColumns.forEach((item:any) => {
+      this._internalColumns.forEach((item: any) => {
         item.visible == null || undefined ? item.visible = true : null
       })
-      this._internalColumns = this._internalColumns.filter((x:any) => x.visible || x.prop == 'action-column')
+      this._internalColumns = this._internalColumns.filter((x: any) => x.visible || x.prop == 'action-column')
       setColumnDefaults(this._internalColumns);
       this.recalculateColumns();
     }
 
-    if (this.allowDeleting && !flag){
+    if (this.allowDeleting && !flag) {
       this._columns = [...val, actionColumn];
-    }else{
+    } else {
       this._columns = [...val];
     }
-    
+
   }
 
   /**
@@ -798,7 +854,7 @@ get allowDeleting(){
     private columnChangesService: ColumnChangesService,
     @Optional() @Inject('configuration') private configuration: IDcDatatableConfig,
     private dcService: DCService,
-    private toastService:DcToastService
+    private toastService: DcToastService
   ) {
     // get ref to elm for measuring
     this.element = element.nativeElement;
@@ -1317,51 +1373,51 @@ get allowDeleting(){
 
 
   //dev:serkan
-  columnSearchValues:any = {}
-  onColumnSearch(e:any) {
-    if(e.value == ''){
+  columnSearchValues: any = {}
+  onColumnSearch(e: any) {
+    if (e.value == '') {
       delete this.columnSearchValues[e.dataField]
     }
-    else{
+    else {
       this.columnSearchValues[e.dataField] = e.value
     }
-    let searchDatas:any = []
-     this.initialRows.forEach((item:any) => {
-      if(Object.keys(this.columnSearchValues).length > 0){
-        for(let key in this.columnSearchValues){
-          if(item[key]?.toLowerCase().includes(this.columnSearchValues[key].toLowerCase())){
-            if(!searchDatas.includes(item)){
+    let searchDatas: any = []
+    this.initialRows.forEach((item: any) => {
+      if (Object.keys(this.columnSearchValues).length > 0) {
+        for (let key in this.columnSearchValues) {
+          if (item[key]?.toLowerCase().includes(this.columnSearchValues[key].toLowerCase())) {
+            if (!searchDatas.includes(item)) {
               searchDatas.push(item)
             }
-              
+
           }
-          else{
-            if(searchDatas.includes(item)){
-              searchDatas = searchDatas.filter((x:any) => x != item)
+          else {
+            if (searchDatas.includes(item)) {
+              searchDatas = searchDatas.filter((x: any) => x != item)
             }
           }
         }
       }
     })
-    if(searchDatas.length > 0){
+    if (searchDatas.length > 0) {
       this.rows = searchDatas
     }
-    else{
-      this.rows = JSON.parse(JSON.stringify(this.initialRows)) 
+    else {
+      this.rows = JSON.parse(JSON.stringify(this.initialRows))
     }
-   
+
 
   }
 
-  changeColumns(e:any){
+  changeColumns(e: any) {
     this.columns = e
     this.recalculate()
     this.onColumnResize({ column: this._columns[0], newValue: this._columns[0].width })
- 
+
   }
 
-  isActionColumnAlreadyHas(val:any){
-    return val.find((x:any) => x.prop == 'action-column') ? true : false
-    
+  isActionColumnAlreadyHas(val: any) {
+    return val.find((x: any) => x.prop == 'action-column') ? true : false
+
   }
 }

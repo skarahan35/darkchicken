@@ -27,7 +27,8 @@ export type InputValidationType =
   | 'minLength'
   | 'maxLength'
   | 'regEx'
-  | 'null';
+  | 'null'
+  | 'canNotBe';
 
   export type CheckboxType = 'box' | 'switch'
 
