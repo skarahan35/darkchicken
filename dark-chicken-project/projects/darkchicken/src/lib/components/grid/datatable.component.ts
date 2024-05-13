@@ -70,9 +70,100 @@ export class DatatableComponent implements OnInit, DoCheck, AfterViewInit, OnCha
   @Input() allowColumnSearch: boolean | null
 
   /**
+  * Paramet of the using grid search
+  */
+  @Input() allowGridSearch: boolean
+
+  /**
+  * Paramet of the using column chooser
+  */
+  @Input() allowColumnChooser: boolean
+
+  /**
+  * Paramet of the using column reorder
+  */
+  @Input() allowColumnReorder: boolean
+
+  /**
+  * Paramet of the using toolbar
+  */
+  @Input() useToolbar: boolean
+
+  /**
    * Editing mode of the datatable (Just 'batch' is available)
    */
   @Input() editingMode?: 'batch' | 'popup' | 'row' = 'batch'
+
+
+  /**
+   * Event triggered when a row is being inserted
+   */
+  @Output() onRowInserting: EventEmitter<any> = new EventEmitter();
+
+  /**
+   * Event triggered when a row has been inserted
+   */
+  @Output() onRowInserted: EventEmitter<any> = new EventEmitter();
+
+  /**
+   * Event triggered when a row is being removed
+   */
+  @Output() onRowRemoving: EventEmitter<any> = new EventEmitter();
+
+  /**
+   * Event triggered when a row has been removed
+   */
+  @Output() onRowRemoved: EventEmitter<any> = new EventEmitter();
+
+  /**
+   * Event triggered when a row is being reversed
+   */
+  @Output() onRowReversing: EventEmitter<any> = new EventEmitter();
+
+  /**
+   * Event triggered when a row has been reversed
+   */
+  @Output() onRowReversed: EventEmitter<any> = new EventEmitter();
+
+  /**
+   * Event triggered when saving operation is performed
+   */
+  @Output() onSaving: EventEmitter<any> = new EventEmitter();
+
+  /**
+   * Event triggered when saving operation has been completed
+   */
+  @Output() onSaved: EventEmitter<any> = new EventEmitter();
+
+  /**
+   * Event triggered when validating operation is performed
+   */
+  @Output() onValidating: EventEmitter<any> = new EventEmitter();
+
+  /**
+   * Event triggered when validating operation has been completed
+   */
+  @Output() onValidated: EventEmitter<any> = new EventEmitter();
+
+  /**
+   * Event triggered when the grid is being reversed
+   */
+  @Output() onGridReversing: EventEmitter<any> = new EventEmitter();
+
+  /**
+   * Event triggered when the grid has been reversed
+   */
+  @Output() onGridReversed: EventEmitter<any> = new EventEmitter();
+
+  /**
+   * Event triggered when a row is changing
+   */
+  @Output() onRowChanging: EventEmitter<any> = new EventEmitter();
+
+  /**
+   * Event triggered when a row has been changed
+   */
+  @Output() onRowChanged: EventEmitter<any> = new EventEmitter();
 
   get isAllowEditing() {
     return this.allowEditing != undefined ? this.allowEditing : true
@@ -84,18 +175,16 @@ export class DatatableComponent implements OnInit, DoCheck, AfterViewInit, OnCha
   get mode() {
     return this.editingMode != undefined ? this.editingMode : 'batch'
   }
-
   changes: any = []
   initialRows: any
-
-
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['rows']) {
       this.initialRows = JSON.parse(JSON.stringify(this._internalRows))
     }
   }
 
-  onRowInserting() {
+  rowInserting() {
+    this.onRowInserting.emit(this)
     let emptyRow: any = { $$$id: this.dcService.generateUniqueId() }
     this._internalColumns.forEach((column: TableColumn) => {
       if (column && column.prop && column.prop != 'action-column') {
@@ -110,85 +199,66 @@ export class DatatableComponent implements OnInit, DoCheck, AfterViewInit, OnCha
       })
     this._internalRows.unshift(emptyRow)
     this.rows = this._internalRows
+    this.onRowInserted.emit(this)
   }
 
-  onSaving() {
-    if(this.isChangesValid()){
+  saving() {
+    this.onSaving.emit(this)
+    if (this.isChangesValid()) {
       let removedRows = this.changes.filter((x: any) => x.type == 'remove')
       removedRows.forEach((row: any) => {
         this.rows = this.rows.filter((x: any) => x.$$$id != row.key)
       });
       this.changes = []
       this.initialRows = JSON.parse(JSON.stringify(this.rows));
-      this.toastService.create({ content: 'Saved', type: 'success', position: 'bottom-right', closeWithHover: true })
-    }else{
-      this.toastService.create({ content: 'Invalid inputs', type: 'error', position: 'bottom-right', closeWithHover: true })
+      this.onSaved.emit(this)
+    } else {
     }
-
-  }
-
-  getColumnIdByProp(prop: string) {
-    const col = this.columns.find((x: any) => x.prop == prop)
-    return col ? col.$$id : ''
   }
 
   isRowValid(rowId: string) {
-    const row = this.rows.find((x: any) => x['$$$id'] == rowId)
-    let flag = true
+    const invalidCells = this.dcService.getInvalidCells()
+    const row = invalidCells.find((row: any) => row.hasOwnProperty(rowId))
     if (row) {
-      const rowElements = this.findElements(row['$$$id'])
-      if(rowElements){
-        rowElements.forEach((element:any)=>{
-          var idValue = element.getAttribute("id")
-          if(idValue && idValue.includes('┐invalid')){
-            flag = false
-            let inputElement = element.querySelector("input")
-            inputElement.focus()
-            setTimeout(()=>{
-              inputElement.blur()
-            },10)
-          }
-        })
-      }
+      let props = Object.keys(row[rowId])
+      props.forEach(prop => {
+        row[rowId][prop].clickCell()
+      });
     }
-    return flag
+    return row ? false : true
   }
 
-  findElements(rowId: string) {
-    var elements:any = document.querySelectorAll("[id*='┐']");
-    let cels=[]
-    for (let element of elements) {
-        var idValue = element.getAttribute("id");
-        if (idValue && idValue.includes("┐" + rowId + "┐")) {
-            cels.push(element);
-        }
-    }
-    return cels;
-}
-
-
-  isChangesValid(){
+  isChangesValid() {
+    this.onValidating.emit(this)
     let flag = true
-    this.changes.forEach((change:any) => {
-      if(!this.isRowValid(change.row["$$$id"])){
+    this.changes.forEach((change: any) => {
+      if (!this.isRowValid(change.row["$$$id"])) {
         flag = false
       }
     });
+    this.onValidated.emit({ this: this, isValid: flag })
     return flag
   }
 
-  onRowReversing(e: any) {
-    this.initialRows
+  rowReversing(e: any) {
+    this.onRowReversing.emit(this)
     this.changes = this.changes.filter((x: any) => x.key != e.row.$$$id)
+    this.onRowReversed.emit(this)
   }
-  //#endregion
 
-  onGridReverse(e: any) {
+  isChangesEmpty() {
+    return !(this.changes.length > 0)
+  }
+
+  gridReverse(e: any) {
+    this.onGridReversing.emit(this)
     this.changes = [];
     this.rows = JSON.parse(JSON.stringify(this.initialRows));
+    this.onGridReversed.emit(this)
   }
 
-  onRowChange(e: any) {
+  rowChange(e: any) {
+    this.onRowChanging.emit({ this: this, event: e })
     let isChanged = false
     this.changes.forEach((changedItem: any) => {
       if (changedItem.key == e.row.$$$id) {
@@ -206,10 +276,11 @@ export class DatatableComponent implements OnInit, DoCheck, AfterViewInit, OnCha
         type: 'update'
       });
     }
-
+    this.onRowChanged.emit({ this: this, event: e })
   }
 
-  onRowRemoving(e: any) {
+  rowRemoving(e: any) {
+    this.onRowRemoving.emit(this)
     let isOnChanges = false;
     this.changes.forEach((changedItem: any, index: number) => {
       if (changedItem.key === e.row['$$$id']) {
@@ -234,6 +305,8 @@ export class DatatableComponent implements OnInit, DoCheck, AfterViewInit, OnCha
         }
       )
     }
+
+    this.onRowRemoved.emit(this)
   }
 
 

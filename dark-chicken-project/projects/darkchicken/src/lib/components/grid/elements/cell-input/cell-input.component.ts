@@ -1,8 +1,9 @@
-import { Component, EventEmitter, Input, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { TableColumn, dataType } from 'projects/darkchicken/src/lib/types/table-column.type';
 import { DcDropdownComponent } from '../../../molecules/dc-dropdown/dc-dropdown.component';
 import { validationRules } from '../../../../models/dc-models.model'
 import { DCCheckboxComponent, DCInputComponent, DcTreeComponent } from '../../../atoms';
+import { DCService } from 'projects/darkchicken/src/lib/services/dc.service';
 
 @Component({
   selector: 'cell-input',
@@ -11,7 +12,7 @@ import { DCCheckboxComponent, DCInputComponent, DcTreeComponent } from '../../..
     class: 'cell-input'
   }
 })
-export class CellInputComponent {
+export class CellInputComponent implements AfterViewInit{
   @Input() rowIndex: number
   @Input() totalRowCount: number
   @Input() dataType?: dataType = 'text'
@@ -21,7 +22,7 @@ export class CellInputComponent {
   @Input() isEditable?: boolean = true
   @Input() column: TableColumn
   @Input() isRemoved: boolean = false
-  @Input() row:any
+  @Input() row: any
 
   @Output() onCellChange: EventEmitter<any> = new EventEmitter();
   @Output() onCellValidating: EventEmitter<any> = new EventEmitter();
@@ -31,6 +32,14 @@ export class CellInputComponent {
   @ViewChild(DCInputComponent) dcInputComponents: DCInputComponent
   @ViewChild(DcDropdownComponent) dcDropdownComponents: DcDropdownComponent
   @ViewChild(DCCheckboxComponent) dcCheckboxComponents: DCCheckboxComponent
+
+  constructor(private dcService: DCService) { }
+  ngAfterViewInit(): void {
+    if (this.column.prop) {
+      this.dcService.checkValidationOfCell(this.row.$$$id, this.column.prop, this.isCellValid, this)
+    }
+  }
+
   get type() {
     return this.dataType != undefined ? this.dataType : 'text'
   }
@@ -87,8 +96,8 @@ export class CellInputComponent {
           return this.getTreeValue()
         }
       }
-    }else if(this.type == 'boolean'){
-      if(this.value === true || this.value === false) return this. value
+    } else if (this.type == 'boolean') {
+      if (this.value === true || this.value === false) return this.value
       return null
 
     }
@@ -106,7 +115,7 @@ export class CellInputComponent {
   }
 
   get dropdownPosition() {
-    if (this.rowIndex != undefined && this.totalRowCount !=undefined) {
+    if (this.rowIndex != undefined && this.totalRowCount != undefined) {
       if (this.totalRowCount / 2 >= this.rowIndex) {
         return 'below'
       } else {
@@ -118,29 +127,40 @@ export class CellInputComponent {
   }
 
 
-  get isCellValid(){
-    if(this.type == 'date' || this.type == 'text' || this.type == 'number'){
+  get isCellValid() {
+    if (this.type == 'date' || this.type == 'text' || this.type == 'number') {
       return this.dcInputComponents?.isValid
-    }else if(this.type == 'lookup'){
+    } else if (this.type == 'lookup') {
       return this.dcDropdownComponents?.isValid
     }
-    else{
+    else {
       return this.dcCheckboxComponents?.isValid
     }
   }
 
-  get isClickedOnce(){
-    if(this.type == 'date' || this.type == 'text' || this.type == 'number'){
+  get isClickedOnce() {
+    if (this.type == 'date' || this.type == 'text' || this.type == 'number') {
       return this.dcInputComponents?.clickedOnce
-    }else if(this.type == 'lookup'){
+    } else if (this.type == 'lookup') {
       return this.dcDropdownComponents?.clickedOnce
     }
-    else{
+    else {
       return this.dcCheckboxComponents?.clickedOnce
     }
   }
 
-  get notEqual(){
+  clickCell(){
+    if (this.type == 'date' || this.type == 'text' || this.type == 'number') {
+      return this.dcInputComponents.clickedOnce = true
+    } else if (this.type == 'lookup') {
+      return this.dcDropdownComponents.clickedOnce = true
+    }
+    else {
+      return this.dcCheckboxComponents.clickedOnce = true
+    }
+  }
+
+  get notEqual() {
     const canNoteBeRule = this.column.validationRules?.find((rule) => rule.type === 'canNotBe');
     return canNoteBeRule && (typeof canNoteBeRule.value === 'boolean') ? canNoteBeRule.value : null;
   }
@@ -153,6 +173,9 @@ export class CellInputComponent {
       this.onCellChange.emit({ nativeElement: e.nativeElement, newValue: this.value })
     }
     dropdown.closeDropdown()
+    if (this.column.prop) {
+      this.dcService.checkValidationOfCell(this.row.$$$id, this.column.prop, this.isCellValid, this)
+    }
   }
 
   getTreeValue(): string {
@@ -160,7 +183,6 @@ export class CellInputComponent {
       const data = this.column.lookup.dataSource;
       const valueExp = this.column.lookup.valueExp;
       const displayExp = this.column.lookup.displayExp;
-
       const findValueInDataSource = (data: any[], value: string): string => {
         let result = '';
         data.forEach(item => {
@@ -187,16 +209,32 @@ export class CellInputComponent {
       treeDropdown.value = this.getTreeValue()
       this.onCellChange.emit({ nativeElement: e.nativeElement, newValue: this.value })
       treeDropdown.closeDropdown()
+
+      if (this.column.prop) {
+        this.dcService.checkValidationOfCell(this.row.$$$id, this.column.prop, this.isCellValid, this)
+      }
     }
   }
-  dcCollapsing(){
-    if(this.treeComponent){
+
+  dcCollapsing() {
+    if (this.treeComponent) {
       this.treeComponent.closeAllNodesExcept()
     }
   }
 
-  onBooleanChange(e:any){
-    this.value= e.value
+  onBooleanChange(e: any) {
+    this.value = e.value
     this.onCellChange.emit({ nativeElement: e.nativeElement, newValue: this.value })
+
+    if (this.column.prop) {
+      this.dcService.checkValidationOfCell(this.row.$$$id, this.column.prop, this.isCellValid, this)
+    }
+  }
+
+  dcValidated(e: any) {
+    this.onCellValidated.emit(e)
+    if (this.column.prop) {
+      this.dcService.checkValidationOfCell(this.row.$$$id, this.column.prop, this.isCellValid, this)
+    }
   }
 }

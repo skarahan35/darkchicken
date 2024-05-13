@@ -1,26 +1,26 @@
 <span class="toolbar">
 
-    <div class="toolbar-item icon-button">
+    <div *ngIf="allowColumnReorder !=false" class="toolbar-item icon-button">
         <column-reorder></column-reorder>
     </div>
 
-    <div class="toolbar-item icon-button">
+    <div *ngIf="allowColumnChooser !=false" class="toolbar-item icon-button">
         <column-chooser [columns]="columns" (changeColumns)="changeColumns($event)"></column-chooser>
     </div>
 
-    <div (click)="onSaveClick.emit($event)" class="toolbar-item icon-button">
+    <div *ngIf="allowEditing !=false" (click)="saveClick($event)" class="toolbar-item icon-button"[ngClass]="{'disable':passiveSaving}">
         <dca-icon icon="floppy-disk"></dca-icon>
     </div>
 
-    <div (click)="onAddClick.emit($event)" class="toolbar-item icon-button">
+    <div *ngIf="allowAdding !=false" (click)="addClick($event)" class="toolbar-item icon-button" >
         <dca-icon icon="plus"></dca-icon>
     </div>
 
-    <div (click)="onGridReverse.emit($event)" class="toolbar-item icon-button">
+    <div *ngIf="!(allowAdding ==false && allowEditing ==false && allowDeleting ==false)" (click)="gridReverse($event)" class="toolbar-item icon-button" [ngClass]="{'disable':passiveReversing}">
         <dca-icon icon="arrow-rotate-left"></dca-icon>
     </div>
 
-    <div class="toolbar-item">
+    <div *ngIf="allowGridSearch !=false" class="toolbar-item">
         <grid-search></grid-search>
     </div>
 </span>

@@ -7,7 +7,7 @@
     --dc-grid-header-divider-color: #c5c5c5;
 
     --dc-grid-body-color: #f5f5f5;
-    --dc-grid-body-color-hover: #4a91e24f;
+    --dc-grid-body-color-hover: #a2ceff;
     --dc-grid-body-text-color: #333333;
     --dc-grid-body-divider-color: #c5c5c5;
     --dc-grid-body-odd-row-color: #e0e0e0;
@@ -63,7 +63,9 @@
 
         .datatable-body-row {
             border-top: 1px solid var(--dc-grid-body-divider-color);
-
+            transition-property: background, color;
+            transition-duration: 0.3s;
+            transition-timing-function: linear;
             .datatable-body-cell {
                 vertical-align: middle;
 
@@ -74,11 +76,11 @@
             }
 
             .datatable-row-right{
-                background-color: var(--dc-grid-body-color);
-            }
-
-            .datatable-row-right{
+                transition-property: background, color;
+                transition-duration: 0.3s;
+                transition-timing-function: linear;
                 border-left: 1px solid var(--dc-grid-body-divider-color);
+                background-color: var(--dc-grid-body-color);
             }
 
             &.datatable-row-odd {
@@ -92,11 +94,12 @@
 
             &:hover {
                 background: var(--dc-grid-body-color-hover);
-                /* color: var(--dc-grid-body-text-color-hover); */
-                transition-property: background, color;
-                transition-duration: 0.3s;
-                transition-timing-function: linear;
+                .datatable-row-right{
+                    background: var(--dc-grid-body-color-hover);
+                    
+                }
             }
+            
 
             &:focus {
                 background-color: #232837;

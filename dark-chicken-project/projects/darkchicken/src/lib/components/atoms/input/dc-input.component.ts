@@ -109,7 +109,6 @@ export class DCInputComponent implements AfterViewInit {
 
   //#region Outputs methots
   onFocusIn(e: Event) {
-    this.clickedOnce = true;
     this.dcFocusIn.emit({
       currentValue: (e.currentTarget as HTMLInputElement).value,
       nativeElement: e,
@@ -117,6 +116,7 @@ export class DCInputComponent implements AfterViewInit {
   }
 
   onFocusOut(e: Event) {
+    this.clickedOnce = true;
     this.checkValidation(); //checking the validation 
     this.dcFocusOut.emit({
       currentValue: (e.currentTarget as HTMLInputElement).value,
