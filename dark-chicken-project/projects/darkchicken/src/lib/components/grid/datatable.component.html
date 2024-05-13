@@ -1,4 +1,10 @@
-<dc-toolbar [columns]="columns" (onChangeColumns)="changeColumns($event)" (onGridReverse)="onGridReverse($event)" (onSaveClick)="onSaving()" (onAddClick)="onRowInserting()"></dc-toolbar>
+<dc-toolbar *ngIf="useToolbar != false" [columns]="columns" (onChangeColumns)="changeColumns($event)"
+  (onGridReverse)="gridReverse($event)" (onSaveClick)="saving()"
+  (onAddClick)="rowInserting()" [passiveReversing]="isChangesEmpty()"
+  [passiveSaving]="isChangesEmpty()" [allowAdding]="isAllowAdding"
+  [allowEditing]="isAllowEditing" [allowDeleting]="allowDeleting"
+  [allowGridSearch]="allowGridSearch" [allowColumnChooser]="allowColumnChooser" 
+  [allowColumnReorder]="allowColumnReorder"></dc-toolbar>
 
 <div role="table" visibilityObserver (visible)="recalculate()">
   <dc-header
@@ -26,8 +32,7 @@
     (columnContextmenu)="onColumnContextmenu($event)"
     (onColumnSearch)="onColumnSearch($event)"
     [rowHeight]="rowHeight"
-    [allowColumnSearch]="allowColumnSearch"
-  >
+    [allowColumnSearch]="allowColumnSearch">
   </dc-header>
   <dc-body
     role="rowgroup"
@@ -69,10 +74,9 @@
     (treeAction)="onTreeAction($event)"
     (mode)="mode"
     [changes]="changes"
-    (onRowReversing)="onRowReversing($event)"
-    (onRowChange)="onRowChange($event)"
-    (onRowRemoving)="onRowRemoving($event)"
-  >
+    (onRowReversing)="rowReversing($event)"
+    (onRowChange)="rowChange($event)"
+    (onRowRemoving)="rowRemoving($event)">
   </dc-body>
   <dc-footer
     *ngIf="footerHeight"
@@ -88,7 +92,6 @@
     [selectedCount]="selected.length"
     [selectedMessage]="!!selectionType && messages.selectedMessage"
     [pagerNextIcon]="cssClasses.pagerNext"
-    (page)="onFooterPage($event)"
-  >
+    (page)="onFooterPage($event)">
   </dc-footer>
 </div>

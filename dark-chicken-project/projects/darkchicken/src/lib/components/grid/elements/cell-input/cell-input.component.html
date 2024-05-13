@@ -1,8 +1,8 @@
-<span [id]="column.$$id + '┐' + row['$$$id'] + '┐' + (isCellValid ? 'valid' : 'invalid') + '┐' + (isClickedOnce ? 'clickedOnce' : '')">
+<span class="cell-input-wrapper">
     <span *ngIf="type == 'text' || type =='number' || type == 'date'">
-        <dca-input [disabled]="isRemoved" [readonly]="readonly" [type]="type" dcClass="cell-input text" [validationRules]="validationRules"
+        <dca-input [class]="'cell-input ' + type" [disabled]="isRemoved" [readonly]="readonly" [type]="type" [dcClass]="'cell-input ' + type" [validationRules]="validationRules"
             (dcValueChanged)="onCellChange.emit($event)" [title]="sanitizedValue" [value]="processedValue" (dcValidating)="onCellValidating.emit($event)"
-            (dcValidated)="onCellValidated.emit($event)"></dca-input>
+            (dcValidated)="dcValidated($event)" [style.width.px]="column.width"></dca-input>
     </span>
     
     <span *ngIf="type == 'lookup'">

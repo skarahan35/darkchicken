@@ -114,6 +114,7 @@
         }
 
         .datatable-row-center{
+          border: 1px solid transparent;
 
           &.insert{
             border: 1px solid var(--dc-color-primary);

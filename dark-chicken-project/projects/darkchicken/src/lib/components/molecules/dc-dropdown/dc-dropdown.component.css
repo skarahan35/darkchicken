@@ -1,7 +1,5 @@
-
 .dcm-dropdown-content {
     background-color: var(--dc-color-light);
-    min-width: calc(100% - 1rem);
     z-index: 999;
     border-radius: 0.5rem;
     position: absolute;
@@ -9,11 +7,11 @@
     padding: 0 0.5rem 0 0.5rem;
     display: block;
 
-    &.below{
-        top: calc(100% + 0.1rem);
-    }
-    &.above{
+    top: calc(100% + 0.1rem);
+
+    &.above {
         bottom: calc(100% + 0.1rem);
+        top: unset;
     }
 }
 
@@ -23,7 +21,7 @@
 
 
 
-    .dca-input-icon{
+    .dca-input-icon {
         right: 5px;
         left: inherit;
     }
@@ -34,22 +32,23 @@
     width: fit-content;
     display: inline-flex;
 
-    .dca-invalid-icon{
+    .dca-invalid-icon {
         margin-right: 1rem;
 
-        .validation-message{
-            &.below{
+        .validation-message {
+            &.below {
                 top: 100%;
                 bottom: unset;
             }
-            &.above{
+
+            &.above {
                 bottom: 100%;
                 top: unset;
             }
         }
     }
 
-    &.invalid{
+    &.invalid {
         border-color: var(--dc-color-danger) !important;
         box-shadow: inset 0px 0px 5px var(--dc-color-danger);
     }
@@ -66,7 +65,7 @@
 
 
 
-.disable{
+.disable {
     opacity: 0.7;
     cursor: pointer;
 }
