@@ -1,8 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
-import { TableColumnProp } from "../types/table-column.type";
-import { CellInputComponent } from "../components/grid/elements/cell-input/cell-input.component";
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -22,11 +21,11 @@ export class DCService {
     return uniqueId;
   }
 
-  checkValidationOfCell(rowId: string, column: TableColumnProp, isValid: boolean, component:CellInputComponent) {
+  checkValidationOfCell(rowId: string, column: any, isValid: boolean, component:any) {
     isValid ? this.removeInvalidCell(rowId, column) : this.addInvalidCell(rowId, column,component)
   }
 
-  private addInvalidCell(rowId: string, column: TableColumnProp,component:CellInputComponent) {
+  private addInvalidCell(rowId: string, column: any,component:any) {
     let tempRow = this.invalidCells.find((cell: any) => cell.hasOwnProperty(rowId));
     if (tempRow) {
       tempRow[rowId][column] = component;
@@ -43,7 +42,7 @@ export class DCService {
     return this.invalidCells
   }
 
-  private removeInvalidCell(rowId: string, column: TableColumnProp) {
+  private removeInvalidCell(rowId: string, column: any) {
     const rowIndex = this.invalidCells.findIndex((row: any) => row.hasOwnProperty(rowId));
     if (rowIndex !== -1 && this.invalidCells[rowIndex][rowId].hasOwnProperty(column)) {
       delete this.invalidCells[rowIndex][rowId][column];

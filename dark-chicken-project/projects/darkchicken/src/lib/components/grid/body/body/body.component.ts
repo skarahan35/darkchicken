@@ -4,7 +4,7 @@ import { columnsByPin, columnGroupWidths } from 'projects/darkchicken/src/lib/ut
 import { RowHeightCache } from 'projects/darkchicken/src/lib/utils/row-height-cache';
 import { translateXY } from 'projects/darkchicken/src/lib/utils/translate';
 import { ScrollerComponent } from '../scroller/scroller.component';
-import { DCService } from 'projects/darkchicken/src/public-api';
+
 
 @Component({
   selector: 'dc-body',
@@ -132,7 +132,7 @@ export class BodyComponent implements OnInit, OnDestroy{
   @Output() rowContextmenu = new EventEmitter<{ event: MouseEvent; row: any }>(false);
   @Output() treeAction: EventEmitter<any> = new EventEmitter();
 
-  @ViewChild(ScrollerComponent) scroller: ScrollerComponent;
+  @ViewChild(ScrollerComponent) scroller: any;
 
   /**
    * Returns if selection is enabled.
@@ -175,7 +175,7 @@ export class BodyComponent implements OnInit, OnDestroy{
   /**
    * Creates an instance of DataTableBodyComponent.
    */
-  constructor(private cd: ChangeDetectorRef, private dcService: DCService) {
+  constructor(private cd: ChangeDetectorRef) {
     // declare fn here so we can get access to the `this` property
     this.rowTrackingFn = (index: number, row: any): any => {
       const idx = this.getRowIndex(row);

@@ -72,11 +72,12 @@
     (select)="onBodySelect($event)"
     (scroll)="onBodyScroll($event)"
     (treeAction)="onTreeAction($event)"
-    (mode)="mode"
+    [mode]="mode"
     [changes]="changes"
     (onRowReversing)="rowReversing($event)"
     (onRowChange)="rowChange($event)"
-    (onRowRemoving)="rowRemoving($event)">
+    (onRowRemoving)="rowRemoving($event)"
+    >
   </dc-body>
   <dc-footer
     *ngIf="footerHeight"

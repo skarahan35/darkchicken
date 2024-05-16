@@ -10,7 +10,6 @@ import { ToastComponent } from './toast/toast.component';
 import { TreeComponent } from './tree/tree.component';
 import { DropdownsComponent } from './dropdowns/dropdowns.component';
 import { TabsComponent } from './tabs/tabs.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { ListsComponent } from './lists/lists.component';
 import { GridComponent } from './grid/grid.component';
 
@@ -53,10 +52,6 @@ const routes: Routes = [{
 {
   path: 'pages/tabs',
   component: TabsComponent
-},
-{
-  path: 'pages/sidebar',
-  component: SidebarComponent
 },
 {
   path: 'pages/lists',

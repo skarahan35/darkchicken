@@ -4,7 +4,6 @@ import { BreadCrumbModel } from '../../../models/dc-models.model';
 @Component({
   selector: 'dca-bread-crumb',
   templateUrl: 'dc-bread-crumb.component.html'
-
 })
 export class DCBreadCrumbComponent {
   //#region Inputs
