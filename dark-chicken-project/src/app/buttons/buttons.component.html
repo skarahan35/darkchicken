@@ -1,4 +1,4 @@
-<div class="content">
+<!-- <div class="content">
   <h1>Dark Chicken Atomic Button</h1>
 
   <h2>No Decoration</h2>
@@ -281,92 +281,113 @@
         class="line-numbers"><code class="language-html">{{buttonSize}}</code></pre>
     </dcm-tab>
   </div>
-</div>
-
-<!-- <div class="card">
-    <h3>PRIMARY</h3>
-    <div class="button-container">
-        <dca-button (dcClick)="dcClick($event)" (dcHover)="dcHover($event)" (dcMouseUp)="dcMouseUp($event)"
-            (dcMouseDown)="dcMouseDown($event)" (dcMouseOut)="dcMouseOut($event)" (dcMouseEnter)="dcMouseEnter($event)"
-            (dcDoubleClick)="dcDoubleClick($event)" buttonText="PRIMARY" class="dca-btn dca-btn-primary"
-            [isToggle]="true"></dca-button>
-        <dca-button buttonText="PRIMARY PASİF" class="dca-btn dca-btn-primary" [disabled]="true"></dca-button>
-        <dca-button buttonText="PRIMARY OUTLINE" class="dca-btn dca-btn-outline-primary"></dca-button>
-        <dca-button buttonText="PRIMARY OUTLINE PASİF" class="dca-btn dca-btn-outline-primary"
-            [disabled]="true"></dca-button>
-    </div>
-</div>
-
-<div class="card">
-    <h3>SECONDARY</h3>
-    <div class="button-container">
-        <dca-button buttonText="SECONDARY" class="dca-btn dca-btn-secondary"></dca-button>
-        <dca-button buttonText="SECONDARY PASİF" class="dca-btn dca-btn-secondary" [disabled]="true"></dca-button>
-        <dca-button buttonText="SECONDARY OUTLINE" class="dca-btn dca-btn-outline-secondary"></dca-button>
-        <dca-button buttonText="SECONDARY OUTLINE PASİF" class="dca-btn dca-btn-outline-secondary"
-            [disabled]="true"></dca-button>
-    </div>
-</div>
-
-<div class="card">
-    <h3>SUCCESS</h3>
-    <div class="button-container">
-        <dca-button buttonText="SUCCESS" class="dca-btn dca-btn-success"></dca-button>
-        <dca-button buttonText="SUCCESS PASİF" class="dca-btn dca-btn-success" [disabled]="true"></dca-button>
-        <dca-button buttonText="SUCCESS OUTLINE" class="dca-btn dca-btn-outline-success"></dca-button>
-        <dca-button buttonText="SUCCESS OUTLINE PASİF" class="dca-btn dca-btn-outline-success"
-            [disabled]="true"></dca-button>
-    </div>
-</div>
-
-<div class="card">
-    <h3>DANGER</h3>
-    <div class="button-container">
-        <dca-button buttonText="DANGER" class="dca-btn dca-btn-danger"></dca-button>
-        <dca-button buttonText="DANGER PASİF" class="dca-btn dca-btn-danger" [disabled]="true"></dca-button>
-        <dca-button buttonText="DANGER OUTLINE" class="dca-btn dca-btn-outline-danger"></dca-button>
-        <dca-button buttonText="DANGER OUTLINE PASİF" class="dca-btn dca-btn-outline-danger"
-            [disabled]="true"></dca-button>
-    </div>
-</div>
-
-<div class="card">
-    <h3>WARNING</h3>
-    <div class="button-container">
-        <dca-button buttonText="WARNING" class="dca-btn dca-btn-warning"></dca-button>
-        <dca-button buttonText="WARNING PASİF" class="dca-btn dca-btn-warning" [disabled]="true"></dca-button>
-        <dca-button buttonText="WARNING OUTLINE" class="dca-btn dca-btn-outline-warning"></dca-button>
-        <dca-button buttonText="WARNING OUTLINE PASİF" class="dca-btn dca-btn-outline-warning"
-            [disabled]="true"></dca-button>
-    </div>
-</div>
-
-<div class="card">
-    <h3>INFO</h3>
-    <div class="button-container">
-        <dca-button buttonText="INFO" class="dca-btn dca-btn-info"></dca-button>
-        <dca-button buttonText="INFO PASİF" class="dca-btn dca-btn-info" [disabled]="true"></dca-button>
-        <dca-button buttonText="INFO OUTLINE" class="dca-btn dca-btn-outline-info"></dca-button>
-        <dca-button buttonText="INFO OUTLINE PASİF" class="dca-btn dca-btn-outline-info" [disabled]="true"></dca-button>
-    </div>
-</div>
-
-<div class="card" style="background-color: black;">
-    <h3>LIGHT</h3>
-    <div class="button-container">
-        <dca-button buttonText="LIGHT" class="dca-btn dca-btn-light"></dca-button>
-        <dca-button buttonText="LIGHT PASİF" class="dca-btn dca-btn-light" [disabled]="true"></dca-button>
-        <dca-button buttonText="LIGHT OUTLINE" class="dca-btn dca-btn-outline-light"></dca-button>
-        <dca-button buttonText="LIGHT OUTLINE PASİF" class="dca-btn dca-btn-outline-light"
-            [disabled]="true"></dca-button>
-    </div>
-</div>
-<div class="card">
-    <h3>DARK</h3>
-    <div class="button-container">
-        <dca-button buttonText="DARK" class="dca-btn dca-btn-dark"></dca-button>
-        <dca-button buttonText="DARK PASİF" class="dca-btn dca-btn-dark" [disabled]="true"></dca-button>
-        <dca-button buttonText="DARK OUTLINE" class="dca-btn dca-btn-outline-dark"></dca-button>
-        <dca-button buttonText="DARK OUTLINE PASİF" class="dca-btn dca-btn-outline-dark" [disabled]="true"></dca-button>
-    </div>
 </div> -->
+
+<div class="content">
+  <h1>Dark Chicken Atomic Button</h1>
+  <dcm-tab class="main-tab" [tab]="mainTabs" id="1">
+    <div class="overview tab-content" #tabContent [id]="mainTabs[0].tabId">
+      <div class="full-des">
+        <h2> Lorem ipsum dolor sit</h2>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam, error
+        recusandae. Cum dolores repellat ut sit provident vero beatae, nobis
+        voluptate eum et nostrum eligendi. Libero cumque quisquam delectus odio
+        vel mollitia est similique, quidem omnis minus sequi, nemo architecto
+        esse commodi necessitatibus quia tempora voluptate neque ullam
+        cupiditate repellat ipsum? Nihil quos autem laudantium laboriosam cumque
+        consequatur corrupti ipsa aliquam harum aliquid laborum, accusamus
+        nostrum amet impedit atque, alias, temporibus in perspiciatis pariatur
+        ipsam. Placeat consequatur repellat sequi! Nulla officia quis, ipsa
+        minima fugiat cupiditate omnis nobis sapiente sed enim voluptatum,
+        repellat ad aliquam, quaerat accusamus rerum necessitatibus sequi.
+      </div>
+      <div class="content-lib">
+        <h3>Lorem ipsum</h3>
+        <div class="content-lib-items">
+          <dca-button
+            buttonText="Primary"
+            dcClass="dca-btn dca-btn-outline-primary"
+            class="content-lib-item"></dca-button>
+          <dca-button
+            buttonText="Secondary"
+            dcClass="dca-btn dca-btn-outline-secondary"
+            class="content-lib-item"></dca-button>
+          <dca-button
+            buttonText="Success"
+            dcClass="dca-btn dca-btn-outline-success"
+            class="content-lib-item"></dca-button>
+          <dca-button
+            buttonText="Danger"
+            dcClass="dca-btn dca-btn-outline-danger"
+            class="content-lib-item"></dca-button>
+          <dca-button
+            buttonText="Warning"
+            dcClass="dca-btn dca-btn-outline-warning"
+            class="content-lib-item"></dca-button>
+          <dca-button
+            buttonText="Info"
+            dcClass="dca-btn dca-btn-outline-info"
+            class="content-lib-item"></dca-button>
+          <dca-button
+            buttonText="Dark"
+            dcClass="dca-btn dca-btn-outline-dark"
+            class="content-lib-item"></dca-button>
+          <dca-button
+            buttonText="Light"
+            dcClass="dca-btn dca-btn-outline-light"
+            class="content-lib-item"></dca-button>
+        </div>
+      </div>
+
+      <div class="one-line-des">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta fuga
+        animi labore neque, nesciunt itaque ex error rem aspernatur laboriosam,
+        nihil placeat blanditiis praesentium, magnam ab sit nam culpa
+        architecto!
+      </div>
+      <div class="one-line-des">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta fuga
+        animi labore neque, nesciunt itaque ex error rem aspernatur laboriosam,
+        nihil placeat blanditiis praesentium, magnam ab sit nam culpa
+        architecto!
+      </div>
+      <div class="one-line-des">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta fuga
+        animi labore neque, nesciunt itaque ex error rem aspernatur laboriosam,
+        nihil placeat blanditiis praesentium, magnam ab sit nam culpa
+        architecto!
+      </div>
+    </div>
+    <div class="api tab-content" #tabContent [id]="mainTabs[1].tabId">
+      <div class="full-des">
+        <h2> Lorem ipsum dolor sit</h2>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam, error
+        recusandae. Cum dolores repellat ut sit provident vero beatae, nobis
+        voluptate eum et nostrum eligendi. Libero cumque quisquam delectus odio
+        vel mollitia est similique, quidem omnis minus sequi, nemo architecto
+        esse commodi necessitatibus quia tempora voluptate neque ullam
+        cupiditate repellat ipsum? Nihil quos autem laudantium laboriosam cumque
+        consequatur corrupti ipsa aliquam harum aliquid laborum, accusamus
+        nostrum amet impedit atque, alias, temporibus in perspiciatis pariatur
+        ipsam. Placeat consequatur repellat sequi! Nulla officia quis, ipsa
+        minima fugiat cupiditate omnis nobis sapiente sed enim voluptatum,
+        repellat ad aliquam, quaerat accusamus rerum necessitatibus sequi.
+      </div>
+      <div class="api-table">
+        <dc-datatable
+          class="primary"
+          [rows]="apiTableRows1"
+          [columns]="apiTableColumns1"
+          [columnMode]="'force'"
+          [allowDeleting]="false"
+          [useToolbar]="false"
+          [allowEditing]="false"
+          [footerHeight]="0"
+          [rowHeight]="32"
+          ></dc-datatable>
+      </div>
+    </div>
+
+  </dcm-tab>
+
+</div>
