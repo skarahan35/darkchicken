@@ -6,6 +6,7 @@ import { Icons } from '../../../types/dc-types';
 @Component({
   selector: 'dca-icon',
   templateUrl: 'dc-icon.component.html',
+  
 })
 export class DCIconComponent implements OnChanges {
   //#region Inputs

@@ -17,7 +17,6 @@ import { FormsModule } from '@angular/forms';
 import { TreeComponent } from './tree/tree.component';
 import { DropdownsComponent } from './dropdowns/dropdowns.component';
 import { TabsComponent } from './tabs/tabs.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { ListsComponent } from './lists/lists.component';
 import { GridComponent } from './grid/grid.component';
 import { DataService } from './services/data.service';
@@ -39,7 +38,6 @@ import { HttpClientModule } from '@angular/common/http';
     TreeComponent,
     DropdownsComponent,
     TabsComponent,
-    SidebarComponent,
     ListsComponent,
     GridComponent,
   ],

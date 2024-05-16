@@ -31,6 +31,7 @@ import { DCMoleculeModule } from '../molecules';
 
 
 
+
 @NgModule({
   declarations: [
     SummaryRowComponent,
@@ -62,7 +63,6 @@ import { DCMoleculeModule } from '../molecules';
     HttpClientModule,
     DCAtomModule,
     DCMoleculeModule
-
   ],
   exports: [
     SummaryRowComponent,

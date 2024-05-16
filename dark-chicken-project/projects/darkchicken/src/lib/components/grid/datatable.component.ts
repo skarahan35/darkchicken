@@ -873,7 +873,7 @@ export class DatatableComponent implements OnInit, DoCheck, AfterViewInit, OnCha
    * invoking functions on the body.
    */
   @ViewChild(BodyComponent)
-  bodyComponent: BodyComponent;
+  bodyComponent: any;
 
   /**
    * Reference to the header component for manually
@@ -882,7 +882,7 @@ export class DatatableComponent implements OnInit, DoCheck, AfterViewInit, OnCha
    * @memberOf DatatableComponent
    */
   @ViewChild(HeaderComponent)
-  headerComponent: BodyComponent;
+  headerComponent: any;
 
   /**
    * Returns if all rows are selected.
@@ -927,7 +927,6 @@ export class DatatableComponent implements OnInit, DoCheck, AfterViewInit, OnCha
     private columnChangesService: ColumnChangesService,
     @Optional() @Inject('configuration') private configuration: IDcDatatableConfig,
     private dcService: DCService,
-    private toastService: DcToastService
   ) {
     // get ref to elm for measuring
     this.element = element.nativeElement;
