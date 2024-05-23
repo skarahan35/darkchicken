@@ -29,35 +29,7 @@
     }
 }
 
-.div-container {
-    position: relative;
-}
 
-.div-element {
-    min-width: 200px;
-    min-height: 100px;
-    color: white;
-    position: absolute;
-    border-radius: 8px;
-    font-size: 18px;
-    transition: transform 0.3s, background-color 0.3s;
-}
-
-.div-element:hover {
-    transform: scale(1.05);
-}
-
-::ng-deep .dca-list{
-    .dca-list-item{
-        background-color: var(--dc-color-danger);
-
-        &:hover{
-            background-color: var(--dc-color-danger-hover);
-
-        }
-    }
-
-}
 
 .light {
     position: fixed;
