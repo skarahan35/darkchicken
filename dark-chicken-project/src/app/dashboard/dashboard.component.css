@@ -1,0 +1,117 @@
+
+.content {
+    width: 100vw;
+    height: 100vh;
+    background-color: #0F172A;
+    overflow: hidden ;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+}
+
+.logo-container img {
+    width: 800px;
+    transition: filter 0.3s ease;
+    margin-top: 40px;
+    &:hover{
+        filter: drop-shadow(0 0px 16px rgb(0, 0, 0));
+    }
+}
+
+.div-container {
+    position: relative;
+}
+
+.div-element {
+    min-width: 200px;
+    min-height: 100px;
+    color: white;
+    position: absolute;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.div-element:hover {
+    transform: scale(1.05);
+}
+
+::ng-deep .dca-list{
+    .dca-list-item{
+        background-color: var(--dc-color-danger);
+
+        &:hover{
+            background-color: var(--dc-color-danger-hover);
+
+        }
+    }
+
+}
+
+.light {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: radial-gradient(
+      circle at var(--x) var(--y),
+      rgba(100, 100, 255, 0.084) 1%,
+      rgba(100, 100, 255, 0.082) 2%,
+      rgba(100, 100, 255, 0.080) 3%,
+      rgba(100, 100, 255, 0.078) 4%,
+      rgba(100, 100, 255, 0.076) 5%,
+      rgba(100, 100, 255, 0.074) 6%,
+      rgba(100, 100, 255, 0.072) 7%,
+      rgba(100, 100, 255, 0.070) 8%,
+      rgba(100, 100, 255, 0.068) 9%,
+      rgba(100, 100, 255, 0.066) 10%,
+      rgba(100, 100, 255, 0.064) 11%,
+      rgba(100, 100, 255, 0.062) 12%,
+      rgba(100, 100, 255, 0.060) 13%,
+      rgba(100, 100, 255, 0.058) 14%,
+      rgba(100, 100, 255, 0.056) 15%,
+      rgba(100, 100, 255, 0.054) 16%,
+      rgba(100, 100, 255, 0.052) 17%,
+      rgba(100, 100, 255, 0.050) 18%,
+      rgba(100, 100, 255, 0.048) 19%,
+      rgba(100, 100, 255, 0.046) 20%,
+      rgba(100, 100, 255, 0.044) 21%,
+      rgba(100, 100, 255, 0.042) 22%,
+      rgba(100, 100, 255, 0.040) 23%,
+      rgba(100, 100, 255, 0.038) 24%,
+      rgba(100, 100, 255, 0.036) 25%,
+      rgba(100, 100, 255, 0.034) 26%,
+      rgba(100, 100, 255, 0.032) 27%,
+      rgba(100, 100, 255, 0.030) 28%,
+      rgba(100, 100, 255, 0.028) 29%,
+      rgba(100, 100, 255, 0.026) 24%,
+      rgba(100, 100, 255, 0.024) 30%,
+      rgba(100, 100, 255, 0.022) 31%,
+      rgba(100, 100, 255, 0.020) 32%,
+      rgba(100, 100, 255, 0.018) 33%,
+      rgba(100, 100, 255, 0.016) 34%,
+      rgba(100, 100, 255, 0.015) 35%,
+      rgba(100, 100, 255, 0.0) 38%
+      
+    );
+  }
+  
+  
+  
+  :root {
+    --cursor-radius: ;
+  }
+  

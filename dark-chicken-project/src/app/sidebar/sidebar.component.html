@@ -8,18 +8,17 @@
                 class="kt-aside  kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop"
                 id="kt_aside">
                 <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand">
-                    <p *ngIf="!isOpen" style="color: white;">DARKCHICKEN</p>
-                    <!-- <div class="kt-aside__brand-logo">
-                        <a routerLink="dahsboard" class="header-wrapper"
-                            *ngIf="isOpen">
-                            <p class="header-text">DARK CHICKEN</p>
-                        </a>
-                    </div> -->
+
+                    <img class="logo" *ngIf="!isOpen" [ngClass]="logoClass" src="../../assets/images/darkchicken-logo.png">
+                    <p *ngIf="!isOpen" class="logo-name" [ngClass]="logoNameClass"><b>DARKCHICKEN</b></p>
                     <div class="kt-aside__brand-tools">
-                        <button class="kt-aside__brand-aside-toggler"
+                        <button [ngClass]="logoClass" class="kt-aside__brand-aside-toggler"
                             id="kt_aside_toggler"
                             (click)="onTogglerClick()">
-                            <span><svg xmlns="http://www.w3.org/2000/svg"
+                            <span>
+                                <img class="logo" style="margin-left: -6px;" *ngIf="isOpen" src="../../assets/images/darkchicken-logo.png">
+
+                                <svg *ngIf="!isOpen" xmlns="http://www.w3.org/2000/svg"
                                     xmlns:xlink="http://www.w3.org/1999/xlink"
                                     width="24px"
                                     height="24px" viewBox="0 0 24 24"

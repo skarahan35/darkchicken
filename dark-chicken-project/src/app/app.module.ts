@@ -22,7 +22,9 @@ import { GridComponent } from './grid/grid.component';
 import { DataService } from './services/data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { TestPageComponent } from './test-page/test-page.component';
+
 
 
 
@@ -43,6 +45,7 @@ import { TestPageComponent } from './test-page/test-page.component';
     ListsComponent,
     GridComponent,
     SidebarComponent,
+    DashboardComponent,
     TestPageComponent
   ],
   imports: [
