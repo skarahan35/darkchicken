@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import { ISummaryColumn } from 'projects/darkchicken/src/lib/models/dc-grid.model';
-import { defaultSumFunc, noopSumFunc } from 'projects/darkchicken/src/lib/utils/summary-row';
+import { ISummaryColumn } from '../../../../models/dc-grid.model';
+import { defaultSumFunc, noopSumFunc } from '../../../../utils/summary-row';
 
 @Component({
   selector: 'dc-summary-row',

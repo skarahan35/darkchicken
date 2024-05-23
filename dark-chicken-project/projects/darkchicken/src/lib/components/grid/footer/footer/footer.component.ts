@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-import { DatatableFooterDirective } from 'projects/darkchicken/src/lib/directives/footer.directive';
+import { DatatableFooterDirective } from '../../../../directives/footer.directive';
 
 @Component({
   selector: 'dc-footer',

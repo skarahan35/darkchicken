@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, DoCheck, ElementRef, EventEmitter, HostBinding, HostListener, Input, OnChanges, OnDestroy, Output, PipeTransform, SimpleChanges, ViewChild, ViewContainerRef } from '@angular/core';
-import { TreeStatus } from 'projects/darkchicken/src/lib/types/dc-types';
-import { SortDirection } from 'projects/darkchicken/src/lib/types/sort-direction.type';
-import { TableColumn } from 'projects/darkchicken/src/lib/types/table-column.type';
-import { Keys } from 'projects/darkchicken/src/lib/utils/keys';
+import { TreeStatus } from '../../../../types/dc-types';
+import { SortDirection } from '../../../../types/sort-direction.type';
+import { TableColumn } from '../../../../types/table-column.type';
+import { Keys } from '../../../../utils/keys';
 import { CellInputComponent } from '../../elements/cell-input/cell-input.component';
 
 @Component({

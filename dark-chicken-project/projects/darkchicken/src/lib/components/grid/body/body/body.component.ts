@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, HostBinding, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
-import { SelectionType } from 'projects/darkchicken/src/lib/types/selection.type';
-import { columnsByPin, columnGroupWidths } from 'projects/darkchicken/src/lib/utils/column';
-import { RowHeightCache } from 'projects/darkchicken/src/lib/utils/row-height-cache';
-import { translateXY } from 'projects/darkchicken/src/lib/utils/translate';
+import { SelectionType } from '../../../../types/selection.type';
+import { columnsByPin, columnGroupWidths } from '../../../../utils/column';
+import { RowHeightCache } from '../../../../utils/row-height-cache';
+import { translateXY } from '../../../../utils/translate';
 import { ScrollerComponent } from '../scroller/scroller.component';
 
 

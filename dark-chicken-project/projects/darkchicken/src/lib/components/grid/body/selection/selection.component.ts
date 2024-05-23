@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-import { Model } from 'projects/darkchicken/src/lib/models/dc-grid.model';
-import { SelectionType } from 'projects/darkchicken/src/lib/types/selection.type';
-import { Keys } from 'projects/darkchicken/src/lib/utils/keys';
-import { selectRowsBetween, selectRows } from 'projects/darkchicken/src/lib/utils/selection';
+import { Model } from '../../../../models/dc-grid.model';
+import { SelectionType } from '../../../../types/selection.type';
+import { Keys } from '../../../../utils/keys';
+import { selectRowsBetween, selectRows } from '../../../../utils/selection';
 
 @Component({
   selector: 'dc-selection',

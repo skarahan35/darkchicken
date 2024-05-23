@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, HostBinding, Input, OnDestroy, Output } from '@angular/core';
-import { DataTableColumnDirective } from 'projects/darkchicken/src/lib/directives/column.directive';
-import { SelectionType } from 'projects/darkchicken/src/lib/types/selection.type';
-import { SortType } from 'projects/darkchicken/src/lib/types/sort.type';
-import { columnsByPin, columnGroupWidths, columnsByPinArr } from 'projects/darkchicken/src/lib/utils/column';
-import { translateXY } from 'projects/darkchicken/src/lib/utils/translate';
+import { DataTableColumnDirective } from '../../../../directives/column.directive';
+import { SelectionType } from '../../../../types/selection.type';
+import { SortType } from '../../../../types/sort.type';
+import { columnsByPin, columnGroupWidths, columnsByPinArr } from '../../../../utils/column';
+import { translateXY } from '../../../../utils/translate';
 @Component({
   selector: 'dc-header',
   templateUrl: './header.component.html',

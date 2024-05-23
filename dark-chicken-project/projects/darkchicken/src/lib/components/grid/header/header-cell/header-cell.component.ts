@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, HostBinding, HostListener, Input, Output } from '@angular/core';
-import { SelectionType } from 'projects/darkchicken/src/lib/types/selection.type';
-import { SortDirection } from 'projects/darkchicken/src/lib/types/sort-direction.type';
-import { SortType } from 'projects/darkchicken/src/lib/types/sort.type';
-import { TableColumn } from 'projects/darkchicken/src/lib/types/table-column.type';
-import { nextSortDir } from 'projects/darkchicken/src/lib/utils/sort';
+import { SelectionType } from '../../../../types/selection.type';
+import { SortDirection } from '../../../../types/sort-direction.type';
+import { SortType } from '../../../../types/sort.type';
+import { TableColumn } from '../../../../types/table-column.type';
+import { nextSortDir } from '../../../../utils/sort';
 
 @Component({
   selector: 'dc-header-cell',

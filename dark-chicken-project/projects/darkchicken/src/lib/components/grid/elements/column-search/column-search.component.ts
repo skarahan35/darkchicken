@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { TableColumn } from 'projects/darkchicken/src/lib/types/table-column.type';
+import { TableColumn } from '../../../../types/table-column.type';
 
 @Component({
   selector: 'column-search',
