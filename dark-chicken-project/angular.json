@@ -36,7 +36,10 @@
             ],
             "styles": [
               "src/styles.css",
-              "projects/darkchicken/assets/style.scss"
+              "projects/darkchicken/assets/style.scss",
+              "src/assets/Metronic/css/style.bundle.css",
+              "src/assets/Metronic/css/skins/brand/dark.css",
+              "src/assets/Metronic/css/skins/aside/dark.css"
               
             ],
             "scripts": [

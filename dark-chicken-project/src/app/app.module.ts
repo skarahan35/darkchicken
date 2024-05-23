@@ -21,6 +21,7 @@ import { ListsComponent } from './lists/lists.component';
 import { GridComponent } from './grid/grid.component';
 import { DataService } from './services/data.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 
@@ -40,6 +41,7 @@ import { HttpClientModule } from '@angular/common/http';
     TabsComponent,
     ListsComponent,
     GridComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,

@@ -190,3 +190,11 @@ padding: 1rem;
   }
 
 }
+
+.dc-datatable.primary{
+  width: 1200px;
+  display: flex;
+  justify-content: center;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
