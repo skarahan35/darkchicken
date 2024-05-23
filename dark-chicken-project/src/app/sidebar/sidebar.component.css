@@ -1,0 +1,43 @@
+.header-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: auto;
+
+    &:hover {
+        .header-icon{
+            color: #5d78ff;;
+        }
+
+        .header-text{
+            color: white;
+        }
+        
+    }
+}
+
+.header-text {
+    transition: all 0.3s ease;
+    padding: 1rem;
+    font-weight: bolder;
+    font-size: large;
+    display: contents;
+    color: var(--dc-color-primary);
+}
+
+.header-icon {
+    transition: all 0.3s ease;
+    padding: 1rem;
+}
+
+
+
+.sidebar-icon{
+    fill: #a2a3b7;
+}
+
+.kt-aside-menu .kt-menu__nav>.kt-menu__item:hover{
+    .sidebar-icon{
+        fill: white;
+    }
+}

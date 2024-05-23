@@ -7,5 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'dark-chicken-project';
+  constructor(){
+    document.addEventListener('DOMContentLoaded', function() {
+      const sidebar = document.getElementById('sidebar');
+      if (sidebar) {
+          sidebar.addEventListener('click', function() {
+              this.classList.toggle('collapsed');
+          });
+      }
+  });
+  }
 
 }
