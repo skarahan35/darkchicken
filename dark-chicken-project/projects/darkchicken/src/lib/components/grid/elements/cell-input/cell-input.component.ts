@@ -1,9 +1,9 @@
 import { AfterViewInit, Component, EventEmitter, Input, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { TableColumn, dataType } from 'projects/darkchicken/src/lib/types/table-column.type';
+import { TableColumn, dataType } from '../../../../types/table-column.type';
 import { DcDropdownComponent } from '../../../molecules/dc-dropdown/dc-dropdown.component';
 import { validationRules } from '../../../../models/dc-models.model'
 import { DCCheckboxComponent, DCInputComponent, DcTreeComponent } from '../../../atoms';
-import { DCService } from 'projects/darkchicken/src/lib/services/dc.service';
+import { DCService } from '../../../../services/dc.service';
 
 @Component({
   selector: 'cell-input',

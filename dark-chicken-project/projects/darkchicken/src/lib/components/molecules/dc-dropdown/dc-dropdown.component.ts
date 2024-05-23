@@ -19,7 +19,9 @@ export class DcDropdownComponent implements AfterViewInit{
   @Input() isRequired?:boolean = false
   @Input() validationMessage?:string = ''
   @Input() contentPosition: 'below' | 'above'
-
+  @Input() width: string | null = null;
+  @Input() height: string | null = null;
+  
   @Output() dcClick = new EventEmitter<Object>
   @Output() dcExpanding = new EventEmitter<Object>
   @Output() dcCollapsing = new EventEmitter<Object>

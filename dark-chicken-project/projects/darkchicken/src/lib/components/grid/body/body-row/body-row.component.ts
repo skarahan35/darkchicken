@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, DoCheck, ElementRef, EventEmitter, HostBinding, HostListener, Input, KeyValueDiffer, KeyValueDiffers, Output, SkipSelf } from '@angular/core';
-import { ScrollbarHelper } from 'projects/darkchicken/src/lib/services/scrollbar-helper.service';
-import { TreeStatus } from 'projects/darkchicken/src/lib/types/dc-types';
-import { columnsByPin, columnGroupWidths, columnsByPinArr } from 'projects/darkchicken/src/lib/utils/column';
-import { Keys } from 'projects/darkchicken/src/lib/utils/keys';
-import { translateXY } from 'projects/darkchicken/src/lib/utils/translate';
+import { ScrollbarHelper } from '../../../../services/scrollbar-helper.service';
+import { TreeStatus } from '../../../../types/dc-types';
+import { columnsByPin, columnGroupWidths, columnsByPinArr } from '../../../../utils/column';
+import { Keys } from '../../../../utils/keys';
+import { translateXY } from '../../../../utils/translate';
 
 @Component({
   selector: 'dc-body-row',

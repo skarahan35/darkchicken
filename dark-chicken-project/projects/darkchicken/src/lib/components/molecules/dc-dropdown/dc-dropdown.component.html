@@ -9,7 +9,7 @@
         <span [class]="'validation-message ' + contentPosition">{{validationMessage}}</span>
     </div>
 
-    <dca-input (dcFocusOut)="onFocusOut($event)" [disabled]="disabled" [readonly]="readonly" [value]="value"
+    <dca-input [width]="width" [height]="height" (dcFocusOut)="onFocusOut($event)" [disabled]="disabled" [readonly]="readonly" [value]="value"
         [placeholder]="placeholder" [inputId]="id" (dcFocusIn)="onDropdownFocusIn()"
         [ngClass]="{'dcm-dropdown-input':true}" [dcClass]="dcClass">
         <dca-icon (dcClick)="isMenuShow ? closeDropdown() : focusInput()" [ngClass]="{'disable': disabled}"

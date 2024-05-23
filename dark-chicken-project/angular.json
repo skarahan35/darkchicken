@@ -36,7 +36,7 @@
             ],
             "styles": [
               "src/styles.css",
-              "projects/darkchicken/assets/style.css"
+              "projects/darkchicken/assets/style.scss"
               
             ],
             "scripts": [
