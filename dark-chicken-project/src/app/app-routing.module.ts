@@ -13,6 +13,7 @@ import { TabsComponent } from './tabs/tabs.component';
 import { ListsComponent } from './lists/lists.component';
 import { GridComponent } from './grid/grid.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [{
   path:'pages/buttons',
@@ -65,7 +66,7 @@ const routes: Routes = [{
 },
 {
   path: '',
-  component: SidebarComponent
+  component: DashboardComponent
 }
 ];
 

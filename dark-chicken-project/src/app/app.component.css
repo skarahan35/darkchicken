@@ -2,18 +2,10 @@
     display: flex;
 }
 
-#sidebar {
-    width: 250px; /* Varsayılan genişlik */
-    flex-shrink: 0; /* Sidebar'ın genişliğini sabit tutar */
-    transition: width 0.3s; /* Genişlik değişimlerinde pürüzsüz geçiş */
-}
-
-#sidebar.collapsed {
-    width: 80px; /* Daraltılmış genişlik */
-}
-
-.content {
-    flex-grow: 1; /* İçeriğin genişleyebilir olmasını sağlar */
-    padding: 20px; /* İçeriğin kenar boşlukları */
-    transition: margin-left 0.3s; /* Genişlik değişimlerinde pürüzsüz geçiş */
+.content{
+    margin-left: 80px;
+    transition: margin 0.3s ease;
+    &.sidebar-open{
+        margin-left: 275px;
+    }
 }

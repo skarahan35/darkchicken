@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class SidebarComponent implements OnInit {
   isOpen: boolean = true
+  logoClass = '';
+  logoNameClass = '';
   menuDataAtoms: any = [
     {
       name: 'Bread Crumb',
@@ -57,10 +59,10 @@ export class SidebarComponent implements OnInit {
       display: true,
       icon: 'folder-tree'
     }
-    
+
   ]
 
-  menuDataMolecules:any = [
+  menuDataMolecules: any = [
     {
       name: 'Dropdown',
       itemURL: 'pages/dropdowns',
@@ -81,7 +83,7 @@ export class SidebarComponent implements OnInit {
     }
   ]
 
-  menuDataDatatables:any = [
+  menuDataDatatables: any = [
     {
       name: 'Datatable',
       itemURL: 'pages/grid',
@@ -89,7 +91,6 @@ export class SidebarComponent implements OnInit {
       icon: 'table'
     },
   ]
-  constructor() {}
 
   ngOnInit(): void {
 
@@ -97,14 +98,22 @@ export class SidebarComponent implements OnInit {
   }
 
 
-  
   onTogglerClick() {
+    let content = document.getElementById('content')
     if (document.body.classList.contains('kt-aside--minimize')) {
       document.body.classList.remove('kt-aside--minimize')
       this.isOpen = false
+      content?.classList.add('sidebar-open')
+
+      this.logoClass = 'fade-in';
+      this.logoNameClass = 'fade-in';
     } else {
       this.isOpen = true
       document.body.classList.add('kt-aside--minimize')
+      content?.classList.remove('sidebar-open')
+      this.logoClass = '';
+      this.logoNameClass = '';
     }
   }
+
 }
