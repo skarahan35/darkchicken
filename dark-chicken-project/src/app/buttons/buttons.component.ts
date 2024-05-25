@@ -9,6 +9,29 @@ import { buttonEventsHtml, buttonEventsTs, buttonSize, buttonWithTextButton, noD
   styleUrls: ['./buttons.component.css']
 })
 export class ButtonsComponent {
+  selectedModal = null
+
+
+  onModalClick(e: any) {
+    this.selectedModal = e
+
+  }
+  closeModal() {
+    this.selectedModal = null
+
+  }
+
+
+  tabs: TabModel[] = [
+    {tabId:'1',
+      tabTitle:'Description'
+    },
+    {tabId:'2',
+      tabTitle:'Code'
+    }
+  ]
+
+
 
   mainTabs: TabModel[] = [
     {
@@ -92,15 +115,7 @@ export class ButtonsComponent {
 
 
 
-  tabs: TabModel[] = [{
-    tabId: 'des',
-    tabTitle: 'Description'
-  },
-  {
-    tabId: 'code',
-    tabTitle: 'Code'
-  },
-  ]
+
   codeTabs: TabModel[] = [
     {
       tabId: 'html',

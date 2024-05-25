@@ -283,6 +283,592 @@
   </div>
 </div> -->
 
+<div class="container">
+  <div class="header">
+    <h1 class="header-title">Darkchicken Buttons</h1><br><br>
+    <p>DarkChicken is an innovative library providing user interface tools for developers using Angular. The "Button" UI elements in this library are 
+      designed to optimize user experience and facilitate the developers' work. Here are the basic features and usage of DarkChicken Button elements:
+      <br>
+      <b>Basic Features</b>
+      <br>
+      <b>Various Styles:</b>
+      DarkChicken Button elements come in various styles. Predefined styles such as default, primary, secondary, and danger allow you to use buttons 
+      for different purposes in your projects easily.
+      <br>
+      <b>Customizability:</b>
+      You can customize the appearance and feel of the Button elements according to your projects. You can change the color, size, border radius, and more via CSS.
+      <br>
+      <b>State Management:</b>
+      Button elements support different states such as active, disabled, and loading. These states allow you to manage user interactions and feedback more effectively.
+      <br>
+      <b>Accessibility:</b>
+      DarkChicken is designed according to accessibility standards. Button elements are fully compatible with screen readers and keyboard navigation.</p>
+      
+  </div>
+
+</div>
+
+<div class="content">
+  <section class="card" (click)="onModalClick('modal1')">
+    <h2 class="button-title">Default</h2>
+    <div class="button-wrapper">
+      <dca-button
+        buttonText="Primary"
+        dcClass="dca-btn dca-btn-primary"></dca-button>
+      <dca-button buttonText="Secondary"
+        dcClass="dca-btn dca-btn-secondary"></dca-button>
+      <dca-button buttonText="Success"
+        dcClass="dca-btn dca-btn-success"></dca-button>
+      <dca-button buttonText="Danger"
+        dcClass="dca-btn dca-btn-danger"></dca-button>
+      <dca-button buttonText="Warning"
+        dcClass="dca-btn dca-btn-warning"></dca-button>
+      <dca-button buttonText="Info"
+        dcClass="dca-btn dca-btn-info"></dca-button>
+      <dca-button buttonText="Dark"
+        dcClass="dca-btn dca-btn-dark"></dca-button>
+      <dca-button buttonText="Light"
+        dcClass="dca-btn dca-btn-light"></dca-button>
+    </div>
+  </section>
+  <section class="card" (click)="onModalClick('modal2')">
+    <h2 class="button-title">Outline</h2>
+    <div class="button-wrapper">
+      <dca-button buttonText="Primary"
+        dcClass="dca-btn dca-btn-outline-primary"></dca-button>
+      <dca-button buttonText="Secondary"
+        dcClass="dca-btn dca-btn-outline-secondary"></dca-button>
+      <dca-button buttonText="Success"
+        dcClass="dca-btn dca-btn-outline-success"></dca-button>
+      <dca-button buttonText="Danger"
+        dcClass="dca-btn dca-btn-outline-danger"></dca-button>
+      <dca-button buttonText="Warning"
+        dcClass="dca-btn dca-btn-outline-warning"></dca-button>
+      <dca-button buttonText="Info"
+        dcClass="dca-btn dca-btn-outline-info"></dca-button>
+      <dca-button buttonText="Dark"
+        dcClass="dca-btn dca-btn-outline-dark"></dca-button>
+      <dca-button buttonText="Light"
+        dcClass="dca-btn dca-btn-outline-light"></dca-button>
+    </div>
+  </section>
+  <section class="card" (click)="onModalClick('modal3')">
+    <h2 class="button-title">Passive Buttons</h2>
+    <div class="button-wrapper">
+      <dca-button [disabled]="true" buttonText="Primary"
+        dcClass="dca-btn dca-btn-primary"></dca-button>
+      <dca-button [disabled]="true" buttonText="Secondary"
+        dcClass="dca-btn dca-btn-secondary"></dca-button>
+      <dca-button [disabled]="true" buttonText="Success"
+        dcClass="dca-btn dca-btn-success"></dca-button>
+      <dca-button [disabled]="true" buttonText="Danger"
+        dcClass="dca-btn dca-btn-danger"></dca-button>
+      <dca-button [disabled]="true" buttonText="Warning"
+        dcClass="dca-btn dca-btn-warning"></dca-button>
+      <dca-button [disabled]="true" buttonText="Info"
+        dcClass="dca-btn dca-btn-info"></dca-button>
+      <dca-button [disabled]="true" buttonText="Dark"
+        dcClass="dca-btn dca-btn-dark"></dca-button>
+      <dca-button [disabled]="true" buttonText="Light"
+        dcClass="dca-btn dca-btn-light"></dca-button>
+    </div>
+  </section>
+  <section class="card" (click)="onModalClick('modal4')">
+    <h2 class="button-title">Events</h2>
+    <div class="button-wrapper">
+      <dca-button
+      buttonText="Events & Sized"
+      dcClass="dca-btn dca-btn-primary"
+      class="card-last-button"
+      (dcClick)="dcClick($event)"
+      (dcHover)="dcHover($event)"
+      (dcMouseUp)="dcMouseUp($event)"
+      (dcMouseDown)="dcMouseDown($event)"
+      (dcMouseOut)="dcMouseOut($event)"
+      (dcMouseEnter)="dcMouseEnter($event)"
+      (dcDoubleClick)="dcDoubleClick($event)"
+      width="400px"
+      height="100px"></dca-button>
+
+    </div>
+  </section>
+
+</div>
+
+<div class="modal-overlay" id="modalOverlay" (click)="closeModal()"
+  [ngClass]="{'show':selectedModal=='modal1' ? true : false}"></div>
+<div class="modal" id="modal"
+  [ngClass]="{'show':selectedModal=='modal1' ? true : false}">
+
+  <dcm-tab [tab]="tabs">
+    <div #tabContent id="1">
+
+      <section class="modal-card">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex
+          sed
+          blanditiis nihil obcaecati eum, autem quas
+          excepturi optio a tenetur tempore error dolorem maiores
+          delectus.</p><br>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+      </section>
+      <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
+        nisi ex
+        illo veritatis beatae quis, sequi accusantium quisquam possimus
+        maxime
+        totam a quaerat porro quae error natus quibusdam labore, at
+        animi cumque
+        magni nostrum commodi sunt! Neque ducimus vel maxime nihil ex
+        culpa
+        repudiandae ipsa eveniet, voluptas quas quod omnis suscipit
+        quibusdam
+        maiores repellat pariatur obcaecati? Deserunt doloremque
+        architecto ut
+        error, libero doloribus eius eaque fugiat nulla consectetur,
+        officiis
+        nemo maxime? Nihil ut, dicta veritatis rem, ab sit accusantium
+        vel
+        expedita dolor facere maxime alias consequatur nemo! Expedita,
+        aliquid.
+        Iusto sint voluptatum enim placeat ad velit assumenda, provident
+        iste
+        veritatis?</div>
+    </div>
+    <div #tabContent id="2">
+
+      <iframe
+        src="https://codesandbox.io/p/devbox/asd-my5g4g?embed=1&file=%2Fsrc%2Fapp%2Fbuttons%2Fbuttons.component.ts"
+        width="100%" height="600px" frameborder="0">
+      </iframe>
+    </div>
+  </dcm-tab>
+</div>
+
+<div class="modal-overlay" id="modalOverlay" (click)="closeModal()"
+  [ngClass]="{'show':selectedModal=='modal2' ? true : false}"></div>
+<div class="modal" id="modal"
+  [ngClass]="{'show':selectedModal=='modal2' ? true : false}">
+
+  <dcm-tab [tab]="tabs">
+    <div #tabContent id="1">
+
+      <section class="modal-card">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex
+          sed
+          blanditiis nihil obcaecati eum, autem quas
+          excepturi optio a tenetur tempore error dolorem maiores
+          delectus.</p><br>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+      </section>
+      <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
+        nisi ex
+        illo veritatis beatae quis, sequi accusantium quisquam possimus
+        maxime
+        totam a quaerat porro quae error natus quibusdam labore, at
+        animi cumque
+        magni nostrum commodi sunt! Neque ducimus vel maxime nihil ex
+        culpa
+        repudiandae ipsa eveniet, voluptas quas quod omnis suscipit
+        quibusdam
+        maiores repellat pariatur obcaecati? Deserunt doloremque
+        architecto ut
+        error, libero doloribus eius eaque fugiat nulla consectetur,
+        officiis
+        nemo maxime? Nihil ut, dicta veritatis rem, ab sit accusantium
+        vel
+        expedita dolor facere maxime alias consequatur nemo! Expedita,
+        aliquid.
+        Iusto sint voluptatum enim placeat ad velit assumenda, provident
+        iste
+        veritatis?</div>
+    </div>
+    <div #tabContent id="2">
+      <iframe
+        src="https://codesandbox.io/p/devbox/asd-my5g4g?embed=1&file=%2Fsrc%2Fapp%2Fapp.component.html%3A9%2C40"
+        width="100%" height="600px" frameborder="0">
+      </iframe>
+
+    </div>
+  </dcm-tab>
+</div>
+
+<div class="modal-overlay" id="modalOverlay" (click)="closeModal()"
+  [ngClass]="{'show':selectedModal=='modal3' ? true : false}"></div>
+<div class="modal" id="modal"
+  [ngClass]="{'show':selectedModal=='modal3' ? true : false}">
+
+  <dcm-tab [tab]="tabs">
+    <div #tabContent id="1">
+
+      <section class="modal-card">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex
+          sed
+          blanditiis nihil obcaecati eum, autem quas
+          excepturi optio a tenetur tempore error dolorem maiores
+          delectus.</p><br>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+      </section>
+      <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
+        nisi ex
+        illo veritatis beatae quis, sequi accusantium quisquam possimus
+        maxime
+        totam a quaerat porro quae error natus quibusdam labore, at
+        animi cumque
+        magni nostrum commodi sunt! Neque ducimus vel maxime nihil ex
+        culpa
+        repudiandae ipsa eveniet, voluptas quas quod omnis suscipit
+        quibusdam
+        maiores repellat pariatur obcaecati? Deserunt doloremque
+        architecto ut
+        error, libero doloribus eius eaque fugiat nulla consectetur,
+        officiis
+        nemo maxime? Nihil ut, dicta veritatis rem, ab sit accusantium
+        vel
+        expedita dolor facere maxime alias consequatur nemo! Expedita,
+        aliquid.
+        Iusto sint voluptatum enim placeat ad velit assumenda, provident
+        iste
+        veritatis?</div>
+    </div>
+    <div #tabContent id="2">
+      <iframe
+        src="https://codesandbox.io/p/devbox/asd-my5g4g?embed=1&file=%2Fsrc%2Fapp%2Fapp.component.html%3A9%2C40"
+        width="100%" height="600px" frameborder="0">
+      </iframe>
+
+    </div>
+  </dcm-tab>
+</div>
+
+<div class="modal-overlay" id="modalOverlay" (click)="closeModal()"
+  [ngClass]="{'show':selectedModal=='modal4' ? true : false}"></div>
+<div class="modal" id="modal"
+  [ngClass]="{'show':selectedModal=='modal4' ? true : false}">
+
+  <dcm-tab [tab]="tabs">
+    <div #tabContent id="1">
+
+      <section class="modal-card">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex
+          sed
+          blanditiis nihil obcaecati eum, autem quas
+          excepturi optio a tenetur tempore error dolorem maiores
+          delectus.</p><br>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi
+            debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+      </section>
+      <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
+        nisi ex
+        illo veritatis beatae quis, sequi accusantium quisquam possimus
+        maxime
+        totam a quaerat porro quae error natus quibusdam labore, at
+        animi cumque
+        magni nostrum commodi sunt! Neque ducimus vel maxime nihil ex
+        culpa
+        repudiandae ipsa eveniet, voluptas quas quod omnis suscipit
+        quibusdam
+        maiores repellat pariatur obcaecati? Deserunt doloremque
+        architecto ut
+        error, libero doloribus eius eaque fugiat nulla consectetur,
+        officiis
+        nemo maxime? Nihil ut, dicta veritatis rem, ab sit accusantium
+        vel
+        expedita dolor facere maxime alias consequatur nemo! Expedita,
+        aliquid.
+        Iusto sint voluptatum enim placeat ad velit assumenda, provident
+        iste
+        veritatis?</div>
+    </div>
+    <div #tabContent id="2">
+      <iframe
+        src="https://codesandbox.io/p/devbox/asd-my5g4g?embed=1&file=%2Fsrc%2Fapp%2Fapp.component.html%3A9%2C40"
+        width="100%" height="600px" frameborder="0">
+      </iframe>
+
+    </div>
+  </dcm-tab>
+</div>
+<!-- 
+
+
+
+
+
+
 <div class="content">
   <h1>Dark Chicken Atomic Button</h1>
   <dcm-tab class="main-tab" [tab]="mainTabs" id="1">
@@ -383,11 +969,10 @@
           [useToolbar]="false"
           [allowEditing]="false"
           [footerHeight]="0"
-          [rowHeight]="32"
-          ></dc-datatable>
+          [rowHeight]="32"></dc-datatable>
       </div>
     </div>
 
   </dcm-tab>
 
-</div>
+</div> -->
