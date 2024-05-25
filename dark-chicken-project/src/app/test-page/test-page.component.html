@@ -1,35 +1,47 @@
 <div class="container">
     <div class="header">
         <h1 class="header-title">Başlık</h1><br><br>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, id sit nihil quisquam obcaecati tenetur.
-            Soluta obcaecati vel consectetur! Fuga id libero deserunt cupiditate voluptates ad porro eum iste
-            voluptatum, labore nemo, quia laudantium ipsa quae? Incidunt, voluptatibus at in quae consequatur unde
-            necessitatibus optio quia voluptate porro minus mollitia impedit sit iure repellat. Aspernatur tenetur
-            consectetur adipisci accusamus quaerat molestias illum dolores nostrum beatae minima deserunt velit eius,
-            repellat eos. Error dolor distinctio itaque aut quam illum ab ex tenetur excepturi doloribus voluptate
-            consequatur asperiores eligendi adipisci, dolorem quisquam repellendus iure recusandae nesciunt. Id aliquam
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, id
+            sit nihil quisquam obcaecati tenetur.
+            Soluta obcaecati vel consectetur! Fuga id libero deserunt cupiditate
+            voluptates ad porro eum iste
+            voluptatum, labore nemo, quia laudantium ipsa quae? Incidunt,
+            voluptatibus at in quae consequatur unde
+            necessitatibus optio quia voluptate porro minus mollitia impedit sit
+            iure repellat. Aspernatur tenetur
+            consectetur adipisci accusamus quaerat molestias illum dolores
+            nostrum beatae minima deserunt velit eius,
+            repellat eos. Error dolor distinctio itaque aut quam illum ab ex
+            tenetur excepturi doloribus voluptate
+            consequatur asperiores eligendi adipisci, dolorem quisquam
+            repellendus iure recusandae nesciunt. Id aliquam
             obcaecati itaque adipisci quisquam?</p>
     </div>
     <div class="content">
-        <div class="card" (click)="closeModal('button')">
+        <div class="card" (click)="onModalClick('modal1')">
             <h2 class="button-title">Başlık</h2>
             <div class="button-wrapper">
-                <dca-button (dcClick)="closeModal('button')" [width]="'110px'" buttonText="Primary"
+                <dca-button [width]="'110px'"
+                    buttonText="Primary"
                     dcClass="dca-btn dca-btn-outline-primary"></dca-button>
                 <dca-button [width]="'110px'" buttonText="Secondary"
                     dcClass="dca-btn dca-btn-outline-secondary"></dca-button>
                 <dca-button [width]="'110px'" buttonText="Success"
                     dcClass="dca-btn dca-btn-outline-success"></dca-button>
-                <dca-button [width]="'110px'" buttonText="Danger" dcClass="dca-btn dca-btn-outline-danger"></dca-button>
+                <dca-button [width]="'110px'" buttonText="Danger"
+                    dcClass="dca-btn dca-btn-outline-danger"></dca-button>
                 <dca-button [width]="'110px'" buttonText="Warning"
                     dcClass="dca-btn dca-btn-outline-warning"></dca-button>
-                <dca-button [width]="'110px'" buttonText="Info" dcClass="dca-btn dca-btn-outline-info"></dca-button>
-                <dca-button [width]="'110px'" buttonText="Dark" dcClass="dca-btn dca-btn-outline-dark"></dca-button>
-                <dca-button [width]="'110px'" buttonText="Light" dcClass="dca-btn dca-btn-outline-light"></dca-button>
+                <dca-button [width]="'110px'" buttonText="Info"
+                    dcClass="dca-btn dca-btn-outline-info"></dca-button>
+                <dca-button [width]="'110px'" buttonText="Dark"
+                    dcClass="dca-btn dca-btn-outline-dark"></dca-button>
+                <dca-button [width]="'110px'" buttonText="Light"
+                    dcClass="dca-btn dca-btn-outline-light"></dca-button>
             </div>
         </div>
         <!-- İkinci kart örneği -->
-        <section class="card" (click)="closeModal('card')">
+        <section class="card" (click)="onModalClick('modal2')">
             <h2 class="button-title">Başlık</h2>
             <div class="button-wrapper">
                 <dca-button [width]="'110px'" buttonText="Primary"
@@ -38,15 +50,19 @@
                     dcClass="dca-btn dca-btn-outline-secondary"></dca-button>
                 <dca-button [width]="'110px'" buttonText="Success"
                     dcClass="dca-btn dca-btn-outline-success"></dca-button>
-                <dca-button [width]="'110px'" buttonText="Danger" dcClass="dca-btn dca-btn-outline-danger"></dca-button>
+                <dca-button [width]="'110px'" buttonText="Danger"
+                    dcClass="dca-btn dca-btn-outline-danger"></dca-button>
                 <dca-button [width]="'110px'" buttonText="Warning"
                     dcClass="dca-btn dca-btn-outline-warning"></dca-button>
-                <dca-button [width]="'110px'" buttonText="Info" dcClass="dca-btn dca-btn-outline-info"></dca-button>
-                <dca-button [width]="'110px'" buttonText="Dark" dcClass="dca-btn dca-btn-outline-dark"></dca-button>
-                <dca-button [width]="'110px'" buttonText="Light" dcClass="dca-btn dca-btn-outline-light"></dca-button>
+                <dca-button [width]="'110px'" buttonText="Info"
+                    dcClass="dca-btn dca-btn-outline-info"></dca-button>
+                <dca-button [width]="'110px'" buttonText="Dark"
+                    dcClass="dca-btn dca-btn-outline-dark"></dca-button>
+                <dca-button [width]="'110px'" buttonText="Light"
+                    dcClass="dca-btn dca-btn-outline-light"></dca-button>
             </div>
         </section>
-        <section class="card" (click)="closeModal('card')">
+        <section class="card" (click)="onModalClick('modal3')">
             <h2 class="button-title">Başlık</h2>
             <div class="button-wrapper">
                 <dca-button [width]="'110px'" buttonText="Primary"
@@ -55,15 +71,19 @@
                     dcClass="dca-btn dca-btn-outline-secondary"></dca-button>
                 <dca-button [width]="'110px'" buttonText="Success"
                     dcClass="dca-btn dca-btn-outline-success"></dca-button>
-                <dca-button [width]="'110px'" buttonText="Danger" dcClass="dca-btn dca-btn-outline-danger"></dca-button>
+                <dca-button [width]="'110px'" buttonText="Danger"
+                    dcClass="dca-btn dca-btn-outline-danger"></dca-button>
                 <dca-button [width]="'110px'" buttonText="Warning"
                     dcClass="dca-btn dca-btn-outline-warning"></dca-button>
-                <dca-button [width]="'110px'" buttonText="Info" dcClass="dca-btn dca-btn-outline-info"></dca-button>
-                <dca-button [width]="'110px'" buttonText="Dark" dcClass="dca-btn dca-btn-outline-dark"></dca-button>
-                <dca-button [width]="'110px'" buttonText="Light" dcClass="dca-btn dca-btn-outline-light"></dca-button>
+                <dca-button [width]="'110px'" buttonText="Info"
+                    dcClass="dca-btn dca-btn-outline-info"></dca-button>
+                <dca-button [width]="'110px'" buttonText="Dark"
+                    dcClass="dca-btn dca-btn-outline-dark"></dca-button>
+                <dca-button [width]="'110px'" buttonText="Light"
+                    dcClass="dca-btn dca-btn-outline-light"></dca-button>
             </div>
         </section>
-        <section class="card" (click)="closeModal('card')">
+        <section class="card" (click)="onModalClick('modal4')">
             <h2 class="button-title">Başlık</h2>
             <div class="button-wrapper">
                 <dca-button [width]="'110px'" buttonText="Primary"
@@ -72,15 +92,19 @@
                     dcClass="dca-btn dca-btn-outline-secondary"></dca-button>
                 <dca-button [width]="'110px'" buttonText="Success"
                     dcClass="dca-btn dca-btn-outline-success"></dca-button>
-                <dca-button [width]="'110px'" buttonText="Danger" dcClass="dca-btn dca-btn-outline-danger"></dca-button>
+                <dca-button [width]="'110px'" buttonText="Danger"
+                    dcClass="dca-btn dca-btn-outline-danger"></dca-button>
                 <dca-button [width]="'110px'" buttonText="Warning"
                     dcClass="dca-btn dca-btn-outline-warning"></dca-button>
-                <dca-button [width]="'110px'" buttonText="Info" dcClass="dca-btn dca-btn-outline-info"></dca-button>
-                <dca-button [width]="'110px'" buttonText="Dark" dcClass="dca-btn dca-btn-outline-dark"></dca-button>
-                <dca-button [width]="'110px'" buttonText="Light" dcClass="dca-btn dca-btn-outline-light"></dca-button>
+                <dca-button [width]="'110px'" buttonText="Info"
+                    dcClass="dca-btn dca-btn-outline-info"></dca-button>
+                <dca-button [width]="'110px'" buttonText="Dark"
+                    dcClass="dca-btn dca-btn-outline-dark"></dca-button>
+                <dca-button [width]="'110px'" buttonText="Light"
+                    dcClass="dca-btn dca-btn-outline-light"></dca-button>
             </div>
         </section>
-        <section class="card" (click)="closeModal('card')">
+        <section class="card" (click)="onModalClick('modal5')">
             <h2 class="button-title">Başlık</h2>
             <div class="button-wrapper">
                 <dca-button [width]="'110px'" buttonText="Primary"
@@ -89,15 +113,19 @@
                     dcClass="dca-btn dca-btn-outline-secondary"></dca-button>
                 <dca-button [width]="'110px'" buttonText="Success"
                     dcClass="dca-btn dca-btn-outline-success"></dca-button>
-                <dca-button [width]="'110px'" buttonText="Danger" dcClass="dca-btn dca-btn-outline-danger"></dca-button>
+                <dca-button [width]="'110px'" buttonText="Danger"
+                    dcClass="dca-btn dca-btn-outline-danger"></dca-button>
                 <dca-button [width]="'110px'" buttonText="Warning"
                     dcClass="dca-btn dca-btn-outline-warning"></dca-button>
-                <dca-button [width]="'110px'" buttonText="Info" dcClass="dca-btn dca-btn-outline-info"></dca-button>
-                <dca-button [width]="'110px'" buttonText="Dark" dcClass="dca-btn dca-btn-outline-dark"></dca-button>
-                <dca-button [width]="'110px'" buttonText="Light" dcClass="dca-btn dca-btn-outline-light"></dca-button>
+                <dca-button [width]="'110px'" buttonText="Info"
+                    dcClass="dca-btn dca-btn-outline-info"></dca-button>
+                <dca-button [width]="'110px'" buttonText="Dark"
+                    dcClass="dca-btn dca-btn-outline-dark"></dca-button>
+                <dca-button [width]="'110px'" buttonText="Light"
+                    dcClass="dca-btn dca-btn-outline-light"></dca-button>
             </div>
         </section>
-        <section class="card" (click)="closeModal('card')">
+        <section class="card" (click)="onModalClick('modal6')">
             <h2 class="button-title">Başlık</h2>
             <div class="button-wrapper">
                 <dca-button [width]="'110px'" buttonText="Primary"
@@ -106,76 +134,666 @@
                     dcClass="dca-btn dca-btn-outline-secondary"></dca-button>
                 <dca-button [width]="'110px'" buttonText="Success"
                     dcClass="dca-btn dca-btn-outline-success"></dca-button>
-                <dca-button [width]="'110px'" buttonText="Danger" dcClass="dca-btn dca-btn-outline-danger"></dca-button>
+                <dca-button [width]="'110px'" buttonText="Danger"
+                    dcClass="dca-btn dca-btn-outline-danger"></dca-button>
                 <dca-button [width]="'110px'" buttonText="Warning"
                     dcClass="dca-btn dca-btn-outline-warning"></dca-button>
-                <dca-button [width]="'110px'" buttonText="Info" dcClass="dca-btn dca-btn-outline-info"></dca-button>
-                <dca-button [width]="'110px'" buttonText="Dark" dcClass="dca-btn dca-btn-outline-dark"></dca-button>
-                <dca-button [width]="'110px'" buttonText="Light" dcClass="dca-btn dca-btn-outline-light"></dca-button>
+                <dca-button [width]="'110px'" buttonText="Info"
+                    dcClass="dca-btn dca-btn-outline-info"></dca-button>
+                <dca-button [width]="'110px'" buttonText="Dark"
+                    dcClass="dca-btn dca-btn-outline-dark"></dca-button>
+                <dca-button [width]="'110px'" buttonText="Light"
+                    dcClass="dca-btn dca-btn-outline-light"></dca-button>
             </div>
         </section>
     </div>
     <div class="footer">
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam adipisci possimus laboriosam rerum quia qui
-            vero deserunt, sed labore totam earum veritatis. Laudantium asperiores nostrum, id obcaecati beatae error,
-            impedit soluta, nulla porro quia dignissimos ad mollitia doloribus debitis eum illum minima. Impedit illum
-            debitis, laborum qui ut dolores, labore incidunt iure recusandae rem cumque inventore nulla molestiae
-            nesciunt, quidem quam perspiciatis quaerat! Cum culpa exercitationem eligendi. Nobis minima praesentium
-            accusamus natus quibusdam animi voluptatibus, id sint numquam, officia deleniti? Dolorum quaerat autem,
-            necessitatibus praesentium et modi facilis reprehenderit, earum ipsa qui rerum recusandae cupiditate dolore
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+            adipisci possimus laboriosam rerum quia qui
+            vero deserunt, sed labore totam earum veritatis. Laudantium
+            asperiores nostrum, id obcaecati beatae error,
+            impedit soluta, nulla porro quia dignissimos ad mollitia doloribus
+            debitis eum illum minima. Impedit illum
+            debitis, laborum qui ut dolores, labore incidunt iure recusandae rem
+            cumque inventore nulla molestiae
+            nesciunt, quidem quam perspiciatis quaerat! Cum culpa exercitationem
+            eligendi. Nobis minima praesentium
+            accusamus natus quibusdam animi voluptatibus, id sint numquam,
+            officia deleniti? Dolorum quaerat autem,
+            necessitatibus praesentium et modi facilis reprehenderit, earum ipsa
+            qui rerum recusandae cupiditate dolore
             deleniti neque eligendi eius!</p>
     </div>
 </div>
 
+<div class="modal-overlay" id="modalOverlay" (click)="closeModal()"
+    [ngClass]="{'show':selectedModal=='modal1' ? true : false}"></div>
+<div class="modal" id="modal"
+    [ngClass]="{'show':selectedModal=='modal1' ? true : false}">
+    <section class="card not-hover">
+        <h2 class="button-title">Başlık</h2>
+        <div class="button-wrapper">
+            <dca-button [width]="'110px'" buttonText="Primary"
+                dcClass="dca-btn dca-btn-outline-primary"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Secondary"
+                dcClass="dca-btn dca-btn-outline-secondary"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Success"
+                dcClass="dca-btn dca-btn-outline-success"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Danger"
+                dcClass="dca-btn dca-btn-outline-danger"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Warning"
+                dcClass="dca-btn dca-btn-outline-warning"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Info"
+                dcClass="dca-btn dca-btn-outline-info"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Dark"
+                dcClass="dca-btn dca-btn-outline-dark"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Light"
+                dcClass="dca-btn dca-btn-outline-light"></dca-button>
+        </div>
+    </section>
+    <dcm-tab [tab]="tabs">
+        <div #tabContent id="1">
 
-<div class="modal-overlay" id="modalOverlay"></div>
-<div class="modal" id="modal">
-    <div class="modal-content" id="modalContent" (click)="closeModal('button')"></div>
-    <section *ngIf="!modalOpen" class="modal-card">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex sed blanditiis nihil obcaecati eum, autem quas
-            excepturi optio a tenetur tempore error dolorem maiores delectus.</p><br>
+            <section *ngIf="!modalOpen" class="modal-card">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex
+                    sed
+                    blanditiis nihil obcaecati eum, autem quas
+                    excepturi optio a tenetur tempore error dolorem maiores
+                    delectus.</p><br>
+                <section class="modal-content-card">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eligendi
+                        debitis nam sunt architecto quibusdam cumque!</p>
+                </section>
+                <section class="modal-content-card">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eligendi
+                        debitis nam sunt architecto quibusdam cumque!</p>
+                </section>
+                <section class="modal-content-card">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eligendi
+                        debitis nam sunt architecto quibusdam cumque!</p>
+                </section>
+                <section class="modal-content-card">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eligendi
+                        debitis nam sunt architecto quibusdam cumque!</p>
+                </section>
+                <section class="modal-content-card">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eligendi
+                        debitis nam sunt architecto quibusdam cumque!</p>
+                </section>
+                <section class="modal-content-card">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eligendi
+                        debitis nam sunt architecto quibusdam cumque!</p>
+                </section>
+                <section class="modal-content-card">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eligendi
+                        debitis nam sunt architecto quibusdam cumque!</p>
+                </section>
+                <section class="modal-content-card">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eligendi
+                        debitis nam sunt architecto quibusdam cumque!</p>
+                </section>
+                <section class="modal-content-card">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eligendi
+                        debitis nam sunt architecto quibusdam cumque!</p>
+                </section>
+                <section class="modal-content-card">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eligendi
+                        debitis nam sunt architecto quibusdam cumque!</p>
+                </section>
+                <section class="modal-content-card">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eligendi
+                        debitis nam sunt architecto quibusdam cumque!</p>
+                </section>
+                <section class="modal-content-card">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eligendi
+                        debitis nam sunt architecto quibusdam cumque!</p>
+                </section>
+                <section class="modal-content-card">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eligendi
+                        debitis nam sunt architecto quibusdam cumque!</p>
+                </section>
+                <section class="modal-content-card">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eligendi
+                        debitis nam sunt architecto quibusdam cumque!</p>
+                </section>
+            </section>
+            <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
+                nisi ex
+                illo veritatis beatae quis, sequi accusantium quisquam possimus
+                maxime
+                totam a quaerat porro quae error natus quibusdam labore, at
+                animi cumque
+                magni nostrum commodi sunt! Neque ducimus vel maxime nihil ex
+                culpa
+                repudiandae ipsa eveniet, voluptas quas quod omnis suscipit
+                quibusdam
+                maiores repellat pariatur obcaecati? Deserunt doloremque
+                architecto ut
+                error, libero doloribus eius eaque fugiat nulla consectetur,
+                officiis
+                nemo maxime? Nihil ut, dicta veritatis rem, ab sit accusantium
+                vel
+                expedita dolor facere maxime alias consequatur nemo! Expedita,
+                aliquid.
+                Iusto sint voluptatum enim placeat ad velit assumenda, provident
+                iste
+                veritatis?</div>
+        </div>
+        <div #tabContent id="2">
+            <iframe
+                src="https://codesandbox.io/p/devbox/asd-my5g4g?embed=1&file=%2Fsrc%2Fapp%2Fapp.component.html%3A9%2C40"
+                width="100%" height="600px" frameborder="0">
+            </iframe>
+
+        </div>
+    </dcm-tab>
+</div>
+
+<div class="modal-overlay" id="modalOverlay" (click)="closeModal()"
+    [ngClass]="{'show':selectedModal=='modal2' ? true : false}"></div>
+<div class="modal" id="modal"
+    [ngClass]="{'show':selectedModal=='modal2' ? true : false}">
+    <section class="card not-hover">
+        <h2 class="button-title">Başlık</h2>
+        <div class="button-wrapper">
+            <dca-button [width]="'110px'" buttonText="Primary"
+                dcClass="dca-btn dca-btn-outline-primary"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Secondary"
+                dcClass="dca-btn dca-btn-outline-secondary"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Success"
+                dcClass="dca-btn dca-btn-outline-success"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Danger"
+                dcClass="dca-btn dca-btn-outline-danger"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Warning"
+                dcClass="dca-btn dca-btn-outline-warning"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Info"
+                dcClass="dca-btn dca-btn-outline-info"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Dark"
+                dcClass="dca-btn dca-btn-outline-dark"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Light"
+                dcClass="dca-btn dca-btn-outline-light"></dca-button>
+        </div>
+    </section> <section *ngIf="!modalOpen" class="modal-card">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex sed
+            blanditiis nihil obcaecati eum, autem quas
+            excepturi optio a tenetur tempore error dolorem maiores
+            delectus.</p><br>
         <section class="modal-content-card">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi debitis nam sunt architecto quibusdam cumque!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
         </section>
         <section class="modal-content-card">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi debitis nam sunt architecto quibusdam cumque!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
         </section>
         <section class="modal-content-card">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi debitis nam sunt architecto quibusdam cumque!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
         </section>
         <section class="modal-content-card">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi debitis nam sunt architecto quibusdam cumque!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
         </section>
         <section class="modal-content-card">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi debitis nam sunt architecto quibusdam cumque!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
         </section>
         <section class="modal-content-card">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi debitis nam sunt architecto quibusdam cumque!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
         </section>
         <section class="modal-content-card">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi debitis nam sunt architecto quibusdam cumque!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
         </section>
         <section class="modal-content-card">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi debitis nam sunt architecto quibusdam cumque!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
         </section>
         <section class="modal-content-card">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi debitis nam sunt architecto quibusdam cumque!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
         </section>
         <section class="modal-content-card">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi debitis nam sunt architecto quibusdam cumque!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
         </section>
         <section class="modal-content-card">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi debitis nam sunt architecto quibusdam cumque!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
         </section>
         <section class="modal-content-card">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi debitis nam sunt architecto quibusdam cumque!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
         </section>
         <section class="modal-content-card">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi debitis nam sunt architecto quibusdam cumque!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
         </section>
         <section class="modal-content-card">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi debitis nam sunt architecto quibusdam cumque!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
         </section>
     </section>
-    <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque nisi ex illo veritatis beatae quis, sequi accusantium quisquam possimus maxime totam a quaerat porro quae error natus quibusdam labore, at animi cumque magni nostrum commodi sunt! Neque ducimus vel maxime nihil ex culpa repudiandae ipsa eveniet, voluptas quas quod omnis suscipit quibusdam maiores repellat pariatur obcaecati? Deserunt doloremque architecto ut error, libero doloribus eius eaque fugiat nulla consectetur, officiis nemo maxime? Nihil ut, dicta veritatis rem, ab sit accusantium vel expedita dolor facere maxime alias consequatur nemo! Expedita, aliquid. Iusto sint voluptatum enim placeat ad velit assumenda, provident iste veritatis?</div>
+    <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque nisi ex
+        illo veritatis beatae quis, sequi accusantium quisquam possimus maxime
+        totam a quaerat porro quae error natus quibusdam labore, at animi cumque
+        magni nostrum commodi sunt! Neque ducimus vel maxime nihil ex culpa
+        repudiandae ipsa eveniet, voluptas quas quod omnis suscipit quibusdam
+        maiores repellat pariatur obcaecati? Deserunt doloremque architecto ut
+        error, libero doloribus eius eaque fugiat nulla consectetur, officiis
+        nemo maxime? Nihil ut, dicta veritatis rem, ab sit accusantium vel
+        expedita dolor facere maxime alias consequatur nemo! Expedita, aliquid.
+        Iusto sint voluptatum enim placeat ad velit assumenda, provident iste
+        veritatis?</div>
+</div>
+
+<div class="modal-overlay" id="modalOverlay" (click)="closeModal()"
+    [ngClass]="{'show':selectedModal=='modal3' ? true : false}"></div>
+<div class="modal" id="modal"
+    [ngClass]="{'show':selectedModal=='modal3' ? true : false}">
+    <section class="card not-hover">
+        <h2 class="button-title">Başlık</h2>
+        <div class="button-wrapper">
+            <dca-button [width]="'110px'" buttonText="Primary"
+                dcClass="dca-btn dca-btn-outline-primary"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Secondary"
+                dcClass="dca-btn dca-btn-outline-secondary"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Success"
+                dcClass="dca-btn dca-btn-outline-success"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Danger"
+                dcClass="dca-btn dca-btn-outline-danger"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Warning"
+                dcClass="dca-btn dca-btn-outline-warning"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Info"
+                dcClass="dca-btn dca-btn-outline-info"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Dark"
+                dcClass="dca-btn dca-btn-outline-dark"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Light"
+                dcClass="dca-btn dca-btn-outline-light"></dca-button>
+        </div>
+    </section> <section *ngIf="!modalOpen" class="modal-card">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex sed
+            blanditiis nihil obcaecati eum, autem quas
+            excepturi optio a tenetur tempore error dolorem maiores
+            delectus.</p><br>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+    </section>
+    <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque nisi ex
+        illo veritatis beatae quis, sequi accusantium quisquam possimus maxime
+        totam a quaerat porro quae error natus quibusdam labore, at animi cumque
+        magni nostrum commodi sunt! Neque ducimus vel maxime nihil ex culpa
+        repudiandae ipsa eveniet, voluptas quas quod omnis suscipit quibusdam
+        maiores repellat pariatur obcaecati? Deserunt doloremque architecto ut
+        error, libero doloribus eius eaque fugiat nulla consectetur, officiis
+        nemo maxime? Nihil ut, dicta veritatis rem, ab sit accusantium vel
+        expedita dolor facere maxime alias consequatur nemo! Expedita, aliquid.
+        Iusto sint voluptatum enim placeat ad velit assumenda, provident iste
+        veritatis?</div>
+</div>
+
+<div class="modal-overlay" id="modalOverlay" (click)="closeModal()"
+    [ngClass]="{'show':selectedModal=='modal4' ? true : false}"></div>
+<div class="modal" id="modal"
+    [ngClass]="{'show':selectedModal=='modal4' ? true : false}">
+    <section class="card not-hover">
+        <h2 class="button-title">Başlık</h2>
+        <div class="button-wrapper">
+            <dca-button [width]="'110px'" buttonText="Primary"
+                dcClass="dca-btn dca-btn-outline-primary"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Secondary"
+                dcClass="dca-btn dca-btn-outline-secondary"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Success"
+                dcClass="dca-btn dca-btn-outline-success"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Danger"
+                dcClass="dca-btn dca-btn-outline-danger"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Warning"
+                dcClass="dca-btn dca-btn-outline-warning"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Info"
+                dcClass="dca-btn dca-btn-outline-info"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Dark"
+                dcClass="dca-btn dca-btn-outline-dark"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Light"
+                dcClass="dca-btn dca-btn-outline-light"></dca-button>
+        </div>
+    </section> <section *ngIf="!modalOpen" class="modal-card">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex sed
+            blanditiis nihil obcaecati eum, autem quas
+            excepturi optio a tenetur tempore error dolorem maiores
+            delectus.</p><br>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+    </section>
+    <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque nisi ex
+        illo veritatis beatae quis, sequi accusantium quisquam possimus maxime
+        totam a quaerat porro quae error natus quibusdam labore, at animi cumque
+        magni nostrum commodi sunt! Neque ducimus vel maxime nihil ex culpa
+        repudiandae ipsa eveniet, voluptas quas quod omnis suscipit quibusdam
+        maiores repellat pariatur obcaecati? Deserunt doloremque architecto ut
+        error, libero doloribus eius eaque fugiat nulla consectetur, officiis
+        nemo maxime? Nihil ut, dicta veritatis rem, ab sit accusantium vel
+        expedita dolor facere maxime alias consequatur nemo! Expedita, aliquid.
+        Iusto sint voluptatum enim placeat ad velit assumenda, provident iste
+        veritatis?</div>
+</div>
+
+<div class="modal-overlay" id="modalOverlay" (click)="closeModal()"
+    [ngClass]="{'show':selectedModal=='modal5' ? true : false}"></div>
+<div class="modal" id="modal"
+    [ngClass]="{'show':selectedModal=='modal5' ? true : false}">
+    <section class="card not-hover">
+        <h2 class="button-title">Başlık</h2>
+        <div class="button-wrapper">
+            <dca-button [width]="'110px'" buttonText="Primary"
+                dcClass="dca-btn dca-btn-outline-primary"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Secondary"
+                dcClass="dca-btn dca-btn-outline-secondary"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Success"
+                dcClass="dca-btn dca-btn-outline-success"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Danger"
+                dcClass="dca-btn dca-btn-outline-danger"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Warning"
+                dcClass="dca-btn dca-btn-outline-warning"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Info"
+                dcClass="dca-btn dca-btn-outline-info"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Dark"
+                dcClass="dca-btn dca-btn-outline-dark"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Light"
+                dcClass="dca-btn dca-btn-outline-light"></dca-button>
+        </div>
+    </section> <section *ngIf="!modalOpen" class="modal-card">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex sed
+            blanditiis nihil obcaecati eum, autem quas
+            excepturi optio a tenetur tempore error dolorem maiores
+            delectus.</p><br>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+    </section>
+    <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque nisi ex
+        illo veritatis beatae quis, sequi accusantium quisquam possimus maxime
+        totam a quaerat porro quae error natus quibusdam labore, at animi cumque
+        magni nostrum commodi sunt! Neque ducimus vel maxime nihil ex culpa
+        repudiandae ipsa eveniet, voluptas quas quod omnis suscipit quibusdam
+        maiores repellat pariatur obcaecati? Deserunt doloremque architecto ut
+        error, libero doloribus eius eaque fugiat nulla consectetur, officiis
+        nemo maxime? Nihil ut, dicta veritatis rem, ab sit accusantium vel
+        expedita dolor facere maxime alias consequatur nemo! Expedita, aliquid.
+        Iusto sint voluptatum enim placeat ad velit assumenda, provident iste
+        veritatis?</div>
+</div>
+
+<div class="modal-overlay" id="modalOverlay" (click)="closeModal()"
+    [ngClass]="{'show':selectedModal=='modal6' ? true : false}"></div>
+<div class="modal" id="modal"
+    [ngClass]="{'show':selectedModal=='modal6' ? true : false}">
+    <section class="card not-hover">
+        <h2 class="button-title">Başlık</h2>
+        <div class="button-wrapper">
+            <dca-button [width]="'110px'" buttonText="Primary"
+                dcClass="dca-btn dca-btn-outline-primary"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Secondary"
+                dcClass="dca-btn dca-btn-outline-secondary"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Success"
+                dcClass="dca-btn dca-btn-outline-success"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Danger"
+                dcClass="dca-btn dca-btn-outline-danger"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Warning"
+                dcClass="dca-btn dca-btn-outline-warning"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Info"
+                dcClass="dca-btn dca-btn-outline-info"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Dark"
+                dcClass="dca-btn dca-btn-outline-dark"></dca-button>
+            <dca-button [width]="'110px'" buttonText="Light"
+                dcClass="dca-btn dca-btn-outline-light"></dca-button>
+        </div>
+    </section> <section *ngIf="!modalOpen" class="modal-card">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex sed
+            blanditiis nihil obcaecati eum, autem quas
+            excepturi optio a tenetur tempore error dolorem maiores
+            delectus.</p><br>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+        <section class="modal-content-card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                debitis nam sunt architecto quibusdam cumque!</p>
+        </section>
+    </section>
+    <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque nisi ex
+        illo veritatis beatae quis, sequi accusantium quisquam possimus maxime
+        totam a quaerat porro quae error natus quibusdam labore, at animi cumque
+        magni nostrum commodi sunt! Neque ducimus vel maxime nihil ex culpa
+        repudiandae ipsa eveniet, voluptas quas quod omnis suscipit quibusdam
+        maiores repellat pariatur obcaecati? Deserunt doloremque architecto ut
+        error, libero doloribus eius eaque fugiat nulla consectetur, officiis
+        nemo maxime? Nihil ut, dicta veritatis rem, ab sit accusantium vel
+        expedita dolor facere maxime alias consequatur nemo! Expedita, aliquid.
+        Iusto sint voluptatum enim placeat ad velit assumenda, provident iste
+        veritatis?</div>
 </div>

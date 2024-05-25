@@ -53,7 +53,7 @@ body {
     transition: transform 0.5s, background-color 0.5s;
 }
 
-.card:hover {
+.card:not(.not-hover):hover {
     
     background-color: #eee9e9;
     transform: scale(1.02);

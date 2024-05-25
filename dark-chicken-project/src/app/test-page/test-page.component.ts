@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TabModel } from 'projects/darkchicken';
 
 @Component({
   selector: 'app-test-page',
@@ -6,46 +7,34 @@ import { Component } from '@angular/core';
   styleUrls: ['./test-page.component.css']
 })
 export class TestPageComponent {
-
+  selectedModal = null
   isVisible = false
   modalOpen = false
 
   constructor() {
   }
 
-  closeModal(type:string) {
-    if(type == 'button'){
-      document.querySelectorAll('.dca-btn').forEach(button => {
-        button.addEventListener('click', () => {
-          console.log(button)
-        })
-      })
-      document.querySelectorAll('.card').forEach(card => {
-        card.addEventListener('click', () => {
-          const modalOverlay = document.getElementById('modalOverlay');
-          const modal = document.getElementById('modal');
-          const modalContent = document.getElementById('modalContent');
-  
-          modalContent!.innerHTML = card.innerHTML;
-          modal!.classList.add('show');
-          modalOverlay!.classList.add('show');
-        });
-      });
-  
-      document.getElementById('modalOverlay')!.addEventListener('click', () => {
-        const modalOverlay = document.getElementById('modalOverlay');
-        const modal = document.getElementById('modal');
-  
-        modal!.classList.remove('show');
-        modalOverlay!.classList.remove('show');
-      });
-    }
-    else{
-      this.modalOpen = true
-    }
+  closeModal() {
+    this.selectedModal = null
+
   }
 
-  clickButton(e:any){
+  clickButton(e: any) {
     this.modalOpen = true
   }
+
+  onModalClick(e: any) {
+    this.selectedModal = e
+
+  }
+
+  tabs: TabModel[] = [
+    {tabId:'1',
+      tabTitle:'Description'
+    },
+    {tabId:'2',
+      tabTitle:'Code'
+    }
+  ]
+
 }
