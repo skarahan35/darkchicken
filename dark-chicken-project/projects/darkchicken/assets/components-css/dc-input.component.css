@@ -34,7 +34,7 @@
   padding: 0.2em calc(1em + 10px) 0.2em calc(1em + 10px);
 }
 .dca-input:disabled{
-  opacity: 0.7
+  background-color:rgba(216, 216, 216);
 }
 
 .dca-input:not([readonly]) {
