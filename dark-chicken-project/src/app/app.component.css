@@ -1,8 +1,8 @@
-.container {
+/* .container {
     display: flex;
-}
+} */
 
-.content{
+.m-content{
     margin-left: 80px;
     transition: margin 0.3s ease;
     &.sidebar-open{
