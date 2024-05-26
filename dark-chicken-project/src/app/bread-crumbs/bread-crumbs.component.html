@@ -1,103 +1,90 @@
-<div class="content">
-    <h1> Dark Chicken Atomic Bread Crumb</h1>
+<div class="container">
+    <div class="header">
+        <h1 class="header-title">Darkchicken Breadcrumbs</h1><br><br>
+        <h2>Breadcrumb Types and Usage</h2>
+        <p>DarkChicken is an innovative library providing user interface tools for developers using Angular. The "Breadcrumb"
+            UI element in this library is designed to optimize user experience and facilitate the developers' work. Here
+            are the basic features and usage of DarkChicken Breadcrumb elements:</p>
 
-    <div class="content-item">
-        <h3>Crumb List</h3>
-        <dcm-tab class="content-tab" [tab]="tabs" id="1">
-            <div #tabContent [id]="tabs[0].tabId">
-                <div class="content-lib-items">
-                    <dca-bread-crumb
-                        [crumbList]="crumbList"
-                        class="content-lib-item"></dca-bread-crumb>
-                </div>
-                <div class="content-item-description">
-                    Neredeyse her web sayfasında gördüğümüz, oldukça işe yarayan
-                    fakat çok az kişinin dikkat ettiği bread-crumb ile
-                    karşınızdayız. Bu elementin oldukça basit ve etkili bir
-                    kullanımı vardır. İçerisine listelemek istediğimiz öğleri
-                    verdiğimizde gerekli yönlendirmeleri içeren bir bread-crumb
-                    oluşturacaktır. Burada Görüntülemek için gerekli olan birkaç
-                    öğeyi sizlerden rica ediyoruz:
-                    <br>
-                    <strong>*Label:</strong> Bu öğe listelenecek öğenin ekran
-                    gözükecek etiketini
-                    temsil etmketedir.
-                    <br>
-                    <strong>*Link:</strong> Bu öğe listelenen elmandaki bağlantı
-                    yolunu temisl
-                    etmektedir. Eğer ki bir öğede bağlantı varsa bunu belli
-                    etmek için de içerisine basit bir renk belirteci de ekler.
-                    <br>
-                    <strong>*Icon:</strong> Bu öğe listelenecek öğenin hemen
-                    solunda gözükecek
-                    olan icon'u temsil etmektedir.
-                </div>
+        <h3>Basic Features</h3>
+        <ul>
+            <li><strong>Easy Navigation:</strong> DarkChicken Breadcrumb elements provide a clear path of navigation for users,
+                making it easier to understand their current location within the application's hierarchy.</li>
+            <li><strong>Customizability:</strong> You can customize the appearance and behavior of the Breadcrumb elements
+                according to your projects. Using CSS, you can alter the color, size, font, and more.</li>
+            <li><strong>Data Binding:</strong> Breadcrumb elements support dynamic data binding, allowing you to display a
+                variety of paths effortlessly. You can bind the breadcrumb data to a data source, making it easy to handle
+                dynamic navigational paths.</li>
+            <li><strong>Accessibility:</strong> DarkChicken is designed according to accessibility standards. Breadcrumb
+                elements are fully compatible with screen readers and keyboard navigation, ensuring inclusivity for all
+                users.</li>
+        </ul>
+
+        <h3>Usage</h3>
+        <p>In this code example, the Breadcrumb component is used to display a navigation path:</p>
+        <ul>
+            <li><strong>Breadcrumb List:</strong> The <code>[crumbList]</code> attribute binds the breadcrumb data to the component,
+                creating a navigational path for the user.</li>
+        </ul>
+
+        <p>These elements allow users to visualize and navigate different paths within their projects. When a breadcrumb item
+            is clicked, specific actions can be performed, enhancing user experience and navigation. DarkChicken Breadcrumb
+            elements offer a comprehensive and practical guide for those who want to understand and use user interface components
+            better.</p>
+    </div>
+</div>
+
+<div class="content container">
+    <section class="card" (click)="onModalClick('modal1')">
+        <h2 class="button-title">BreadCrumbs</h2>
+        <dca-bread-crumb [crumbList]="crumbList" class="content-lib-item"></dca-bread-crumb>
+
+    </section>
+
+</div>
+
+<div class="container">
+    <div class="header">
+        <h1 class="header-title">Properties</h1><br><br>
+        <dcm-tab [tab]="tabProperties" (dcTabChange)="tabChange()">
+            <div #tabContent id="1">
+                <dc-datatable #table1 class="primary" [rows]="inputRows" [loadingIndicator]="false"
+                    [columns]="inputColumns" [columnMode]="'force'" [reorderable]="false" [allowColumnSearch]="true"
+                    [scrollbarH]="false" [useToolbar]="false" [allowDeleting]="false" [allowAdding]="false"
+                    [allowEditing]="false">
+                </dc-datatable>
+
             </div>
-
-            <div #tabContent [id]="tabs[1].tabId">
-                <dcm-tab class="content-code" [tab]="codeTabs">
-                    <div #tabContent [id]="codeTabs[0].tabId">
-                        <pre>
-                        <code class="language-html">
-                            {{basicCrumbHTML}}
-                        </code>
-                    </pre>
-                    </div>
-                    <div #tabContent [id]="codeTabs[1].tabId">
-                        <pre>
-                            <code class="language-ts">
-                                {{basicCrumbTS}}
-                            </code>
-                        </pre>
-                    </div>
-                </dcm-tab>
+            <div #tabContent id="2">
+                <dc-datatable #table2 class="primary" [rows]="eventRows" [loadingIndicator]="false"
+                    [columns]="eventColumns" [columnMode]="'force'" [reorderable]="false" [allowColumnSearch]="true"
+                    [scrollbarH]="false" [useToolbar]="false" [allowDeleting]="false" [allowAdding]="false"
+                    [allowEditing]="false">
+                </dc-datatable>
             </div>
         </dcm-tab>
     </div>
 
-    <div class="content-item">
-        <h3>Events</h3>
-        <dcm-tab class="content-tab" [tab]="tabs" id="3">
-            <div #tabContent [id]="tabs[0].tabId">
-                <div class="content-lib-items">
-                    <dca-bread-crumb (dcClick)="dcClick($event)"
-                        (dcHover)="dcHover($event)"
-                        (dcMouseUp)="dcMouseUp($event)"
-                        (dcMouseDown)="dcMouseDown($event)"
-                        (dcMouseLeave)="dcMouseLeave($event)"
-                        (dcMouseEnter)="dcMouseEnter($event)"
-                        (dcDoubleClick)="dcDoubleClick($event)"
-                        [crumbList]="crumbList"
-                        class="content-lib-item"></dca-bread-crumb>
-                </div>
-                <div class="content-item-description">
-                    Bu bölümde bread-crumb için vermiş olduğumuz event'leri
-                    inceleyeceğiz. Burada diğer atomic elementlerde verilen
-                    eventlere çok benzer bir şekilde yöntem izledik ve
-                    yakaladığımız her event'i size verdik. Tarayıcınızın
-                    konsolunu açarak verilen eventleri ve çıktılarını
-                    görebilirsiniz.
-                </div>
-            </div>
+</div>
 
-            <div #tabContent [id]="tabs[1].tabId">
-                <dcm-tab id="4" class="content-code" [tab]="codeTabs">
-                    <div #tabContent [id]="codeTabs[0].tabId">
-                        <pre>
-                        <code class="language-html">
-                            {{eventBreadCrumbHTML}}
-                        </code>
-                    </pre>
-                    </div>
-                    <div #tabContent [id]="codeTabs[1].tabId">
-                        <pre>
-                            <code class="language-ts">
-                                {{eventBreadCrumbTS}}
-                            </code>
-                        </pre>
-                    </div>
-                </dcm-tab>
-            </div>
-        </dcm-tab>
-    </div>
+<div class="modal-overlay" id="modalOverlay" (click)="closeModal()"
+    [ngClass]="{'show':selectedModal=='modal1' ? true : false}"></div>
+<div class="modal" id="modal" [ngClass]="{'show':selectedModal=='modal1' ? true : false}">
+
+    <dcm-tab [tab]="tabs">
+        <div #tabContent id="1">
+
+            <iframe
+                src="https://codesandbox.io/p/devbox/asd-my5g4g?embed=1&file=%2Fsrc%2Fapp%2Fbread-crumbs%2Fbread-crumbs.component.html"
+                width="100%" height="600px" frameborder="1">
+            </iframe>
+        </div>
+        <div #tabContent id="2">
+
+            <iframe
+                src="https://codesandbox.io/p/devbox/asd-my5g4g?embed=1&file=%2Fsrc%2Fapp%2Fbread-crumbs%2Fbread-crumbs.component.ts"
+                width="100%" height="600px" frameborder="1">
+            </iframe>
+        </div>
+    </dcm-tab>
 </div>

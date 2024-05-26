@@ -202,6 +202,5 @@ export class ListsComponent {
   tabChange(){
     // this.table1.recalculate()
     this.table2.recalculate()
-    debugger
   }
 }
