@@ -1,152 +1,139 @@
-<div class="content">
-    <h1> Dark Chicken Atomic Checkbox & Switch</h1>
+<div class="container">
+    <div class="header">
+      <h1 class="header-title">Darkchicken Checkboxes</h1><br><br>
+      <h2>Checkbox And Switch Types</h2>
+            <p>DarkChicken is an innovative library providing user interface tools for developers using Angular. The "Checkbox" and "Switch" UI elements in this library 
+                are designed to optimize user experience and facilitate the developers' work. Here are the basic features and usage of DarkChicken Checkbox and Switch 
+                elements:</p>
 
-    <h2> No Decoration</h2>
-    <div class="content-item">
-        <dcm-tab class="content-tab" [tab]="tabs" id="1">
-            <div #tabContent [id]="tabs[0].tabId">
-                <div class="content-lib-items">
-                    <dca-checkbox class="content-lib-item"></dca-checkbox>
-                </div>
-                <div class="content-item-description">
-                    Checkbox' element'imize herhangi bir etiket atamazsak eğer
-                    ortada sade bir checkbox görürüz. Eğer tasarımınızda ve
-                    kurduğunuz yapıda bu yeterli ise sadece tek bir satır kod
-                    ile istediğniiz checkbox'a sahip olabilirsiniz.
-                </div>
-            </div>
+            <h3>Basic Features</h3>
+            <ul>
+                <li><strong>Various Styles:</strong> DarkChicken Checkbox and Switch elements come in various styles. Predefined styles such as default, box type, 
+                    and switch type allow you to use these elements for different purposes in your projects easily.</li>
+                <li><strong>Customizability:</strong> You can customize the appearance and feel of the Checkbox and Switch elements according to your projects. 
+                    You can change the color, size, border radius, and more via CSS.</li>
+                <li><strong>State Management:</strong> Checkbox and Switch elements support different states such as active, disabled, and loading. These states 
+                    allow you to manage user interactions and feedback more effectively.</li>
+                <li><strong>Accessibility:</strong> DarkChicken is designed according to accessibility standards. Checkbox and Switch elements are fully compatible 
+                    with screen readers and keyboard navigation.</li>
+            </ul>
 
-            <pre #tabContent [id]="tabs[1].tabId">
-                <code class="language-html">
-                    {{noDecorationCheckbox}}
-                </code>
-            </pre>
-        </dcm-tab>
+            <h3>Usage</h3>
+            <p>In this code example, different types of Checkbox and Switch components are used:</p>
+            <ul>
+                <li><strong>Standard Checkbox:</strong> A checkbox is displayed with default settings.</li>
+                <li><strong>Box Type Checkboxes:</strong>
+                    <ul>
+                        <li>Unselected box type checkbox</li>
+                        <li>Selected box type checkbox</li>
+                        <li>Disabled box type checkbox, not interactive</li>
+                    </ul>
+                </li>
+                <li><strong>Switch Type Checkboxes:</strong>
+                    <ul>
+                        <li>Switch type checkbox with label and specific ID</li>
+                        <li>Selected switch type checkbox</li>
+                        <li>Disabled switch type checkbox, not interactive</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>These elements allow users to visualize and use different states and styles in their projects. When the card section is clicked, a specific modal 
+                window opens, providing easy access to additional information and options. DarkChicken Checkbox and Switch elements offer a comprehensive and practical 
+                guide for those who want to understand and use user interface components better.</p>
+        
     </div>
-
-    <div class="content-item">
-        <h3> Checkbox Types</h3>
-        <dcm-tab class="content-tab" [tab]="tabs" id="2">
-            <div #tabContent [id]="tabs[0].tabId">
-                <div class="content-lib-items">
-                    <dca-checkbox type="box"
-                        class="content-lib-item"></dca-checkbox>
-                    <dca-checkbox type="switch" label="Type Switch"
-                        checkboxId="002"
-                        class="content-lib-item"></dca-checkbox>
-                </div>
-                <div class="content-item-description">
-                    Boolean bir veri girişi için checkbox'lar biz geliştiriciler
-                    için vazgeçilmezdir. Fakat burada kullanıcı gözünden
-                    baktığımızda bir işaret kutusu ile bir swtich kutusu
-                    arasında büyük farklar vardır. Burada kullanıcıların bu tarz
-                    isteklerini giderebilmek için checkbox'ın içerisine aynı
-                    zamanda bir switch ekledik. Bu sayede sadece 'type' etiketi
-                    ile checkbox'un tipini yönetebiliriz. Ne kadar heyecanlı
-                    değil mi?
-                </div>
-            </div>
-
-            <pre #tabContent [id]="tabs[1].tabId">
-                <code class="language-html">
-                    {{checkboxTypes}}
-                </code>
-            </pre>
+  
+  </div>
+  
+  <div class="content">
+    <section class="card" (click)="onModalClick('modal1')">
+      <h2 class="button-title">Checkbox And Switch Types</h2>
+      <div class="button-wrapper">
+        <dca-checkbox class="content-lib-item"></dca-checkbox>
+        <dca-checkbox type="box" [checked]="false" class="content-lib-item"></dca-checkbox>
+        <dca-checkbox type="box" [checked]="true" class="content-lib-item"></dca-checkbox>
+        <dca-checkbox type="box" [disabled]="true" class="content-lib-item"></dca-checkbox>
+        <dca-checkbox type="switch" label="Type Switch" checkboxId="002" class="content-lib-item"></dca-checkbox>
+        <dca-checkbox type="switch" [checked]="true" label="Type Switch" checkboxId="002" class="content-lib-item"></dca-checkbox>
+        <dca-checkbox type="switch" [disabled]="true" label="Type Switch" checkboxId="002" class="content-lib-item"></dca-checkbox>
+        
+      </div>
+    </section>
+  
+  </div>
+  
+  <div class="container">
+    <div class="header">
+      <h1 class="header-title">Properties</h1><br><br>
+      <dcm-tab [tab]="tabProperties" (dcTabChange)="tabChange()">
+        <div #tabContent id="1">
+          <dc-datatable
+          #table1
+            class="primary"
+            [rows]="inputRows"
+            [loadingIndicator]="false"
+            [columns]="inputColumns"
+            [columnMode]="'force'"
+            [reorderable]="false"
+            [allowColumnSearch]="true"
+            [scrollbarH]="false"
+            [useToolbar]="false"
+            [allowDeleting]="false"
+            [allowAdding]="false"
+            [allowEditing]="false"
+            >
+            </dc-datatable>
+            
+        </div>
+      <div #tabContent id="2">
+            <dc-datatable
+            #table2
+              class="primary"
+              [rows]="eventRows"
+              [loadingIndicator]="false"
+              [columns]="eventColumns"
+              [columnMode]="'force'"
+              [reorderable]="false"
+              [allowColumnSearch]="true"
+              [scrollbarH]="false"
+              [useToolbar]="false"
+              [allowDeleting]="false"
+              [allowAdding]="false"
+              [allowEditing]="false"
+              >
+              </dc-datatable>
+          </div>
         </dcm-tab>
-    </div>
+      </div>
+  
+  </div>
+  
+  <div class="modal-overlay" id="modalOverlay" (click)="closeModal()"
+    [ngClass]="{'show':selectedModal=='modal1' ? true : false}"></div>
+  <div class="modal" id="modal"
+    [ngClass]="{'show':selectedModal=='modal1' ? true : false}">
+  
+    <dcm-tab [tab]="tabs">
+      <div #tabContent id="1">
+  
+        <iframe
+          src="https://codesandbox.io/p/devbox/asd-my5g4g?embed=1&file=%2Fsrc%2Fapp%2Fcheckboxes%2Fcheckboxes.component.html"
+          width="100%" height="600px" frameborder="1">
+        </iframe>
+      </div>
+      <div #tabContent id="2">
+  
+        <iframe
+          src="https://codesandbox.io/p/devbox/asd-my5g4g?embed=1&file=%2Fsrc%2Fapp%2Fcheckboxes%2Fcheckboxes.component.ts"
+          width="100%" height="600px" frameborder="1">
+        </iframe>
+      </div>
+    </dcm-tab>
+  </div>
 
-    <div class="content-item">
-        <h3> Disabled & Visible</h3>
-        <dcm-tab class="content-tab" [tab]="tabs" id="3">
-            <div #tabContent [id]="tabs[0].tabId">
-                <div class="content-lib-items">
-                    <dca-checkbox type="box" [visible]="visibleCheckbox"
-                        class="content-lib-item"></dca-checkbox>
-                    <dca-checkbox type="switch" [disabled]="true"
-                        [checked]="true"
-                        class="content-lib-item"></dca-checkbox>
-                </div>
-                <div class="content-item-description">
-                    Checkbox ve Switch birbirlerinden farklı olarak gözükselerde
-                    aslında birbirlerine çok benzerler. Hatta clasic HTML input
-                    alanlarına da bezerler. Bu sayede onlara disabled etiketi
-                    verebilmemiz oldukça mümkündür. Burada basit bir 'disabled'
-                    etiketi ile checkbox'ları kullanım dışı yapabiliyoruz. Hatta
-                    istersek görünmez olmasını da sağlayabiliriz. 'visible'
-                    etiketiyle diğer atomik elementlerde olduğu gibi
-                    checkbox'ları da görünmez yapabiliriz.
-                    <dca-button (dcClick)="visibleCheckbox = !visibleCheckbox"
-                        buttonText="Click Me"
-                        dcClass="dca-btn dca-btn-primary"></dca-button>
-                </div>
-            </div>
 
-            <div #tabContent [id]="tabs[1].tabId">
-                <dcm-tab class="content-code" [tab]="codeTabs" id="code-1">,
-                    <div #tabContent [id]="codeTabs[0].tabId">
-                        <pre
-                            class="line-numbers"><code class="language-html">{{checkboxPassiveCodeHTML}}</code></pre>
-                    </div>
-                    <div #tabContent [id]="codeTabs[1].tabId">
-                        <pre
-                            class="line-numbers"><code class="language-ts">{{checkboxPassiveCodeTS}}</code></pre>
-                    </div>
-                </dcm-tab>
-            </div>
-        </dcm-tab>
-    </div>
 
-    <div class="content-item">
-        <h3> Events</h3>
-        <dcm-tab class="content-tab" [tab]="tabs" id="4">
-            <div #tabContent [id]="tabs[0].tabId">
-                <div class="content-lib-items">
-                    <dca-checkbox
-                        (dcClick)="dcClick($event)"
-                        (dcHover)="dcHover($event)"
-                        (dcMouseUp)="dcMouseUp($event)"
-                        (dcMouseDown)="dcMouseDown($event)"
-                        (dcMouseLeave)="dcMouseLeave($event)"
-                        (dcMouseEnter)="dcMouseEnter($event)"
-                        (dcDoubleClick)="dcDoubleClick($event)"
-                        (dcValueChanged)="dcValueChanged($event)"
-                        type="box"
-                        class="content-lib-item"></dca-checkbox>
-                    <dca-checkbox
-                        (dcClick)="dcClick($event)"
-                        (dcHover)="dcHover($event)"
-                        (dcMouseUp)="dcMouseUp($event)"
-                        (dcMouseDown)="dcMouseDown($event)"
-                        (dcMouseLeave)="dcMouseLeave($event)"
-                        (dcMouseEnter)="dcMouseEnter($event)"
-                        (dcDoubleClick)="dcDoubleClick($event)"
-                        (dcValueChanged)="dcValueChanged($event)"
-                        type="switch"
-                        class="content-lib-item"></dca-checkbox>
-                </div>
-                <div class="content-item-description">
-                    Bu bölümde checkbox&switch için vermiş olduğumuz event'leri
-                    inceleyeceğiz. Burada diğer atomic elementlerde verilen
-                    eventlere çok benzer bir şekilde yöntem izledik ve
-                    yakaladığımız her event'i size verdik. Tarayıcınızın
-                    konsolunu açarak verilen eventleri ve çıktılarını
-                    görebilirsiniz.
-                </div>
-            </div>
 
-            <div #tabContent [id]="tabs[1].tabId">
-                <dcm-tab class="content-code" [tab]="codeTabs" id="code-2">,
-                    <div #tabContent [id]="codeTabs[0].tabId">
-                        <pre
-                            class="line-numbers"><code class="language-html">{{checkboxEventHTML}}</code></pre>
-                    </div>
-                    <div #tabContent [id]="codeTabs[1].tabId">
-                        <pre
-                            class="line-numbers"><code class="language-ts">{{checkboxEventTS}}</code></pre>
-                    </div>
-                </dcm-tab>
-            </div>
-        </dcm-tab>
-    </div>
 
-</div>
+

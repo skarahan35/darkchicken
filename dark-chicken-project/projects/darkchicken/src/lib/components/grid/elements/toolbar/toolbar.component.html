@@ -8,7 +8,7 @@
         <column-chooser [columns]="columns" (changeColumns)="changeColumns($event)"></column-chooser>
     </div>
 
-    <div *ngIf="allowEditing !=false" (click)="saveClick($event)" class="toolbar-item icon-button"[ngClass]="{'disable':passiveSaving}">
+    <div *ngIf="allowSaveButton !=false" (click)="saveClick($event)" class="toolbar-item icon-button"[ngClass]="{'disable':passiveSaving}">
         <dca-icon icon="floppy-disk"></dca-icon>
     </div>
 
@@ -16,7 +16,7 @@
         <dca-icon icon="plus"></dca-icon>
     </div>
 
-    <div *ngIf="!(allowAdding ==false && allowEditing ==false && allowDeleting ==false)" (click)="gridReverse($event)" class="toolbar-item icon-button" [ngClass]="{'disable':passiveReversing}">
+    <div *ngIf="allowReverseButton" (click)="gridReverse($event)" class="toolbar-item icon-button" [ngClass]="{'disable':passiveReversing}">
         <dca-icon icon="arrow-rotate-left"></dca-icon>
     </div>
 
