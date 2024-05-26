@@ -1,11 +1,37 @@
-<div class="content">
-    <h1>Dark Chicken Atomic List</h1>
-    <h2> Using of the List</h2>
-    <div class="content-item">
-        <dcm-tab class="content-tab" [tab]="tabs" id="1">
-            <div #tabContent [id]="tabs[0].tabId">
-                <div class="content-lib-items">
-                    <dca-list (dcClick)="dcListClick($event)"
+<div class="container">
+    <div class="header">
+        <h1 class="header-title">Darkchicken Lists</h1><br><br>
+        <h2>List Types and Interactions</h2>
+        <p>DarkChicken is an innovative library providing user interface tools for developers using Angular. The "List" UI element in this library is designed to optimize user experience and facilitate the developers' work. Here are the basic features and usage of DarkChicken List elements:</p>
+
+        <h3>Basic Features</h3>
+        <ul>
+            <li><strong>Versatile Interactions:</strong> DarkChicken List elements support a wide range of interactions. These include click, hover, double-click, mouse down, mouse enter, mouse leave, and mouse up events, providing rich interactivity in your applications.</li>
+            <li><strong>Customizability:</strong> You can customize the appearance and behavior of the List elements according to your projects. Using CSS, you can alter the color, size, font, and more.</li>
+            <li><strong>Data Binding:</strong> List elements support dynamic data binding, allowing you to display a variety of data effortlessly. You can bind the list data to a data source, making it easy to handle large datasets.</li>
+            <li><strong>Accessibility:</strong> DarkChicken is designed according to accessibility standards. List elements are fully compatible with screen readers and keyboard navigation, ensuring inclusivity for all users.</li>
+        </ul>
+
+        <h3>Usage</h3>
+        <p>In this code example, different types of List components are used:</p>
+        <ul>
+            <li><strong>Click Event:</strong> When a list item is clicked, the <code>dcClick</code> event is triggered.</li>
+            <li><strong>Hover Event:</strong> When a list item is hovered over, the <code>dcHover</code> event is triggered.</li>
+            <li><strong>DoubleClick Event:</strong> When a list item is double-clicked, the <code>dcDoubleClick</code> event is triggered.</li>
+            <li><strong>MouseDown Event:</strong> When a mouse button is pressed down on a list item, the <code>dcMouseDown</code> event is triggered.</li>
+            <li><strong>MouseEnter Event:</strong> When the mouse pointer enters a list item, the <code>dcMouseEnter</code> event is triggered.</li>
+            <li><strong>MouseLeave Event:</strong> When the mouse pointer leaves a list item, the <code>dcMouseLeave</code> event is triggered.</li>
+            <li><strong>MouseUp Event:</strong> When a mouse button is released over a list item, the <code>dcMouseUp</code> event is triggered.</li>
+        </ul>
+
+        <p>These elements allow users to visualize and use different interactions and events in their projects. When a list item is interacted with, specific actions can be performed, enhancing user experience and interactivity. DarkChicken List elements offer a comprehensive and practical guide for those who want to understand and use user interface components better.</p>
+    </div>
+</div>
+  
+  <div class="content container">
+    <section class="card" (click)="onModalClick('modal1')">
+      <h2 class="button-title">Lists</h2>
+        <dca-list (dcClick)="dcListClick($event)"
                         (dcHover)="dcListHover($event)"
                         (dcDoubleClick)="dcListDoubleClick($event)"
                         (dcMouseDown)="dcListMouseDown($event)"
@@ -14,33 +40,76 @@
                         (dcMouseUp)="dcListMouseUp($event)" displayExp="name"
                         valueExp="id"
                         [dataSource]="listData"></dca-list>
-                </div>
-                <div class="content-item-description">
-                    İşte karşınızda oldukça basit kullanımlı bir list.
-                    İstediğimiz liste içeriğini oluşturmak için öncellikle
-                    'dataSource' içerisinde listelenmesini istediğimiz
-                    elemanları veriyoruz. Ardından bu listeleme elamanlarından
-                    hangilerinin ekran gözükeceği hangilerinin value olarak
-                    arkaplanda saklanacağını söylememiz yeterli. Vee işte
-                    karşınızda harika bir list. Bu list öğleri için verdiğimiz
-                    eventler diğer atomic elementlere oldukça bennzer.
-                    Verdiğimiz eventlerin çıktılarını tarayıcınızın konsolunu
-                    açarak ulaşabilirsiniz. Aynı zamanda hazırladığınız listeyi
-                    istediğiniz zaman görünmez yapabilmeniz için 'visible'
-                    özelliğini de sizlere sunuyoruz.
-                </div>
-            </div>
-            <div #tabContent [id]="tabs[1].tabId">
-                <dcm-tab [tab]="codeTabs" id="2">
-
-                    <pre #tabContent [id]="codeTabs[0].tabId">
-                <code class="language-html">{{listHTML}}</code></pre>
-                
-                <pre #tabContent [id]="codeTabs[1].tabId">
-                    <code class="language-ts">{{listTS}}</code></pre>
-                </dcm-tab>
-            </div>
+        
+    </section>
+  
+  </div>
+  
+  <div class="container">
+    <div class="header">
+      <h1 class="header-title">Properties</h1><br><br>
+      <dcm-tab [tab]="tabProperties" (dcTabChange)="tabChange()">
+        <div #tabContent id="1">
+          <dc-datatable
+          #table1
+            class="primary"
+            [rows]="inputRows"
+            [loadingIndicator]="false"
+            [columns]="inputColumns"
+            [columnMode]="'force'"
+            [reorderable]="false"
+            [allowColumnSearch]="true"
+            [scrollbarH]="false"
+            [useToolbar]="false"
+            [allowDeleting]="false"
+            [allowAdding]="false"
+            [allowEditing]="false"
+            >
+            </dc-datatable>
+            
+        </div>
+      <div #tabContent id="2">
+            <dc-datatable
+            #table2
+              class="primary"
+              [rows]="eventRows"
+              [loadingIndicator]="false"
+              [columns]="eventColumns"
+              [columnMode]="'force'"
+              [reorderable]="false"
+              [allowColumnSearch]="true"
+              [scrollbarH]="false"
+              [useToolbar]="false"
+              [allowDeleting]="false"
+              [allowAdding]="false"
+              [allowEditing]="false"
+              >
+              </dc-datatable>
+          </div>
         </dcm-tab>
-    </div>
-
-</div>
+      </div>
+  
+  </div>
+  
+  <div class="modal-overlay" id="modalOverlay" (click)="closeModal()"
+    [ngClass]="{'show':selectedModal=='modal1' ? true : false}"></div>
+  <div class="modal" id="modal"
+    [ngClass]="{'show':selectedModal=='modal1' ? true : false}">
+  
+    <dcm-tab [tab]="tabs">
+      <div #tabContent id="1">
+  
+        <iframe
+          src="https://codesandbox.io/p/devbox/asd-my5g4g?embed=1&file=%2Fsrc%2Fapp%2Flists%2Flists.component.html"
+          width="100%" height="600px" frameborder="1">
+        </iframe>
+      </div>
+      <div #tabContent id="2">
+  
+        <iframe
+          src="https://codesandbox.io/p/devbox/asd-my5g4g?embed=1&file=%2Fsrc%2Fapp%2Flists%2Flists.component.ts"
+          width="100%" height="600px" frameborder="1">
+        </iframe>
+      </div>
+    </dcm-tab>
+  </div> 
