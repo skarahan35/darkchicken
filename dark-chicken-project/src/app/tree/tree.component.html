@@ -1,5 +1,145 @@
 
 
+<div class="container">
+    <div class="header">
+        <h1 class="header-title">Darkchicken Trees</h1><br><br>
+        <p>DarkChicken is an innovative library that provides user interface
+            tools for developers using Angular. The "Tree" UI elements in this
+            library are designed to optimize user experience and simplify
+            developers' tasks. Here are the main features and usage of
+            DarkChicken Tree elements:
+            <br>
+            <b>Basic Features</b>
+            <br>
+            <b>Various Structures: </b>
+            DarkChicken Tree elements offer a variety of structure options. You
+            can easily use tree structures in your projects with different
+            branching and leaf styles to create hierarchical data structures.
+            <br>
+            <b>Customizability:</b>
+            You can customize the appearance and feel of the Tree elements
+            according to your projects. You can change colors, sizes, borders,
+            and more with CSS.
+            <br>
+            <b>State Management:</b>
+            Tree elements support various states such as expandable,
+            collapsible, and selectable. These states help you manage user
+            interactions and feedback more effectively.
+            <br>
+            <b>Accessibility:</b>
+            DarkChicken is designed in accordance with accessibility standards.
+            Tree elements are fully compatible with screen readers and keyboard
+            navigation.</p>
+
+    </div>
+
+</div>
+
+<div class="content container">
+    <section class="card" (click)="onModalClick('modal1', $event)">
+        <h2 class="button-title">Expanded With Item Click</h2>
+        <div class="button-wrapper">
+            <dca-tree class="content-lib-item" [treeData]="world"
+            (dcClick)="dcClick($event)"
+            (dcCollapsing)="dcCollapsing($event)"
+            (dcExpanding)="dcExpanding($event)"
+            (dcHover)="dcHover($event)"
+            (dcMouseUp)="dcMouseUp($event)"
+            (dcMouseDown)="dcMouseDown($event)"
+            (dcMouseLeave)="dcMouseLeave($event)"
+            (dcMouseEnter)="dcMouseEnter($event)"
+            (dcDoubleClick)="dcDoubleClick($event)"
+            [visible]="true" [expandOnlyIcon]="false"></dca-tree>
+        </div>
+    </section>
+    <section class="card" (click)="onModalClick('modal1', $event)">
+        <h2 class="button-title">Expanded Just Icon Click</h2>
+        <div class="button-wrapper">
+            <dca-tree class="content-lib-item" [treeData]="lessons"
+            (dcClick)="dcClick($event)"
+            (dcCollapsing)="dcCollapsing($event)"
+            (dcExpanding)="dcExpanding($event)"
+            (dcHover)="dcHover($event)"
+            (dcMouseUp)="dcMouseUp($event)"
+            (dcMouseDown)="dcMouseDown($event)"
+            (dcMouseLeave)="dcMouseLeave($event)"
+            (dcMouseEnter)="dcMouseEnter($event)"
+            (dcDoubleClick)="dcDoubleClick($event)"
+            [visible]="true" [expandOnlyIcon]="true"></dca-tree>
+        </div>
+    </section>
+
+</div>
+
+<div class="container">
+    <div class="header">
+        <h1 class="header-title">Properties</h1><br><br>
+        <dcm-tab [tab]="tabProperties" (dcTabChange)="tabChange()">
+            <div #tabContent id="1">
+                <dc-datatable
+                    #table1
+                    class="primary"
+                    [rows]="inputRows"
+                    [loadingIndicator]="false"
+                    [columns]="inputColumns"
+                    [columnMode]="'force'"
+                    [reorderable]="false"
+                    [allowColumnSearch]="true"
+                    [scrollbarH]="false"
+                    [useToolbar]="false"
+                    [allowDeleting]="false"
+                    [allowAdding]="false"
+                    [allowEditing]="false">
+                </dc-datatable>
+
+            </div>
+            <div #tabContent id="2">
+                <dc-datatable
+                    #table2
+                    class="primary"
+                    [rows]="eventRows"
+                    [loadingIndicator]="false"
+                    [columns]="eventColumns"
+                    [columnMode]="'force'"
+                    [reorderable]="false"
+                    [allowColumnSearch]="true"
+                    [scrollbarH]="false"
+                    [useToolbar]="false"
+                    [allowDeleting]="false"
+                    [allowAdding]="false"
+                    [allowEditing]="false">
+                </dc-datatable>
+            </div>
+        </dcm-tab>
+    </div>
+
+</div>
+
+<div class="modal-overlay" id="modalOverlay" (click)="closeModal()"
+    [ngClass]="{'show':selectedModal=='modal1' ? true : false}"></div>
+<div class="modal" id="modal"
+    [ngClass]="{'show':selectedModal=='modal1' ? true : false}">
+
+    <dcm-tab [tab]="tabs">
+        <div #tabContent id="1">
+
+            <iframe
+                src="https://codesandbox.io/p/devbox/asd-my5g4g?embed=1&file=%2Fsrc%2Fapp%2Ftree%2Ftree.component.html"
+                width="100%" height="600px" frameborder="1">
+            </iframe>
+        </div>
+        <div #tabContent id="2">
+
+            <iframe
+                src="https://codesandbox.io/p/devbox/asd-my5g4g?embed=1&file=%2Fsrc%2Fapp%2Ftree%2Ftree.component.ts"
+                width="100%" height="600px" frameborder="1">
+            </iframe>
+        </div>
+    </dcm-tab>
+</div>
+
+<!-- 
+
 <div class="content">
     <h1>Dark Chicken Atomic Tree List</h1>
 
@@ -70,4 +210,4 @@
             </div>
         </dcm-tab>
     </div>
-</div>
+</div> -->

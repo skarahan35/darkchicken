@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { TableColumn } from 'projects/darkchicken';
 import { TabModel, TreeModel } from 'projects/darkchicken/src/lib/models/dc-models.model';
 import { treeHTML, treeTS } from 'src/assets/codes/tree';
 
@@ -8,31 +9,136 @@ import { treeHTML, treeTS } from 'src/assets/codes/tree';
   styleUrls: ['./tree.component.css']
 })
 export class TreeComponent {
+  selectedModal = null
+
+  onModalClick(e: any, event:any) {
+    if((event.target as HTMLElement).classList.contains('button-wrapper') || (event.target as HTMLElement).classList.contains('button-title') || (event.target as HTMLElement).classList.contains('card')){
+      this.selectedModal = e
+    }
+
+
+  }
+  closeModal() {
+    this.selectedModal = null
+
+  }
+
+  eventRows = [
+    {
+      event: "dcClick",
+      description: "Triggered when a node is clicked"
+    },
+    {
+      event: "dcHover",
+      description: "Triggered when the mouse hovers over a node"
+    },
+    {
+      event: "dcMouseUp",
+      description: "Triggered when the mouse button is released over a node"
+    },
+    {
+      event: "dcMouseDown",
+      description: "Triggered when the mouse button is pressed over a node"
+    },
+    {
+      event: "dcMouseLeave",
+      description: "Triggered when the mouse leaves a node"
+    },
+    {
+      event: "dcMouseEnter",
+      description: "Triggered when the mouse enters a node"
+    },
+    {
+      event: "dcDoubleClick",
+      description: "Triggered when a node is double-clicked"
+    },
+    {
+      event: "dcExpanding",
+      description: "Triggered when a node is expanded"
+    },
+    {
+      event: "dcCollapsing",
+      description: "Triggered when a node is collapsed"
+    }
+  ];
+  inputRows = [
+    {
+      input: "treeData",
+      description: "The data model for the tree, defining its nodes"
+    },
+    {
+      input: "visible",
+      description: "Controls the visibility of the tree component"
+    },
+    {
+      input: "dcClass",
+      description: "Custom CSS class applied to the tree component"
+    },
+    {
+      input: "expandOnlyIcon",
+      description: "Allows nodes to be expanded only by clicking on the icon"
+    }
+  ];
+
+  inputColumns: TableColumn[] = [
+    {
+      prop: 'input',
+      name: 'Input',
+      dataType: 'text',
+      visible: true
+    },
+    {
+      prop: 'description',
+      name: 'Description',
+      dataType: 'text',
+      visible:true
+    }
+  ]
+  eventColumns: TableColumn[] =[
+    {
+      prop:'event',
+      name:'Event',
+      dataType:'text',
+      visible:true
+    },
+    {
+      prop: 'description',
+      name: 'Description',
+      dataType: 'text',
+      visible:true
+    }
+  ]
+  
+  @ViewChild('table1') table1:any;
+  @ViewChild('table2') table2:any;
+  tabChange(){
+    this.table1.recalculate()
+    this.table2.recalculate()
+  }
+  tabProperties: TabModel[] = [
+    {tabId:'1',
+      tabTitle:'Inputs',
+    },
+    {tabId:'2',
+      tabTitle:'Events',
+    }
+  ]
+
 
   treeHTML = treeHTML
   treeTS = treeTS
 
-  tabs: TabModel[] = [{
-    tabId: 'des',
-    tabTitle: 'Description'
-  },
-  {
-    tabId: 'code',
-    tabTitle: 'Code'
-  },
-  ]
-  codeTabs: TabModel[] = [
-    {
-      tabId: 'html',
-      tabTitle: 'HTML',
-      tabIcon: 'html5',
+  tabs: TabModel[] = [
+    {tabId:'1',
+      tabTitle:'',
+      tabIcon:"html5"
     },
-    {
-      tabId: 'ts',
-      tabTitle: 'TS',
-      tabIcon: 'angular',
+    {tabId:'2',
+      tabTitle:'',
+      tabIcon:"angular"
     }
   ]
+
 
   lessons: TreeModel[] = [
     {
