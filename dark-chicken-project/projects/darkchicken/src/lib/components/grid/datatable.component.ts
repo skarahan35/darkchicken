@@ -53,6 +53,9 @@ export class DatatableComponent implements OnInit, DoCheck, AfterViewInit, OnCha
     }
   }
 
+  @Input() allowSaveButton?:boolean = true
+  @Input() allowReverseButton?:boolean = true
+
   _allowDeleting: boolean = true
 
   get allowDeleting() {

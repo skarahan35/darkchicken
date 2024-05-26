@@ -11,6 +11,8 @@ export class ToolbarComponent {
   @Input() passiveSaving: boolean = false;
   @Input() allowAdding:boolean = true
   @Input() allowEditing:boolean = true
+  @Input() allowSaveButton?:boolean = true;
+  @Input() allowReverseButton?:boolean = true;
   @Input() allowDeleting:boolean = true
   @Input() allowGridSearch:boolean = true
   @Input() allowColumnChooser:boolean = true

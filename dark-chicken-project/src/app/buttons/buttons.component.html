@@ -1,287 +1,4 @@
-<!-- <div class="content">
-  <h1>Dark Chicken Atomic Button</h1>
 
-  <h2>No Decoration</h2>
-  <div class="content-item">
-    <dcm-tab class="content-tab" [tab]="tabs" id="1">
-      <div #tabContent [id]="tabs[0].tabId">
-        <div class="content-lib-items">
-          <dca-button
-            dcClass="dca-btn dca-btn-primary"
-            class="content-lib-item"></dca-button>
-          <dca-button
-            dcClass="dca-btn dca-btn-secondary"
-            class="content-lib-item"></dca-button>
-          <dca-button
-            dcClass="dca-btn dca-btn-success"
-            class="content-lib-item"></dca-button>
-          <dca-button
-            dcClass="dca-btn dca-btn-danger"
-            class="content-lib-item"></dca-button>
-          <dca-button
-            dcClass="dca-btn dca-btn-warning"
-            class="content-lib-item"></dca-button>
-          <dca-button
-            dcClass="dca-btn dca-btn-info"
-            class="content-lib-item"></dca-button>
-          <dca-button
-            dcClass="dca-btn dca-btn-dark"
-            class="content-lib-item"></dca-button>
-          <dca-button
-            dcClass="dca-btn dca-btn-light"
-            class="content-lib-item"></dca-button>
-        </div>
-        <div class="content-item-description">
-          Ekibimiz olarak herhangi bir element için type gerekli gördüysek
-          bunları class vererek özelleştirme imkanını sizlere sunduk. Button da
-          bu elementlerden bir tanesi. 'dcClass' etiketi içerisinde bir class
-          tanımı yapıldığında element içen kendi classımızı tanımlamış oluyoruz.
-          Burada 'dcClass' içerisinde tanımladığımız class tanımları
-          butonlarımızın tiplerini belirliyor. Sekiz farklı button sunduk
-          sizlere bunların görünümünü 'dcClass' ile verdiğiniz class etiketi
-          sayesinde kendize göre özelleştirebilirsiniz.
-        </div>
-      </div>
-      <pre
-        #tabContent
-        [id]="tabs[1].tabId"
-        class="line-numbers"><code class="language-html">{{noDecorationButton}}</code></pre>
-    </dcm-tab>
-  </div>
-
-  <h2>With Decoration</h2>
-  <div class="content-item">
-    <h3>Button With Text</h3>
-    <dcm-tab class="content-tab" [tab]="tabs" id="2">
-      <div #tabContent [id]="tabs[0].tabId">
-        <div class="content-lib-items">
-          <dca-button
-            buttonText="Primary"
-            dcClass="dca-btn dca-btn-primary"
-            class="content-lib-item"></dca-button>
-          <dca-button
-            buttonText="Secondary"
-            dcClass="dca-btn dca-btn-secondary"
-            class="content-lib-item"></dca-button>
-          <dca-button
-            buttonText="Success"
-            dcClass="dca-btn dca-btn-success"
-            class="content-lib-item"></dca-button>
-          <dca-button
-            buttonText="Danger"
-            dcClass="dca-btn dca-btn-danger"
-            class="content-lib-item"></dca-button>
-          <dca-button
-            buttonText="Warning"
-            dcClass="dca-btn dca-btn-warning"
-            class="content-lib-item"></dca-button>
-          <dca-button
-            buttonText="Info"
-            dcClass="dca-btn dca-btn-info"
-            class="content-lib-item"></dca-button>
-          <dca-button
-            buttonText="Dark"
-            dcClass="dca-btn dca-btn-dark"
-            class="content-lib-item"></dca-button>
-          <dca-button
-            buttonText="Light"
-            dcClass="dca-btn dca-btn-light"
-            class="content-lib-item"></dca-button>
-        </div>
-        <div class="content-item-description">
-          Buttonlar içerisine istediğiniz bir text'i 'buttonText' etiketi
-          sayesinde verebilirisiniz. Sizlere örnek için sunduuğumuz etikelerde
-          aynı zamanda buttonlara kendi koyduğumuz isimleri de sunmaktayız.
-        </div>
-      </div>
-      <pre
-        #tabContent
-        [id]="tabs[1].tabId"
-        class="line-numbers"><code class="language-html">{{buttonWithTextButton}}</code></pre>
-    </dcm-tab>
-  </div>
-
-  <div class="content-item">
-    <h3>Outlined Buttons</h3>
-    <dcm-tab [tab]="tabs" id="3">
-      <div #tabContent [id]="tabs[0].tabId">
-        <div class="content-lib-items">
-          <dca-button
-            buttonText="Primary"
-            dcClass="dca-btn dca-btn-outline-primary"
-            class="content-lib-item"></dca-button>
-          <dca-button
-            buttonText="Secondary"
-            dcClass="dca-btn dca-btn-outline-secondary"
-            class="content-lib-item"></dca-button>
-          <dca-button
-            buttonText="Success"
-            dcClass="dca-btn dca-btn-outline-success"
-            class="content-lib-item"></dca-button>
-          <dca-button
-            buttonText="Danger"
-            dcClass="dca-btn dca-btn-outline-danger"
-            class="content-lib-item"></dca-button>
-          <dca-button
-            buttonText="Warning"
-            dcClass="dca-btn dca-btn-outline-warning"
-            class="content-lib-item"></dca-button>
-          <dca-button
-            buttonText="Info"
-            dcClass="dca-btn dca-btn-outline-info"
-            class="content-lib-item"></dca-button>
-          <dca-button
-            buttonText="Dark"
-            dcClass="dca-btn dca-btn-outline-dark"
-            class="content-lib-item"></dca-button>
-          <dca-button
-            buttonText="Light"
-            dcClass="dca-btn dca-btn-outline-light"
-            class="content-lib-item"></dca-button>
-        </div>
-        <div class="content-item-description">
-          Buttonlarda ekstra bir tip olarak 'outlined' özelliğini de sunuyoruz.
-          Bu özelliği kullanmak için 'dcClass' içerisine 'outlined' string'ini
-          eklememiz yeterli olacaktır.
-        </div>
-      </div>
-      <pre
-        #tabContent
-        [id]="tabs[1].tabId"
-        class="line-numbers"><code class="language-html">{{outlinedButton}}</code></pre>
-    </dcm-tab>
-  </div>
-  <div class="content-item">
-    <h3>Passive Buttons</h3>
-    <dcm-tab [tab]="tabs" id="4">
-      <div #tabContent [id]="tabs[0].tabId">
-        <div class="content-lib-items">
-          <dca-button
-            buttonText="Primary"
-            dcClass="dca-btn dca-btn-primary"
-            class="content-lib-item"
-            [disabled]="true"></dca-button>
-          <dca-button
-            buttonText="Secondary"
-            dcClass="dca-btn dca-btn-secondary"
-            class="content-lib-item"
-            [disabled]="true"></dca-button>
-          <dca-button
-            buttonText="Success"
-            dcClass="dca-btn dca-btn-success"
-            class="content-lib-item"
-            [disabled]="true"></dca-button>
-          <dca-button
-            buttonText="Danger"
-            dcClass="dca-btn dca-btn-danger"
-            class="content-lib-item"
-            [disabled]="true"></dca-button>
-          <dca-button
-            buttonText="Warning"
-            dcClass="dca-btn dca-btn-warning"
-            class="content-lib-item"
-            [disabled]="true"></dca-button>
-          <dca-button
-            buttonText="Info"
-            dcClass="dca-btn dca-btn-info"
-            class="content-lib-item"
-            [disabled]="true"></dca-button>
-          <dca-button
-            buttonText="Dark"
-            dcClass="dca-btn dca-btn-dark"
-            class="content-lib-item"
-            [disabled]="true"></dca-button>
-          <dca-button
-            buttonText="Light"
-            dcClass="dca-btn dca-btn-light"
-            class="content-lib-item"
-            [disabled]="true"></dca-button>
-        </div>
-        <div class="content-item-description">
-          HTML biz geliştiricilere buttonlar için disabled özelliğini
-          sunmaktadır. Bizlerde HTML'in verdiği bu özelliği neden sizlere
-          sunmaktan kaçınalım diye kendimize sorduk ve bir cevap bulamadık.
-          'disabled' etiketini kullanarak buttonları basitçe disabled
-          yapabilirsiniz.
-        </div>
-      </div>
-      <pre
-        #tabContent
-        [id]="tabs[1].tabId"
-        class="line-numbers"><code class="language-html">{{passiveButton}}</code></pre>
-    </dcm-tab>
-  </div>
-
-  <div class="content-item">
-    <h3>Button Events</h3>
-    <dcm-tab [tab]="tabs" id="5">
-      <div #tabContent [id]="tabs[0].tabId">
-        <div class="content-lib-items">
-          <dca-button
-            buttonText="Primary"
-            dcClass="dca-btn dca-btn-primary"
-            class="content-lib-item"
-            (dcClick)="dcClick($event)"
-            (dcHover)="dcHover($event)"
-            (dcMouseUp)="dcMouseUp($event)"
-            (dcMouseDown)="dcMouseDown($event)"
-            (dcMouseOut)="dcMouseOut($event)"
-            (dcMouseEnter)="dcMouseEnter($event)"
-            (dcDoubleClick)="dcDoubleClick($event)"></dca-button>
-        </div>
-        <div class="content-item-description">
-          Bu bölümde button için vermiş olduğumuz event'leri inceleyeceğiz.
-          Burada diğer atomic elementlerde verilen
-          eventlere çok benzer bir şekilde yöntem izledik ve
-          yakaladığımız her event'i size verdik. Tarayıcınızın
-          konsolunu açarak verilen eventleri ve çıktılarını
-          görebilirsiniz.
-        </div>
-      </div>
-      <div #tabContent [id]="tabs[1].tabId">
-        <dcm-tab [tab]="codeTabs" id="11">
-          <pre
-            #tabContent
-            [id]="codeTabs[0].tabId"
-            class="line-numbers"><code class="language-html">{{buttonEventsHtml}}</code></pre>
-
-          <pre
-            #tabContent
-            [id]="codeTabs[1].tabId"
-            class="line-numbers"><code class="language-ts">{{buttonEventsTs}}</code></pre>
-        </dcm-tab>
-      </div>
-    </dcm-tab>
-  </div>
-
-  <div class="content-item">
-    <h3>Button Size</h3>
-    <dcm-tab [tab]="tabs" id="6">
-      <div #tabContent [id]="tabs[0].tabId">
-        <div class="content-lib-items">
-          <dca-button
-            buttonText="Primary"
-            dcClass="dca-btn dca-btn-primary"
-            class="content-lib-item"
-            width="400px"
-            height="10px"></dca-button>
-        </div>
-        <div class="content-item-description">
-          Son olarak genişlik ve yükseklik attribute'larına bakalım. Burada
-          sizleri CSS dosyaları içerisine boğmak
-          istemediğimizden hiç değilse boyutlandırmayı sizin için yapabiliriz
-          dedik. Eğer ki belirlediğimiz genişlik
-          sizin için uygun değilse 'width' ve 'height' attributlarını vererek
-          istediğiniz değeri atayabilirsiniz.
-        </div>
-      </div>
-      <pre
-        #tabContent
-        [id]="tabs[1].tabId"
-        class="line-numbers"><code class="language-html">{{buttonSize}}</code></pre>
-    </dcm-tab>
-  </div>
-</div> -->
 
 <div class="container">
   <div class="header">
@@ -331,7 +48,7 @@
         dcClass="dca-btn dca-btn-light"></dca-button>
     </div>
   </section>
-  <section class="card" (click)="onModalClick('modal2')">
+  <section class="card" (click)="onModalClick('modal1')">
     <h2 class="button-title">Outline</h2>
     <div class="button-wrapper">
       <dca-button buttonText="Primary"
@@ -352,7 +69,7 @@
         dcClass="dca-btn dca-btn-outline-light"></dca-button>
     </div>
   </section>
-  <section class="card" (click)="onModalClick('modal3')">
+  <section class="card" (click)="onModalClick('modal1')">
     <h2 class="button-title">Passive Buttons</h2>
     <div class="button-wrapper">
       <dca-button [disabled]="true" buttonText="Primary"
@@ -373,7 +90,7 @@
         dcClass="dca-btn dca-btn-light"></dca-button>
     </div>
   </section>
-  <section class="card" (click)="onModalClick('modal4')">
+  <section class="card" (click)="onModalClick('modal1')">
     <h2 class="button-title">Events</h2>
     <div class="button-wrapper">
       <dca-button
@@ -395,6 +112,52 @@
 
 </div>
 
+<div class="container">
+  <div class="header">
+    <h1 class="header-title">Properties</h1><br><br>
+    <dcm-tab [tab]="tabProperties" (dcTabChange)="tabChange()">
+      <div #tabContent id="1">
+        <dc-datatable
+        #table1
+          class="primary"
+          [rows]="inputRows"
+          [loadingIndicator]="false"
+          [columns]="inputColumns"
+          [columnMode]="'force'"
+          [reorderable]="false"
+          [allowColumnSearch]="true"
+          [scrollbarH]="false"
+          [useToolbar]="false"
+          [allowDeleting]="false"
+          [allowAdding]="false"
+          [allowEditing]="false"
+          >
+          </dc-datatable>
+          
+      </div>
+    <div #tabContent id="2">
+          <dc-datatable
+          #table2
+            class="primary"
+            [rows]="eventRows"
+            [loadingIndicator]="false"
+            [columns]="eventColumns"
+            [columnMode]="'force'"
+            [reorderable]="false"
+            [allowColumnSearch]="true"
+            [scrollbarH]="false"
+            [useToolbar]="false"
+            [allowDeleting]="false"
+            [allowAdding]="false"
+            [allowEditing]="false"
+            >
+            </dc-datatable>
+        </div>
+      </dcm-tab>
+    </div>
+
+</div>
+
 <div class="modal-overlay" id="modalOverlay" (click)="closeModal()"
   [ngClass]="{'show':selectedModal=='modal1' ? true : false}"></div>
 <div class="modal" id="modal"
@@ -403,576 +166,18 @@
   <dcm-tab [tab]="tabs">
     <div #tabContent id="1">
 
-      <section class="modal-card">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex
-          sed
-          blanditiis nihil obcaecati eum, autem quas
-          excepturi optio a tenetur tempore error dolorem maiores
-          delectus.</p><br>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-      </section>
-      <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-        nisi ex
-        illo veritatis beatae quis, sequi accusantium quisquam possimus
-        maxime
-        totam a quaerat porro quae error natus quibusdam labore, at
-        animi cumque
-        magni nostrum commodi sunt! Neque ducimus vel maxime nihil ex
-        culpa
-        repudiandae ipsa eveniet, voluptas quas quod omnis suscipit
-        quibusdam
-        maiores repellat pariatur obcaecati? Deserunt doloremque
-        architecto ut
-        error, libero doloribus eius eaque fugiat nulla consectetur,
-        officiis
-        nemo maxime? Nihil ut, dicta veritatis rem, ab sit accusantium
-        vel
-        expedita dolor facere maxime alias consequatur nemo! Expedita,
-        aliquid.
-        Iusto sint voluptatum enim placeat ad velit assumenda, provident
-        iste
-        veritatis?</div>
+      <iframe
+        src="https://codesandbox.io/p/devbox/asd-my5g4g?embed=1&file=%2Fsrc%2Fapp%2Fbuttons%2Fbuttons.component.html"
+        width="100%" height="600px" frameborder="1">
+      </iframe>
     </div>
     <div #tabContent id="2">
 
       <iframe
         src="https://codesandbox.io/p/devbox/asd-my5g4g?embed=1&file=%2Fsrc%2Fapp%2Fbuttons%2Fbuttons.component.ts"
-        width="100%" height="600px" frameborder="0">
+        width="100%" height="600px" frameborder="1">
       </iframe>
     </div>
   </dcm-tab>
 </div>
 
-<div class="modal-overlay" id="modalOverlay" (click)="closeModal()"
-  [ngClass]="{'show':selectedModal=='modal2' ? true : false}"></div>
-<div class="modal" id="modal"
-  [ngClass]="{'show':selectedModal=='modal2' ? true : false}">
-
-  <dcm-tab [tab]="tabs">
-    <div #tabContent id="1">
-
-      <section class="modal-card">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex
-          sed
-          blanditiis nihil obcaecati eum, autem quas
-          excepturi optio a tenetur tempore error dolorem maiores
-          delectus.</p><br>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-      </section>
-      <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-        nisi ex
-        illo veritatis beatae quis, sequi accusantium quisquam possimus
-        maxime
-        totam a quaerat porro quae error natus quibusdam labore, at
-        animi cumque
-        magni nostrum commodi sunt! Neque ducimus vel maxime nihil ex
-        culpa
-        repudiandae ipsa eveniet, voluptas quas quod omnis suscipit
-        quibusdam
-        maiores repellat pariatur obcaecati? Deserunt doloremque
-        architecto ut
-        error, libero doloribus eius eaque fugiat nulla consectetur,
-        officiis
-        nemo maxime? Nihil ut, dicta veritatis rem, ab sit accusantium
-        vel
-        expedita dolor facere maxime alias consequatur nemo! Expedita,
-        aliquid.
-        Iusto sint voluptatum enim placeat ad velit assumenda, provident
-        iste
-        veritatis?</div>
-    </div>
-    <div #tabContent id="2">
-      <iframe
-        src="https://codesandbox.io/p/devbox/asd-my5g4g?embed=1&file=%2Fsrc%2Fapp%2Fapp.component.html%3A9%2C40"
-        width="100%" height="600px" frameborder="0">
-      </iframe>
-
-    </div>
-  </dcm-tab>
-</div>
-
-<div class="modal-overlay" id="modalOverlay" (click)="closeModal()"
-  [ngClass]="{'show':selectedModal=='modal3' ? true : false}"></div>
-<div class="modal" id="modal"
-  [ngClass]="{'show':selectedModal=='modal3' ? true : false}">
-
-  <dcm-tab [tab]="tabs">
-    <div #tabContent id="1">
-
-      <section class="modal-card">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex
-          sed
-          blanditiis nihil obcaecati eum, autem quas
-          excepturi optio a tenetur tempore error dolorem maiores
-          delectus.</p><br>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-      </section>
-      <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-        nisi ex
-        illo veritatis beatae quis, sequi accusantium quisquam possimus
-        maxime
-        totam a quaerat porro quae error natus quibusdam labore, at
-        animi cumque
-        magni nostrum commodi sunt! Neque ducimus vel maxime nihil ex
-        culpa
-        repudiandae ipsa eveniet, voluptas quas quod omnis suscipit
-        quibusdam
-        maiores repellat pariatur obcaecati? Deserunt doloremque
-        architecto ut
-        error, libero doloribus eius eaque fugiat nulla consectetur,
-        officiis
-        nemo maxime? Nihil ut, dicta veritatis rem, ab sit accusantium
-        vel
-        expedita dolor facere maxime alias consequatur nemo! Expedita,
-        aliquid.
-        Iusto sint voluptatum enim placeat ad velit assumenda, provident
-        iste
-        veritatis?</div>
-    </div>
-    <div #tabContent id="2">
-      <iframe
-        src="https://codesandbox.io/p/devbox/asd-my5g4g?embed=1&file=%2Fsrc%2Fapp%2Fapp.component.html%3A9%2C40"
-        width="100%" height="600px" frameborder="0">
-      </iframe>
-
-    </div>
-  </dcm-tab>
-</div>
-
-<div class="modal-overlay" id="modalOverlay" (click)="closeModal()"
-  [ngClass]="{'show':selectedModal=='modal4' ? true : false}"></div>
-<div class="modal" id="modal"
-  [ngClass]="{'show':selectedModal=='modal4' ? true : false}">
-
-  <dcm-tab [tab]="tabs">
-    <div #tabContent id="1">
-
-      <section class="modal-card">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex
-          sed
-          blanditiis nihil obcaecati eum, autem quas
-          excepturi optio a tenetur tempore error dolorem maiores
-          delectus.</p><br>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-        <section class="modal-content-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi
-            debitis nam sunt architecto quibusdam cumque!</p>
-        </section>
-      </section>
-      <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-        nisi ex
-        illo veritatis beatae quis, sequi accusantium quisquam possimus
-        maxime
-        totam a quaerat porro quae error natus quibusdam labore, at
-        animi cumque
-        magni nostrum commodi sunt! Neque ducimus vel maxime nihil ex
-        culpa
-        repudiandae ipsa eveniet, voluptas quas quod omnis suscipit
-        quibusdam
-        maiores repellat pariatur obcaecati? Deserunt doloremque
-        architecto ut
-        error, libero doloribus eius eaque fugiat nulla consectetur,
-        officiis
-        nemo maxime? Nihil ut, dicta veritatis rem, ab sit accusantium
-        vel
-        expedita dolor facere maxime alias consequatur nemo! Expedita,
-        aliquid.
-        Iusto sint voluptatum enim placeat ad velit assumenda, provident
-        iste
-        veritatis?</div>
-    </div>
-    <div #tabContent id="2">
-      <iframe
-        src="https://codesandbox.io/p/devbox/asd-my5g4g?embed=1&file=%2Fsrc%2Fapp%2Fapp.component.html%3A9%2C40"
-        width="100%" height="600px" frameborder="0">
-      </iframe>
-
-    </div>
-  </dcm-tab>
-</div>
-<!-- 
-
-
-
-
-
-
-<div class="content">
-  <h1>Dark Chicken Atomic Button</h1>
-  <dcm-tab class="main-tab" [tab]="mainTabs" id="1">
-    <div class="overview tab-content" #tabContent [id]="mainTabs[0].tabId">
-      <div class="full-des">
-        <h2> Lorem ipsum dolor sit</h2>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam, error
-        recusandae. Cum dolores repellat ut sit provident vero beatae, nobis
-        voluptate eum et nostrum eligendi. Libero cumque quisquam delectus odio
-        vel mollitia est similique, quidem omnis minus sequi, nemo architecto
-        esse commodi necessitatibus quia tempora voluptate neque ullam
-        cupiditate repellat ipsum? Nihil quos autem laudantium laboriosam cumque
-        consequatur corrupti ipsa aliquam harum aliquid laborum, accusamus
-        nostrum amet impedit atque, alias, temporibus in perspiciatis pariatur
-        ipsam. Placeat consequatur repellat sequi! Nulla officia quis, ipsa
-        minima fugiat cupiditate omnis nobis sapiente sed enim voluptatum,
-        repellat ad aliquam, quaerat accusamus rerum necessitatibus sequi.
-      </div>
-      <div class="content-lib">
-        <h3>Lorem ipsum</h3>
-        <div class="content-lib-items">
-          <dca-button
-            buttonText="Primary"
-            dcClass="dca-btn dca-btn-outline-primary"
-            class="content-lib-item"></dca-button>
-          <dca-button
-            buttonText="Secondary"
-            dcClass="dca-btn dca-btn-outline-secondary"
-            class="content-lib-item"></dca-button>
-          <dca-button
-            buttonText="Success"
-            dcClass="dca-btn dca-btn-outline-success"
-            class="content-lib-item"></dca-button>
-          <dca-button
-            buttonText="Danger"
-            dcClass="dca-btn dca-btn-outline-danger"
-            class="content-lib-item"></dca-button>
-          <dca-button
-            buttonText="Warning"
-            dcClass="dca-btn dca-btn-outline-warning"
-            class="content-lib-item"></dca-button>
-          <dca-button
-            buttonText="Info"
-            dcClass="dca-btn dca-btn-outline-info"
-            class="content-lib-item"></dca-button>
-          <dca-button
-            buttonText="Dark"
-            dcClass="dca-btn dca-btn-outline-dark"
-            class="content-lib-item"></dca-button>
-          <dca-button
-            buttonText="Light"
-            dcClass="dca-btn dca-btn-outline-light"
-            class="content-lib-item"></dca-button>
-        </div>
-      </div>
-
-      <div class="one-line-des">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta fuga
-        animi labore neque, nesciunt itaque ex error rem aspernatur laboriosam,
-        nihil placeat blanditiis praesentium, magnam ab sit nam culpa
-        architecto!
-      </div>
-      <div class="one-line-des">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta fuga
-        animi labore neque, nesciunt itaque ex error rem aspernatur laboriosam,
-        nihil placeat blanditiis praesentium, magnam ab sit nam culpa
-        architecto!
-      </div>
-      <div class="one-line-des">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta fuga
-        animi labore neque, nesciunt itaque ex error rem aspernatur laboriosam,
-        nihil placeat blanditiis praesentium, magnam ab sit nam culpa
-        architecto!
-      </div>
-    </div>
-    <div class="api tab-content" #tabContent [id]="mainTabs[1].tabId">
-      <div class="full-des">
-        <h2> Lorem ipsum dolor sit</h2>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam, error
-        recusandae. Cum dolores repellat ut sit provident vero beatae, nobis
-        voluptate eum et nostrum eligendi. Libero cumque quisquam delectus odio
-        vel mollitia est similique, quidem omnis minus sequi, nemo architecto
-        esse commodi necessitatibus quia tempora voluptate neque ullam
-        cupiditate repellat ipsum? Nihil quos autem laudantium laboriosam cumque
-        consequatur corrupti ipsa aliquam harum aliquid laborum, accusamus
-        nostrum amet impedit atque, alias, temporibus in perspiciatis pariatur
-        ipsam. Placeat consequatur repellat sequi! Nulla officia quis, ipsa
-        minima fugiat cupiditate omnis nobis sapiente sed enim voluptatum,
-        repellat ad aliquam, quaerat accusamus rerum necessitatibus sequi.
-      </div>
-      <div class="api-table">
-        <dc-datatable
-          class="primary"
-          [rows]="apiTableRows1"
-          [columns]="apiTableColumns1"
-          [columnMode]="'force'"
-          [allowDeleting]="false"
-          [useToolbar]="false"
-          [allowEditing]="false"
-          [footerHeight]="0"
-          [rowHeight]="32"></dc-datatable>
-      </div>
-    </div>
-
-  </dcm-tab>
-
-</div> -->

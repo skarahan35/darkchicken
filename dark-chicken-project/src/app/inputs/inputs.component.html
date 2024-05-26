@@ -1,107 +1,66 @@
+
+
+<div class="container">
+  <div class="header">
+    <h1 class="header-title">Darkchicken Inputs</h1><br><br>
+    <section>
+      <p>This page is designed to introduce the versatile and powerful <code>dca-input</code> components available in the DarkChicken library for Angular developers. Our input components are created to enhance user experience and expedite the development process with extensive customization options and built-in validation features.</p>
+  </section>
+
+  <section>
+      <h2>Key Features</h2>
+      <ul>
+          <li><strong>Customizability:</strong> Each input component can be tailored to meet your needs, with options to set labels, placeholders, read-only states, visibility, and more.</li>
+          <li><strong>Validation:</strong> Our input components support comprehensive validation rules, including required fields, minimum and maximum values, length restrictions, and regular expressions. Validation messages provide immediate feedback to users.</li>
+          <li><strong>Event Handling:</strong> <code>dca-input</code> components emit various events such as value changes, focus in and out, validation states, and mouse interactions. These events enable developers to create responsive and interactive forms.</li>
+          <li><strong>Icon Integration:</strong> Enhance your input fields with integrated icons to provide visual cues and improve user interface aesthetics.</li>
+      </ul>
+  </section>
+
+  <section>
+      <h2>Usage Examples</h2>
+      <h3>Default Input Fields</h3>
+      <ul>
+          <li>Simple input fields with labels and placeholders.</li>
+          <li>Read-only and disabled states to control user interaction.</li>
+          <li>Visibility control to dynamically show or hide input fields.</li>
+      </ul>
+
+      <h3>Outlined Input Fields</h3>
+      <ul>
+          <li>Input fields with validation rules for required fields, minimum and maximum values, length restrictions, and regular expressions.</li>
+          <li>Examples demonstrating how to provide feedback for various validation scenarios.</li>
+      </ul>
+
+      <h3>Interactive Input Fields</h3>
+      <ul>
+          <li>Input fields with event bindings to handle value changes, focus events, and mouse events.</li>
+          <li>Integrated icons to visually enhance input fields and provide contextual information.</li>
+      </ul>
+
+      <p>Explore the sections below to see how <code>dca-input</code> components can be implemented and customized in various scenarios. These examples will guide you through the essential features and functionalities, helping you to create intuitive and robust forms for your Angular applications.</p>
+  </section>
+  </div>
+
+</div>
+
 <div class="content">
-  <h1>Darck Chicken Atomic Input</h1>
-  <!--#region No Decoration-->
-  <h2>No decoration</h2>
-  <div class="content-item">
-    <dcm-tab class="content-tab" [tab]="tabs">
-      <div #tabContent [id]="tabs[0].tabId">
-        <div class="content-lib-items">
-          <dca-input class="content-lib-item"> </dca-input>
-        </div>
-        <div class="content-item-description">
-          Herhangi bir dekorasyon kullanmadan Dark Chicken Input'u kullanmak mümkün.
-          Bu yazının hemen solunda gördüğünüz input alanı hiçbir dekorasyon
-          kullanılmadan oluşturulmuştur. Tabiki eksik dekorasyonlar bağzı
-          özelliklerin kullanılmasını engellemektedir, fakat sadece basit bir input
-          alanı istiyorsanız işte karşınızda. Başlangıç için dekorasyon kullanmamak
-          biz geliştiriciler için ne kadar güzel olsada hepimiz kontrolün bizim
-          elimizde olmasını isteriz. Alt bölümlerimizde kontrolü nasıl ele
-          alabileceğiniz gösterilmiştir. Ne duruyorsun hadi oraya da bir göz at.
-        </div>
-      </div>
-
-      <pre #tabContent [id]="tabs[1].tabId"
-        class="line-numbers"><code class="language-html">{{ noDecorationCode }}</code></pre>
-    </dcm-tab>
-
-  </div>
-  <!--#endregion-->
-
-  <!--#region With Decoration-->
-  <h2>With decorations</h2>
-  <!--#region Label & Placeholder-->
-  <div class="content-item">
-    <h3>Label & Placeholder</h3>
-    <dcm-tab class="content-tab" [tab]="tabs" >
-      <div #tabContent [id]="tabs[0].tabId">
-        <div class="content-lib-items">
-          <dca-input class="content-lib-item" label="Label" placeholder="Placeholder"
-            inputId="id-01"></dca-input>
-        </div>
-        <div class="content-item-description">
-          Burada input için olmazsa olmaz dekorasyonlardan olan 'label' ve
-          'placeholder'ı görüyorsunuz. Label bölümünü tasarlarken HTML'in label
-          etiketini kullandık. Tabi ki burada etiketin düzgün çalışması için input
-          alanı için bir id gerekiyordu. Id bölümünü kullanıcılardan alacak şekilde
-          parametrik olarak tasarladık. Eğer ki id alanı boş geçilirse label alanı
-          yine gözükür fakat tıklanıldığında focus özelliği gerçekleşmez.
-        </div>
-      </div>
-
-      <pre #tabContent [id]="tabs[1].tabId"
-        class="line-numbers"><code class="language-html">{{ labelPlaceholdercode }}</code></pre>
-
-    </dcm-tab>
-  </div>
-  <!--#endregion No Decoration-->
-
-  <!--#region Passive-->
-
-  <div class="content-item">
-    <h3>Passive</h3>
-    <dcm-tab class="content-tab" [tab]="tabs" >
-      <div #tabContent [id]="tabs[0].tabId">
-        <div class="content-lib-items">
-          <dca-input [readonly]="true" class="content-lib-item" value="Dark Chicken"></dca-input>
-          <dca-input [disabled]="true" class="content-lib-item" value="Awsome Inputs"></dca-input>
-          <dca-input [visible]="visibleInput" class="content-lib-item" value="This is a magic"></dca-input>
-        </div>
-        <div class="content-item-description">
-          Burası güvenli alan. Input alanlarında çok fazla kullanılmayan ama nadir
-          de olsa lazım olan iki özelliği ele aldık 'readonly' ve 'disabled'.
-          Aslında iki alanın işlev olarak bir farkı olmamasına karşın kullanıcıya
-          sunum açısından geliştiricilerde farklı anlama gelebileceğinden dolayı bu
-          iki alanı birleştirmeden ayrı ayrı tasarladık. Bu örneklerde fark
-          edebileceğiniz gibi input alanlarımızın içerisine dışarıdan değer ataması
-          yapabiliyor. Bu sayede başlangıç değeri ataması veya değer kontrollerini
-          de buradan kontrol edebiliyoruz. Buraya kadar bahsetmediğimiz bir
-          özelliğimiz daha var, fark etmemeniz çok normal çünkü görünmezlik. Hemen
-          alttaki butona tıkladığınızda neyden bahettiğimizi çok iyi anlayacaksınız.
-          <dca-button (dcClick)="visibleInput = !visibleInput" 
-            buttonText="Click Me" dcClass="dca-btn dca-btn-primary"></dca-button>
-        </div>
-      </div>
-      <div #tabContent [id]="tabs[1].tabId">
-        <dcm-tab class="content-code" [tab]="codeTabs" >,
-          <div #tabContent [id]="codeTabs[0].tabId">
-            <pre class="line-numbers"><code class="language-html">{{passiveCodeHtml}}</code></pre>
-          </div>
-          <div #tabContent [id]="codeTabs[1].tabId">
-            <pre class="line-numbers"><code class="language-ts">{{passiveCodeTs}}</code></pre>
-          </div>
-        </dcm-tab>
-      </div>
-    </dcm-tab>
-  </div>
-  <!--#endregion-->
-
-  <!--#region Validation-->
-  <div class="content-item">
-    <h3>Validations</h3>
-    <dcm-tab class="content-tab" [tab]="tabs">
-      <div #tabContent [id]="tabs[0].tabId">
-        <div class="content-lib-items">
-          <dca-input label="Required" inputId="req" [validationRules]="[
+  <section class="card" (click)="onModalClick('modal1')">
+    <h2 class="button-title">Default</h2>
+    <div class="button-wrapper">
+      <dca-input class="content-lib-item"> </dca-input>
+      
+      <dca-input [readonly]="true" class="content-lib-item" value="Dark Chicken"></dca-input>
+      <dca-input [disabled]="true" class="content-lib-item" value="Awsome Inputs"></dca-input>
+      <dca-input [visible]="visibleInput" class="content-lib-item" value="This is a magic"></dca-input>
+      <dca-input class="content-lib-item" label="Label" placeholder="Placeholder"inputId="id-01"></dca-input>
+      
+    </div>
+  </section>
+  <section class="card" (click)="onModalClick('modal1')">
+    <h2 class="button-title">Outline</h2>
+    <div class="button-wrapper">
+      <dca-input label="Required" inputId="req" [validationRules]="[
             {
               type: 'required',
               message: 'Required field'
@@ -160,110 +119,105 @@
             }
           ]" class="content-lib-item">
           </dca-input>
-        </div>
-        <div class="content-item-description">
-          Bir input alanı için validasyon en önemli şeylerden biridir. Biz burada
-          HTML'e güvenerek onun validasyonlarını uyguluyoruz. Burada kullanıcıların
-          işlerini kolaylaştırmak için validasyonları bir array içerisinde kendi
-          belirlediğimiz modelde alıyoruz. Bu model tipi şu şekildedir:
-          <pre class="line-numbers"><code class="language-ts">{{ validationModel}}</code></pre>
-
-        </div>
-      </div>
-      <div #tabContent [id]="tabs[1].tabId">
-        <pre class="line-numbers"><code class="language-html">{{ validationCode}}</code></pre>
-
-      </div>
-    </dcm-tab>
-  </div>
-
-  <!--#endregion-->
-
-  <!--#region Events-->
-  <div class="content-item">
-    <h3>Events</h3>
-    <dcm-tab class="content-tab" [tab]="tabs">
-      <div #tabContent [id]="tabs[0].tabId">
-        <div class="content-lib-items">
-          <dca-input class="content-lib-item" label="Coffe ?" placeholder="It can be hot" inputId="id-02"
+    </div>
+  </section>
+  <section class="big-card" (click)="onModalClick('modal1')">
+    <h2 class="button-title">Interactive Inputs</h2>
+    <div class="button-wrapper">
+      <dca-input class="content-lib-item" label="Coffe ?" placeholder="It can be hot" inputId="id-02"
             (dcValueChanged)="dcValueChanged($event)" (dcFocusOut)="dcFocusOut($event)" (dcFocusIn)="dcFocusIn($event)"
             (dcValidating)="dcValidating($event)" (dcValidated)="dcValidated($event)">
             <dca-icon icon="coffee"></dca-icon>
           </dca-input>
-        </div>
-        <div class="content-item-description">
-          Bu bölümde output (Event)'leri inceleyeceğiz. Input alanımız için belirlediğimiz eventlerimiz şunlardır :
-          dcValueChanged
-          ,dcFocusOut
-          ,dcFocusIn
-          ,dcValidating
-          ,dcValidated. Geliştiriciler kontrolün kendilerinde olmasını istediklerini bildiğimizden dolayı
-          event'lerimizin içerisinde input alanı ile ilgili her şeyi açıkça vermekteyiz. Tam şuanda hemen yandaki
-          input alanı ile yapacağınız etkileşimlerin sonucunu sayfayı inceleyerek konsolda bulabilirsiniz. Aynı
-          zamanda icon paketimizi de input alanımızın içerisinde kullanabilirsiniz. Sizin için sıcak bir kahveyi
-          hazırladık, input alanın hemen solunda görebilirsiniz.
-        </div>
-      </div>
-      <div #tabContent [id]="tabs[1].tabId">
-        <dcm-tab class="content-code" [tab]="codeTabs">
-          <div #tabContent [id]="codeTabs[0].tabId">
-            <pre class="line-numbers"><code class="language-html">{{ inputEventCodeHtml}}</code></pre>
-          </div>
-          <div #tabContent [id]="codeTabs[1].tabId">
-            <pre class="line-numbers"><code class="language-ts">{{ inputEventCodeTs}}</code></pre>
-          </div>
-        </dcm-tab>
-      </div>
-    </dcm-tab>
-  </div>
-
-  <!--#endregion-->
-
-  <!--#region Size-->
-  <div class="content-item">
-    <h3>Size</h3>
-    <dcm-tab class="content-tab" [tab]="tabs">
-      <div #tabContent [id]="tabs[0].tabId">
-        <div class="content-lib-items">
-          <dca-input class="content-lib-item" label="Dark Chicken"
+      <dca-input class="content-lib-item" label="Dark Chicken"
             placeholder="Here's a really tiny, tiny, sweet chicken" inputId="id-04" width='300px' height="100px">
             <dca-icon icon="egg"></dca-icon>
           </dca-input>
-        </div>
-        <div class="content-item-description">
-          Son olarak genişlik ve yükseklik attribute'larına bakalım. Burada sizleri CSS dosyaları içerisine boğmak
-          istemediğimizden hiç değilse boyutlandırmayı sizin için yapabiliriz dedik. Eğer ki belirlediğimiz genişlik
-          sizin için uygun değilse 'width' ve 'height' attributlarını vererek istediğiniz değeri atayabilirsiniz.
-        </div>
-      </div>
-      <pre #tabContent [id]="tabs[1].tabId"
-        class="line-numbers"><code class="language-html">{{ inputSizeCode }}</code></pre>
-    </dcm-tab>
-
-  </div>
-  <!--#endregion-->
-  <!--#endregion-->
-
-
-  <div class="content-item">
-    <h3>Size</h3>
-      <div >
-        <div class="content-lib-items">
-          <dca-input [validationRules]="validationRulesText"
+      <dca-input [validationRules]="validationRulesText"
           (dcMouseEnter)="onMouseEnter()"
             (dcMouseLeave)="onMouseLeave()"
           class="content-lib-item" label="Dark Chicken"
             placeholder="Here's a really tiny, tiny, sweet chicken" inputId="id-05" width='300px' height="100px">
             <dca-icon icon="egg"></dca-icon>
           </dca-input>
-        </div>
-        <div class="content-item-description">
-          Active Tag Name : {{activetagName}}
-          <br>
-          Active Class : {{activeClass}}
-          
-        </div>
-      </div>
+    </div>
+  </section>
 
-  </div>
 </div>
+
+<div class="container">
+  <div class="header">
+    <h1 class="header-title">Properties</h1><br><br>
+    <dcm-tab [tab]="tabProperties" (dcTabChange)="tabChange()">
+      <div #tabContent id="1">
+        <dc-datatable
+        #table1
+          class="primary"
+          [rows]="inputRows"
+          [loadingIndicator]="false"
+          [columns]="inputColumns"
+          [columnMode]="'force'"
+          [reorderable]="false"
+          [allowColumnSearch]="true"
+          [scrollbarH]="false"
+          [useToolbar]="false"
+          [allowDeleting]="false"
+          [allowAdding]="false"
+          [allowEditing]="false"
+          >
+          </dc-datatable>
+          
+      </div>
+    <div #tabContent id="2">
+          <dc-datatable
+          #table2
+            class="primary"
+            [rows]="eventRows"
+            [loadingIndicator]="false"
+            [columns]="eventColumns"
+            [columnMode]="'force'"
+            [reorderable]="false"
+            [allowColumnSearch]="true"
+            [scrollbarH]="false"
+            [useToolbar]="false"
+            [allowDeleting]="false"
+            [allowAdding]="false"
+            [allowEditing]="false"
+            >
+            </dc-datatable>
+        </div>
+      </dcm-tab>
+    </div>
+
+</div>
+
+<div class="modal-overlay" id="modalOverlay" (click)="closeModal()"
+  [ngClass]="{'show':selectedModal=='modal1' ? true : false}"></div>
+<div class="modal" id="modal"
+  [ngClass]="{'show':selectedModal=='modal1' ? true : false}">
+
+  <dcm-tab [tab]="tabs">
+    <div #tabContent id="1">
+
+      <iframe
+        src="https://codesandbox.io/p/devbox/asd-my5g4g?embed=1&file=%2Fsrc%2Fapp%2Finputs%2Finputs.component.html"
+        width="100%" height="600px" frameborder="1">
+      </iframe>
+    </div>
+    <div #tabContent id="2">
+
+      <iframe
+        src="https://codesandbox.io/p/devbox/asd-my5g4g?embed=1&file=%2Fsrc%2Fapp%2Finputs%2Finputs.component.ts"
+        width="100%" height="600px" frameborder="1">
+      </iframe>
+    </div>
+  </dcm-tab>
+</div>
+
+
+
+
+
+
+
+

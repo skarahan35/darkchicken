@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { TabModel } from 'projects/darkchicken/src/lib/models/dc-models.model';
 import { TableColumn } from 'projects/darkchicken/src/lib/types/table-column.type';
 import { buttonEventsHtml, buttonEventsTs, buttonSize, buttonWithTextButton, noDecorationButton, outlinedButton, passiveButton } from 'src/assets/codes/button';
@@ -9,7 +9,100 @@ import { buttonEventsHtml, buttonEventsTs, buttonSize, buttonWithTextButton, noD
   styleUrls: ['./buttons.component.css']
 })
 export class ButtonsComponent {
+
+  @ViewChild('table1') table1:any;
+  @ViewChild('table2') table2:any;
+
+  eventRows = [
+    {
+      event:"dcClick",
+      description:"Triggered when the mouse hovers over the element"
+    },
+    {
+      event:"dcHover",
+      description:"Triggered when the mouse button is released"
+    },
+    {
+      event:"dcMouseUp",
+      description:"Triggered when the mouse button is pressed"
+    },
+    {
+      event:"dcMouseDown",
+      description:"Triggered when the mouse leaves the element"
+    },
+    {
+      event:"dcMouseLeave",
+      description:"Triggered when the mouse leaves the element"
+    },
+    {
+      event:"dcMouseEnter",
+      description:"Triggered when the mouse enters the element"
+    },
+    {
+      event:"dcDoubleClick",
+      description:"Listens for double click events on the element"
+    }
+  ]
   selectedModal = null
+  inputRows = [
+    {
+      input:"buttonText",
+      description:"The text displayed on the button"
+    },
+    {
+      input:"width",
+      description:"The width of the button"
+    },
+    {
+      input:"height",
+      description:"The height of the button"
+    },
+    {
+      input:"disabled",
+      description:"Indicates if the button is disabled"
+    },
+    {
+      input:"visible",
+      description:"Indicates if the button is visible"
+    },
+    {
+      input:"isToggle",
+      description:"Indicates if the button is a toggle button"
+    },
+    {
+      input:"dcClass",
+      description:"The custom CSS class applied to the button"
+    }
+  ]
+  
+  inputColumns: TableColumn[] = [
+    {
+      prop: 'input',
+      name: 'Input',
+      dataType: 'text',
+      visible: true
+    },
+    {
+      prop: 'description',
+      name: 'Description',
+      dataType: 'text',
+      visible:true
+    }
+  ]
+  eventColumns: TableColumn[] =[
+    {
+      prop:'event',
+      name:'Event',
+      dataType:'text',
+      visible:true
+    },
+    {
+      prop: 'description',
+      name: 'Description',
+      dataType: 'text',
+      visible:true
+    }
+  ]
 
 
   onModalClick(e: any) {
@@ -24,10 +117,20 @@ export class ButtonsComponent {
 
   tabs: TabModel[] = [
     {tabId:'1',
-      tabTitle:'Description'
+      tabTitle:'',
+      tabIcon:"html5"
     },
     {tabId:'2',
-      tabTitle:'Code'
+      tabTitle:'',
+      tabIcon:"angular"
+    }
+  ]
+  tabProperties: TabModel[] = [
+    {tabId:'1',
+      tabTitle:'Inputs',
+    },
+    {tabId:'2',
+      tabTitle:'Events',
     }
   ]
 
@@ -156,5 +259,10 @@ export class ButtonsComponent {
   }
   dcDoubleClick(e: any) {
     console.log({ dcDoubleClick: e })
+  }
+
+  tabChange(){
+    this.table1.recalculate()
+    this.table2.recalculate()
   }
 }
