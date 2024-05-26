@@ -195,6 +195,5 @@ export class CheckboxesComponent {
   tabChange(){
     // this.table1.recalculate()
     this.table2.recalculate()
-    debugger
   }
 }
