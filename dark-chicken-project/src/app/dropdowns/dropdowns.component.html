@@ -1,4 +1,227 @@
 
+
+<div class="container">
+     <div class="header">
+          <h1 class="header-title">DarkChicken Dropdowns</h1><br><br>
+          <section>
+               <p>This page is designed to introduce the versatile and powerful
+                    <code>dca-dropdown</code> components available in the
+                    DarkChicken library for Angular developers. Our dropdown
+                    components are created to enhance user experience and
+                    expedite the development process with extensive
+                    customization options and built-in features.</p>
+          </section>
+
+          <section>
+               <h2>Key Features</h2>
+               <ul>
+                    <li><strong>Various Options:</strong> DarkChicken Dropdown
+                         elements
+                         offer various options. You can enrich your projects
+                         with different
+                         options for your users to choose from.</li>
+                    <li><strong>Customizability:</strong> You can customize the
+                         appearance
+                         and feel of the Dropdown elements according to your
+                         projects. You can
+                         change colors, sizes, borders, and more with CSS.</li>
+                    <li><strong>State Management:</strong> Dropdown elements
+                         support various
+                         states such as expandable, collapsible, and selectable.
+                         These states
+                         help you manage user interactions and feedback more
+                         effectively.</li>
+                    <li><strong>Accessibility:</strong> DarkChicken is designed
+                         in accordance
+                         with accessibility standards. Dropdown elements are
+                         fully compatible
+                         with screen readers and keyboard navigation.</li>
+               </ul>
+          </section>
+
+          <section>
+               <h2>Usage Examples</h2>
+               <h3>Basic Dropdowns</h3>
+               <ul>
+                    <li>Simple dropdowns with various options.</li>
+                    <li>Customizable appearance and feel with CSS.</li>
+                    <li>Support for expandable, collapsible, and selectable
+                         states.</li>
+               </ul>
+
+               <h3>Advanced Dropdowns</h3>
+               <ul>
+                    <li>Dropdowns with integrated validation features.</li>
+                    <li>Examples demonstrating how to provide feedback for
+                         various validation scenarios.</li>
+               </ul>
+
+               <h3>Interactive Dropdowns</h3>
+               <ul>
+                    <li>Dropdowns with event bindings to handle state changes
+                         and user interactions.</li>
+                    <li>Fully accessible dropdowns compatible with screen
+                         readers and keyboard navigation.</li>
+               </ul>
+
+               <p>Explore the sections below to see how
+                    <code>dca-dropdown</code>
+                    components can be implemented and customized in various
+                    scenarios. These examples will guide you through the
+                    essential features and functionalities, helping you to
+                    create intuitive and robust dropdowns for your Angular
+                    applications.</p>
+          </section>
+     </div>
+
+</div>
+
+<div class="content container">
+     <section class="card" (click)="onModalClick('modal1', $event)">
+          <h2 class="button-title">Varieties and Events</h2>
+          <div class="button-wrapper">
+               <dcm-dropdown
+                    placeholder="Placeholder"
+                    #myDropdown1
+                    [value]="dropdownValue"
+                    class="content-lib-item">
+                    <dca-list
+                         (dcClick)="optionSelect($event, myDropdown1)"
+                         displayExp="name" valueExp="id"
+                         [dataSource]="listData"></dca-list>
+               </dcm-dropdown>
+               <dcm-dropdown
+                    [readonly]="true"
+                    #myDropdown2
+                    [value]="dropdownValue"
+                    class="content-lib-item">
+                    <dca-list
+                         (dcClick)="optionSelect($event, myDropdown2)"
+                         displayExp="name" valueExp="id"
+                         [dataSource]="listData"></dca-list>
+               </dcm-dropdown>
+               <dcm-dropdown
+                    [disabled]="true"
+                    #myDropdown3
+                    [value]="dropdownValue"
+                    class="content-lib-item">
+                    <dca-list
+                         (dcClick)="optionSelect($event, myDropdown3)"
+                         displayExp="name" valueExp="id"
+                         [dataSource]="listData"></dca-list>
+               </dcm-dropdown>
+               <dcm-dropdown
+                    [closeOnOutsideClick]="false"
+                    #myDropdown4
+                    [value]="dropdownValue"
+                    class="content-lib-item">
+                    <dca-list
+                         (dcClick)="optionSelect($event, myDropdown4)"
+                         displayExp="name" valueExp="id"
+                         [dataSource]="listData"></dca-list>
+               </dcm-dropdown>
+               <dcm-dropdown
+                    dcClass="my-custom-class"
+                    #myDropdown5
+                    [value]="dropdownValue"
+                    class="content-lib-item">
+                    <dca-list
+                         (dcClick)="optionSelect($event, myDropdown5)"
+                         displayExp="name" valueExp="id"
+                         [dataSource]="listData"></dca-list>
+               </dcm-dropdown>
+               <dcm-dropdown
+                    [visible]="visibleDropdown"
+                    #myDropdown6
+                    [value]="dropdownValue"
+                    class="content-lib-item">
+                    <dca-list
+                         (dcClick)="optionSelect($event, myDropdown6)"
+                         displayExp="name" valueExp="id"
+                         [dataSource]="listData"></dca-list>
+               </dcm-dropdown>
+               <dcm-dropdown
+                    class="content-lib-item"
+                    (dcClick)="dropdownClick($event)"
+                    (dcCollapsing)="dropdownCollapsing($event)"
+                    (dcExpanding)="dropdownExpanding($event)"
+                    #treeDropdown>
+                    <dca-tree
+                         (dcClick)="onTreeClick($event, treeDropdown)"
+                         [treeData]="lessons"></dca-tree>
+               </dcm-dropdown>
+          </div>
+     </section>
+</div>
+
+<div class="container">
+     <div class="header">
+          <h1 class="header-title">Properties</h1><br><br>
+          <dcm-tab [tab]="tabProperties" (dcTabChange)="tabChange()">
+               <div #tabContent id="1">
+                    <dc-datatable
+                         #table1
+                         class="primary"
+                         [rows]="inputRows"
+                         [loadingIndicator]="false"
+                         [columns]="inputColumns"
+                         [columnMode]="'force'"
+                         [reorderable]="false"
+                         [allowColumnSearch]="true"
+                         [scrollbarH]="false"
+                         [useToolbar]="false"
+                         [allowDeleting]="false"
+                         [allowAdding]="false"
+                         [allowEditing]="false">
+                    </dc-datatable>
+
+               </div>
+               <div #tabContent id="2">
+                    <dc-datatable
+                         #table2
+                         class="primary"
+                         [rows]="eventRows"
+                         [loadingIndicator]="false"
+                         [columns]="eventColumns"
+                         [columnMode]="'force'"
+                         [reorderable]="false"
+                         [allowColumnSearch]="true"
+                         [scrollbarH]="false"
+                         [useToolbar]="false"
+                         [allowDeleting]="false"
+                         [allowAdding]="false"
+                         [allowEditing]="false">
+                    </dc-datatable>
+               </div>
+          </dcm-tab>
+     </div>
+
+</div>
+
+<div class="modal-overlay" id="modalOverlay" (click)="closeModal()"
+     [ngClass]="{'show':selectedModal=='modal1' ? true : false}"></div>
+<div class="modal" id="modal"
+     [ngClass]="{'show':selectedModal=='modal1' ? true : false}">
+
+     <dcm-tab [tab]="tabs">
+          <div #tabContent id="1">
+
+               <iframe
+                    src="https://codesandbox.io/p/devbox/asd-my5g4g?embed=1&file=%2Fsrc%2Fapp%2Fdropdowns%2Fdropdowns.component.html"
+                    width="100%" height="600px" frameborder="1">
+               </iframe>
+          </div>
+          <div #tabContent id="2">
+
+               <iframe
+                    src="https://codesandbox.io/p/devbox/asd-my5g4g?embed=1&file=%2Fsrc%2Fapp%2Fdropdowns%2Fdropdowns.component.ts"
+                    width="100%" height="600px" frameborder="1">
+               </iframe>
+          </div>
+     </dcm-tab>
+</div>
+
+<!-- 
 <div class="content">
      <h1> Dark Chicken Molecular Dropdown</h1>
 
@@ -226,4 +449,4 @@
                </div>
           </dcm-tab>
      </div>
-</div>
+</div> -->
