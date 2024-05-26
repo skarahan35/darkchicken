@@ -1,40 +1,33 @@
-<div class="content">
-  <h1>Dark Chicken Atomic Spinner</h1>
 
-  <h2> No Decoration</h2>
-  <div class="content-item">
-    <dcm-tab class="content-tab" [tab]="tabs" id="1">
-      <div #tabContent [id]="tabs[0].tabId">
-        <div class="content-lib-items">
-          <dca-spinner class="content-lib-item"></dca-spinner>
-        </div>
-        <div class="content-item-description">
-          Biz geliştiriciler her zaman en optimal senaryo üzerinden hareket
-          ederiz, fakat olası sorunları da düşünmememiz gereklidir. Burada hemen
-          ilk aklımıza gelen spinner olmuştur. Herhangi bir işlevin
-          gerçekleşmesi zaman alacağını düşündüğümüzde spinner'ı aktif sayfa
-          üzerinde gösterip kullanıcılara işleminin arkaplanda sürdüğünü
-          belirtiriz. Bu derece önemli ve bir o kadar basit bir işlevi olan
-          spinner için aynı kalıplarla yaklaştık. Çok önemli bir bakışla
-          olabildiğince basit bir kullanım sağlamaya çalıştık. İşte karşınızda
-          hiç bir dekorasyon kullanılmadan oluşturulan spinner.
-        </div>
-      </div>
 
-      <pre #tabContent [id]="tabs[1].tabId">
-      <code class="language-html">
-        {{noDecorationSpinner}}
-      </code> </pre>
-    </dcm-tab>
+<div class="container">
+  <div class="header">
+    <h1 class="header-title">Darkchicken Spinner</h1><br><br>
+    <p>DarkChicken is an innovative library providing user interface tools for developers using Angular. The "Spinner" UI elements in this library are designed to optimize user experience and facilitate the developers' work. Here are the basic features and usage of DarkChicken Spinner elements:
+      <br>
+      <b>Basic Features</b>
+      <br>
+      <b>Various Styles:</b>
+      DarkChicken Spinner elements come in various styles. Predefined styles such as primary, secondary, success, danger, warning, info, light, and dark allow you to use spinners for different purposes in your projects easily.
+      <br>
+      <b>Customizability:</b>
+      You can customize the appearance and feel of the Spinner elements according to your projects. You can change the color, size, speed, and more via CSS.
+      <br>
+      <b>State Management:</b>
+      Spinner elements support different loading states. These states allow you to manage user interactions and feedback more effectively.
+      <br>
+      <b>Accessibility:</b>
+      DarkChicken is designed according to accessibility standards. Spinner elements are fully compatible with screen readers and keyboard navigation.</p>
+      
   </div>
 
-  <h2>With Decoration</h2>
-  <div class="content-item">
-    <h3>Spinner Types</h3>
-    <dcm-tab class="content-tab" [tab]="tabs" id="2">
-      <div #tabContent [id]="tabs[0].tabId">
-        <div class="content-lib-items">
-          <dca-spinner class="content-lib-item"
+</div>
+
+<div class="content container">
+  <section class="card" (click)="onModalClick('modal1')">
+    <h2 class="button-title">Default</h2>
+    <div class="button-wrapper">
+      <dca-spinner class="content-lib-item"
             dcClass="dca-spinner-primary"></dca-spinner>
           <dca-spinner class="content-lib-item"
             dcClass="dca-spinner-secondary"></dca-spinner>
@@ -49,64 +42,59 @@
           <dca-spinner class="content-lib-item"
             dcClass="dca-spinner-light"></dca-spinner>
           <dca-spinner class="content-lib-item"
-            dcClass="dca-spinner-dark"></dca-spinner> </div>
-        <div class="content-item-description">
-          Spinnerlar birden farkllı şekillerde birden farklı renklerde olabilir.
-          Burada geliştiricilerin tasarım sürecinde zaman harcamasını
-          istemediğimiz için sizlere hazır renk tasarımlarını içeren spinner
-          tiplerini sunduk. Burada diğer atomic elementlerde olduğu gibi basit
-          bir class atamasıyla istediğiniz tipteki spinener'ı ekranınınızda
-          gösterebilirsiniz.
-        </div>
+            dcClass="dca-spinner-dark"></dca-spinner>
+
+    </div>
+  </section>
+  
+
+</div>
+
+<div class="container">
+  <div class="header">
+    <h1 class="header-title">Properties</h1><br><br>
+      <div #tabContent id="1">
+        <dc-datatable
+        #table1
+          class="primary"
+          [rows]="inputRows"
+          [loadingIndicator]="false"
+          [columns]="inputColumns"
+          [columnMode]="'force'"
+          [reorderable]="false"
+          [allowColumnSearch]="true"
+          [scrollbarH]="false"
+          [useToolbar]="false"
+          [allowDeleting]="false"
+          [allowAdding]="false"
+          [allowEditing]="false"
+          >
+          </dc-datatable>
+          
       </div>
+    </div>
 
-      <pre #tabContent [id]="tabs[1].tabId">
-      <code class="language-html">
-        {{spinnerTypes}}
-      </code> </pre>
-    </dcm-tab>
-  </div>
+</div>
 
-  <div class="content-item">
-    <h3>Spinner Active & Passive</h3>
-    <dcm-tab class="content-tab" [tab]="tabs" id="3">
-      <div #tabContent [id]="tabs[0].tabId">
-        <div class="content-lib-items">
-          <dca-spinner class="content-lib-item"
-            dcClass="dca-spinner-primary"></dca-spinner>
-          <dca-spinner [active]="activity" class="content-lib-item"
-            dcClass="dca-spinner-secondary"></dca-spinner>
-          <dca-spinner class="content-lib-item"
-            dcClass="dca-spinner-success"></dca-spinner>
-          <dca-spinner [active]="activity" class="content-lib-item"
-            dcClass="dca-spinner-danger"></dca-spinner>
-          <dca-spinner class="content-lib-item"
-            dcClass="dca-spinner-warning"></dca-spinner>
-          <dca-spinner [active]="activity" class="content-lib-item"
-            dcClass="dca-spinner-info"></dca-spinner>
-          <dca-spinner class="content-lib-item"
-            dcClass="dca-spinner-light"></dca-spinner>
-          <dca-spinner [active]="activity" class="content-lib-item"
-            dcClass="dca-spinner-dark"></dca-spinner> </div>
-        <div class="content-item-description">
-          Spinner her ne kadar çok önemli bir element olsa da bir yerde
-          kapanması gerekli. Bir spinnerı kapatabilmek için en basit ne
-          yapabiliriz diye düşündük ve tabiki de bir boolean inputu ile bunu
-          gerçekleştirebileceğimize karar verdik. Spinner içerisindeki 'active'
-          inputuna verdiğiniz boolean değerler spinner'ın pasif mi yoksa aktif
-          mi olduğunu belirler. Defaul olarak biz bu değeri 'true' yani 'active'
-          değerine ayarladık.
-          <br>
-          <dca-button (dcClick)="activity = !activity"
-            buttonText="Click Me"
-            dcClass="dca-btn dca-btn-primary"></dca-button>
-        </div>
-      </div>
+<div class="modal-overlay" id="modalOverlay" (click)="closeModal()"
+  [ngClass]="{'show':selectedModal=='modal1' ? true : false}"></div>
+<div class="modal" id="modal"
+  [ngClass]="{'show':selectedModal=='modal1' ? true : false}">
 
-      <pre #tabContent [id]="tabs[1].tabId">
-      <code class="language-html">
-        {{spinnerActive}}
-      </code> </pre>
-    </dcm-tab>
-  </div>
+  <dcm-tab [tab]="tabs">
+    <div #tabContent id="1">
+
+      <iframe
+        src="https://codesandbox.io/p/devbox/asd-my5g4g?embed=1&file=%2Fsrc%2Fapp%2Fspinners%2Fspinners.component.html"
+        width="100%" height="600px" frameborder="1">
+      </iframe>
+    </div>
+    <div #tabContent id="2">
+
+      <iframe
+        src="https://codesandbox.io/p/devbox/asd-my5g4g?embed=1&file=%2Fsrc%2Fapp%2Fspinners%2Fspinnert.component.ts"
+        width="100%" height="600px" frameborder="1">
+      </iframe>
+    </div>
+  </dcm-tab>
 </div>
