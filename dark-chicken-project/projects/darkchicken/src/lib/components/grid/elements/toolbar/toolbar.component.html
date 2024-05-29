@@ -1,8 +1,6 @@
 <span class="toolbar">
 
-    <div *ngIf="allowColumnReorder !=false" class="toolbar-item icon-button">
-        <column-reorder></column-reorder>
-    </div>
+    
 
     <div *ngIf="allowColumnChooser !=false" class="toolbar-item icon-button">
         <column-chooser [columns]="columns" (changeColumns)="changeColumns($event)"></column-chooser>
