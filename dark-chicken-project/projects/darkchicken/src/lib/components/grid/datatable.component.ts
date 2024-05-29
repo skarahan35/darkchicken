@@ -283,6 +283,7 @@ export class DatatableComponent implements OnInit, DoCheck, AfterViewInit, OnCha
   }
 
   rowRemoving(e: any) {
+    debugger
     this.onRowRemoving.emit(this)
     let isOnChanges = false;
     this.changes.forEach((changedItem: any, index: number) => {
@@ -302,7 +303,7 @@ export class DatatableComponent implements OnInit, DoCheck, AfterViewInit, OnCha
     if (!isOnChanges) {
       this.changes.push(
         {
-          row: null,
+          row: e.row,
           key: e.row.$$$id,
           type: 'remove'
         }
