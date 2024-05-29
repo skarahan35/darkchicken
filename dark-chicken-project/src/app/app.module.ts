@@ -24,6 +24,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TestPageComponent } from './test-page/test-page.component';
+import { ColumnSearchComponent } from './column-search/column-search.component';
+import { GridSearchComponent } from './grid-search/grid-search.component';
+import { ColumnChooserComponent } from './column-chooser/column-chooser.component';
+import { SortingComponent } from './sorting/sorting.component';
+import { BatchEditableComponent } from './batch-editable/batch-editable.component';
 
 
 
@@ -46,7 +51,12 @@ import { TestPageComponent } from './test-page/test-page.component';
     GridComponent,
     SidebarComponent,
     DashboardComponent,
-    TestPageComponent
+    TestPageComponent,
+    ColumnSearchComponent,
+    GridSearchComponent,
+    ColumnChooserComponent,
+    SortingComponent,
+    BatchEditableComponent
   ],
   imports: [
     BrowserModule,

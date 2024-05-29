@@ -734,3 +734,17 @@
     content: '\72';
   }
   /*#endregion*/
+
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  dc-toolbar {
+    margin-bottom: 10px; 
+  }
+  
+  div[role="table"] {
+    flex: 1;
+  }
