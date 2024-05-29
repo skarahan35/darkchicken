@@ -1,17 +1,28 @@
-<dc-datatable class="primary" [rows]="rows"
-    [loadingIndicator]="loadingIndicator" 
-    [columns]="columns"
-    [columnMode]="ColumnMode.force" 
-    [reorderable]="reorderable"
-    columnMode="force" 
-    [scrollbarH]="false"
-    [allowColumnSearch]="false" 
-    [allowGridSearch]="false"
-    [allowColumnChooser]="false" 
-    [allowAdding]="false"
-    [allowDeleting]="false" 
-    [allowEditing]="false" 
-    [allowSaveButton]="false"
-    [allowReverseButton]="false" 
-    [allowSorting]="true">
-</dc-datatable>
+<dcm-tab [tab]="tabs">
+    <div #tabContent id="1">
+        <dc-datatable class="primary" [rows]="rows"
+            [loadingIndicator]="loadingIndicator" 
+            [columns]="columns"
+            [columnMode]="ColumnMode.force" 
+            [reorderable]="reorderable"
+            columnMode="force" 
+            [scrollbarH]="false"
+            [allowColumnSearch]="false" 
+            [allowGridSearch]="false"
+            [allowColumnChooser]="false" 
+            [allowAdding]="false"
+            [allowDeleting]="false" 
+            [allowEditing]="false" 
+            [allowSaveButton]="false"
+            [allowReverseButton]="false" 
+            [allowSorting]="true">
+        </dc-datatable>
+    </div>
+    <div #tabContent id="2">    
+        <iframe
+          src="https://codesandbox.io/p/devbox/asd-my5g4g?embed=1&file=%2Fsrc%2Fapp%2Fsorting%2Fsorting.component.html"
+          width="100%" height="600px" frameborder="1">
+        </iframe>
+    </div>
+</dcm-tab>
+    
