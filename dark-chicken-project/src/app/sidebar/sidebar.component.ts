@@ -85,6 +85,36 @@ export class SidebarComponent implements OnInit {
 
   menuDataDatatables: any = [
     {
+      name: 'Column Search',
+      itemURL: 'pages/column-search',
+      display: true,
+      icon: 'magnifying-glass'
+    },
+    {
+      name: 'Grid Search',
+      itemURL: 'pages/grid-search',
+      display: true,
+      icon: 'magnifying-glass'
+    },
+    {
+      name: 'Column Chooser',
+      itemURL: 'pages/column-chooser',
+      display: true,
+      icon: 'table-columns'
+    },
+    {
+      name: 'Batch Editable',
+      itemURL: 'pages/batch-editable',
+      display: true,
+      icon: 'pen-to-square'
+    },
+    {
+      name: 'Sorting',
+      itemURL: 'pages/sorting',
+      display: true,
+      icon: 'sort'
+    },
+    {
       name: 'Datatable',
       itemURL: 'pages/grid',
       display: true,
