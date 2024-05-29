@@ -41,7 +41,7 @@ export class DatatableComponent implements OnInit, DoCheck, AfterViewInit, OnCha
    * Is datatable datas editable 
    */
   @Input() allowEditing?: boolean = true
-
+  @Input() allowSorting?: boolean = true
   /**
    * Is datatable datas deletable 
    */
