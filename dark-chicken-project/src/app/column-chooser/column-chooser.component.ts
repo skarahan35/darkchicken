@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ColumnMode } from 'projects/darkchicken/src/lib/types/column-mode.type';
 import { TableColumn } from 'projects/darkchicken/src/lib/types/table-column.type';
+import { TabModel } from 'projects/darkchicken/src/lib/models/dc-models.model';
 @Component({
   selector: 'app-column-chooser',
   templateUrl: './column-chooser.component.html',
@@ -10,6 +11,17 @@ export class ColumnChooserComponent {
   rows = [];
   loadingIndicator = true;
   reorderable = true;
+
+  tabs: TabModel[] = [
+    {tabId:'1',
+      tabTitle:'',
+      tabIcon:"table"
+    },
+    {tabId:'2',
+      tabTitle:'',
+      tabIcon:"angular",
+    }
+  ]
 
   treeData = [{
     "id": "s15",

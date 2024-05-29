@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TabModel } from 'projects/darkchicken';
 import { ColumnMode } from 'projects/darkchicken/src/lib/types/column-mode.type';
 import { TableColumn } from 'projects/darkchicken/src/lib/types/table-column.type';
 
@@ -11,6 +12,19 @@ export class BatchEditableComponent {
   rows = [];
   loadingIndicator = true;
   reorderable = true;
+
+  tabs: TabModel[] = [
+    {
+      tabId:'1',
+      tabTitle:'',
+      tabIcon:"table"
+    },
+    {
+      tabId:'2',
+      tabTitle:'',
+      tabIcon:"angular"
+    }
+  ]
 
   treeData = [{
     "id": "s15",
