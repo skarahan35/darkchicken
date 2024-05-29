@@ -17,30 +17,35 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { TestPageComponent } from './test-page/test-page.component';
+import { ColumnChooserComponent } from './column-chooser/column-chooser.component';
+import { ColumnSearchComponent } from './column-search/column-search.component';
+import { GridSearchComponent } from './grid-search/grid-search.component';
+import { BatchEditableComponent } from './batch-editable/batch-editable.component';
+import { SortingComponent } from './sorting/sorting.component';
 
 
 const routes: Routes = [{
-  path:'pages/buttons',
+  path: 'pages/buttons',
   component: ButtonsComponent
 },
 {
-  path:'pages/inputs',
-  component:InputsComponent
+  path: 'pages/inputs',
+  component: InputsComponent
 },
 {
-  path:'pages/checkboxes',
-  component:CheckboxesComponent
+  path: 'pages/checkboxes',
+  component: CheckboxesComponent
 },
 {
-  path:'pages/icons',
-  component:IconComponent
+  path: 'pages/icons',
+  component: IconComponent
 },
 {
-  path:'pages/bread-crumbs',
-  component:BreadCrumbsComponent
+  path: 'pages/bread-crumbs',
+  component: BreadCrumbsComponent
 },
 {
-  path:'pages/spinners',
+  path: 'pages/spinners',
   component: SpinnersComponent
 },
 {
@@ -63,7 +68,7 @@ const routes: Routes = [{
   path: 'pages/lists',
   component: ListsComponent
 }
-,
+  ,
 {
   path: 'pages/grid',
   component: GridComponent
@@ -75,6 +80,26 @@ const routes: Routes = [{
 {
   path: 'pages/test-page',
   component: TestPageComponent
+},
+{
+  path: 'pages/column-chooser',
+  component: ColumnChooserComponent
+},
+{
+  path: 'pages/column-search',
+  component: ColumnSearchComponent
+},
+{
+  path: 'pages/grid-search',
+  component: GridSearchComponent
+},
+{
+  path: 'pages/batch-editable',
+  component: BatchEditableComponent
+},
+{
+  path: 'pages/sorting',
+  component: SortingComponent
 }
 ];
 
